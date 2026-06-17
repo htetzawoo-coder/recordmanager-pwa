@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.0 PWA Install Deploy</title>
+<title>RecordManager_2D_Logic_Pro v1.5.1 Public Login Super Admin</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.0 PWA Install Deploy */
+/* v1.5.1 Public Login Super Admin */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -113,6 +113,7 @@
 .dark .cal-am{background:#1e3a8a;color:#dbeafe}.dark .cal-pm{background:#78350f;color:#fde68a}
 @media(max-width:600px){.calendar-grid{grid-template-columns:repeat(5,118px);}.cal-cell{min-width:118px}}
 .workday-badge{display:inline-block;border-radius:999px;background:#dcfce7;color:#166534;padding:5px 10px;font-size:12px;font-weight:1000;margin-top:6px}.dark .workday-badge{background:#14532d;color:#bbf7d0}
+.owner-badge{display:inline-block;border-radius:999px;background:#fef3c7;color:#92400e;padding:4px 9px;font-weight:1000;font-size:11px}.dark .owner-badge{background:#78350f;color:#fde68a}.owner-table td,.owner-table th{font-size:12px;vertical-align:middle}
 
 </style>
 </head>
@@ -121,7 +122,7 @@
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.0 PWA Install Deploy</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.1 Public Login Super Admin</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
@@ -134,9 +135,9 @@
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.0 PWA Install Deploy — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
-      <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Firebase Email" value="admin@test.com">
-      <input id="p" type="password" class="form-control mb-3" placeholder="Firebase Password" value="123456">
+      <p class="small-note mb-2">v1.5.1 Public Login Super Admin — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
+      <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
       <div class="register-box">
         <button class="btn btn-outline-primary w-100 rounded-pill fw-bold mb-2" type="button" onclick="regBox.style.display=regBox.style.display==='block'?'none':'block'">➕ New Admin Register</button>
@@ -150,11 +151,8 @@
           <small class="text-muted">Admin အသစ်တစ်ယောက်သည် shopId သီးသန့်ဖြင့် သူ့ member/data ကို သီးခြားသုံးနိုင်ပါမည်။</small>
         </div>
       </div>
-      <div class="alert alert-info mt-3 mb-0 small">
-        <b>Firebase Test Accounts</b><br>
-        Admin: <b>admin@test.com / 123456</b><br>
-        Member 1: <b>member1@test.com / 111111</b><br>
-        <small>Member အသစ်ထည့်လျှင် Firebase Authentication ထဲတွင်လည်း user ရှိရပါမည်။</small>
+      <div class="alert alert-secondary mt-3 mb-0 small">
+        Admin / Member account ဖြင့် Sign in ဝင်ပါ။ Member account သည် သက်ဆိုင်ရာ Admin မှ ဖွင့်ပေးထားရန်လိုပါသည်။
       </div>
     </div>
   </div>
@@ -173,6 +171,7 @@
   <div id="app" class="page">
     <div class="alert alert-success small fw-bold" id="cloudStatus">Cloud: Ready <span id="netBadge" class="net-badge">ONLINE</span></div>
     <div class="tabs">
+      <button id="tOwner" class="owner-tab hidden-by-role" onclick="tab('owner','tOwner')">👑 Owner</button>
       <button id="tDash" class="active admin-tab" onclick="tab('dash','tDash')">📊 Dashboard</button>
       <button id="tEntry" class="member-tab" onclick="tab('entry','tEntry')">📝 Record</button>
       <button id="tRecords" onclick="tab('records','tRecords')">📋 Records</button>
@@ -188,6 +187,21 @@
       <button id="tLogs" class="admin-tab" onclick="tab('logs','tLogs')">🧾 Logs</button>
       <button id="tSettings" class="admin-tab" onclick="tab('settings','tSettings')">⚙️ Settings</button>
     </div>
+
+    <section id="owner" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">👑 Super Admin / App Owner Dashboard</h5>
+        <p class="small-note">Registration / License metadata only. Record data, number amount, reports are not shown here.</p>
+        <div id="ownerStats" class="smart-grid mb-3"></div>
+        <input id="ownerSearch" class="form-control mb-2" placeholder="Search admin/member email, phone, shop..." oninput="renderOwnerDashboard()">
+        <div class="table-responsive">
+          <table class="table table-sm owner-table">
+            <thead><tr><th>Role</th><th>ID</th><th>Name / Shop</th><th>Email / Phone</th><th>Status</th></tr></thead>
+            <tbody id="ownerBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
     <section id="dash" class="page active">
       <div class="card p-3">
@@ -482,7 +496,7 @@
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.0 PWA Install Deploy
+   RecordManager_2D_Logic_Pro v1.5.1 Public Login Super Admin
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -590,6 +604,8 @@ function renderCloseStatus(updateTimer=true){
 
 let settings={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
 let token='',uid='',authEmail='';
+const SUPER_ADMIN_EMAILS=['htetzawoohzo99@gmail.com','admin@test.com'];
+function isSuperAdmin(){return currentUser&&currentUser.role==='superadmin'}
 
 const MAP={A:['05','16','27','38','49','50','61','72','83','94'],Z:['07','18','24','35','69','70','81','42','53','96'],B:['12','23','34','45','56','21','32','43','54','65','67','78','89','90','01','76','87','98','09','10'],'//':['00','11','22','33','44','55','66','77','88','99']},E=['0','2','4','6','8'],O=['1','3','5','7','9'];
 
@@ -744,7 +760,7 @@ function isAdmin(){return currentUser&&currentUser.role==='admin'}
 function isMember(){return currentUser&&currentUser.role==='member'}
 function rate(){return Number(settings.rate||80)}
 function defCor(){return Number(settings.cor||13)}
-function allVisibleRecords(){if(!currentUser)return[];return isAdmin()?records.filter(r=>sameShop(r)):records.filter(r=>sameShop(r)&&(String(r.memberId).toLowerCase()===String(currentUser.id).toLowerCase()||String(r.memberUid||'').toLowerCase()===String(currentUser.uid).toLowerCase()||String(r.memberEmail||'').toLowerCase()===String(currentUser.email).toLowerCase()))}
+function allVisibleRecords(){if(!currentUser||isSuperAdmin())return[];return isAdmin()?records.filter(r=>sameShop(r)):records.filter(r=>sameShop(r)&&(String(r.memberId).toLowerCase()===String(currentUser.id).toLowerCase()||String(r.memberUid||'').toLowerCase()===String(currentUser.uid).toLowerCase()||String(r.memberEmail||'').toLowerCase()===String(currentUser.email).toLowerCase()))}
 function isTodayRecord(r){return String(r.d||today())===today()}
 function visibleRecords(){return allVisibleRecords().filter(isTodayRecord)}
 function displayNameFor(r){return isAdmin()?(r.memberName||'Unknown Member'):(r.playerName||r.name||'')}
@@ -811,6 +827,14 @@ async function login(){
     let r=await firebaseSignIn(email,pass);
     token=r.idToken; uid=r.localId; authEmail=(r.email||email).toLowerCase();
 
+    if(SUPER_ADMIN_EMAILS.includes(authEmail)){
+      currentUser={id:uid,uid,email:authEmail,username:authEmail,role:'superadmin',memberName:'App Owner / Developer',phone:'',shopId:'__owner__',shopName:'App Owner',active:true};
+      accounts=await listCollection(COL_ACCOUNTS);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
+      saveCur();loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
+      $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
+      applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Super Admin Connected ✅','success');return;
+    }
+
     let acc=await getDoc(COL_ACCOUNTS,uid,null);
 
     // Transition support: v1.4.0/email-doc accounts ကို uid-doc အဖြစ် migrate လုပ်ရန်
@@ -854,8 +878,8 @@ async function login(){
   }
 }
 function logout(){currentUser=null;token='';uid='';authEmail='';saveCur();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary')}
-function applyRoleUI(){if(!currentUser)return;let label=isAdmin()?'ADMIN / ဒိုင်':'MEMBER / '+(currentUser.memberName||currentUser.username);$('roleBadge').innerText=label;if($('shopBadge'))$('shopBadge').innerText=currentUser.shopName||currentUser.shopId||'Shop';document.querySelectorAll('.admin-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isAdmin()));document.querySelectorAll('.member-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isMember()));if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;}
-function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();renderCloseStatus()}
+function applyRoleUI(){if(!currentUser)return;let label=isSuperAdmin()?'SUPER ADMIN / OWNER':(isAdmin()?'ADMIN / ဒိုင်':'MEMBER / '+(currentUser.memberName||currentUser.username));$('roleBadge').innerText=label;if($('shopBadge'))$('shopBadge').innerText=currentUser.shopName||currentUser.shopId||'Shop';document.querySelectorAll('.owner-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isSuperAdmin()));document.querySelectorAll('.admin-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isAdmin()||isSuperAdmin()));document.querySelectorAll('.member-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isMember()||isSuperAdmin()));if(isSuperAdmin())document.querySelectorAll('.tabs button:not(.owner-tab)').forEach(el=>el.classList.add('hidden-by-role'));else document.querySelectorAll('.tabs button:not(.owner-tab)').forEach(el=>el.classList.remove('hidden-by-role'));if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;}
+function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus()}
 function toggleTheme(){document.body.classList.toggle('dark')}
 function key(v){if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
 function delKey(){let e=$(currentField);if(e){e.value=e.value.slice(0,-1);e.focus()}}
@@ -1125,7 +1149,7 @@ function settleData(s,pn){
     if(!m[key])m[key]={name:nm,total:0,pAmt:0,pay:0,cor:0,net:0};
     m[key].total+=num(r.amt); if(r.n===pn)m[key].pAmt+=num(r.amt);
   });
-  Object.values(m).forEach(x=>{x.pay=x.pAmt*rate();x.cor=Math.round(x.total*(memberCorRateByName(x.name)/100));x.net=x.total-x.pay-x.cor});
+  Object.values(m).forEach(x=>{x.pay=x.pAmt*rate();x.cor=isAdmin()?Math.round(x.total*(memberCorRateByName(x.name)/100)):0;x.net=x.total-x.pay-x.cor});
   return Object.values(m)
 }
 function memberCorRateByName(name){
@@ -1135,6 +1159,8 @@ function memberCorRateByName(name){
 function tableReport(d){
   if(!d.length)return'<div class="alert alert-secondary mt-2">No Data</div>';
   let h=isAdmin()?'Commission':'Name';
+  if(!isAdmin())return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>ပေးရန်/ရရန်</th></tr>'+ 
+    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>';
   return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>Cor</th><th>ပေးရန်/ရရန်</th></tr>'+
     d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${money(x.cor)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>'
 }
@@ -1320,7 +1346,7 @@ async function sendMessage(){
   finally{setBusy(false)}
 }
 
-function backupJSON(){download(JSON.stringify({version:'1.5.0-pwa-install-deploy',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v150_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
+function backupJSON(){download(JSON.stringify({version:'1.5.1-public-login-super-admin',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v151_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
 function restoreJSON(e){let f=e.target.files[0];if(!f)return;let reader=new FileReader();reader.onload=async()=>{try{let d=JSON.parse(reader.result);if(!confirm('Backup data ကို Cloud ထဲသို့ ထည့်မည်။ လက်ရှိစာရင်းကို မဖျက်ဘဲ ထပ်ပေါင်းပါမည်။'))return;let newRecords=d.records||[],newExports=d.exportsL||d.limitExports||[];for(const r of newRecords){delete r._path;delete r.docId;let saved=await addDoc(COL_RECORDS,r);records.push(saved)}for(const x of newExports){delete x._path;delete x.docId;let saved=await addDoc(COL_EXPORTS,x);exportsL.push(saved)}if(d.settings){settings={...settings,...d.settings};await saveSet()}renderAll();applySettingsUI();renderMembers();alert('Restore to Cloud ပြီးပါပြီ')}catch(err){alert('Backup file မမှန်ပါ / Restore Error: '+err.message)}};reader.readAsText(f)}
 async function importOldData(){if(!isAdmin())return;let keys=['RM_v130_records','RM_v126_records','RM_v125_records','RM_v124_records','RM_v123_records','RM_v122_records'];let old=[];for(let k of keys){old=localLoad(k,[]);if(old.length)break}if(!old.length)return alert('Old local data မတွေ့ပါ');let memberEmail=prompt('Old data ကို ဘယ် Member Email ဖြင့် Import မလဲ?','legacy@test.com')||'legacy@test.com';let memberName=prompt('Commission Name','Legacy Commission')||'Legacy Commission';if(!accounts.some(a=>a.id===memberEmail)){let a={id:memberEmail,email:memberEmail,username:memberEmail,role:'member',memberName,active:false};accounts.push(a);await setDoc(COL_ACCOUNTS,a.id,a)}for(const r of old){let rec={...r,memberId:memberEmail,memberName,playerName:r.playerName||r.name||'',name:r.name||r.playerName||''};delete rec._path;delete rec.docId;let saved=await addDoc(COL_RECORDS,rec);records.push(saved)}renderAll();renderMembers();alert('Old data imported to Cloud: '+old.length)}
 async function clearTodayRecords(){if(!isAdmin())return; if(!confirm('ဒီနေ့စာရင်းများကို Cloud မှ ဖျက်မလား?'))return;let d=today(),targets=records.filter(r=>r.d===d);try{setBusy(true,'Clearing today...');for(const r of targets)await delDocByPath(r._path);records=records.filter(r=>r.d!==d);await save();renderAll();setCloudStatus('Cloud: Today Records Cleared','success');toast('Today Records Cleared','success');await addAudit('CLEAR_TODAY','rows '+targets.length)}finally{setBusy(false)}}
@@ -1360,6 +1386,21 @@ function renderHistory(){
   hb.innerHTML=rows.length?rows.map(r=>`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
 }
 
+
+function renderOwnerDashboard(){
+  if(!$('ownerBody'))return;
+  let q=($('ownerSearch')?.value||'').toLowerCase();
+  let rows=(accounts||[]).filter(a=>String(a.role||'').match(/admin|member/));
+  if(q)rows=rows.filter(a=>[a.role,a.id,a.uid,a.email,a.username,a.memberName,a.phone,a.shopId,a.shopName].join(' ').toLowerCase().includes(q));
+  let admins=(accounts||[]).filter(a=>a.role==='admin'),members=(accounts||[]).filter(a=>a.role==='member'),active=(accounts||[]).filter(a=>a.active!==false).length;
+  ownerStats.innerHTML=`<div class="smart-mini"><small>Admins</small><br><b>${admins.length}</b></div><div class="smart-mini"><small>Members</small><br><b>${members.length}</b></div><div class="smart-mini"><small>Active</small><br><b>${active}</b></div><div class="smart-mini"><small>Metadata only</small><br><b>No records</b></div>`;
+  ownerBody.innerHTML=rows.length?rows.map(a=>{
+    let memCount=a.role==='admin'?members.filter(m=>String(m.shopId||'')===String(a.shopId||'')).length:'';
+    let st=a.active===false?'Disabled':'Active';
+    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${st}<br><small>${a.createdAt?new Date(Number(a.createdAt)).toLocaleDateString():''}</small></td></tr>`
+  }).join(''):'<tr><td colspan="5" class="text-center text-muted">No registration metadata</td></tr>';
+}
+
 function safeRun(label,fn){try{if(typeof fn==='function')fn()}catch(e){console.warn(label,e);toast(label+' render warning: '+e.message,'warning')}}
 
 
@@ -1377,6 +1418,7 @@ function renderAll(){
   safeRun('Close Status',renderCloseStatus);
   safeRun('Result Book',renderResultBookStatus);
   safeRun('History',renderHistory);
+  safeRun('Owner Dashboard',renderOwnerDashboard);
   safeRun('Session Timer',updateSessionTimer);
 }
 
