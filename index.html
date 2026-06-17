@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>RecordManager_2D_Logic_Pro v1.5.0 PWA Install Deploy</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="RecordManager Pro">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--text:#111827;--muted:#64748b;--border:#e5e7eb;--primary:#2563eb;--purple:#7c3aed}body{background:var(--bg);color:var(--text);font-family:Arial,'Noto Sans Myanmar',sans-serif;padding-bottom:30px}.dark{--bg:#111827;--card:#1f2937;--text:#f9fafb;--muted:#cbd5e1;--border:#334155}.card{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 25px #0001;margin-bottom:16px}.page{display:none}.page.active{display:block}.appbar{position:sticky;top:0;z-index:1000;border-radius:0 0 18px 18px}.tabs{position:sticky;top:58px;z-index:999;background:var(--bg);padding:8px 6px;white-space:nowrap;overflow-x:auto;border-bottom:1px solid var(--border)}.tabs button{border:0;border-radius:999px;padding:9px 12px;margin:2px;background:var(--card);color:var(--muted);font-weight:800;box-shadow:0 4px 12px #0001}.tabs button.active{background:var(--primary);color:#fff}.form-control,.form-select{border:1px solid var(--border);border-radius:14px;padding:12px;background:var(--card);color:var(--text);font-weight:700}.dark .form-control,.dark .form-select{background:#0f172a;color:#f9fafb;border-color:#334155}.focused-input{outline:3px solid #60a5fa!important}.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.keypad button{min-height:56px;font-weight:900;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);box-shadow:0 5px 12px #0001}.keypad .enter{grid-column:span 4;min-height:72px;background:linear-gradient(135deg,#10b981,#047857);color:#fff;font-size:24px;border:0}.keypad small{font-size:11px;color:var(--muted)}.name-text{font-weight:900;color:var(--purple)}.nums{display:none;background:#eff6ff;border-radius:10px;padding:8px;margin-top:6px;font-size:12px;line-height:1.6;color:#1e3a8a}.dark .nums{background:#0f2a4a;color:#bfdbfe}.limit-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:11px}.cell{background:var(--card);border:1px solid var(--border);border-radius:6px;text-align:center;padding:5px 1px}.hit{background:#dc2626!important;color:#fff!important;font-weight:900;box-shadow:0 0 0 2px #7f1d1d inset}.neg{background:#fee2e2!important;color:#991b1b!important;font-weight:900}.pos{background:#dcfce7!important;color:#166534!important;font-weight:900}.dark .table{--bs-table-bg:var(--card);--bs-table-color:var(--text);--bs-table-border-color:var(--border)}.report-shell{background:linear-gradient(135deg,#e0f7fa,#fff 40%,#fff1f2);padding:14px;border-radius:20px}#imgBox{background:#fff;color:#111;max-width:610px;margin:auto;padding:20px;border-radius:22px;border:1px solid #e5e7eb;box-shadow:0 12px 28px #0002}.img-header{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}.img-title{font-size:34px;font-weight:1000;color:#111;text-shadow:2px 2px 0 #facc15;word-break:break-word}.badge13{border:3px solid #22d3ee;color:#0891b2;background:#ecfeff;font-size:24px;font-weight:1000;padding:6px 12px;border-radius:12px;min-width:86px;text-align:center}.session-card{background:#fafafa;border:1px solid #e5e7eb;border-radius:18px;padding:14px;height:100%}.ap{font-size:30px;color:#7c3aed;font-weight:1000;text-align:center}.redlbl{color:#ef4444;font-weight:900;font-size:15px;margin-top:10px}.val{font-weight:1000;font-size:20px;color:#111;border-bottom:1px dashed #e5e7eb}.daily-title{text-align:center;font-size:32px;font-weight:1000;text-shadow:2px 2px 0 #facc15;margin:14px 0 8px}.daily-box{border:4px solid #67e8f9;background:#f8fafc;margin:8px auto 12px;padding:14px 24px;max-width:430px;border-radius:16px}.daily-row{font-size:28px;color:#65a30d;font-weight:1000}.action-text{text-align:center;font-weight:1000;color:#e11d48;text-shadow:1px 1px 0 #111}.lock-screen{min-height:70vh;display:flex;align-items:center;justify-content:center}.lock-card{max-width:520px;margin:auto;border:2px solid #ef4444}.logo-tile{width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:1000;margin:auto;box-shadow:0 8px 18px #0002}.license-box{display:none;border:2px dashed #ef4444;border-radius:16px;padding:12px;margin-top:12px}@media(min-width:900px){.container{max-width:1320px}.tabs{position:fixed;left:0;top:58px;bottom:0;width:218px;display:flex;flex-direction:column;white-space:normal;overflow-y:auto;border-right:1px solid var(--border);border-bottom:0}.tabs button{width:100%;text-align:left;margin:4px 0}.page{margin-left:230px}.card{border-radius:16px}.keypad{max-width:560px}.table-responsive{max-height:70vh}.report-shell{max-width:760px;margin:auto}}@media print{.appbar,.tabs,button,input,select{display:none!important}.page{display:block!important;margin-left:0!important}.card{box-shadow:none!important;border:0!important}}
+.role-pill{font-size:12px;border-radius:999px;padding:5px 10px;background:#e0f2fe;color:#075985;font-weight:900;margin-left:6px}
+.dark .role-pill{background:#0c4a6e;color:#e0f2fe}
+.hidden-by-role{display:none!important}
+.member-tag{display:inline-block;border-radius:999px;background:#fef3c7;color:#92400e;font-size:11px;font-weight:900;padding:2px 8px;margin-top:4px}
+.dark .member-tag{background:#78350f;color:#fde68a}
+.small-note{font-size:12px;color:var(--muted)}
+
+/* v1.3.4 UI polish */
+.navbar-brand{white-space:normal;line-height:1.15;max-width:72vw;font-size:15px}
+.appbar .btn{padding:6px 10px;font-size:12px}
+.stat-card{min-height:92px;display:flex;flex-direction:column;justify-content:center}
+.risk-box{border:1px solid var(--border);border-radius:16px;padding:12px;background:var(--card);height:100%}
+.risk-title{font-size:12px;color:var(--muted);font-weight:900;text-transform:uppercase}
+.risk-value{font-size:20px;font-weight:1000;word-break:break-word}
+.safe{background:#dcfce7!important;color:#166534!important;font-weight:1000}
+.warn{background:#fef3c7!important;color:#92400e!important;font-weight:1000}
+.danger2{background:#fee2e2!important;color:#991b1b!important;font-weight:1000}
+.num-chip{display:inline-flex;gap:4px;align-items:center;border-radius:999px;background:#e0f2fe;color:#075985;border:1px solid #bae6fd;font-weight:900;padding:4px 8px;margin:3px;font-size:12px}
+.num-chip b{color:#1d4ed8}
+.dark .num-chip{background:#0c4a6e;color:#e0f2fe;border-color:#075985}
+.img-title{font-size:clamp(22px,6vw,34px)!important;line-height:1.08!important;overflow-wrap:anywhere}
+.settle-summary{border-radius:16px;padding:12px;margin:10px 0;border:1px solid var(--border)}
+.settle-win{background:#dcfce7;color:#166534}
+.settle-lose{background:#fee2e2;color:#991b1b}
+@media(max-width:640px){
+  .container{padding-left:10px;padding-right:10px}
+  .table th,.table td{font-size:12px;padding:6px 4px}
+  .table .btn-sm{font-size:11px;padding:4px 6px}
+  .tabs button{font-size:12px;padding:8px 10px}
+  .row.g-2>[class*="col-"]{padding-left:4px;padding-right:4px}
+}
+
+
+/* v1.3.5 Smart UX + Data Safety */
+#toastWrap{position:fixed;top:78px;left:12px;right:12px;z-index:3000;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast-msg{border-radius:14px;padding:11px 13px;color:#fff;font-weight:900;box-shadow:0 10px 24px #0003;animation:toastIn .2s ease}
+.toast-success{background:#059669}.toast-danger{background:#dc2626}.toast-warning{background:#d97706}.toast-info{background:#2563eb}.toast-secondary{background:#475569}
+@keyframes toastIn{from{transform:translateY(-8px);opacity:0}to{transform:translateY(0);opacity:1}}
+#busyOverlay{position:fixed;inset:0;background:#0006;display:none;align-items:center;justify-content:center;z-index:2500;color:#fff;font-weight:1000;text-align:center}
+.busy-card{background:#111827;border:1px solid #334155;border-radius:18px;padding:22px 28px;box-shadow:0 18px 40px #0006}
+.net-badge{display:inline-block;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:1000;margin-left:6px;background:#dcfce7;color:#166534}
+.net-off{background:#fee2e2!important;color:#991b1b!important}
+.audit-list{max-height:55vh;overflow:auto}
+.audit-item{border:1px solid var(--border);border-radius:14px;background:var(--card);padding:10px;margin-bottom:8px}
+.audit-action{font-weight:1000;color:var(--primary)}
+.close-pill{display:inline-block;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:1000;background:#dcfce7;color:#166534}
+.close-pill.closed{background:#fee2e2;color:#991b1b}
+.toprisk-chip{display:inline-flex;align-items:center;gap:6px;margin:3px;padding:6px 10px;border-radius:999px;background:#fef3c7;color:#92400e;font-weight:1000;border:1px solid #fde68a}
+.dark .toprisk-chip{background:#78350f;color:#fde68a;border-color:#92400e}
+.smart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:800px){.smart-grid{grid-template-columns:repeat(4,1fr)}}
+.smart-mini{border:1px solid var(--border);border-radius:14px;padding:10px;background:var(--card)}
+.smart-mini small{color:var(--muted);font-weight:900}.smart-mini b{font-size:18px}
+
+
+/* v1.3.6 report close / backup polish */
+.result-book{border:1px solid var(--border);border-radius:14px;padding:10px;background:var(--card);margin:8px 0}
+.btn-xs{padding:4px 7px;font-size:11px;border-radius:999px}
+.log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
+
+
+/* v1.5.0 PWA Install Deploy */
+.tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
+.dark .tenant-pill{background:#312e81;color:#e0e7ff}
+.register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
+
+/* v1.4.1 secure rules ready */
+
+/* v1.4.2 Contact + Message Box */
+.msg-list{max-height:58vh;overflow:auto;border:1px solid var(--border);border-radius:16px;padding:10px;background:var(--card)}
+.msg-bubble{max-width:88%;padding:9px 12px;border-radius:16px;margin:7px 0;box-shadow:0 3px 10px #0001}
+.msg-me{margin-left:auto;background:#dbeafe;color:#1e3a8a;border-bottom-right-radius:4px}
+.msg-other{margin-right:auto;background:#f1f5f9;color:#0f172a;border-bottom-left-radius:4px}
+.dark .msg-me{background:#1e3a8a;color:#dbeafe}.dark .msg-other{background:#334155;color:#f8fafc}
+.msg-meta{font-size:10px;opacity:.75;margin-top:4px}
+.phone-link{font-weight:900;color:#2563eb;text-decoration:none}
+.dark .phone-link{color:#93c5fd}
+
+
+/* v1.4.4 Auto Session Timer + Calendar */
+.history-table th,.history-table td{font-size:12px;vertical-align:middle}
+.weekday-pill{display:inline-block;border-radius:999px;background:#e0f2fe;color:#075985;font-weight:1000;padding:3px 8px}
+.dark .weekday-pill{background:#0c4a6e;color:#e0f2fe}
+.range-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:800px){.range-summary{grid-template-columns:repeat(4,1fr)}}
+.session-timer{border:2px solid var(--border);border-radius:16px;padding:12px;margin:10px 0;font-weight:1000;line-height:1.7;background:#f8fafc;color:#0f172a}
+.session-timer .big{font-size:22px}.session-timer .time{font-size:18px}
+.session-open{border-color:#22c55e;background:#dcfce7;color:#14532d}
+.session-closed{border-color:#ef4444;background:#fee2e2;color:#7f1d1d}
+.dark .session-timer{background:#111827;color:#e5e7eb}.dark .session-open{background:#052e16;color:#bbf7d0}.dark .session-closed{background:#450a0a;color:#fecaca}
+.calendar-grid{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:8px;overflow-x:auto;padding-bottom:6px}
+.cal-cell{min-height:110px;border:1px solid var(--border);border-radius:14px;padding:8px;background:var(--card);box-shadow:0 4px 12px #0001}
+.cal-date{font-size:12px;color:var(--muted);font-weight:900}.cal-day{font-size:14px;font-weight:1000;margin-bottom:6px}
+.cal-num{display:flex;justify-content:space-between;align-items:center;border-radius:10px;padding:6px 7px;margin:5px 0;font-weight:1000}
+.cal-am{background:#dbeafe;color:#1e3a8a}.cal-pm{background:#fef3c7;color:#92400e}
+.dark .cal-am{background:#1e3a8a;color:#dbeafe}.dark .cal-pm{background:#78350f;color:#fde68a}
+@media(max-width:600px){.calendar-grid{grid-template-columns:repeat(5,118px);}.cal-cell{min-width:118px}}
+.workday-badge{display:inline-block;border-radius:999px;background:#dcfce7;color:#166534;padding:5px 10px;font-size:12px;font-weight:1000;margin-top:6px}.dark .workday-badge{background:#14532d;color:#bbf7d0}
+
+</style>
+</head>
+<body>
+<div id="toastWrap"></div>
+<div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
+<nav class="navbar navbar-dark bg-primary appbar">
+  <div class="container-fluid">
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.0 PWA Install Deploy</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <div class="d-flex gap-2">
+      <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
+      <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
+      <button class="btn btn-light btn-sm rounded-pill fw-bold" onclick="toggleTheme()">Theme</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-3">
+  <div id="loginPage" class="page active">
+    <div class="card p-4">
+      <h3 class="fw-bold">Login</h3>
+      <p class="small-note mb-2">v1.5.0 PWA Install Deploy — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Firebase Email" value="admin@test.com">
+      <input id="p" type="password" class="form-control mb-3" placeholder="Firebase Password" value="123456">
+      <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
+      <div class="register-box">
+        <button class="btn btn-outline-primary w-100 rounded-pill fw-bold mb-2" type="button" onclick="regBox.style.display=regBox.style.display==='block'?'none':'block'">➕ New Admin Register</button>
+        <div id="regBox" style="display:none">
+          <input id="regShop" class="form-control mb-2" placeholder="Shop / Admin Group Name">
+          <input id="regOwner" class="form-control mb-2" placeholder="Owner/Admin Name">
+          <input id="regPhone" class="form-control mb-2" inputmode="tel" placeholder="Admin Phone Number">
+          <input id="regEmail" type="email" inputmode="email" class="form-control mb-2" placeholder="Admin Email">
+          <input id="regPass" type="password" class="form-control mb-2" placeholder="Admin Password">
+          <button class="btn btn-success w-100 rounded-pill fw-bold" onclick="registerAdmin()">CREATE ADMIN SHOP</button>
+          <small class="text-muted">Admin အသစ်တစ်ယောက်သည် shopId သီးသန့်ဖြင့် သူ့ member/data ကို သီးခြားသုံးနိုင်ပါမည်။</small>
+        </div>
+      </div>
+      <div class="alert alert-info mt-3 mb-0 small">
+        <b>Firebase Test Accounts</b><br>
+        Admin: <b>admin@test.com / 123456</b><br>
+        Member 1: <b>member1@test.com / 111111</b><br>
+        <small>Member အသစ်ထည့်လျှင် Firebase Authentication ထဲတွင်လည်း user ရှိရပါမည်။</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="lockPage" class="page">
+    <div class="lock-screen">
+      <div class="card lock-card p-4 text-center">
+        <h3 class="text-danger fw-bold">App Locked</h3>
+        <p id="lockMsg" class="fs-5 fw-bold">သက်တမ်းကုန်ဆုံးသွားပါပြီ။</p>
+        <p id="lockContact" class="text-muted">သက်တမ်းတိုးရန် ဆက်သွယ်ပါ 09773121226</p>
+        <button class="btn btn-outline-primary rounded-pill" onclick="location.reload()">Reload</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="page">
+    <div class="alert alert-success small fw-bold" id="cloudStatus">Cloud: Ready <span id="netBadge" class="net-badge">ONLINE</span></div>
+    <div class="tabs">
+      <button id="tDash" class="active admin-tab" onclick="tab('dash','tDash')">📊 Dashboard</button>
+      <button id="tEntry" class="member-tab" onclick="tab('entry','tEntry')">📝 Record</button>
+      <button id="tRecords" onclick="tab('records','tRecords')">📋 Records</button>
+      <button id="tLimit" class="admin-tab" onclick="tab('limit','tLimit')">📉 Limit</button>
+      <button id="tOver" class="admin-tab" onclick="tab('over','tOver')">🚨 Over</button>
+      <button id="tAM" onclick="tab('am','tAM')">☀️ AM</button>
+      <button id="tPM" onclick="tab('pm','tPM')">🌙 PM</button>
+      <button id="tDaily" onclick="tab('daily','tDaily')">📅 Daily</button>
+      <button id="tHistory" onclick="tab('history','tHistory')">🗓️ History</button>
+      <button id="tImg" onclick="tab('img','tImg')">🖼️ Image</button>
+      <button id="tMembers" class="admin-tab" onclick="tab('members','tMembers')">👥 Members</button>
+      <button id="tMessages" onclick="tab('messages','tMessages')">💬 Messages</button>
+      <button id="tLogs" class="admin-tab" onclick="tab('logs','tLogs')">🧾 Logs</button>
+      <button id="tSettings" class="admin-tab" onclick="tab('settings','tSettings')">⚙️ Settings</button>
+    </div>
+
+    <section id="dash" class="page active">
+      <div class="card p-3">
+        <h5 id="dashTitle" class="fw-bold mb-2">Admin Dashboard</h5>
+        <div id="dashSub" class="small-note">Member အားလုံး၏ စုစုပေါင်းစာရင်း</div>
+      </div>
+      <div class="row g-2">
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small>Records</small><h3 id="dRec">0</h3></div></div>
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small id="dGrpLabel">Members</small><h3 id="dGrp">0</h3></div></div>
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small>AM</small><h3 id="dAM">0</h3></div></div>
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small>PM</small><h3 id="dPM">0</h3></div></div>
+      </div>
+      <div class="card p-3">
+        <h5 class="fw-bold">Smart Risk Summary</h5>
+        <div id="dashRisk" class="smart-grid"></div>
+        <hr>
+        <h6 class="fw-bold">Top Risk Numbers</h6>
+        <div id="dashTopRisk"></div>
+      </div>
+      <div class="card p-3"><canvas id="chart"></canvas></div>
+    </section>
+
+    <section id="entry" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">Member Record Entry</h5>
+        <p id="entryMemberLabel" class="small-note mb-2"></p>
+        <div id="entrySessionTimer" class="session-timer session-closed">Session status...</div>
+        <input id="rName" class="form-control mb-2" placeholder="ထိုးသား Name">
+        <input id="rCode" class="form-control mb-2" inputmode="none" placeholder="Number / Logic">
+        <input id="rAmt" class="form-control mb-3" inputmode="none" placeholder="Amount">
+        <div class="keypad">
+          <button onclick="key('1')">1</button><button onclick="key('2')">2</button><button onclick="key('3')">3</button><button onclick="delKey()">⌫</button>
+          <button onclick="key('4')">4</button><button onclick="key('5')">5</button><button onclick="key('6')">6</button><button onclick="clearKey()">C</button>
+          <button onclick="key('7')">7</button><button onclick="key('8')">8</button><button onclick="key('9')">9</button><button onclick="key('/')">/</button>
+          <button onclick="key('*')">*</button><button onclick="key('0')">0</button><button onclick="key('+')">+<br><small>စုံ</small></button><button onclick="key('-')">-<br><small>မ</small></button>
+          <button onclick="key('A')">A<br><small>ပါဝါ</small></button><button onclick="key('Z')">Z<br><small>နက္ခ</small></button><button onclick="key('B')">B<br><small>ညီကို</small></button><button onclick="key('//')">//<br><small>အပူး</small></button>
+          <button class="enter" onclick="enterAction()">ENTER ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="records" class="page">
+      <div class="card p-3">
+        <h5 id="recordsTitle" class="fw-bold">Records</h5>
+        <p id="recordsSub" class="small-note mb-2"></p>
+        <input id="search" class="form-control mb-2" inputmode="text" placeholder="Search name / code / number..." oninput="renderRecords()">
+        <div class="table-responsive">
+          <table class="table table-sm align-middle">
+            <thead><tr><th>S</th><th id="recordsNameTh">Name</th><th>Code / Numbers</th><th>Amt</th><th>Act</th></tr></thead>
+            <tbody id="recBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="limit" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold text-danger">Admin Only — Limit Monitor</h5>
+        <p class="small-note">Member အားလုံးထံမှ တက်လာသော number amount များကို စုပြီး limit စစ်ပါမည်။</p>
+        <div class="row g-2">
+          <div class="col-12 col-md-4"><label class="small fw-bold">Limit Amount</label><input id="lim" class="form-control mb-2" inputmode="numeric" placeholder="Limit Amount" oninput="riskMaster='limit';renderLimit(false)"></div>
+          <div class="col-6 col-md-4"><label class="small fw-bold">Lose %</label><input id="riskLosePct" class="form-control mb-2" inputmode="decimal" placeholder="ဥပမာ 20" oninput="riskMaster='losePct';renderLimit(false)"></div>
+          <div class="col-6 col-md-4"><label class="small fw-bold">Max Lose Amount</label><input id="riskMaxLose" class="form-control mb-2" inputmode="numeric" placeholder="ဥပမာ 500000" oninput="riskMaster='maxLose';renderLimit(false)"></div>
+        </div>
+        <button class="btn btn-primary w-100 mb-2 rounded-pill fw-bold" onclick="renderLimit(true)">Check / Auto Calculate</button>
+        <div class="row g-2 mb-2" id="riskSummary">
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Total</div><div id="limTotal" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Over</div><div id="riskOverTotal" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Cor</div><div id="riskCorTotal" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Balance</div><div id="riskBalance" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Max No</div><div id="riskMaxNo" class="risk-value">-</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Worst Pay</div><div id="riskWorstPay" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Pay Allowed</div><div id="riskPayAllowed" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div id="riskStatusBox" class="risk-box"><div class="risk-title">Status</div><div id="riskStatus" class="risk-value">-</div></div></div>
+          <div class="col-6"><div class="alert alert-danger mb-1">Over Count<br><b id="limCount">0</b></div></div>
+          <div class="col-6"><div class="alert alert-info mb-1">Suggested Limit<br><b id="riskSuggested">0</b></div></div>
+        </div>
+        <div id="grid" class="limit-grid"></div>
+        <button class="btn btn-outline-danger w-100 mt-2 rounded-pill fw-bold" onclick="tab('over','tOver')">Limit ကျော် Table ကြည့်ရန်</button>
+        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="saveLimit()">Save Limit Table</button>
+        <small class="text-muted">မူရင်းအရောင်းစာရင်း မပြောင်းပါ။ Limit အတွက် သီးသန့်နုတ်ထားသည့် စာရင်းသာ သိမ်းပါမည်။</small>
+      </div>
+    </section>
+
+    <section id="over" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">Admin Only — Limit Over Table</h5>
+        <div id="overContent"></div>
+        <button class="btn btn-primary w-100 mt-2 rounded-pill fw-bold" onclick="saveOverImage()">Save Image</button>
+        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="shareOver()">Share</button>
+        <button class="btn btn-warning w-100 mt-2 rounded-pill fw-bold" onclick="exportOver()">Export CSV</button>
+      </div>
+    </section>
+
+    <section id="am" class="page">
+      <div class="card p-3">
+        <h5 id="amTitle">AM Report</h5>
+        <p id="amSub" class="small-note"></p>
+        <input id="amP" class="form-control mb-2" inputmode="numeric" placeholder="P Number">
+        <button class="btn btn-primary rounded-pill" onclick="settle('AM')">Show / Save Result</button> <span id="amCloseStatus" class="close-pill">Auto</span>
+        <div id="amOut" class="mt-2"></div>
+      </div>
+    </section>
+
+    <section id="pm" class="page">
+      <div class="card p-3">
+        <h5 id="pmTitle">PM Report</h5>
+        <p id="pmSub" class="small-note"></p>
+        <input id="pmP" class="form-control mb-2" inputmode="numeric" placeholder="P Number">
+        <button class="btn btn-primary rounded-pill" onclick="settle('PM')">Show / Save Result</button> <span id="pmCloseStatus" class="close-pill">Auto</span>
+        <div id="pmOut" class="mt-2"></div>
+      </div>
+    </section>
+
+    <section id="daily" class="page">
+      <div class="card p-3">
+        <h5 id="dailyTitle">Daily Report</h5>
+        <p id="dailySub" class="small-note"></p>
+        <input id="dAmP" class="form-control mb-2" inputmode="numeric" placeholder="AM P">
+        <input id="dPmP" class="form-control mb-2" inputmode="numeric" placeholder="PM P">
+        <button class="btn btn-primary rounded-pill" onclick="dailyReport()">Show Daily</button> <span id="dailyCloseStatus" class="close-pill">Auto Schedule</span>
+        <div id="dailyOut" class="mt-2"></div>
+      </div>
+    </section>
+
+
+    <section id="history" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">🗓️ History / AM-PM Calendar</h5>
+        <p class="small-note">Start Date / End Date အလိုက် Monday to Friday ဇယားဖြင့် AM P / PM P နှင့် စာရင်းများကို ပြန်ကြည့်ရန်။</p>
+        <div class="row g-2">
+          <div class="col-6"><label class="small fw-bold">Start Date</label><input id="histStart" class="form-control" type="date"></div>
+          <div class="col-6"><label class="small fw-bold">End Date</label><input id="histEnd" class="form-control" type="date"></div>
+          <div class="col-6"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="setHistoryThisWeek()">This Week</button></div>
+          <div class="col-6"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="renderHistory()">Show History</button></div>
+        </div>
+        <div id="histSummary" class="range-summary mt-3"></div>
+        <div id="histCalendar" class="calendar-grid mt-3"></div>
+        <div class="table-responsive mt-3">
+          <table class="table table-sm history-table">
+            <thead><tr><th>Date</th><th>Day</th><th>AM P</th><th>AM Total</th><th>PM P</th><th>PM Total</th><th>Daily Total</th></tr></thead>
+            <tbody id="histBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="img" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">Image / Member Result Report</h5>
+        <p class="small-note">AM P / PM P ထည့်ပြီးပါက Admin နှင့် Member account တို့တွင် သက်ဆိုင်ရာ report image ထုတ်နိုင်ပါသည်။</p>
+        <select id="imgName" class="form-select mb-2" onchange="renderImg()"></select>
+        <div class="row g-2 mb-3">
+          <div class="col-4"><input id="imgAM" class="form-control" inputmode="numeric" placeholder="AM P" oninput="renderImg()"></div>
+          <div class="col-4"><input id="imgPM" class="form-control" inputmode="numeric" placeholder="PM P" oninput="renderImg()"></div>
+          <div class="col-4"><input id="imgCor" value="13" class="form-control" inputmode="numeric" placeholder="Cor %" oninput="renderImg()"></div>
+        </div>
+        <div class="report-shell">
+          <div id="imgBox">
+            <div class="img-header"><div class="img-title" id="imgTitle">Name</div><div class="badge13"><span id="corBadge">13</span>%</div></div>
+            <div class="row g-3">
+              <div class="col-6"><div class="session-card"><div class="ap">AM</div><div class="redlbl">Total Amount</div><div id="amTot" class="val">0</div><div class="redlbl">P Total</div><div id="amPay" class="val">0</div><div class="redlbl">Cor</div><div id="amCor" class="val">0</div><div class="redlbl">Result</div><div id="amRes" class="val">0</div></div></div>
+              <div class="col-6"><div class="session-card"><div class="ap">PM</div><div class="redlbl">Total Amount</div><div id="pmTot" class="val">0</div><div class="redlbl">P Total</div><div id="pmPay" class="val">0</div><div class="redlbl">Cor</div><div id="pmCor" class="val">0</div><div class="redlbl">Result</div><div id="pmRes" class="val">0</div></div></div>
+            </div>
+            <div class="daily-title">Daily Total</div>
+            <div class="daily-box"><div class="daily-row">T. <span id="dt">0</span></div><div class="daily-row">P. <span id="dp">0</span></div><div class="daily-row">C. <span id="dc">0</span></div><div class="daily-row">R. <span id="dr">0</span></div></div>
+            
+          </div>
+        </div>
+        <button class="btn btn-primary w-100 mt-3 rounded-pill fw-bold" onclick="saveCustomerImage()">Save Image</button>
+        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="shareCustomer()">Image Share</button>
+      </div>
+    </section>
+
+    <section id="members" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold text-primary">👥 Admin Member Accounts</h5>
+        <p class="small-note">Cloud Version ဖြစ်လို့ account mapping/data များကို Firebase Firestore ထဲတွင် သိမ်းပါမည်။</p>
+        <div class="row g-2">
+          <div class="col-12"><label class="small fw-bold">Commission / Member Name</label><input id="mName" class="form-control" placeholder="ဥပမာ Mg Mg Commission"></div>
+          <div class="col-6"><label class="small fw-bold">Email / Login</label><input id="mUser" class="form-control" type="email" inputmode="email" placeholder="member2@test.com"></div>
+          <div class="col-6"><label class="small fw-bold">New Auth Password</label><input id="mPass" class="form-control" placeholder="new member password"></div>
+          <div class="col-12"><label class="small fw-bold">Phone Number</label><input id="mPhone" class="form-control" inputmode="tel" placeholder="09..."></div>
+          <div class="col-12"><label class="small fw-bold">Cor %</label><input id="mCor" class="form-control" inputmode="decimal" placeholder="ဥပမာ 13"></div>
+          <div class="col-12"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="saveMemberAccount()">Save Member Account</button></div>
+          <div class="col-12"><button class="btn btn-outline-secondary w-100 rounded-pill fw-bold" onclick="resetMemberForm()">Clear Form</button></div>
+        </div>
+      </div>
+      <div class="card p-3">
+        <h6 class="fw-bold">Member List</h6>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle">
+            <thead><tr><th>Member</th><th>Email / Phone</th><th>Cor</th><th>Status</th><th>Act</th></tr></thead>
+            <tbody id="memBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="messages" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">💬 Contact / Message Box</h5>
+        <p class="small-note">Admin နှင့် Member များ တစ်ဦးချင်း ဆက်သွယ်ရန်။ Message များသည် shopId အလိုက်သာ ပြပါမည်။</p>
+        <div class="row g-2">
+          <div class="col-12 col-md-5">
+            <label class="small fw-bold">Contact</label>
+            <select id="msgTo" class="form-select mb-2" onchange="renderMessages()"></select>
+            <div id="contactInfo" class="small-note mb-2"></div>
+          </div>
+          <div class="col-12 col-md-7">
+            <label class="small fw-bold">Message</label>
+            <textarea id="msgText" class="form-control mb-2" rows="3" placeholder="Message ရိုက်ပါ..."></textarea>
+            <button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="sendMessage()">Send Message</button>
+          </div>
+        </div>
+        <hr>
+        <div id="msgList" class="msg-list"></div>
+      </div>
+    </section>
+
+    <section id="logs" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">🧾 Audit Logs</h5>
+        <p class="small-note">Save / Delete / Result / Close / Member changes များကို Cloud ထဲတွင် မှတ်တမ်းထားပါမည်။</p>
+        <div class="log-filter"><input id="logSearch" class="form-control mb-2" placeholder="Search logs..." oninput="renderLogs()">
+        <button class="btn btn-primary rounded-pill mb-2" onclick="renderLogs()">Refresh Logs</button> <button class="btn btn-success rounded-pill mb-2" onclick="exportLogsCSV()">Export Logs CSV</button></div>
+        <div id="logBody" class="audit-list"></div>
+      </div>
+    </section>
+
+    <section id="settings" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold text-primary">⚙️ Settings & Data Safety</h5>
+        <div class="logo-tile mb-3">RM<br><small style="font-size:14px">2D</small></div>
+        <div class="row g-2">
+          <div class="col-6"><label class="small fw-bold">Payout Rate</label><input id="setRate" class="form-control" inputmode="numeric" placeholder="80"></div>
+          <div class="col-6"><label class="small fw-bold">Default Cor %</label><input id="setCor" class="form-control" inputmode="numeric" placeholder="13"></div>
+          <div class="col-12"><label class="small fw-bold">App Name</label><input id="setAppName" class="form-control" placeholder="RecordManager_Pro"></div>
+          <div class="col-12"><label class="small fw-bold">Owner / Shop Name</label><input id="setOwner" class="form-control" placeholder="Owner Name"></div>
+          <div class="col-6"><label class="small fw-bold">App Start Date</label><input id="setStartDate" class="form-control" type="date"></div>
+          <div class="col-6"><label class="small fw-bold">App End Date</label><input id="setEndDate" class="form-control" type="date"></div>
+        </div>
+        <button class="btn btn-primary w-100 mt-3 rounded-pill fw-bold" onclick="saveGeneralSettings()">Save General Settings</button>
+
+        <hr>
+        <h6 class="fw-bold">Auto Session Time Schedule</h6>
+        <p class="small-note">Admin ကတစ်ခါသတ်မှတ်ထားလျှင် နေ့စဉ် AM/PM Entry ကို အလိုအလျောက် Open / Close လုပ်ပါမည်။ Reopen button မလိုတော့ပါ။</p>
+        <div class="row g-2">
+          <div class="col-6"><label class="small fw-bold">Open AM</label><input id="setOpenAM" class="form-control" type="time"></div>
+          <div class="col-6"><label class="small fw-bold">Close AM</label><input id="setCloseAM" class="form-control" type="time"></div>
+          <div class="col-6"><label class="small fw-bold">Open PM</label><input id="setOpenPM" class="form-control" type="time"></div>
+          <div class="col-6"><label class="small fw-bold">Close PM</label><input id="setClosePM" class="form-control" type="time"></div>
+        </div>
+        <div class="mt-2"><span id="setAmCloseStatus" class="close-pill">AM Auto</span> <span id="setPmCloseStatus" class="close-pill">PM Auto</span> <span id="setDailyCloseStatus" class="close-pill">Daily Auto</span></div>
+
+        <hr>
+        <button class="btn btn-danger w-100 rounded-pill fw-bold" onclick="openLicenseSettings()">🔒 Open License Settings</button>
+        <div id="licenseBox" class="license-box">
+          <h6 class="fw-bold text-danger">Protected License Settings</h6>
+          <div class="row g-2">
+            <div class="col-6"><label class="small fw-bold">Expire Date</label><input id="setExpireDate" class="form-control" type="date"></div>
+            <div class="col-6"><label class="small fw-bold">Expire Time</label><input id="setExpireTime" class="form-control" type="time"></div>
+            <div class="col-12"><label class="small fw-bold">Notice Message</label><input id="setNotice" class="form-control" placeholder="သက်တမ်းတိုးရန် ဆက်သွယ်ပါ"></div>
+            <div class="col-12"><label class="small fw-bold">Contact Phone</label><input id="setPhone" class="form-control" placeholder="09773121226"></div>
+            <div class="col-12"><label class="small fw-bold">License Password</label><input id="setLicensePass" class="form-control" type="password" placeholder="4321"></div>
+          </div>
+          <button class="btn btn-danger w-100 mt-3 rounded-pill fw-bold" onclick="saveLicenseSettings()">Save License Settings</button>
+        </div>
+        <hr>
+        <h6 class="fw-bold">Backup / Restore</h6>
+        <button class="btn btn-success w-100 mb-2 rounded-pill fw-bold" onclick="backupJSON()">Backup JSON (Cloud Cache)</button>
+        <button class="btn btn-outline-success w-100 mb-2 rounded-pill fw-bold" onclick="exportTodayCSV()">Export Today CSV</button>
+        <button class="btn btn-outline-secondary w-100 mb-2 rounded-pill fw-bold" onclick="exportLogsCSV()">Export Audit Logs CSV</button>
+        <input type="file" id="restoreFile" class="form-control mb-2" accept=".json" onchange="restoreJSON(event)">
+        <button class="btn btn-outline-primary w-100 mb-2 rounded-pill fw-bold" onclick="importOldData()">Import Old Version Data</button>
+        
+        <hr>
+        <h6 class="fw-bold text-primary">Safe Firestore Rules</h6>
+        <p class="small-note">v1.4.6 သည် Login ဝင်ထားသူများသာ သုံးနိုင်ပြီး app versions မပိတ်စေရန် Compatibility Rules အဖြစ်ပြင်ထားသည်။ Firebase Console → Firestore → Rules တွင် paste/publish လုပ်ပါ။</p>
+        <button class="btn btn-outline-primary w-100 mb-2 rounded-pill fw-bold" onclick="downloadRules()">Download Safe Firestore Rules</button>
+        <hr>
+        <h6 class="fw-bold text-danger">Danger Zone</h6>
+        <button class="btn btn-warning w-100 mb-2 rounded-pill fw-bold" onclick="clearTodayRecords()">Clear Today Records</button>
+        <button class="btn btn-outline-danger w-100 mb-2 rounded-pill fw-bold" onclick="clearLimitExports()">Clear Limit Export Records</button>
+        <button class="btn btn-danger w-100 rounded-pill fw-bold" onclick="clearAllRecords()">Clear All Records</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+/* ==========================================================
+   RecordManager_2D_Logic_Pro v1.5.0 PWA Install Deploy
+   Base UI: v1.3.0 Local Demo
+   Cloud Engine: v1.3.1 REST Cloud Test
+   ========================================================== */
+
+const API_KEY='AIzaSyAVL_Dt1R0nzDu5YTseUq6kdV0pafRcWlM';
+const PROJECT_ID='recordmanager-2dlogic-pr-a11d6';
+const BASE=`https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents`;
+const ROOT='recordmanager/main';
+const COL_RECORDS='records', COL_EXPORTS='limitExports', COL_SETTINGS='settings', COL_ACCOUNTS='accounts', COL_LOGS='auditLogs', COL_MSGS='messages';
+
+const DEFAULT_ACCOUNTS=[
+  {id:'admin@test.com',email:'admin@test.com',username:'admin@test.com',role:'admin',memberName:'Admin / ဒိုင်',shopId:'demo_shop',shopName:'Demo Shop',active:true},
+  {id:'member1@test.com',email:'member1@test.com',username:'member1@test.com',role:'member',memberName:'Member 1 Commission',shopId:'demo_shop',shopName:'Demo Shop',active:true}
+];
+
+function $(id){return document.getElementById(id)}
+function safeId(v){return String(v||'').trim().toLowerCase().replace(/[^a-z0-9_-]/g,'_')}
+
+function makeShopId(v){return 'shop_'+safeId(v||'admin')+'_'+Date.now()}
+function itemShopId(x){return x&&x.shopId?String(x.shopId):'demo_shop'}
+function sameShop(x){return currentUser&&itemShopId(x)===String(currentUser.shopId||'demo_shop')}
+
+function localSave(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function localLoad(k,f){try{let v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}}
+function toast(msg,type='info'){
+  let w=$('toastWrap');if(!w)return;
+  let d=document.createElement('div');d.className='toast-msg toast-'+type;d.innerText=msg;w.appendChild(d);
+  setTimeout(()=>{d.style.opacity='0';d.style.transform='translateY(-8px)';setTimeout(()=>d.remove(),250)},2600)
+}
+function setBusy(on,msg='Saving...'){
+  isSaving=!!on;
+  let b=$('busyOverlay');if(b){b.style.display=on?'flex':'none';$('busyText').innerText=msg}
+  document.querySelectorAll('.enter, button').forEach(x=>{if(x.id!=='logoutBtn')x.disabled=!!on});
+}
+function setCloudStatus(msg,type='success'){
+  let e=$('cloudStatus');if(e){e.className='alert alert-'+type+' small fw-bold';e.innerHTML=msg+' <span id="netBadge" class="net-badge '+(navigator.onLine?'':'net-off')+'">'+(navigator.onLine?'ONLINE':'OFFLINE')+'</span>'}
+  if(type==='danger'||type==='warning')toast(msg,type);
+}
+function updateNetBadge(){
+  let n=$('netBadge');if(n){n.innerText=navigator.onLine?'ONLINE':'OFFLINE';n.classList.toggle('net-off',!navigator.onLine)}
+  toast(navigator.onLine?'Online ပြန်ဖြစ်ပါပြီ':'Offline ဖြစ်နေပါသည်', navigator.onLine?'success':'warning')
+}
+async function addAudit(action,detail=''){
+  try{
+    if(!token)return;
+    let log={action,detail:String(detail||''),user:currentUser?currentUser.email||currentUser.username:'unknown',role:currentUser?currentUser.role:'',shopId:currentUser?currentUser.shopId||'demo_shop':'demo_shop',shopName:currentUser?currentUser.shopName||'Demo Shop':'Demo Shop',date:today(),time:time(),createdAt:Date.now()};
+    let saved=await addDoc(COL_LOGS,log);auditLogs.unshift(saved);renderLogs();
+  }catch(e){}
+}
+function renderLogs(){
+  if(!logBody)return;
+  let q=(logSearch?.value||'').toLowerCase();
+  let rows=[...(auditLogs||[])].filter(l=>sameShop(l)).sort((a,b)=>num(b.createdAt)-num(a.createdAt)).filter(l=>!q||String(l.action+' '+l.detail+' '+l.user+' '+l.date+' '+l.shopName).toLowerCase().includes(q)).slice(0,120);
+  logBody.innerHTML=rows.length?rows.map(l=>`<div class="audit-item"><div class="audit-action">${l.action}</div><div>${l.detail||''}</div><small>${l.date||''} ${l.time||''} • ${l.user||''}</small></div>`).join(''):'<div class="alert alert-secondary">No logs yet</div>'
+}
+function exportLogsCSV(){
+  let rows=[...(auditLogs||[])].filter(l=>sameShop(l)).sort((a,b)=>num(b.createdAt)-num(a.createdAt));
+  let csv='Date,Time,Action,User,Detail\n'+rows.map(l=>[l.date||'',l.time||'',l.action||'',l.user||'',String(l.detail||'').replaceAll('"','""')].map(x=>`"${x}"`).join(',')).join('\n');
+  download(csv,'RecordManager_Audit_Logs_'+today()+'.csv','text/csv');toast('Audit Logs CSV Exported','success')
+}
+function exportTodayCSV(){
+  let rows=visibleRecords().filter(r=>r.d===today());
+  let csv='Date,Time,Session,Member,Player,Code,Number,Amount\n'+rows.map(r=>[r.d,r.tm,r.s,r.memberName,r.playerName||r.name,r.c,r.n,r.amt].map(x=>`"${String(x??'').replaceAll('"','""')}"`).join(',')).join('\n');
+  download(csv,'RecordManager_Today_'+today()+'.csv','text/csv');toast('Today CSV Exported','success')
+}
+function closeKey(s){return today()+'_'+s}
+function isSessionClosed(s){normalizeSettings();let c=settings.closed||{};return !!c[closeKey(s)]||!!c[today()+'_DAILY']}
+async function closeSession(s){
+  if(!isAdmin())return alert('Admin Only');
+  if(!confirm(s+' result ကို Close လုပ်မလား? Close ပြီးလျှင် Member entry ကိုပိတ်ပါမည်။'))return;
+  normalizeSettings();settings.closed[closeKey(s)]={date:today(),time:time(),by:currentUser.email};
+  if(s==='DAILY'){settings.closed[closeKey('AM')]=settings.closed[closeKey('AM')]||{date:today(),time:time(),by:currentUser.email};settings.closed[closeKey('PM')]=settings.closed[closeKey('PM')]||{date:today(),time:time(),by:currentUser.email}}
+  await saveSet();await addAudit('CLOSE_'+s,'Closed '+s+' result for '+today());
+  renderCloseStatus();toast(s+' Closed ✅','success')
+}
+
+async function reopenSession(s){
+  if(!isAdmin())return alert('Admin Only');
+  if(!confirm(s+' result ကို Reopen လုပ်မလား?'))return;
+  normalizeSettings();delete settings.closed[closeKey(s)];
+  if(s==='DAILY'){delete settings.closed[closeKey('DAILY')]}
+  await saveSet();await addAudit('REOPEN_'+s,'Reopened '+s+' result for '+today());
+  renderCloseStatus();toast(s+' Reopened ✅','success')
+}
+
+
+function renderResultBookStatus(){
+  let rb=(settings&&settings.results&&settings.results[today()])?settings.results[today()]:{};
+  let txt=`Result Book ${today()} — AM P: ${rb.amP||'Not set'} / PM P: ${rb.pmP||'Not set'}`;
+  ['amSub','pmSub','dailySub'].forEach(id=>{let e=$(id);if(e&&!e.dataset.base){e.dataset.base=e.innerText||''}if(e)e.innerText=(e.dataset.base?e.dataset.base+' • ':'')+txt});
+}
+
+function renderCloseStatus(updateTimer=true){
+  let info=sessionInfo(), sc=schedule();
+  let setPill=(id,txt,closed)=>{let e=$(id);if(e){e.innerText=txt;e.className='close-pill '+(closed?'closed':'')}};
+  setPill('amCloseStatus',`AM Close ${sc.closeAM}`,!(info.open&&info.session==='AM'));
+  setPill('pmCloseStatus',`PM Close ${sc.closePM}`,!(info.open&&info.session==='PM'));
+  setPill('dailyCloseStatus',`Auto Schedule`,false);
+  setPill('setAmCloseStatus',`AM ${sc.openAM} → ${sc.closeAM}`,!(info.open&&info.session==='AM'));
+  setPill('setPmCloseStatus',`PM ${sc.openPM} → ${sc.closePM}`,!(info.open&&info.session==='PM'));
+  setPill('setDailyCloseStatus',info.open?`${info.session} Open now`:'Entry Closed',!info.open);
+  if(updateTimer&&$('entrySessionTimer'))updateSessionTimer();
+}
+
+
+let settings={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
+let token='',uid='',authEmail='';
+
+const MAP={A:['05','16','27','38','49','50','61','72','83','94'],Z:['07','18','24','35','69','70','81','42','53','96'],B:['12','23','34','45','56','21','32','43','54','65','67','78','89','90','01','76','87','98','09','10'],'//':['00','11','22','33','44','55','66','77','88','99']},E=['0','2','4','6','8'],O=['1','3','5','7','9'];
+
+function val(v){
+  if(v===undefined||v===null)return {nullValue:null};
+  if(typeof v==='boolean')return {booleanValue:v};
+  if(typeof v==='number')return Number.isInteger(v)?{integerValue:String(v)}:{doubleValue:v};
+  if(Array.isArray(v))return {arrayValue:{values:v.map(x=>val(x))}};
+  if(typeof v==='object'){
+    let fields={};
+    Object.keys(v).forEach(k=>fields[k]=val(v[k]));
+    return {mapValue:{fields}};
+  }
+  return {stringValue:String(v)};
+}
+function pack(o){
+  let fields={};
+  Object.keys(o||{}).forEach(k=>{
+    if(k==='_path'||k==='docId')return;
+    fields[k]=val(o[k]);
+  });
+  return {fields};
+}
+function fv(v){
+  if(!v)return '';
+  if('stringValue'in v)return v.stringValue;
+  if('integerValue'in v)return Number(v.integerValue);
+  if('doubleValue'in v)return Number(v.doubleValue);
+  if('booleanValue'in v)return !!v.booleanValue;
+  if('nullValue'in v)return null;
+  if('arrayValue'in v)return (v.arrayValue.values||[]).map(fv);
+  if('mapValue'in v){let o={};Object.keys(v.mapValue.fields||{}).forEach(k=>o[k]=fv(v.mapValue.fields[k]));return o}
+  return '';
+}
+function unpack(d){
+  let o={_path:d.name,docId:d.name.split('/').pop()};
+  Object.keys(d.fields||{}).forEach(k=>o[k]=fv(d.fields[k]));
+  return o;
+}
+function docUrlFromPath(path){return path.startsWith('http')?path:'https://firestore.googleapis.com/v1/'+path}
+function colUrl(col){return `${BASE}/${ROOT}/${col}`}
+function docUrl(col,id){return `${BASE}/${ROOT}/${col}/${safeId(id)}`}
+async function api(url,opt={}){
+  let headers={'Content-Type':'application/json',...(opt.noAuth?{}:(token?{Authorization:'Bearer '+token}:{})),...(opt.headers||{})};
+  let res=await fetch(url,{...opt,headers});
+  let txt=await res.text();
+  let data=txt?JSON.parse(txt):{};
+  if(!res.ok)throw new Error(data.error?.message||res.statusText);
+  return data;
+}
+async function firebaseSignIn(email,password){
+  return api(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,{
+    method:'POST',noAuth:true,body:JSON.stringify({email,password,returnSecureToken:true})
+  });
+}
+async function createFirebaseUser(email,password){
+  if(!email||!password)return null;
+  try{
+    return await api(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,{
+      method:'POST',noAuth:true,body:JSON.stringify({email,password,returnSecureToken:true})
+    });
+  }catch(e){
+    if(String(e.message).includes('EMAIL_EXISTS'))throw new Error('EMAIL_EXISTS: ဒီ Email သည် Firebase Auth ထဲရှိပြီးသားဖြစ်ပါသည်။ Secure Rules အတွက် user UID လိုအပ်သောကြောင့် Email အသစ်သုံးပါ၊ သို့မဟုတ် Firebase Console မှ user ကိုပြန်ဖန်တီးပါ။');
+    throw e;
+  }
+}
+async function listCollection(col){
+  try{
+    let data=await api(`${colUrl(col)}?pageSize=1000`);
+    return (data.documents||[]).map(unpack);
+  }catch(e){
+    if(String(e.message).includes('404')||String(e.message).includes('NOT_FOUND'))return [];
+    throw e;
+  }
+}
+
+async function queryShopCollection(col){
+  if(!currentUser||!currentUser.shopId)return [];
+  try{
+    let q={structuredQuery:{from:[{collectionId:col}],where:{fieldFilter:{field:{fieldPath:'shopId'},op:'EQUAL',value:{stringValue:String(currentUser.shopId)}}}}};
+    let rows=await api(`${BASE}/${ROOT}:runQuery`,{method:'POST',body:JSON.stringify(q)});
+    return rows.filter(x=>x.document).map(x=>unpack(x.document));
+  }catch(e){
+    console.warn('queryShopCollection error',col,e.message);return [];
+  }
+}
+
+async function getDoc(col,id,fallback=null){
+  try{return unpack(await api(docUrl(col,id)))}catch(e){return fallback}
+}
+async function setDoc(col,id,obj){let d=await api(docUrl(col,id),{method:'PATCH',body:JSON.stringify(pack(obj))});return unpack(d)}
+async function addDoc(col,obj){let d=await api(colUrl(col),{method:'POST',body:JSON.stringify(pack(obj))});return unpack(d)}
+async function delDocByPath(path){if(!path)return;try{await api(docUrlFromPath(path),{method:'DELETE'})}catch(e){}}
+
+async function seedAccountsIfEmpty(){
+  if(accounts.length)return;
+  accounts=[...DEFAULT_ACCOUNTS];
+  for(const a of accounts){a.shopId=a.shopId||'demo_shop';a.shopName=a.shopName||'Demo Shop';await setDoc(COL_ACCOUNTS,a.id,a)}
+}
+
+function normalizeSettings(){
+  if(!settings||typeof settings!=='object')settings={};
+  if(!settings.closed||typeof settings.closed!=='object')settings.closed={};
+  if(!settings.results||typeof settings.results!=='object')settings.results={};
+  if(!settings.results[today()]||typeof settings.results[today()]!=='object')settings.results[today()]={};
+}
+function resultBook(){normalizeSettings();return settings.results[today()]}
+
+async function loadCloudAll(){
+  setCloudStatus('Cloud: Loading...', 'info');
+  if(currentUser&&currentUser.shopId){
+    accounts=await queryShopCollection(COL_ACCOUNTS);
+    settings=(await getDoc(COL_SETTINGS,currentUser.shopId,{}))||{};
+    normalizeSettings();
+    records=await queryShopCollection(COL_RECORDS);
+    exportsL=await queryShopCollection(COL_EXPORTS);
+    auditLogs=await queryShopCollection(COL_LOGS);
+    messages=await queryShopCollection(COL_MSGS);
+  }else{
+    accounts=await listCollection(COL_ACCOUNTS);
+    await seedAccountsIfEmpty();
+    settings=(await getDoc(COL_SETTINGS,'demo_shop',{}))||{};
+    normalizeSettings();
+    records=[];exportsL=[];auditLogs=[];messages=[];
+  }
+  normalizeRecords(false);
+  setCloudStatus('Cloud: Connected ✅', 'success');
+}
+function normalizeRecords(doSave=false){
+  records=records.map(r=>{
+    if(!r.memberId)r.memberId=r.memberEmail||r.email||'legacy';if(!r.shopId)r.shopId='demo_shop';if(!r.shopName)r.shopName='Demo Shop';
+    if(!r.memberName)r.memberName='Legacy Commission';
+    if(!r.playerName)r.playerName=r.name||'';
+    if(!r.name)r.name=r.playerName;
+    if(!r.g)r.g=r.groupId||r.id||('G'+Date.now());
+    if(!r.c)r.c=r.code||'';
+    if(!r.n)r.n=r.number||'';
+    if(!r.amt)r.amt=Number(r.amount||0);
+    if(!r.d)r.d=r.date||today();
+    if(!r.tm)r.tm=r.time||'';
+    if(!r.s)r.s=r.session||'AM';
+    return r
+  });
+  if(doSave)save();
+}
+async function saveSet(){normalizeSettings();settings.shopId=currentUser?currentUser.shopId||'demo_shop':'demo_shop';settings.shopName=currentUser?currentUser.shopName||'Demo Shop':'Demo Shop';await setDoc(COL_SETTINGS,settings.shopId,settings);localSave('RM_v141_settings_cache',settings)}
+async function save(){localSave('RM_v132_records_cache',records)}
+async function saveEx(){localSave('RM_v132_exports_cache',exportsL)}
+async function saveAcc(){for(const a of accounts)await setDoc(COL_ACCOUNTS,a.id||a.email||a.username,a);localSave('RM_v132_accounts_cache',accounts)}
+function saveCur(){if(currentUser)localSave('RM_v132_current_user',currentUser);else localStorage.removeItem('RM_v132_current_user')}
+function isAdmin(){return currentUser&&currentUser.role==='admin'}
+function isMember(){return currentUser&&currentUser.role==='member'}
+function rate(){return Number(settings.rate||80)}
+function defCor(){return Number(settings.cor||13)}
+function allVisibleRecords(){if(!currentUser)return[];return isAdmin()?records.filter(r=>sameShop(r)):records.filter(r=>sameShop(r)&&(String(r.memberId).toLowerCase()===String(currentUser.id).toLowerCase()||String(r.memberUid||'').toLowerCase()===String(currentUser.uid).toLowerCase()||String(r.memberEmail||'').toLowerCase()===String(currentUser.email).toLowerCase()))}
+function isTodayRecord(r){return String(r.d||today())===today()}
+function visibleRecords(){return allVisibleRecords().filter(isTodayRecord)}
+function displayNameFor(r){return isAdmin()?(r.memberName||'Unknown Member'):(r.playerName||r.name||'')}
+function reportKeyFor(r){return isAdmin()?(r.memberId||r.memberName):(r.playerName||r.name||'')}
+function reportNameFor(r){return isAdmin()?(r.memberName||'Unknown Member'):(r.playerName||r.name||'')}
+
+function num(v){return Number(v||0)}
+function money(v){return Math.round(Number(v||0)).toLocaleString('en-US')}
+function corRateFor(r){
+  let key=String(r.memberId||r.memberEmail||'').toLowerCase();
+  let a=accounts.find(x=>String(x.id||x.email||x.username||'').toLowerCase()===key);
+  return Number((a&&a.cor)||r.memberCor||settings.cor||13);
+}
+function imageReportNameFor(r){return r.memberName||'Unknown Member'}
+function totalCorFor(rs){return Math.round((rs||[]).reduce((sum,r)=>sum+(num(r.amt)*corRateFor(r)/100),0))}
+function pAmountFor(rs,pn){return /^\d{2}$/.test(pn)?(rs||[]).filter(r=>r.n===pn).reduce((a,b)=>a+num(b.amt),0):0}
+function overRows(s=null){return exportsL.filter(x=>sameShop(x)&&(x.date||x.d||today())===today()&&(!s||x.s===s))}
+function overAmountFor(s=null){return overRows(s).reduce((a,b)=>a+num(b.amt),0)}
+function overPAmountFor(s,pn){return /^\d{2}$/.test(pn)?overRows(s).filter(x=>x.n===pn).reduce((a,b)=>a+num(b.amt),0):0}
+function setP(kind,val,saveIt=true){
+  val=String(val||'');
+  let ids=kind==='AM'?['amP','dAmP','imgAM']:['pmP','dPmP','imgPM'];
+  ids.forEach(id=>{let e=$(id);if(e&&e.value!==val)e.value=val});
+  let rb=resultBook();
+  if(kind==='AM'){settings.amP=val;rb.amP=val}else{settings.pmP=val;rb.pmP=val}
+  if(saveIt&&currentUser)saveSet().catch(()=>{});
+  if($('img'))renderImg();
+}
+function applyPValues(){
+  normalizeSettings();
+  let rb=resultBook();
+  let am=rb.amP||settings.amP||'',pm=rb.pmP||settings.pmP||'';
+  if(am)setP('AM',String(am),false);
+  if(pm)setP('PM',String(pm),false);
+  renderResultBookStatus();
+}
+
+
+function focusField(id){currentField=id;['rName','rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].forEach(x=>$(x)?.classList.remove('focused-input'));$(id)?.classList.add('focused-input')}
+
+async function registerAdmin(){
+  let shop=(regShop.value||'').trim(),owner=(regOwner.value||'').trim(),phone=(regPhone.value||'').trim(),email=(regEmail.value||'').trim().toLowerCase(),pass=(regPass.value||'').trim();
+  if(!shop||!owner||!phone||!email||!pass)return alert('Shop / Owner / Phone / Email / Password အားလုံးဖြည့်ပါ');
+  if(!email.includes('@'))return alert('Email ပုံစံမှန်ပါစေ');
+  try{
+    setBusy(true,'Creating admin shop...');
+    let rr=await api(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,{method:'POST',noAuth:true,body:JSON.stringify({email,password:pass,returnSecureToken:true})});
+    token=rr.idToken;uid=rr.localId;authEmail=email;
+    accounts=await listCollection(COL_ACCOUNTS);
+    let shopId=makeShopId(shop),acc={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,cor:Number(settings.cor||13),active:true,createdAt:Date.now()};
+    await setDoc(COL_ACCOUNTS,uid,acc);accounts.push(acc);
+    currentUser={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,cor:Number(settings.cor||13),active:true};
+    await addAudit('REGISTER_ADMIN',shop+' / '+email);
+    toast('Admin Shop Created ✅','success');
+    u.value=email;p.value=pass;setBusy(false);login();
+  }catch(e){setBusy(false);alert('Register Error: '+e.message);setCloudStatus('Register Error: '+e.message,'danger')}
+}
+
+async function login(){
+  let email=(u.value||'').trim().toLowerCase(),pass=(p.value||'').trim();
+  if(!email||!pass)return alert('Firebase Email / Password ဖြည့်ပါ');
+  try{
+    setCloudStatus('Cloud: Signing in...', 'info');
+    let r=await firebaseSignIn(email,pass);
+    token=r.idToken; uid=r.localId; authEmail=(r.email||email).toLowerCase();
+
+    let acc=await getDoc(COL_ACCOUNTS,uid,null);
+
+    // Transition support: v1.4.0/email-doc accounts ကို uid-doc အဖြစ် migrate လုပ်ရန်
+    if(!acc){
+      try{
+        let all=await listCollection(COL_ACCOUNTS);
+        let old=all.find(x=>String(x.email||x.username||x.id||'').toLowerCase()===authEmail);
+        if(old){
+          old.uid=uid;old.id=uid;old.email=authEmail;old.username=authEmail;old.shopId=old.shopId||'demo_shop';old.shopName=old.shopName||'Demo Shop';
+          await setDoc(COL_ACCOUNTS,uid,old);acc=old;
+        }
+      }catch(e){}
+    }
+
+    // Demo admin fallback for first transition
+    if(!acc&&authEmail==='admin@test.com'){
+      acc={id:uid,uid,email:authEmail,username:authEmail,role:'admin',memberName:'Admin / ဒိုင်',shopId:'demo_shop',shopName:'Demo Shop',cor:Number(settings.cor||13),active:true};
+      await setDoc(COL_ACCOUNTS,uid,acc);
+    }
+
+    if(!acc){
+      alert('Secure Account Mapping မတွေ့ပါ။ Admin Register အသစ်လုပ်ပါ သို့မဟုတ် v1.4.0 မှ account ကို migrate လုပ်ပါ။');
+      setCloudStatus('Cloud: Account mapping missing', 'warning');
+      return;
+    }
+    if(acc.active===false)return alert('ဒီ Account ကို ပိတ်ထားပါသည်');
+    currentUser={id:uid,uid,email:authEmail,username:authEmail,role:acc.role||'member',memberName:acc.memberName||acc.name||authEmail,phone:acc.phone||'',cor:Number(acc.cor||settings.cor||13),shopId:acc.shopId||'demo_shop',shopName:acc.shopName||'Demo Shop',active:acc.active!==false};
+
+    await loadCloudAll();
+    saveCur();
+    if(checkLock())return;
+    loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
+    $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
+    applyRoleUI();renderAll();
+    let first=isAdmin()?['dash','tDash']:['entry','tEntry'];tab(first[0],first[1]);
+    setTimeout(()=>{if(isMember()){rName.focus();focusField('rName')}},80);
+    await addAudit('LOGIN',authEmail+' / '+currentUser.shopName);
+  }catch(e){
+    setCloudStatus('Cloud Login Error: '+e.message, 'danger');
+    alert('Firebase Login Error: '+e.message);
+  }
+}
+function logout(){currentUser=null;token='';uid='';authEmail='';saveCur();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary')}
+function applyRoleUI(){if(!currentUser)return;let label=isAdmin()?'ADMIN / ဒိုင်':'MEMBER / '+(currentUser.memberName||currentUser.username);$('roleBadge').innerText=label;if($('shopBadge'))$('shopBadge').innerText=currentUser.shopName||currentUser.shopId||'Shop';document.querySelectorAll('.admin-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isAdmin()));document.querySelectorAll('.member-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isMember()));if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;}
+function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();renderCloseStatus()}
+function toggleTheme(){document.body.classList.toggle('dark')}
+function key(v){if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
+function delKey(){let e=$(currentField);if(e){e.value=e.value.slice(0,-1);e.focus()}}
+function clearKey(){let e=$(currentField);if(e){e.value='';e.focus()}}
+function enterAction(){
+  if(isSaving){alert('Cloud ထဲသို့ သိမ်းနေပါသည်။ ခဏစောင့်ပါ');return}
+  if(currentField==='rName'){
+    if(!rName.value.trim()){alert('Name လိုအပ်ပါသည်');rName.focus();focusField('rName');return}
+    rCode.focus();focusField('rCode');return
+  }
+  if(currentField==='rCode'){
+    if(!rCode.value.trim()){alert('Number လိုအပ်ပါသည်');rCode.focus();focusField('rCode');return}
+    rAmt.focus();focusField('rAmt');return
+  }
+  if(currentField==='rAmt'){
+    if(!rAmt.value.trim()){alert('Amount လိုအပ်ပါသည်');rAmt.focus();focusField('rAmt');return}
+    saveGroup();return
+  }
+  saveGroup()
+}
+function today(){return new Date().toISOString().slice(0,10)}
+function time(){return new Date().toTimeString().slice(0,5)}
+function schedule(){
+  normalizeSettings();
+  settings.sessionSchedule=settings.sessionSchedule||{};
+  return {
+    openAM: settings.sessionSchedule.openAM || '00:00',
+    closeAM: settings.sessionSchedule.closeAM || '12:00',
+    openPM: settings.sessionSchedule.openPM || '12:01',
+    closePM: settings.sessionSchedule.closePM || '16:30'
+  };
+}
+function todayAt(t,offset=0){let d=new Date(),p=String(t||'00:00').split(':'),h=Number(p[0]||0),m=Number(p[1]||0);d.setDate(d.getDate()+offset);d.setHours(h,m,0,0);return d}
+function fmtClock(d){return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}
+function fmtDuration(ms){ms=Math.max(0,Math.floor(ms/1000));let h=Math.floor(ms/3600),m=Math.floor((ms%3600)/60),s=ms%60;return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function sessionInfo(){
+  let sc=schedule(),now=new Date(),amO=todayAt(sc.openAM),amC=todayAt(sc.closeAM),pmO=todayAt(sc.openPM),pmC=todayAt(sc.closePM);
+  if(now>=amO&&now<amC)return{open:true,session:'AM',openAt:amO,closeAt:amC,nextOpen:pmO,closeLabel:sc.closeAM,openLabel:sc.openAM};
+  if(now>=pmO&&now<pmC)return{open:true,session:'PM',openAt:pmO,closeAt:pmC,nextOpen:todayAt(sc.openAM,1),closeLabel:sc.closePM,openLabel:sc.openPM};
+  if(now<amO)return{open:false,session:'AM',openAt:amO,closeAt:amC,nextOpen:amO,closeLabel:sc.closeAM,openLabel:sc.openAM};
+  if(now>=amC&&now<pmO)return{open:false,session:'PM',openAt:pmO,closeAt:pmC,nextOpen:pmO,closeLabel:sc.closePM,openLabel:sc.openPM};
+  return{open:false,session:'AM',openAt:todayAt(sc.openAM,1),closeAt:todayAt(sc.closeAM,1),nextOpen:todayAt(sc.openAM,1),closeLabel:sc.closeAM,openLabel:sc.openAM};
+}
+function sess(){return sessionInfo().session||'AM'}
+function isEntryOpen(){return !!sessionInfo().open}
+function beep(freq=880,duration=120){try{let AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;let ctx=window.__rmAudioCtx||(window.__rmAudioCtx=new AC()),osc=ctx.createOscillator(),gain=ctx.createGain();osc.frequency.value=freq;gain.gain.value=.04;osc.connect(gain);gain.connect(ctx.destination);osc.start();setTimeout(()=>{try{osc.stop();osc.disconnect();gain.disconnect()}catch(e){}},duration)}catch(e){}}
+let alarmState={};
+function updateSessionTimer(){
+  let info=sessionInfo(),box=$('entrySessionTimer'),now=new Date();
+  if(box){
+    if(info.open){let left=info.closeAt-now;box.className='session-timer session-open';box.innerHTML=`<div class="big">${info.session} Entry OPEN</div><div class="time">Close Time: ${fmtClock(info.closeAt)} • ${fmtDuration(left)} left</div><div>Close time မရောက်ခင် Entry / Edit / Delete အသုံးပြုနိုင်ပါသည်။</div>`;}
+    else{let left=info.nextOpen-now;box.className='session-timer session-closed';box.innerHTML=`<div class="big">Entry CLOSED</div><div class="time">Next ${info.session} Open: ${fmtClock(info.nextOpen)} • ${fmtDuration(left)} left</div><div>Admin Settings ထဲက Auto Session Schedule အတိုင်းပိတ်ထားပါသည်။</div>`;}
+  }
+  if(info.open){
+    let remain=info.closeAt-now,key=today()+'_'+info.session;
+    if(remain<=10*60*1000 && remain>9*60*1000 && !alarmState[key+'_10']){alarmState[key+'_10']=1;beep(660,400);toast(info.session+' Close time 10 မိနစ်သာလိုပါတော့သည်','warning')}
+    if(remain<=5*60*1000 && remain>4*60*1000 && !alarmState[key+'_5']){alarmState[key+'_5']=1;beep(760,500);toast(info.session+' Close time 5 မိနစ်သာလိုပါတော့သည်','warning')}
+    if(remain<=20000 && remain>0){let sec=Math.ceil(remain/1000);if(!alarmState[key+'_s_'+sec]){alarmState[key+'_s_'+sec]=1;beep(980,80)}}
+  }
+  renderCloseStatus(false);
+}
+function uniq(a){return[...new Set(a)]}
+function pair(a,b){let r=[];a.forEach(x=>b.forEach(y=>r.push(x+y)));return r}
+function apa(d){let r=[];for(let i=0;i<10;i++){r.push(d+String(i));r.push(String(i)+d)}return uniq(r)}
+function khway(s){let r=[];for(let i=0;i<s.length;i++)for(let j=i+1;j<s.length;j++){r.push(s[i]+s[j]);r.push(s[j]+s[i])}return uniq(r)}
+function expand(c,amt){c=String(c).trim();if(MAP[c])return MAP[c].map(n=>({n,amt}));if(c==='ပါဝါ')return expand('A',amt);if(c==='နက္ခ')return expand('Z',amt);if(c==='ညီကို')return expand('B',amt);if(c==='အပူး')return expand('//',amt);if(c==='စုံ')c='+';if(c==='မ')c='-';if(c==='စုံစုံ')c='++';if(c==='မမ')c='--';if(c==='စုံမ')c='+-';if(c==='မစုံ')c='-+';if(c==='++')return pair(E,E).map(n=>({n,amt}));if(c==='--')return pair(O,O).map(n=>({n,amt}));if(c==='+-')return pair(E,O).map(n=>({n,amt}));if(c==='-+')return pair(O,E).map(n=>({n,amt}));let a=[];if(/^[1-9]\/$/.test(c)){for(let i=0;i<10;i++)a.push({n:c[0]+i,amt});return a}if(/^\/[1-9]$/.test(c)){for(let i=0;i<10;i++)a.push({n:String(i)+c[1],amt});return a}if(/^[0-9]\*$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}\*$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]}if(/^\d{3,}\*$/.test(c))return khway(c.slice(0,-1)).map(n=>({n,amt}));if(/^\d{3,}ခွေ$/.test(c))return khway(c.replace('ခွေ','')).map(n=>({n,amt}));if(/^\*[0-9]{1,2}$/.test(c)){let t=+c.slice(1);if(t<9||t>18){alert('*9 မှ *18 အတွင်းသာ');return[]}for(let i=0;i<100;i++){let n=String(i).padStart(2,'0'),s=+n[0]+ +n[1];if(s===t||s===t-10)a.push({n,amt})}return a}if(/^\d{2}$/.test(c))return[{n:c,amt}];alert('Invalid Logic');return[]}
+async function saveGroup(){
+  if(isSaving){toast('Cloud ထဲသို့ သိမ်းနေပါသည်။ ထပ်မနှိပ်ပါနှင့်','warning');return}
+  if(!navigator.onLine){toast('Offline ဖြစ်နေပါသည်။ Online ပြန်ရမှ Save လုပ်ပါ','warning');return}
+  if(!isMember())return alert('Record Entry သည် Member Account မှသာ အသုံးပြုရန်ဖြစ်ပါသည်');
+  let si=sessionInfo();if(!si.open)return alert('Entry ပိတ်ထားပါသည်။ Next '+si.session+' Open: '+fmtClock(si.nextOpen));
+  let name=rName.value.trim(),c=rCode.value.trim(),amt=+rAmt.value;
+  if(!name){toast('Name လိုအပ်ပါသည်','warning');rName.focus();focusField('rName');return}
+  if(!c){toast('Number လိုအပ်ပါသည်','warning');rCode.focus();focusField('rCode');return}
+  if(!amt){toast('Amount လိုအပ်ပါသည်','warning');rAmt.focus();focusField('rAmt');return}
+  let items=expand(c,amt);if(!items.length)return;
+  setBusy(true,'Saving records...');
+  let oldCode=c,oldAmt=String(rAmt.value||'');
+  try{
+    setCloudStatus('Cloud: Saving records...', 'info');
+    rCode.value='';rAmt.value='';rCode.focus();focusField('rCode');
+    if(editId){
+      let old=records.filter(x=>x.g===editId&&String(x.memberId).toLowerCase()===String(currentUser.id).toLowerCase());
+      for(const r of old)await delDocByPath(r._path);
+      records=records.filter(x=>x.g!==editId);
+    }
+    let g=editId||'G'+Date.now(),d=today(),tm=time(),s=(si&&si.session)||sess();
+    for(const it of items){
+      let rec={id:'',g,d,tm,s,name,playerName:name,memberId:currentUser.id,memberUid:uid,memberEmail:currentUser.email,memberName:currentUser.memberName||currentUser.username,memberCor:currentUser.cor||defCor(),shopId:currentUser.shopId||'demo_shop',shopName:currentUser.shopName||'Demo Shop',c,n:it.n,amt:it.amt,createdAt:Date.now()};
+      let saved=await addDoc(COL_RECORDS,rec);
+      saved.id=saved.docId;records.push(saved);
+    }
+    editId=null;await save();renderAll();setCloudStatus('Cloud: Saved ✅','success');toast('Saved ✅','success');
+    await addAudit('SAVE_RECORD',`${s} ${name} / ${c} / ${amt} / ${items.length} nums`);
+  }catch(e){
+    rCode.value=oldCode;rAmt.value=oldAmt;rCode.focus();focusField('rCode');
+    setCloudStatus('Cloud Save Error: '+e.message,'danger');alert('Save Error: '+e.message)
+  }finally{
+    setBusy(false);
+  }
+}
+function groups(){let m={};visibleRecords().forEach(r=>{if(!m[r.g])m[r.g]={g:r.g,s:r.s,name:displayNameFor(r),playerName:r.playerName||r.name,memberName:r.memberName,c:r.c,amt:0,nums:[],raw:r};m[r.g].amt+=r.amt;m[r.g].nums.push(r.n+'='+r.amt)});return Object.values(m).sort((a,b)=>String(b.g).localeCompare(String(a.g)))}
+function renderRecords(){
+  if(!recBody)return;
+  if($('recordsSub'))recordsSub.innerHTML=(isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။')+' <span class="workday-badge">Today Workspace: '+today()+'</span>';
+  let q=(search?.value||'').toLowerCase();recBody.innerHTML='';
+  let data=groups().filter(g=>g.name.toLowerCase().includes(q)||(g.playerName||'').toLowerCase().includes(q)||g.c.toLowerCase().includes(q)||g.nums.join(' ').includes(q));
+  if(!data.length){recBody.innerHTML='<tr><td colspan="5" class="text-center text-muted py-3">No records</td></tr>';return}
+  data.forEach(g=>{
+    let id='n'+String(g.g).replace(/[^a-zA-Z0-9]/g,'');
+    let sub=isAdmin()?`<div class="member-tag">Player hidden: ${g.playerName||''}</div>`:'';
+    let acts=isMember()?`<button class="btn btn-sm btn-warning" onclick="edit('${g.g}')">E</button> <button class="btn btn-sm btn-danger" onclick="delg('${g.g}')">D</button>`:`<button class="btn btn-sm btn-danger" onclick="delg('${g.g}')">D</button>`;
+    let chips=g.nums.map(x=>{let [n,a]=String(x).split('=');return `<span class="num-chip"><b>${n}</b>${a||''}</span>`}).join('');
+    recBody.innerHTML+=`<tr><td>${g.s}</td><td class="name-text">${g.name}${sub}</td><td><b>${g.c}</b> <button class="btn btn-sm btn-outline-primary" onclick="tog('${id}')">ON/OFF</button><div id="${id}" class="nums">${chips}</div></td><td>${money(g.amt)}</td><td>${acts}</td></tr>`
+  })
+}
+function tog(id){let e=$(id);e.style.display=e.style.display==='block'?'none':'block'}
+function edit(g){if(!isMember())return alert('Admin mode မှာ edit မလုပ်ပါ။ Member account ထဲကနေ edit လုပ်ပါ။');if(!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။ Edit မလုပ်နိုင်ပါ။');let r=records.find(x=>x.g===g&&String(x.memberId).toLowerCase()===String(currentUser.id).toLowerCase());if(!r)return;if(String(r.d||'')!==today())return alert('နေ့ဟောင်းစာရင်းကို History ထဲမှာသာကြည့်နိုင်ပြီး Edit မလုပ်နိုင်ပါ။');editId=g;rName.value=r.playerName||r.name;rCode.value=r.c;rAmt.value=r.amt;tab('entry','tEntry');rCode.focus();focusField('rCode')}
+async function delg(g){
+  let target=records.filter(x=>x.g===g);if(!target.length)return;
+  if(target.some(x=>String(x.d||'')!==today()))return alert('နေ့ဟောင်းစာရင်းကို History ထဲမှာသိမ်းထားပြီးဖြစ်ပါသည်။ Delete မလုပ်နိုင်ပါ။');
+  if(!isAdmin()&&!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။ Delete မလုပ်နိုင်ပါ။');
+  if(!isAdmin()&&!target.every(x=>String(x.memberId).toLowerCase()===String(currentUser.id).toLowerCase()))return alert('မိမိ record ကိုသာ ဖျက်နိုင်ပါသည်');
+  if(confirm('Delete?')){
+    try{
+      setBusy(true,'Deleting...');
+      setCloudStatus('Cloud: Deleting...', 'info');
+      for(const r of target)await delDocByPath(r._path);
+      records=records.filter(x=>x.g!==g);await save();renderAll();setCloudStatus('Cloud: Deleted ✅','success');toast('Deleted ✅','success');
+      await addAudit('DELETE_RECORD',`Group ${g} / ${target.length} rows`);
+    }catch(e){setCloudStatus('Delete Error: '+e.message,'danger');alert(e.message)}
+    finally{setBusy(false)}
+  }
+}
+function sale(s=null){return visibleRecords().filter(r=>!s||r.s===s).reduce((a,b)=>a+b.amt,0)}
+
+function topRiskNumbers(limit=10){
+  let t=totals();
+  return Object.keys(t).map(n=>({n,total:t[n]})).sort((a,b)=>b.total-a.total).slice(0,limit);
+}
+function renderSmartDashboard(){
+  if(!dashRisk)return;
+  let l=Number(lim?.value||0);
+  let r=(typeof riskCalcForLimit==='function')?riskCalcForLimit(l):null;
+  let vr=visibleRecords();let total=vr.reduce((a,b)=>a+num(b.amt),0),cor=totalCorFor(vr),over=overAmountFor(),bal=total-over-cor;
+  let html='';
+  if(isAdmin()&&r){
+    html+=`<div class="smart-mini"><small>Total</small><br><b>${money(r.total)}</b></div>`;
+    html+=`<div class="smart-mini"><small>Cor</small><br><b>${money(r.cor)}</b></div>`;
+    html+=`<div class="smart-mini"><small>Balance</small><br><b>${money(r.balance)}</b></div>`;
+    html+=`<div class="smart-mini ${r.status==='SAFE'?'safe':'danger2'}"><small>Risk</small><br><b>${r.status}</b></div>`;
+    html+=`<div class="smart-mini"><small>Worst No</small><br><b>${r.maxNo}</b></div>`;
+    html+=`<div class="smart-mini"><small>Worst Pay</small><br><b>${money(r.worst)}</b></div>`;
+    html+=`<div class="smart-mini"><small>Pay Allowed</small><br><b>${money(r.payAllowed)}</b></div>`;
+    let closedList=['AM','PM','DAILY'].filter(x=>isSessionClosed(x)).join(' ')||'Open';html+=`<div class="smart-mini"><small>Closed</small><br><b>${closedList}</b></div>`;
+  }else{
+    html+=`<div class="smart-mini"><small>My Total</small><br><b>${money(sale())}</b></div>`;
+    html+=`<div class="smart-mini"><small>AM</small><br><b>${money(sale('AM'))}</b></div>`;
+    html+=`<div class="smart-mini"><small>PM</small><br><b>${money(sale('PM'))}</b></div>`;
+    html+=`<div class="smart-mini"><small>Status</small><br><b>${isSessionClosed(sess())?'Closed':'Open'}</b></div>`;
+  }
+  dashRisk.innerHTML=html;
+  if(dashTopRisk)dashTopRisk.innerHTML=topRiskNumbers(10).map(x=>`<span class="toprisk-chip">${x.n} = ${money(x.total)}</span>`).join('')||'<span class="text-muted">No data</span>';
+}
+
+function renderDash(){if(!dRec)return;let vr=visibleRecords();dRec.innerText=vr.length;dGrp.innerText=isAdmin()?new Set(vr.map(r=>r.memberId)).size:new Set(vr.map(r=>r.g)).size;dGrpLabel.innerText=isAdmin()?'Members':'Groups';dAM.innerText=money(sale('AM'));dPM.innerText=money(sale('PM'));if(chartObj)chartObj.destroy();if(window.Chart&&chart)chartObj=new Chart(chart,{type:'bar',data:{labels:['AM','PM'],datasets:[{data:[sale('AM'),sale('PM')],backgroundColor:['#2563eb','#f59e0b'],borderRadius:8}]},options:{plugins:{legend:{display:false}}}});renderSmartDashboard();renderCloseStatus()}
+function rawTotals(){let t={};for(let i=0;i<100;i++)t[String(i).padStart(2,'0')]=0;visibleRecords().forEach(r=>t[r.n]+=num(r.amt));return t}
+function expTotals(){let t={};for(let i=0;i<100;i++)t[String(i).padStart(2,'0')]=0;exportsL.forEach(r=>t[r.n]+=r.amt);return t}
+function totals(){let r=rawTotals(),e=expTotals(),t={};Object.keys(r).forEach(n=>t[n]=Math.max(0,r[n]-e[n]));return t}
+function overItems(limitVal=null){let l=Number(limitVal??lim.value),t=totals();return Object.keys(t).filter(n=>l>0&&t[n]>l).map(n=>({n,total:t[n],limit:l,over:t[n]-l,balance:l}))}
+
+function riskCalcForLimit(limitVal){
+  let t=totals(),l=Number(limitVal||0),over=Object.keys(t).filter(n=>l>0&&t[n]>l).map(n=>({n,total:t[n],limit:l,over:t[n]-l,balance:l}));
+  let overTotal=over.reduce((a,b)=>a+b.over,0);
+  let vr=visibleRecords();let total=vr.reduce((a,b)=>a+num(b.amt),0);
+  let cor=totalCorFor(vr);
+  let balance=total-overTotal-cor;
+  let after={};Object.keys(t).forEach(n=>after[n]=l>0?Math.min(t[n],l):t[n]);
+  let maxNo=Object.keys(after).sort((a,b)=>after[b]-after[a])[0]||'00';
+  let maxAmt=after[maxNo]||0;
+  let worst=maxAmt*rate();
+  let losePct=Number(riskLosePct?.value||0);
+  let maxLose=Number(riskMaxLose?.value||0);
+  let allowance=0;
+  if(riskMaster==='losePct')allowance=balance*losePct/100;
+  else if(riskMaster==='maxLose')allowance=maxLose;
+  else if(losePct>0)allowance=balance*losePct/100;
+  else if(maxLose>0)allowance=maxLose;
+  let payAllowed=balance+allowance;
+  let loseAmount=Math.max(0,worst-balance);
+  let actualLosePct=balance>0?loseAmount/balance*100:0;
+  return{limit:l,total,cor,over,overTotal,balance,maxNo,maxAmt,worst,payAllowed,loseAmount,actualLosePct,status:worst<=payAllowed?'SAFE':'DANGER'}
+}
+function findSuggestedLimitBy(mode,value){
+  let t=totals(),vals=Object.values(t),max=Math.max(0,...vals);
+  if(max<=0)return 0;
+  let best=0;
+  for(let L=0;L<=max;L+=100){
+    let r=riskCalcForLimit(L);
+    let allowed=mode==='losePct'?r.balance+(r.balance*Number(value||0)/100):r.balance+Number(value||0);
+    if(r.worst<=allowed)best=L;
+  }
+  for(let L=Math.max(0,best-100);L<=Math.min(max,best+200);L++){
+    let r=riskCalcForLimit(L);
+    let allowed=mode==='losePct'?r.balance+(r.balance*Number(value||0)/100):r.balance+Number(value||0);
+    if(r.worst<=allowed)best=L;
+  }
+  return best;
+}
+
+function renderLimit(alertIt){
+  if(!isAdmin())return;if(!grid)return;
+  if(riskMaster==='losePct'&&Number(riskLosePct.value)>0){lim.value=findSuggestedLimitBy('losePct',riskLosePct.value)}
+  if(riskMaster==='maxLose'&&Number(riskMaxLose.value)>0){lim.value=findSuggestedLimitBy('maxLose',riskMaxLose.value)}
+  let r=riskCalcForLimit(Number(lim.value||0)),over=r.over;
+  limTotal.innerText=money(r.total);limCount.innerText=over.length;
+  if(riskOverTotal)riskOverTotal.innerText=money(r.overTotal);
+  if(riskCorTotal)riskCorTotal.innerText=money(r.cor);
+  if(riskBalance)riskBalance.innerText=money(r.balance);
+  if(riskMaxNo)riskMaxNo.innerText=`${r.maxNo} / ${money(r.maxAmt)}`;
+  if(riskWorstPay)riskWorstPay.innerText=money(r.worst);
+  if(riskPayAllowed)riskPayAllowed.innerText=money(r.payAllowed);
+  if(riskStatus){riskStatus.innerText=r.status==='SAFE'?'SAFE ✅':'DANGER 🔴';riskStatusBox.className='risk-box '+(r.status==='SAFE'?'safe':'danger2')}
+  if(riskSuggested)riskSuggested.innerText=money(Number(lim.value||0));
+  if(riskMaster==='limit'){
+    if(riskLosePct)riskLosePct.value=r.actualLosePct?Number(r.actualLosePct.toFixed(2)):'';
+    if(riskMaxLose)riskMaxLose.value=r.loseAmount?Math.round(r.loseAmount):'';
+  }
+  grid.innerHTML='';
+  let t=totals(),l=+lim.value;
+  for(let i=0;i<100;i++){
+    let n=String(i).padStart(2,'0'),d=document.createElement('div');
+    d.className='cell '+(l>0&&t[n]>l?'hit':'');
+    d.innerHTML='<b>'+n+'</b><br>'+money(t[n]);
+    grid.appendChild(d)
+  }
+  if(alertIt&&over.length)alert('Over Limit / Risk တွက်ပြီးပါပြီ')
+}
+async function saveLimit(){if(!isAdmin())return alert('Admin Only');let o=overItems();if(!o.length)return alert('No Over');if(!confirm('Limit စာရင်းအတွက်သာ သိမ်းမည်။ မူရင်းစာရင်း မပြောင်းပါ။'))return;try{setBusy(true,'Saving Limit Export...');for(const x of o){let saved=await addDoc(COL_EXPORTS,{n:x.n,amt:x.over,date:today(),s:sess(),shopId:currentUser.shopId,shopName:currentUser.shopName,createdAt:Date.now()});exportsL.push(saved)}await saveEx();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Export Saved ✅','success');toast('Limit Export Saved ✅','success');await addAudit('SAVE_LIMIT_EXPORT',`count ${o.length} / over ${money(o.reduce((a,b)=>a+b.over,0))}`)}catch(e){setCloudStatus('Limit Save Error: '+e.message,'danger');alert(e.message)}finally{setBusy(false)}}
+function renderOver(){if(!isAdmin())return;if(!overContent)return;let o=overItems();overContent.innerHTML=o.length?'<table class="table table-sm"><tr><th>No</th><th>Total</th><th>Limit</th><th>Over</th><th>Balance</th></tr>'+o.map(x=>`<tr class="neg"><td>${x.n}</td><td>${money(x.total)}</td><td>${money(x.limit)}</td><td>${money(x.over)}</td><td>${money(x.balance)}</td></tr>`).join('')+'</table>':'<div class="alert alert-success">No Over</div>'}
+function exportOver(){let o=overItems();if(!o.length)return alert('No Data');download('Number,Total,Limit,Over\n'+o.map(x=>`${x.n},${x.total},${x.limit},${x.over}`).join('\n'),'Limit_Over.csv','text/csv')}
+function saveOverImage(){drawText('Limit Over',overItems().map(x=>x.n+'='+x.over).join('\n')||'No Over','Limit_Over.png')}
+function shareOver(){share('Limit Over',overItems().map(x=>x.n+'='+x.over).join('\n')||'No Over')}
+
+
+
+
+
+function adminFinalSummary(s,pn){
+  let rs=visibleRecords().filter(r=>r.s===s);
+  let total=rs.reduce((a,b)=>a+num(b.amt),0),cor=totalCorFor(rs),pAmt=pAmountFor(rs,pn),payout=pAmt*rate();
+  let overAmt=overAmountFor(s),overP=overPAmountFor(s,pn),overPayout=overP*rate();
+  let final=total-cor-payout-overAmt+overPayout;
+  return{session:s,total,cor,pAmt,payout,overAmt,overP,overPayout,final,win:final>=0}
+}
+function summaryHTML(x){
+  return `<div class="settle-summary ${x.win?'settle-win':'settle-lose'}">
+    <b>${x.session} Admin Final Result: ${x.win?'WIN / ရရန်':'LOSE / ပေးရန်'} ${money(Math.abs(x.final))}</b><br>
+    Total: ${money(x.total)} - Cor: ${money(x.cor)} - Payout: ${money(x.payout)} - Over: ${money(x.overAmt)} + Over Payout: ${x.overP?money(x.overPayout):'No'}<br>
+    P Amount: ${money(x.pAmt)} | Over P Amount: ${x.overP?money(x.overP):'No'} | Rate: ${rate()}
+  </div>`
+}
+function settleData(s,pn){
+  let m={};
+  visibleRecords().filter(r=>r.s===s).forEach(r=>{
+    let key=reportKeyFor(r),nm=reportNameFor(r);
+    if(!m[key])m[key]={name:nm,total:0,pAmt:0,pay:0,cor:0,net:0};
+    m[key].total+=num(r.amt); if(r.n===pn)m[key].pAmt+=num(r.amt);
+  });
+  Object.values(m).forEach(x=>{x.pay=x.pAmt*rate();x.cor=Math.round(x.total*(memberCorRateByName(x.name)/100));x.net=x.total-x.pay-x.cor});
+  return Object.values(m)
+}
+function memberCorRateByName(name){
+  let a=accounts.find(x=>x.memberName===name);
+  return Number((a&&a.cor)||settings.cor||13);
+}
+function tableReport(d){
+  if(!d.length)return'<div class="alert alert-secondary mt-2">No Data</div>';
+  let h=isAdmin()?'Commission':'Name';
+  return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>Cor</th><th>ပေးရန်/ရရန်</th></tr>'+
+    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${money(x.cor)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>'
+}
+function settle(s){
+  let pn=s==='AM'?amP.value:pmP.value,out=s==='AM'?amOut:pmOut;
+  if(!/^\d{2}$/.test(pn))return alert('P Number');
+  setP(s,pn,true);
+  out.innerHTML=(isAdmin()?summaryHTML(adminFinalSummary(s,pn)):'')+tableReport(settleData(s,pn));
+  toast(s+' Result Updated ✅','success');
+  addAudit('SAVE_'+s+'_RESULT','P='+pn);
+}
+function dailyReport(){
+  let am=String(dAmP.value||settings.amP||''),pm=String(dPmP.value||settings.pmP||'');
+  if(am)setP('AM',am,true); if(pm)setP('PM',pm,true);
+  let a=settleData('AM',am),p=settleData('PM',pm),m={};
+  [...a,...p].forEach(x=>{if(!m[x.name])m[x.name]={name:x.name,total:0,pAmt:0,pay:0,cor:0,net:0};m[x.name].total+=x.total;m[x.name].pAmt+=x.pAmt;m[x.name].pay+=x.pay;m[x.name].cor+=x.cor;m[x.name].net=m[x.name].total-m[x.name].pay-m[x.name].cor});
+  let html='';
+  if(isAdmin()){
+    let sa=adminFinalSummary('AM',am),sp=adminFinalSummary('PM',pm);
+    let final=sa.final+sp.final, total=sa.total+sp.total, cor=sa.cor+sp.cor, payout=sa.payout+sp.payout, overAmt=sa.overAmt+sp.overAmt, overPayout=sa.overPayout+sp.overPayout;
+    html=`<div class="settle-summary ${final>=0?'settle-win':'settle-lose'}"><b>DAILY Admin Final Result: ${final>=0?'WIN / ရရန်':'LOSE / ပေးရန်'} ${money(Math.abs(final))}</b><br>Total: ${money(total)} - Cor: ${money(cor)} - Payout: ${money(payout)} - Over: ${money(overAmt)} + Over Payout: ${overPayout?money(overPayout):'No'}</div>`;
+  }
+  dailyOut.innerHTML=html+tableReport(Object.values(m));
+  toast('Daily Result Updated ✅','success');
+  addAudit('SAVE_DAILY_RESULT',`AM=${am} PM=${pm}`);
+}
+
+function fillNames(){if(!imgName)return;let names=[...new Set(visibleRecords().map(r=>imageReportNameFor(r)))].filter(Boolean).sort(),cur=imgName.value;imgName.innerHTML=names.map(n=>`<option>${n}</option>`).join('')||'<option>No Name</option>';if(names.includes(cur))imgName.value=cur}
+function cust(name,s,pn,cor){let rs=visibleRecords().filter(r=>imageReportNameFor(r)===name&&r.s===s),total=rs.reduce((a,b)=>a+num(b.amt),0),pAmt=/^\d{2}$/.test(pn)?rs.filter(r=>r.n===pn).reduce((a,b)=>a+num(b.amt),0):0,pay=pAmt*rate(),c=Math.round(total*cor/100),res=total-pay-c;return{total,pay,c,res,pAmt}}
+function renderImg(){
+  if(!imgName)return;
+  let name=imgName.value||'Name',cor=+imgCor.value||memberCorRateByName(name)||defCor(),am=cust(name,'AM',imgAM.value,cor),pm=cust(name,'PM',imgPM.value,cor);
+  imgTitle.innerText=name;corBadge.innerText=cor;
+  amTot.innerText=money(am.total);amPay.innerText=money(am.pay);amCor.innerText=money(am.c);amRes.innerText=(am.res<0?'ပေးရန် ':'ရရန် ')+money(Math.abs(am.res));
+  pmTot.innerText=money(pm.total);pmPay.innerText=money(pm.pay);pmCor.innerText=money(pm.c);pmRes.innerText=(pm.res<0?'ပေးရန် ':'ရရန် ')+money(Math.abs(pm.res));
+  dt.innerText=money(am.total+pm.total);dp.innerText=money(am.pay+pm.pay);dc.innerText=money(am.c+pm.c);dr.innerText=((am.res+pm.res)<0?'ပေးရန် ':'ရရန် ')+money(Math.abs(am.res+pm.res))
+}
+function saveCustomerImage(){renderImg();drawCustomer('Report_'+(imgName.value||'Name')+'.png')}
+function shareCustomer(){renderImg();share('Report',`${imgName.value}\nT=${dt.innerText}\nP=${dp.innerText}\nC=${dc.innerText}\nR=${dr.innerText}`)}
+function drawCustomer(fn){drawText('Report',`${imgName.value}\nT=${dt.innerText}\nP=${dp.innerText}\nC=${dc.innerText}\nR=${dr.innerText}`,fn)}
+function drawText(title,text,fn){let lines=String(text).split('\n'),c=document.createElement('canvas'),x=c.getContext('2d');c.width=520;c.height=90+lines.length*30;x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.fillStyle='#111';x.font='bold 20px Arial';x.fillText(title,20,35);x.font='16px Arial';lines.forEach((l,i)=>x.fillText(l,20,75+i*30));let a=document.createElement('a');a.href=c.toDataURL('image/png');a.download=fn;a.click()}
+function download(text,name,type){let b=new Blob([text],{type}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click()}
+async function share(title,text){if(navigator.share)try{await navigator.share({title,text})}catch(e){}else location.href='viber://forward?text='+encodeURIComponent(text)}
+function renderMembers(){if(!memBody||!isAdmin())return;let mems=accounts.filter(a=>a.role==='member'&&itemShopId(a)===String(currentUser.shopId||'demo_shop'));memBody.innerHTML=mems.length?mems.map(a=>`<tr><td class="name-text">${a.memberName}</td><td>${a.email||a.username}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${a.cor||defCor()}%</td><td>${a.active===false?'OFF':'ON'}</td><td><button class="btn btn-sm btn-warning" onclick="editMemberAccount('${a.id}')">E</button> <button class="btn btn-sm btn-outline-${a.active===false?'success':'secondary'}" onclick="toggleMemberAccount('${a.id}')">${a.active===false?'ON':'OFF'}</button> <button class="btn btn-sm btn-danger" onclick="deleteMemberAccount('${a.id}')">D</button></td></tr>`).join(''):'<tr><td colspan="5" class="text-center text-muted">No Members</td></tr>'}
+function resetMemberForm(){editMemberId=null;mName.value='';mUser.value='';mPass.value='';if(mPhone)mPhone.value='';if(mCor)mCor.value=''}
+async function saveMemberAccount(){
+  if(!isAdmin())return;
+  let memberName=mName.value.trim(),phone=(mPhone&&mPhone.value||'').trim(),email=mUser.value.trim().toLowerCase(),password=mPass.value.trim(),cor=Number((mCor&&mCor.value)||settings.cor||13);
+  if(!memberName||!phone||!email)return alert('Member Name / Phone / Email ဖြည့်ပါ');
+  if(!email.includes('@'))return alert('Email ပုံစံမှန်မှန်ဖြည့်ပါ ဥပမာ member2@test.com');
+  let dup=accounts.find(a=>String(a.email||a.username||a.id||'').toLowerCase()===email&&a.id!==editMemberId);
+  if(dup)return alert('Email တူနေပါသည်');
+  try{
+    if(editMemberId){
+      let a=accounts.find(x=>x.id===editMemberId);
+      if(a){a.memberName=memberName;a.phone=phone;a.email=email;a.username=email;a.cor=cor;a.shopId=a.shopId||currentUser.shopId;a.shopName=a.shopName||currentUser.shopName}
+      await setDoc(COL_ACCOUNTS,a.uid||a.id,a);
+      if(password)alert('Password ပြောင်းရန် Firebase Authentication ထဲမှ ပြောင်းပါ။ ဒီနေရာမှာ mapping ကိုသာ update လုပ်ထားပါသည်။');
+    }else{
+      if(!password)return alert('Member အသစ်အတွက် Password ဖြည့်ပါ');
+      let rr=await createFirebaseUser(email,password);let newUid=rr.localId;
+      let a={id:newUid,uid:newUid,email,username:email,role:'member',memberName,phone,cor,shopId:currentUser.shopId,shopName:currentUser.shopName,active:true,createdAt:Date.now()};
+      accounts.push(a);await setDoc(COL_ACCOUNTS,newUid,a);
+    }
+    resetMemberForm();renderMembers();setCloudStatus('Cloud: Member Saved ✅','success');toast('Member Saved ✅','success');await addAudit('SAVE_MEMBER',email+' / '+phone+' / cor '+cor);alert('Member Account သိမ်းပြီးပါပြီ');
+  }catch(e){setCloudStatus('Member Save Error: '+e.message,'danger');alert('Member Save Error: '+e.message)}
+}
+function editMemberAccount(id){let a=accounts.find(x=>x.id===id);if(!a)return;editMemberId=id;mName.value=a.memberName;mUser.value=a.email||a.username||a.id;mPass.value='';if(mPhone)mPhone.value=a.phone||'';if(mCor)mCor.value=a.cor||defCor();window.scrollTo({top:0,behavior:'smooth'})}
+async function toggleMemberAccount(id){let a=accounts.find(x=>x.id===id);if(!a)return;a.active=a.active===false?true:false;await setDoc(COL_ACCOUNTS,a.id,a);renderMembers();setCloudStatus('Cloud: Member Status Updated','success')}
+async function deleteMemberAccount(id){let a=accounts.find(x=>x.id===id);if(!a)return;let has=records.some(r=>String(r.memberId).toLowerCase()===String(id).toLowerCase());if(has&&!confirm('ဒီ Member မှာ records ရှိနေပါသည်။ Account mapping ကိုဖျက်မလား? Records မဖျက်ပါ။'))return;try{await delDocByPath(docUrl(COL_ACCOUNTS,id));accounts=accounts.filter(x=>x.id!==id);renderMembers();setCloudStatus('Cloud: Member Deleted','success')}catch(e){alert(e.message)}}
+function applySettingsUI(){
+  let eRate=$('setRate');if(!eRate)return;
+  eRate.value=rate();
+  if($('setCor'))setCor.value=defCor();
+  if($('setAppName'))setAppName.value=settings.appName||'RecordManager_Pro';
+  if($('setOwner'))setOwner.value=settings.owner||'';
+  if($('setStartDate'))setStartDate.value=settings.startDate||firstRecordDate()||today();
+  if($('setEndDate'))setEndDate.value=settings.endDate||'';
+  if($('setExpireDate'))setExpireDate.value=settings.expireDate||'';
+  if($('setExpireTime'))setExpireTime.value=settings.expireTime||'23:59';
+  if($('setNotice'))setNotice.value=settings.notice||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ';
+  if($('setPhone'))setPhone.value=settings.phone||'09773121226';
+  if($('setLicensePass'))setLicensePass.value=settings.licensePass||'';
+  let sc=schedule();
+  if($('setOpenAM'))setOpenAM.value=sc.openAM;
+  if($('setCloseAM'))setCloseAM.value=sc.closeAM;
+  if($('setOpenPM'))setOpenPM.value=sc.openPM;
+  if($('setClosePM'))setClosePM.value=sc.closePM;
+  if($('imgCor')&&!imgCor.value)imgCor.value=defCor();
+  applyPValues();
+}
+async function saveGeneralSettings(){
+  settings.rate=Number(setRate.value||80);settings.cor=Number(setCor.value||13);settings.appName=setAppName.value||'RecordManager_Pro';settings.owner=setOwner.value||'';
+  settings.startDate=setStartDate?.value||settings.startDate||today();
+  settings.endDate=setEndDate?.value||settings.endDate||'';
+  settings.sessionSchedule={
+    openAM:$('setOpenAM')?.value||'00:00',
+    closeAM:$('setCloseAM')?.value||'12:00',
+    openPM:$('setOpenPM')?.value||'12:01',
+    closePM:$('setClosePM')?.value||'16:30'
+  };
+  await saveSet();toast('General Settings သိမ်းပြီးပါပြီ','success');renderAll();updateSessionTimer();setCloudStatus('Cloud: Settings Saved ✅','success')
+}
+function openLicenseSettings(){let pass=prompt('License Settings Password ရိုက်ပါ');if(pass===(settings.licensePass||'4321')){licenseBox.style.display='block';applySettingsUI()}else alert('Password မှားနေပါသည်')}
+async function saveLicenseSettings(){settings.expireDate=setExpireDate.value||'';settings.expireTime=setExpireTime.value||'23:59';settings.notice=setNotice.value||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ';settings.phone=setPhone.value||'09773121226';settings.licensePass=setLicensePass.value||settings.licensePass||'4321';await saveSet();alert('License Settings သိမ်းပြီးပါပြီ');setCloudStatus('Cloud: License Saved ✅','success')}
+function isExpired(){if(!settings.expireDate)return false;let exp=new Date(settings.expireDate+'T'+(settings.expireTime||'23:59')+':00');return Date.now()>exp.getTime()}
+function showLock(){app.classList.remove('active');loginPage.classList.remove('active');lockPage.classList.add('active');lockMsg.innerText=settings.notice||'သက်တမ်းကုန်ဆုံးသွားပါပြီ။';lockContact.innerText='သက်တမ်းတိုးရန် ဆက်သွယ်ပါ '+(settings.phone||'09773121226')}
+function checkLock(){if(isExpired())showLock();return isExpired()}
+
+function firestoreRulesText(){
+return `rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // RecordManager v1.4.6 Safe Compatibility Rules
+    // Public မဟုတ်ပါ — Firebase Authentication login ဝင်ထားသူများသာ သုံးနိုင်သည်။
+    // v1.4.x app versions မပိတ်စေရန် recordmanager/main အောက်ကို authenticated-only ဖွင့်ထားသည်။
+    // App ထဲတွင် shopId filter ဖြင့် Admin/Member data ခွဲထားသည်။
+    match /recordmanager/main/{document=**} {
+      allow read, write: if signedIn();
+    }
+
+    // အခြား collection များကို ပိတ်ထားသည်။
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+`;
+}
+
+function downloadRules(){download(firestoreRulesText(),'firestore_rules_v1_4_6_safe.rules','text/plain');toast('Safe Rules file downloaded','success')}
+
+
+function contactAccounts(){
+  if(!currentUser)return [];
+  let same=accounts.filter(a=>itemShopId(a)===String(currentUser.shopId||'demo_shop')&&a.active!==false);
+  if(isAdmin())return same.filter(a=>a.role==='member');
+  return same.filter(a=>a.role==='admin');
+}
+function renderMessageContacts(){
+  if(!msgTo)return;
+  let cs=contactAccounts();
+  let old=msgTo.value;
+  msgTo.innerHTML=cs.map(a=>`<option value="${a.uid||a.id}">${a.memberName||a.email} (${a.role})</option>`).join('')||'<option value="">No contact</option>';
+  if([...msgTo.options].some(o=>o.value===old))msgTo.value=old;
+  renderContactInfo();
+}
+function selectedContact(){
+  let id=msgTo?.value||'';return contactAccounts().find(a=>String(a.uid||a.id)===String(id))||contactAccounts()[0]||null;
+}
+function renderContactInfo(){
+  if(!contactInfo)return;
+  let c=selectedContact();
+  contactInfo.innerHTML=c?`Email: ${c.email||''}<br>Phone: <a class="phone-link" href="tel:${c.phone||''}">${c.phone||''}</a>`:'No contact';
+}
+function chatRows(){
+  let c=selectedContact();if(!currentUser||!c)return [];
+  let me=String(currentUser.uid||currentUser.id), other=String(c.uid||c.id);
+  return messages.filter(m=>sameShop(m)&&((m.fromUid===me&&m.toUid===other)||(m.fromUid===other&&m.toUid===me))).sort((a,b)=>num(a.createdAt)-num(b.createdAt));
+}
+function renderMessages(){
+  if(!msgList)return;
+  renderMessageContacts();renderContactInfo();
+  let rows=chatRows(),me=String(currentUser?.uid||currentUser?.id||'');
+  msgList.innerHTML=rows.length?rows.map(m=>`<div class="msg-bubble ${m.fromUid===me?'msg-me':'msg-other'}"><div>${String(m.text||'').replaceAll('<','&lt;')}</div><div class="msg-meta">${m.fromName||m.fromEmail} • ${m.date||''} ${m.time||''}</div></div>`).join(''):'<div class="alert alert-secondary">No messages yet</div>';
+  msgList.scrollTop=msgList.scrollHeight;
+}
+async function sendMessage(){
+  let c=selectedContact(),text=(msgText?.value||'').trim();
+  if(!c)return alert('Contact မရှိပါ');
+  if(!text)return alert('Message ရိုက်ပါ');
+  try{
+    setBusy(true,'Sending message...');
+    let msg={shopId:currentUser.shopId,shopName:currentUser.shopName,fromUid:currentUser.uid||currentUser.id,fromEmail:currentUser.email,fromName:currentUser.memberName,fromRole:currentUser.role,toUid:c.uid||c.id,toEmail:c.email,toName:c.memberName,toRole:c.role,text,date:today(),time:time(),createdAt:Date.now(),read:false};
+    let saved=await addDoc(COL_MSGS,msg);messages.push(saved);msgText.value='';renderMessages();toast('Message Sent ✅','success');await addAudit('SEND_MESSAGE','to '+(c.email||c.memberName));
+  }catch(e){alert('Message Send Error: '+e.message);setCloudStatus('Message Error: '+e.message,'danger')}
+  finally{setBusy(false)}
+}
+
+function backupJSON(){download(JSON.stringify({version:'1.5.0-pwa-install-deploy',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v150_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
+function restoreJSON(e){let f=e.target.files[0];if(!f)return;let reader=new FileReader();reader.onload=async()=>{try{let d=JSON.parse(reader.result);if(!confirm('Backup data ကို Cloud ထဲသို့ ထည့်မည်။ လက်ရှိစာရင်းကို မဖျက်ဘဲ ထပ်ပေါင်းပါမည်။'))return;let newRecords=d.records||[],newExports=d.exportsL||d.limitExports||[];for(const r of newRecords){delete r._path;delete r.docId;let saved=await addDoc(COL_RECORDS,r);records.push(saved)}for(const x of newExports){delete x._path;delete x.docId;let saved=await addDoc(COL_EXPORTS,x);exportsL.push(saved)}if(d.settings){settings={...settings,...d.settings};await saveSet()}renderAll();applySettingsUI();renderMembers();alert('Restore to Cloud ပြီးပါပြီ')}catch(err){alert('Backup file မမှန်ပါ / Restore Error: '+err.message)}};reader.readAsText(f)}
+async function importOldData(){if(!isAdmin())return;let keys=['RM_v130_records','RM_v126_records','RM_v125_records','RM_v124_records','RM_v123_records','RM_v122_records'];let old=[];for(let k of keys){old=localLoad(k,[]);if(old.length)break}if(!old.length)return alert('Old local data မတွေ့ပါ');let memberEmail=prompt('Old data ကို ဘယ် Member Email ဖြင့် Import မလဲ?','legacy@test.com')||'legacy@test.com';let memberName=prompt('Commission Name','Legacy Commission')||'Legacy Commission';if(!accounts.some(a=>a.id===memberEmail)){let a={id:memberEmail,email:memberEmail,username:memberEmail,role:'member',memberName,active:false};accounts.push(a);await setDoc(COL_ACCOUNTS,a.id,a)}for(const r of old){let rec={...r,memberId:memberEmail,memberName,playerName:r.playerName||r.name||'',name:r.name||r.playerName||''};delete rec._path;delete rec.docId;let saved=await addDoc(COL_RECORDS,rec);records.push(saved)}renderAll();renderMembers();alert('Old data imported to Cloud: '+old.length)}
+async function clearTodayRecords(){if(!isAdmin())return; if(!confirm('ဒီနေ့စာရင်းများကို Cloud မှ ဖျက်မလား?'))return;let d=today(),targets=records.filter(r=>r.d===d);try{setBusy(true,'Clearing today...');for(const r of targets)await delDocByPath(r._path);records=records.filter(r=>r.d!==d);await save();renderAll();setCloudStatus('Cloud: Today Records Cleared','success');toast('Today Records Cleared','success');await addAudit('CLEAR_TODAY','rows '+targets.length)}finally{setBusy(false)}}
+async function clearLimitExports(){if(!isAdmin())return;if(!confirm('Limit Export Records များကို Cloud မှ ဖျက်မလား?'))return;try{setBusy(true,'Clearing limit exports...');let c=exportsL.length;for(const x of exportsL)await delDocByPath(x._path);exportsL=[];await saveEx();renderAll();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Exports Cleared','success');toast('Limit Exports Cleared','success');await addAudit('CLEAR_LIMIT_EXPORTS','rows '+c)}finally{setBusy(false)}}
+async function clearAllRecords(){if(!isAdmin())return;if(!confirm('စာရင်းအားလုံးကို Cloud မှ ဖျက်မလား?'))return;try{setBusy(true,'Clearing all records...');let c=records.length,e=exportsL.length;for(const r of records)await delDocByPath(r._path);for(const x of exportsL)await delDocByPath(x._path);records=[];exportsL=[];await save();await saveEx();renderAll();setCloudStatus('Cloud: All Records Cleared','success');toast('All Records Cleared','success');await addAudit('CLEAR_ALL','records '+c+' exports '+e)}finally{setBusy(false)}}
+
+function ymd(d){return d.toISOString().slice(0,10)}
+function firstRecordDate(){let ds=allVisibleRecords().map(r=>r.d).filter(Boolean).sort();return ds[0]||''}
+function dateAdd(str,days){let d=new Date(str+'T00:00:00');d.setDate(d.getDate()+days);return ymd(d)}
+function weekdayName(str){return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(str+'T00:00:00').getDay()]}
+function isMonFri(str){let x=new Date(str+'T00:00:00').getDay();return x>=1&&x<=5}
+function recordsByDateSession(date,s){return allVisibleRecords().filter(r=>r.d===date&&(!s||r.s===s))}
+function resultForDate(date){normalizeSettings();return settings.results?.[date]||{}}
+function setHistoryThisWeek(){
+  let hs=$('histStart'),he=$('histEnd');if(!hs||!he)return;
+  let now=new Date(),day=now.getDay(),diff=(day===0?-6:1-day),mon=new Date(now);mon.setDate(now.getDate()+diff);let fri=new Date(mon);fri.setDate(mon.getDate()+4);
+  hs.value=ymd(mon);he.value=ymd(fri);renderHistory();
+}
+function renderHistory(){
+  let hs=$('histStart'),he=$('histEnd'),hb=$('histBody'),sumBox=$('histSummary'),cal=$('histCalendar');
+  if(!hs||!he||!hb||!sumBox)return;
+  let start=hs.value||settings.startDate||firstRecordDate()||today(),end=he.value||settings.endDate||today();
+  if(start>end){let tmp=start;start=end;end=tmp}
+  hs.value=start;he.value=end;
+  let rows=[],d=start,guard=0;
+  while(d<=end&&guard<370){
+    if(isMonFri(d)){
+      let rb=resultForDate(d),am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM');
+      let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0);
+      rows.push({date:d,day:weekdayName(d),amP:rb.amP||'',pmP:rb.pmP||'',amTotal,pmTotal,total:amTotal+pmTotal});
+    }
+    d=dateAdd(d,1);guard++;
+  }
+  let sumAM=rows.reduce((a,b)=>a+b.amTotal,0),sumPM=rows.reduce((a,b)=>a+b.pmTotal,0),sum=sumAM+sumPM;
+  sumBox.innerHTML=`<div class="smart-mini"><small>Days</small><br><b>${rows.length}</b></div><div class="smart-mini"><small>AM Total</small><br><b>${money(sumAM)}</b></div><div class="smart-mini"><small>PM Total</small><br><b>${money(sumPM)}</b></div><div class="smart-mini"><small>Range Total</small><br><b>${money(sum)}</b></div>`;
+  if(cal)cal.innerHTML=rows.length?rows.map(r=>`<div class="cal-cell"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="cal-num cal-am"><span>AM</span><b>${r.amP||'-'}</b></div><div class="cal-num cal-pm"><span>PM</span><b>${r.pmP||'-'}</b></div><small>AM ${money(r.amTotal)} / PM ${money(r.pmTotal)}</small></div>`).join(''):'<div class="alert alert-secondary">No AM/PM P history</div>';
+  hb.innerHTML=rows.length?rows.map(r=>`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
+}
+
+function safeRun(label,fn){try{if(typeof fn==='function')fn()}catch(e){console.warn(label,e);toast(label+' render warning: '+e.message,'warning')}}
+
+
+function renderAll(){
+  safeRun('Role UI',applyRoleUI);
+  safeRun('Dashboard',renderDash);
+  safeRun('Records',renderRecords);
+  safeRun('Image names',fillNames);
+  safeRun('Image',renderImg);
+  safeRun('Members',renderMembers);
+  safeRun('Settings',applySettingsUI);
+  safeRun('Logs',renderLogs);
+  safeRun('Message Contacts',renderMessageContacts);
+  safeRun('Messages',renderMessages);
+  safeRun('Close Status',renderCloseStatus);
+  safeRun('Result Book',renderResultBookStatus);
+  safeRun('History',renderHistory);
+  safeRun('Session Timer',updateSessionTimer);
+}
+
+
+// v1.5.0 PWA Install / Service Worker
+let deferredInstallPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferredInstallPrompt=e;
+  let b=$('installBtn');if(b)b.classList.remove('d-none');
+});
+window.addEventListener('appinstalled',()=>{let b=$('installBtn');if(b)b.classList.add('d-none');toast('App installed ✅','success')});
+async function installPWA(){
+  if(deferredInstallPrompt){
+    deferredInstallPrompt.prompt();
+    try{await deferredInstallPrompt.userChoice}catch(e){}
+    deferredInstallPrompt=null;let b=$('installBtn');if(b)b.classList.add('d-none');
+  }else{
+    toast('Chrome menu ⋮ → Add to Home screen / Install app ကိုနှိပ်ပါ','info');
+  }
+}
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    if(location.protocol==='http:'||location.protocol==='https:'){
+      navigator.serviceWorker.register('./sw.js').then(()=>console.log('Service Worker registered')).catch(e=>console.warn('SW error',e));
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  ['rName','rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].forEach(id=>$(id)?.addEventListener('focus',()=>focusField(id)));
+  applySettingsUI();
+  setInterval(checkLock,60000);
+  setInterval(updateSessionTimer,1000);
+  window.__rmWorkDate=today();setInterval(()=>{if(window.__rmWorkDate!==today()){window.__rmWorkDate=today();renderAll();toast('နေ့သစ် စာရင်းအသစ် စတင်ပါပြီ ✅','success')}},60000);
+  u.addEventListener('keydown',e=>{if(e.key==='Enter')p.focus()});
+  p.addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+  rName.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();rCode.focus();focusField('rCode')}});
+  rCode.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();rAmt.focus();focusField('rAmt')}});
+  rAmt.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();saveGroup()}});
+  currentUser=null;token='';uid='';authEmail='';
+  loginPage.classList.add('active');app.classList.remove('active');lockPage.classList.remove('active');
+  u.focus();focusField('rCode');setCloudStatus('Cloud: Please login','info');
+  [['amP','AM'],['dAmP','AM'],['imgAM','AM'],['pmP','PM'],['dPmP','PM'],['imgPM','PM']].forEach(([id,k])=>$(id)?.addEventListener('input',e=>{setP(k,e.target.value,true);renderImg()}));
+
+  window.addEventListener('online',updateNetBadge);
+  window.addEventListener('offline',updateNetBadge);
+  updateNetBadge();
+
+});
+</script>
+</body>
+</html>
