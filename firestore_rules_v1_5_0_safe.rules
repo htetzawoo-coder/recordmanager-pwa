@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // RecordManager v1.4.5 Safe Compatibility Rules
+    // Public မဟုတ်ပါ — Firebase Authentication login ဝင်ထားသူများသာ သုံးနိုင်သည်။
+    // v1.4.x app versions မပိတ်စေရန် recordmanager/main အောက်ကို authenticated-only ဖွင့်ထားသည်။
+    // App ထဲတွင် shopId filter ဖြင့် Admin/Member data ခွဲထားသည်။
+    match /recordmanager/main/{document=**} {
+      allow read, write: if signedIn();
+    }
+
+    // အခြား collection များကို ပိတ်ထားသည်။
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
