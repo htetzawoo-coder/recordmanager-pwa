@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.2 Role UI Fix</title>
+<title>RecordManager_2D_Logic_Pro v1.5.3 Member Close P Lock</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.2 Role UI Fix */
+/* v1.5.3 Member Close P Lock */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -122,7 +122,7 @@
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.2 Role UI Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.3 Member Close P Lock</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
@@ -135,7 +135,7 @@
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.2 Role UI Fix — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <p class="small-note mb-2">v1.5.3 Member Close P Lock — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -496,7 +496,7 @@
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.2 Role UI Fix
+   RecordManager_2D_Logic_Pro v1.5.3 Member Close P Lock
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -786,7 +786,7 @@ function setP(kind,val,saveIt=true){
   ids.forEach(id=>{let e=$(id);if(e&&e.value!==val)e.value=val});
   let rb=resultBook();
   if(kind==='AM'){settings.amP=val;rb.amP=val}else{settings.pmP=val;rb.pmP=val}
-  if(saveIt&&currentUser)saveSet().catch(()=>{});
+  if(saveIt&&currentUser&&isAdmin())saveSet().catch(()=>{});
   if($('img'))renderImg();
 }
 function applyPValues(){
@@ -796,6 +796,17 @@ function applyPValues(){
   if(am)setP('AM',String(am),false);
   if(pm)setP('PM',String(pm),false);
   renderResultBookStatus();
+}
+
+function lockMemberPInputs(){
+  let lock=isMember();
+  ['amP','pmP','dAmP','dPmP','imgAM','imgPM'].forEach(id=>{let e=$(id);if(e){e.readOnly=lock;e.classList.toggle('bg-light',lock);e.title=lock?'Admin မှသတ်မှတ်သော P Number ဖြစ်ပါသည်':''}});
+}
+function currentP(kind){let rb=resultBook();return String(kind==='AM'?(rb.amP||settings.amP||''):(rb.pmP||settings.pmP||''));}
+function setEntryLocked(locked){
+  if(!isMember())locked=false;
+  ['rName','rCode','rAmt'].forEach(id=>{let e=$(id);if(e)e.disabled=locked});
+  document.querySelectorAll('#entry .keypad button').forEach(b=>b.disabled=locked);
 }
 
 
@@ -892,13 +903,14 @@ function applyRoleUI(){
     else hide=false;
     btn.classList.toggle('hidden-by-role',hide);
   });
-  if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;}
+  if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;;lockMemberPInputs();}
 function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus()}
 function toggleTheme(){document.body.classList.toggle('dark')}
-function key(v){if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
+function key(v){if(isMember()&&!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။');if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
 function delKey(){let e=$(currentField);if(e){e.value=e.value.slice(0,-1);e.focus()}}
 function clearKey(){let e=$(currentField);if(e){e.value='';e.focus()}}
 function enterAction(){
+  if(isMember()&&!isEntryOpen()){alert('Entry ပိတ်ထားပါသည်။ Close time ကျော်ပြီးပါပြီ။');return}
   if(isSaving){alert('Cloud ထဲသို့ သိမ်းနေပါသည်။ ခဏစောင့်ပါ');return}
   if(currentField==='rName'){
     if(!rName.value.trim()){alert('Name လိုအပ်ပါသည်');rName.focus();focusField('rName');return}
@@ -953,6 +965,7 @@ function updateSessionTimer(){
     if(remain<=5*60*1000 && remain>4*60*1000 && !alarmState[key+'_5']){alarmState[key+'_5']=1;beep(760,500);toast(info.session+' Close time 5 မိနစ်သာလိုပါတော့သည်','warning')}
     if(remain<=20000 && remain>0){let sec=Math.ceil(remain/1000);if(!alarmState[key+'_s_'+sec]){alarmState[key+'_s_'+sec]=1;beep(980,80)}}
   }
+  setEntryLocked(isMember()&&!info.open);
   renderCloseStatus(false);
 }
 function uniq(a){return[...new Set(a)]}
@@ -1179,16 +1192,18 @@ function tableReport(d){
     d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${money(x.cor)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>'
 }
 function settle(s){
-  let pn=s==='AM'?amP.value:pmP.value,out=s==='AM'?amOut:pmOut;
-  if(!/^\d{2}$/.test(pn))return alert('P Number');
-  setP(s,pn,true);
+  let out=s==='AM'?amOut:pmOut;
+  let pn=isAdmin()?(s==='AM'?amP.value:pmP.value):currentP(s);
+  if(!/^\d{2}$/.test(pn))return alert('Admin မှ '+s+' P Number မသတ်မှတ်ရသေးပါ');
+  setP(s,pn,isAdmin());
   out.innerHTML=(isAdmin()?summaryHTML(adminFinalSummary(s,pn)):'')+tableReport(settleData(s,pn));
   toast(s+' Result Updated ✅','success');
-  addAudit('SAVE_'+s+'_RESULT','P='+pn);
+  if(isAdmin())addAudit('SAVE_'+s+'_RESULT','P='+pn);
 }
 function dailyReport(){
-  let am=String(dAmP.value||settings.amP||''),pm=String(dPmP.value||settings.pmP||'');
-  if(am)setP('AM',am,true); if(pm)setP('PM',pm,true);
+  let am=isAdmin()?String(dAmP.value||settings.amP||''):currentP('AM'),pm=isAdmin()?String(dPmP.value||settings.pmP||''):currentP('PM');
+  if(!/^\d{2}$/.test(am)||!/^\d{2}$/.test(pm))return alert('Admin မှ AM P / PM P မသတ်မှတ်ရသေးပါ');
+  if(am)setP('AM',am,isAdmin()); if(pm)setP('PM',pm,isAdmin());
   let a=settleData('AM',am),p=settleData('PM',pm),m={};
   [...a,...p].forEach(x=>{if(!m[x.name])m[x.name]={name:x.name,total:0,pAmt:0,pay:0,cor:0,net:0};m[x.name].total+=x.total;m[x.name].pAmt+=x.pAmt;m[x.name].pay+=x.pay;m[x.name].cor+=x.cor;m[x.name].net=m[x.name].total-m[x.name].pay-m[x.name].cor});
   let html='';
@@ -1360,7 +1375,7 @@ async function sendMessage(){
   finally{setBusy(false)}
 }
 
-function backupJSON(){download(JSON.stringify({version:'1.5.2-role-ui-fix',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v152_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
+function backupJSON(){download(JSON.stringify({version:'1.5.3-member-close-p-lock',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v153_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
 function restoreJSON(e){let f=e.target.files[0];if(!f)return;let reader=new FileReader();reader.onload=async()=>{try{let d=JSON.parse(reader.result);if(!confirm('Backup data ကို Cloud ထဲသို့ ထည့်မည်။ လက်ရှိစာရင်းကို မဖျက်ဘဲ ထပ်ပေါင်းပါမည်။'))return;let newRecords=d.records||[],newExports=d.exportsL||d.limitExports||[];for(const r of newRecords){delete r._path;delete r.docId;let saved=await addDoc(COL_RECORDS,r);records.push(saved)}for(const x of newExports){delete x._path;delete x.docId;let saved=await addDoc(COL_EXPORTS,x);exportsL.push(saved)}if(d.settings){settings={...settings,...d.settings};await saveSet()}renderAll();applySettingsUI();renderMembers();alert('Restore to Cloud ပြီးပါပြီ')}catch(err){alert('Backup file မမှန်ပါ / Restore Error: '+err.message)}};reader.readAsText(f)}
 async function importOldData(){if(!isAdmin())return;let keys=['RM_v130_records','RM_v126_records','RM_v125_records','RM_v124_records','RM_v123_records','RM_v122_records'];let old=[];for(let k of keys){old=localLoad(k,[]);if(old.length)break}if(!old.length)return alert('Old local data မတွေ့ပါ');let memberEmail=prompt('Old data ကို ဘယ် Member Email ဖြင့် Import မလဲ?','legacy@test.com')||'legacy@test.com';let memberName=prompt('Commission Name','Legacy Commission')||'Legacy Commission';if(!accounts.some(a=>a.id===memberEmail)){let a={id:memberEmail,email:memberEmail,username:memberEmail,role:'member',memberName,active:false};accounts.push(a);await setDoc(COL_ACCOUNTS,a.id,a)}for(const r of old){let rec={...r,memberId:memberEmail,memberName,playerName:r.playerName||r.name||'',name:r.name||r.playerName||''};delete rec._path;delete rec.docId;let saved=await addDoc(COL_RECORDS,rec);records.push(saved)}renderAll();renderMembers();alert('Old data imported to Cloud: '+old.length)}
 async function clearTodayRecords(){if(!isAdmin())return; if(!confirm('ဒီနေ့စာရင်းများကို Cloud မှ ဖျက်မလား?'))return;let d=today(),targets=records.filter(r=>r.d===d);try{setBusy(true,'Clearing today...');for(const r of targets)await delDocByPath(r._path);records=records.filter(r=>r.d!==d);await save();renderAll();setCloudStatus('Cloud: Today Records Cleared','success');toast('Today Records Cleared','success');await addAudit('CLEAR_TODAY','rows '+targets.length)}finally{setBusy(false)}}
@@ -1431,6 +1446,7 @@ function renderAll(){
   safeRun('Messages',renderMessages);
   safeRun('Close Status',renderCloseStatus);
   safeRun('Result Book',renderResultBookStatus);
+  safeRun('Member P Lock',lockMemberPInputs);
   safeRun('History',renderHistory);
   safeRun('Owner Dashboard',renderOwnerDashboard);
   safeRun('Session Timer',updateSessionTimer);
