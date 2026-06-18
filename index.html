@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.3 Member Close P Lock</title>
+<title>RecordManager_2D_Logic_Pro v1.5.4 Six Fixes</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-:root{--bg:#f4f6fb;--card:#fff;--text:#111827;--muted:#64748b;--border:#e5e7eb;--primary:#2563eb;--purple:#7c3aed}body{background:var(--bg);color:var(--text);font-family:Arial,'Noto Sans Myanmar',sans-serif;padding-bottom:30px}.dark{--bg:#111827;--card:#1f2937;--text:#f9fafb;--muted:#cbd5e1;--border:#334155}.card{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 25px #0001;margin-bottom:16px}.page{display:none}.page.active{display:block}.appbar{position:sticky;top:0;z-index:1000;border-radius:0 0 18px 18px}.tabs{position:sticky;top:58px;z-index:999;background:var(--bg);padding:8px 6px;white-space:nowrap;overflow-x:auto;border-bottom:1px solid var(--border)}.tabs button{border:0;border-radius:999px;padding:9px 12px;margin:2px;background:var(--card);color:var(--muted);font-weight:800;box-shadow:0 4px 12px #0001}.tabs button.active{background:var(--primary);color:#fff}.form-control,.form-select{border:1px solid var(--border);border-radius:14px;padding:12px;background:var(--card);color:var(--text);font-weight:700}.dark .form-control,.dark .form-select{background:#0f172a;color:#f9fafb;border-color:#334155}.focused-input{outline:3px solid #60a5fa!important}.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.keypad button{min-height:56px;font-weight:900;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);box-shadow:0 5px 12px #0001}.keypad .enter{grid-column:span 4;min-height:72px;background:linear-gradient(135deg,#10b981,#047857);color:#fff;font-size:24px;border:0}.keypad small{font-size:11px;color:var(--muted)}.name-text{font-weight:900;color:var(--purple)}.nums{display:none;background:#eff6ff;border-radius:10px;padding:8px;margin-top:6px;font-size:12px;line-height:1.6;color:#1e3a8a}.dark .nums{background:#0f2a4a;color:#bfdbfe}.limit-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:11px}.cell{background:var(--card);border:1px solid var(--border);border-radius:6px;text-align:center;padding:5px 1px}.hit{background:#dc2626!important;color:#fff!important;font-weight:900;box-shadow:0 0 0 2px #7f1d1d inset}.neg{background:#fee2e2!important;color:#991b1b!important;font-weight:900}.pos{background:#dcfce7!important;color:#166534!important;font-weight:900}.dark .table{--bs-table-bg:var(--card);--bs-table-color:var(--text);--bs-table-border-color:var(--border)}.report-shell{background:linear-gradient(135deg,#e0f7fa,#fff 40%,#fff1f2);padding:14px;border-radius:20px}#imgBox{background:#fff;color:#111;max-width:610px;margin:auto;padding:20px;border-radius:22px;border:1px solid #e5e7eb;box-shadow:0 12px 28px #0002}.img-header{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}.img-title{font-size:34px;font-weight:1000;color:#111;text-shadow:2px 2px 0 #facc15;word-break:break-word}.badge13{border:3px solid #22d3ee;color:#0891b2;background:#ecfeff;font-size:24px;font-weight:1000;padding:6px 12px;border-radius:12px;min-width:86px;text-align:center}.session-card{background:#fafafa;border:1px solid #e5e7eb;border-radius:18px;padding:14px;height:100%}.ap{font-size:30px;color:#7c3aed;font-weight:1000;text-align:center}.redlbl{color:#ef4444;font-weight:900;font-size:15px;margin-top:10px}.val{font-weight:1000;font-size:20px;color:#111;border-bottom:1px dashed #e5e7eb}.daily-title{text-align:center;font-size:32px;font-weight:1000;text-shadow:2px 2px 0 #facc15;margin:14px 0 8px}.daily-box{border:4px solid #67e8f9;background:#f8fafc;margin:8px auto 12px;padding:14px 24px;max-width:430px;border-radius:16px}.daily-row{font-size:28px;color:#65a30d;font-weight:1000}.action-text{text-align:center;font-weight:1000;color:#e11d48;text-shadow:1px 1px 0 #111}.lock-screen{min-height:70vh;display:flex;align-items:center;justify-content:center}.lock-card{max-width:520px;margin:auto;border:2px solid #ef4444}.logo-tile{width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:1000;margin:auto;box-shadow:0 8px 18px #0002}.license-box{display:none;border:2px dashed #ef4444;border-radius:16px;padding:12px;margin-top:12px}@media(min-width:900px){.container{max-width:1320px}.tabs{position:fixed;left:0;top:58px;bottom:0;width:218px;display:flex;flex-direction:column;white-space:normal;overflow-y:auto;border-right:1px solid var(--border);border-bottom:0}.tabs button{width:100%;text-align:left;margin:4px 0}.page{margin-left:230px}.card{border-radius:16px}.keypad{max-width:560px}.table-responsive{max-height:70vh}.report-shell{max-width:760px;margin:auto}}@media print{.appbar,.tabs,button,input,select{display:none!important}.page{display:block!important;margin-left:0!important}.card{box-shadow:none!important;border:0!important}}
+:root{--bg:#f4f6fb;--card:#fff;--text:#111827;--muted:#64748b;--border:#e5e7eb;--primary:#2563eb;--purple:#7c3aed}body{background:var(--bg);color:var(--text);font-family:Arial,'Noto Sans Myanmar',sans-serif;padding-bottom:30px}.dark{--bg:#111827;--card:#1f2937;--text:#f9fafb;--muted:#cbd5e1;--border:#334155}.card{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 25px #0001;margin-bottom:16px}.page{display:none}.page.active{display:block}.appbar{position:sticky;top:0;z-index:1000;border-radius:0 0 18px 18px}.tabs{position:sticky!important;top:58px;z-index:999;background:var(--bg);padding:8px 6px;white-space:nowrap;overflow-x:auto;border-bottom:1px solid var(--border)}.tabs button{border:0;border-radius:999px;padding:9px 12px;margin:2px;background:var(--card);color:var(--muted);font-weight:800;box-shadow:0 4px 12px #0001}.tabs button.active{background:var(--primary);color:#fff}.form-control,.form-select{border:1px solid var(--border);border-radius:14px;padding:12px;background:var(--card);color:var(--text);font-weight:700}.dark .form-control,.dark .form-select{background:#0f172a;color:#f9fafb;border-color:#334155}.focused-input{outline:3px solid #60a5fa!important}.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.keypad button{min-height:56px;font-weight:900;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);box-shadow:0 5px 12px #0001}.keypad .enter{grid-column:span 4;min-height:72px;background:linear-gradient(135deg,#10b981,#047857);color:#fff;font-size:24px;border:0}.keypad small{font-size:11px;color:var(--muted)}.name-text{font-weight:900;color:var(--purple)}.nums{display:none;background:#eff6ff;border-radius:10px;padding:8px;margin-top:6px;font-size:12px;line-height:1.6;color:#1e3a8a}.dark .nums{background:#0f2a4a;color:#bfdbfe}.limit-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:11px}.cell{background:var(--card);border:1px solid var(--border);border-radius:6px;text-align:center;padding:5px 1px}.hit{background:#dc2626!important;color:#fff!important;font-weight:900;box-shadow:0 0 0 2px #7f1d1d inset}.neg{background:#fee2e2!important;color:#991b1b!important;font-weight:900}.pos{background:#dcfce7!important;color:#166534!important;font-weight:900}.dark .table{--bs-table-bg:var(--card);--bs-table-color:var(--text);--bs-table-border-color:var(--border)}.report-shell{background:linear-gradient(135deg,#e0f7fa,#fff 40%,#fff1f2);padding:14px;border-radius:20px}#imgBox{background:#fff;color:#111;max-width:610px;margin:auto;padding:20px;border-radius:22px;border:1px solid #e5e7eb;box-shadow:0 12px 28px #0002}.img-header{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}.img-title{font-size:34px;font-weight:1000;color:#111;text-shadow:2px 2px 0 #facc15;word-break:break-word}.badge13{border:3px solid #22d3ee;color:#0891b2;background:#ecfeff;font-size:24px;font-weight:1000;padding:6px 12px;border-radius:12px;min-width:86px;text-align:center}.session-card{background:#fafafa;border:1px solid #e5e7eb;border-radius:18px;padding:14px;height:100%}.ap{font-size:30px;color:#7c3aed;font-weight:1000;text-align:center}.redlbl{color:#ef4444;font-weight:900;font-size:15px;margin-top:10px}.val{font-weight:1000;font-size:20px;color:#111;border-bottom:1px dashed #e5e7eb}.daily-title{text-align:center;font-size:32px;font-weight:1000;text-shadow:2px 2px 0 #facc15;margin:14px 0 8px}.daily-box{border:4px solid #67e8f9;background:#f8fafc;margin:8px auto 12px;padding:14px 24px;max-width:430px;border-radius:16px}.daily-row{font-size:28px;color:#65a30d;font-weight:1000}.action-text{text-align:center;font-weight:1000;color:#e11d48;text-shadow:1px 1px 0 #111}.lock-screen{min-height:70vh;display:flex;align-items:center;justify-content:center}.lock-card{max-width:520px;margin:auto;border:2px solid #ef4444}.logo-tile{width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:1000;margin:auto;box-shadow:0 8px 18px #0002}.license-box{display:none;border:2px dashed #ef4444;border-radius:16px;padding:12px;margin-top:12px}@media(min-width:900px){.container{max-width:1320px}.tabs{position:fixed;left:0;top:58px;bottom:0;width:218px;display:flex;flex-direction:column;white-space:normal;overflow-y:auto;border-right:1px solid var(--border);border-bottom:0}.tabs button{width:100%;text-align:left;margin:4px 0}.page{margin-left:230px}.card{border-radius:16px}.keypad{max-width:560px}.table-responsive{max-height:70vh}.report-shell{max-width:760px;margin:auto}}@media print{.appbar,.tabs,button,input,select{display:none!important}.page{display:block!important;margin-left:0!important}.card{box-shadow:none!important;border:0!important}}
 .role-pill{font-size:12px;border-radius:999px;padding:5px 10px;background:#e0f2fe;color:#075985;font-weight:900;margin-left:6px}
 .dark .role-pill{background:#0c4a6e;color:#e0f2fe}
 .hidden-by-role{display:none!important}
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.3 Member Close P Lock */
+/* v1.5.4 Six Fixes */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -115,6 +115,18 @@
 .workday-badge{display:inline-block;border-radius:999px;background:#dcfce7;color:#166534;padding:5px 10px;font-size:12px;font-weight:1000;margin-top:6px}.dark .workday-badge{background:#14532d;color:#bbf7d0}
 .owner-badge{display:inline-block;border-radius:999px;background:#fef3c7;color:#92400e;padding:4px 9px;font-weight:1000;font-size:11px}.dark .owner-badge{background:#78350f;color:#fde68a}.owner-table td,.owner-table th{font-size:12px;vertical-align:middle}
 
+
+/* v1.5.4 six fixes */
+.tabs{backdrop-filter:blur(8px)}
+.result-clean{border-radius:18px;padding:12px;margin:10px 0;border:1px solid var(--border);box-shadow:0 6px 16px #0001}
+.result-clean.win{background:#dcfce7;color:#166534}.result-clean.lose{background:#fee2e2;color:#991b1b}
+.result-head{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed currentColor;padding-bottom:8px;margin-bottom:8px}
+.result-badge{border-radius:999px;padding:5px 10px;background:#fff;font-size:12px;font-weight:1000;color:#111}
+.result-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-weight:800}
+.result-row span:first-child{opacity:.82}.result-row b{text-align:right}
+.result-final{font-size:20px;border-top:1px dashed currentColor;margin-top:6px;padding-top:8px}
+.weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
+.closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 </style>
 </head>
 <body>
@@ -122,7 +134,7 @@
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.3 Member Close P Lock</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.4 Six Fixes</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
@@ -135,7 +147,7 @@
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.3 Member Close P Lock — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <p class="small-note mb-2">v1.5.4 Six Fixes — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -238,6 +250,12 @@
           <button onclick="key('7')">7</button><button onclick="key('8')">8</button><button onclick="key('9')">9</button><button onclick="key('/')">/</button>
           <button onclick="key('*')">*</button><button onclick="key('0')">0</button><button onclick="key('+')">+<br><small>စုံ</small></button><button onclick="key('-')">-<br><small>မ</small></button>
           <button onclick="key('A')">A<br><small>ပါဝါ</small></button><button onclick="key('Z')">Z<br><small>နက္ခ</small></button><button onclick="key('B')">B<br><small>ညီကို</small></button><button onclick="key('//')">//<br><small>အပူး</small></button>
+          <button onclick="logicBtn('reverse')">*အာ<br><small>အပြန်</small></button>
+          <button onclick="logicBtn('khway')">*ခွေ<br><small>ခွေ</small></button>
+          <button onclick="logicBtn('break')">*<br><small>ဘရိတ်</small></button>
+          <button onclick="logicBtn('apa')">*<br><small>အပါ</small></button>
+          <button onclick="logicBtn('front')">ရှေ့<br><small>1/</small></button>
+          <button onclick="logicBtn('back')">နောက်<br><small>/1</small></button>
           <button class="enter" onclick="enterAction()">ENTER ✓</button>
         </div>
       </div>
@@ -496,7 +514,7 @@
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.3 Member Close P Lock
+   RecordManager_2D_Logic_Pro v1.5.4 Six Fixes
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -734,6 +752,16 @@ async function loadCloudAll(){
   normalizeRecords(false);
   setCloudStatus('Cloud: Connected ✅', 'success');
 }
+
+async function refreshSharedSettings(){
+  try{
+    if(!currentUser||!currentUser.shopId)return;
+    let latest=(await getDoc(COL_SETTINGS,currentUser.shopId,settings))||settings;
+    let oldSchedule=JSON.stringify(settings.sessionSchedule||{});
+    settings=latest;normalizeSettings();
+    if(JSON.stringify(settings.sessionSchedule||{})!==oldSchedule){applySettingsUI();renderCloseStatus();updateSessionTimer();toast('Admin Schedule Sync Updated','info')}
+  }catch(e){console.warn('refreshSharedSettings',e.message)}
+}
 function normalizeRecords(doSave=false){
   records=records.map(r=>{
     if(!r.memberId)r.memberId=r.memberEmail||r.email||'legacy';if(!r.shopId)r.shopId='demo_shop';if(!r.shopName)r.shopName='Demo Shop';
@@ -907,6 +935,16 @@ function applyRoleUI(){
 function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus()}
 function toggleTheme(){document.body.classList.toggle('dark')}
 function key(v){if(isMember()&&!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။');if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
+function logicBtn(type){
+  focusField('rCode');let v=rCode.value||'';
+  if(type==='reverse'){rCode.value=v+'*'}
+  if(type==='khway'){rCode.value=v+'ခွေ'}
+  if(type==='break'){rCode.value='*'+v.replace(/^\*/,'')}
+  if(type==='apa'){rCode.value=v+'အပါ'}
+  if(type==='front'){rCode.value=v.replace(/\/$/,'')+'/'}
+  if(type==='back'){rCode.value='/'+v.replace(/^\//,'')}
+  rCode.focus();toast('Logic button ထည့်ပြီးပါပြီ','info')
+}
 function delKey(){let e=$(currentField);if(e){e.value=e.value.slice(0,-1);e.focus()}}
 function clearKey(){let e=$(currentField);if(e){e.value='';e.focus()}}
 function enterAction(){
@@ -1146,11 +1184,10 @@ function renderLimit(alertIt){
   if(alertIt&&over.length)alert('Over Limit / Risk တွက်ပြီးပါပြီ')
 }
 async function saveLimit(){if(!isAdmin())return alert('Admin Only');let o=overItems();if(!o.length)return alert('No Over');if(!confirm('Limit စာရင်းအတွက်သာ သိမ်းမည်။ မူရင်းစာရင်း မပြောင်းပါ။'))return;try{setBusy(true,'Saving Limit Export...');for(const x of o){let saved=await addDoc(COL_EXPORTS,{n:x.n,amt:x.over,date:today(),s:sess(),shopId:currentUser.shopId,shopName:currentUser.shopName,createdAt:Date.now()});exportsL.push(saved)}await saveEx();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Export Saved ✅','success');toast('Limit Export Saved ✅','success');await addAudit('SAVE_LIMIT_EXPORT',`count ${o.length} / over ${money(o.reduce((a,b)=>a+b.over,0))}`)}catch(e){setCloudStatus('Limit Save Error: '+e.message,'danger');alert(e.message)}finally{setBusy(false)}}
-function renderOver(){if(!isAdmin())return;if(!overContent)return;let o=overItems();overContent.innerHTML=o.length?'<table class="table table-sm"><tr><th>No</th><th>Total</th><th>Limit</th><th>Over</th><th>Balance</th></tr>'+o.map(x=>`<tr class="neg"><td>${x.n}</td><td>${money(x.total)}</td><td>${money(x.limit)}</td><td>${money(x.over)}</td><td>${money(x.balance)}</td></tr>`).join('')+'</table>':'<div class="alert alert-success">No Over</div>'}
-function exportOver(){let o=overItems();if(!o.length)return alert('No Data');download('Number,Total,Limit,Over\n'+o.map(x=>`${x.n},${x.total},${x.limit},${x.over}`).join('\n'),'Limit_Over.csv','text/csv')}
-function saveOverImage(){drawText('Limit Over',overItems().map(x=>x.n+'='+x.over).join('\n')||'No Over','Limit_Over.png')}
-function shareOver(){share('Limit Over',overItems().map(x=>x.n+'='+x.over).join('\n')||'No Over')}
-
+function renderOver(){if(!isAdmin())return;if(!overContent)return;let o=overItems();let total=o.reduce((a,b)=>a+num(b.over),0);overContent.innerHTML=o.length?'<table class="table table-sm"><tr><th>No</th><th>Number</th><th>Amount</th></tr>'+o.map((x,i)=>`<tr class="neg"><td>${i+1}</td><td>${x.n}</td><td>${money(x.over)}</td></tr>`).join('')+`<tr class="fw-bold"><td colspan="2">total.</td><td>${money(total)}</td></tr></table>`:'<div class="alert alert-success">No Over</div>'}
+function exportOver(){let o=overItems();if(!o.length)return alert('No Data');let total=o.reduce((a,b)=>a+num(b.over),0);download('No,Number,Amount\n'+o.map((x,i)=>`${i+1},${x.n},${x.over}`).join('\n')+`\ntotal,,${total}`,'Limit_Over.csv','text/csv')}
+function saveOverImage(){let o=overItems();let total=o.reduce((a,b)=>a+num(b.over),0);drawText('Limit Over',o.map((x,i)=>`${i+1}. ${x.n}  ${money(x.over)}`).join('\n')+(o.length?`\ntotal. ${money(total)}`:'No Over'),'Limit_Over.png')}
+function shareOver(){let o=overItems();let total=o.reduce((a,b)=>a+num(b.over),0);share('Limit Over',o.map((x,i)=>`${i+1}. ${x.n}  ${money(x.over)}`).join('\n')+(o.length?`\ntotal. ${money(total)}`:'No Over'))}
 
 
 
@@ -1163,10 +1200,17 @@ function adminFinalSummary(s,pn){
   return{session:s,total,cor,pAmt,payout,overAmt,overP,overPayout,final,win:final>=0}
 }
 function summaryHTML(x){
-  return `<div class="settle-summary ${x.win?'settle-win':'settle-lose'}">
-    <b>${x.session} Admin Final Result: ${x.win?'WIN / ရရန်':'LOSE / ပေးရန်'} ${money(Math.abs(x.final))}</b><br>
-    Total: ${money(x.total)} - Cor: ${money(x.cor)} - Payout: ${money(x.payout)} - Over: ${money(x.overAmt)} + Over Payout: ${x.overP?money(x.overPayout):'No'}<br>
-    P Amount: ${money(x.pAmt)} | Over P Amount: ${x.overP?money(x.overP):'No'} | Rate: ${rate()}
+  let cls=x.win?'win':'lose',status=x.win?'WIN / ရရန်':'LOSE / ပေးရန်';
+  return `<div class="result-clean ${cls}">
+    <div class="result-head"><b>${x.session} Final Result</b><span class="result-badge">${status}</span></div>
+    <div class="result-row"><span>Total</span><b>${money(x.total)}</b></div>
+    <div class="result-row"><span>Cor</span><b>${money(x.cor)}</b></div>
+    <div class="result-row"><span>Payout</span><b>${money(x.payout)}</b></div>
+    <div class="result-row"><span>Over</span><b>${money(x.overAmt)}</b></div>
+    <div class="result-row"><span>P Amount</span><b>${money(x.pAmt)}</b></div>
+    <div class="result-row"><span>Over P Amount</span><b>${x.overP?money(x.overP):'No'}</b></div>
+    <div class="result-row"><span>Rate</span><b>${rate()}</b></div>
+    <div class="result-row result-final"><span>Final Result</span><b>${money(Math.abs(x.final))}</b></div>
   </div>`
 }
 function settleData(s,pn){
@@ -1209,8 +1253,8 @@ function dailyReport(){
   let html='';
   if(isAdmin()){
     let sa=adminFinalSummary('AM',am),sp=adminFinalSummary('PM',pm);
-    let final=sa.final+sp.final, total=sa.total+sp.total, cor=sa.cor+sp.cor, payout=sa.payout+sp.payout, overAmt=sa.overAmt+sp.overAmt, overPayout=sa.overPayout+sp.overPayout;
-    html=`<div class="settle-summary ${final>=0?'settle-win':'settle-lose'}"><b>DAILY Admin Final Result: ${final>=0?'WIN / ရရန်':'LOSE / ပေးရန်'} ${money(Math.abs(final))}</b><br>Total: ${money(total)} - Cor: ${money(cor)} - Payout: ${money(payout)} - Over: ${money(overAmt)} + Over Payout: ${overPayout?money(overPayout):'No'}</div>`;
+    let final=sa.final+sp.final,total=sa.total+sp.total,cor=sa.cor+sp.cor,payout=sa.payout+sp.payout,overAmt=sa.overAmt+sp.overAmt,overPayout=sa.overPayout+sp.overPayout;
+    html=`<div class="result-clean ${final>=0?'win':'lose'}"><div class="result-head"><b>DAILY Final Result</b><span class="result-badge">${final>=0?'WIN / ရရန်':'LOSE / ပေးရန်'}</span></div><div class="result-row"><span>Total</span><b>${money(total)}</b></div><div class="result-row"><span>Cor</span><b>${money(cor)}</b></div><div class="result-row"><span>Payout</span><b>${money(payout)}</b></div><div class="result-row"><span>Over</span><b>${money(overAmt)}</b></div><div class="result-row"><span>Over Payout</span><b>${overPayout?money(overPayout):'No'}</b></div><div class="result-row result-final"><span>Final Result</span><b>${money(Math.abs(final))}</b></div></div>`;
   }
   dailyOut.innerHTML=html+tableReport(Object.values(m));
   toast('Daily Result Updated ✅','success');
@@ -1399,20 +1443,19 @@ function renderHistory(){
   if(!hs||!he||!hb||!sumBox)return;
   let start=hs.value||settings.startDate||firstRecordDate()||today(),end=he.value||settings.endDate||today();
   if(start>end){let tmp=start;start=end;end=tmp}
+  let maxEnd=dateAdd(start,92);if(end>maxEnd){end=maxEnd;toast('အများဆုံး 3 လအထိသာ ကြည့်နိုင်ပါသည်','warning')}
   hs.value=start;he.value=end;
   let rows=[],d=start,guard=0;
-  while(d<=end&&guard<370){
-    if(isMonFri(d)){
-      let rb=resultForDate(d),am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM');
-      let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0);
-      rows.push({date:d,day:weekdayName(d),amP:rb.amP||'',pmP:rb.pmP||'',amTotal,pmTotal,total:amTotal+pmTotal});
-    }
+  while(d<=end&&guard<93){
+    let weekend=!isMonFri(d),rb=resultForDate(d),am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM');
+    let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0);
+    rows.push({date:d,day:weekdayName(d),weekend,amP:weekend?'Closed':(rb.amP||''),pmP:weekend?'Closed':(rb.pmP||''),amTotal:weekend?0:amTotal,pmTotal:weekend?0:pmTotal,total:weekend?0:amTotal+pmTotal});
     d=dateAdd(d,1);guard++;
   }
-  let sumAM=rows.reduce((a,b)=>a+b.amTotal,0),sumPM=rows.reduce((a,b)=>a+b.pmTotal,0),sum=sumAM+sumPM;
-  sumBox.innerHTML=`<div class="smart-mini"><small>Days</small><br><b>${rows.length}</b></div><div class="smart-mini"><small>AM Total</small><br><b>${money(sumAM)}</b></div><div class="smart-mini"><small>PM Total</small><br><b>${money(sumPM)}</b></div><div class="smart-mini"><small>Range Total</small><br><b>${money(sum)}</b></div>`;
-  if(cal)cal.innerHTML=rows.length?rows.map(r=>`<div class="cal-cell"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="cal-num cal-am"><span>AM</span><b>${r.amP||'-'}</b></div><div class="cal-num cal-pm"><span>PM</span><b>${r.pmP||'-'}</b></div><small>AM ${money(r.amTotal)} / PM ${money(r.pmTotal)}</small></div>`).join(''):'<div class="alert alert-secondary">No AM/PM P history</div>';
-  hb.innerHTML=rows.length?rows.map(r=>`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
+  let workRows=rows.filter(r=>!r.weekend),sumAM=rows.reduce((a,b)=>a+b.amTotal,0),sumPM=rows.reduce((a,b)=>a+b.pmTotal,0),sum=sumAM+sumPM;
+  sumBox.innerHTML=`<div class="smart-mini"><small>Days</small><br><b>${rows.length}</b></div><div class="smart-mini"><small>Work Days</small><br><b>${workRows.length}</b></div><div class="smart-mini"><small>AM Total</small><br><b>${money(sumAM)}</b></div><div class="smart-mini"><small>Range Total</small><br><b>${money(sum)}</b></div>`;
+  if(cal)cal.innerHTML=rows.length?rows.map(r=>r.weekend?`<div class="cal-cell weekend-card"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="closed-weekend">ပိတ်ရက် / 2D မရှိ</div></div>`:`<div class="cal-cell"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="cal-num cal-am"><span>AM</span><b>${r.amP||'-'}</b></div><div class="cal-num cal-pm"><span>PM</span><b>${r.pmP||'-'}</b></div><small>AM ${money(r.amTotal)} / PM ${money(r.pmTotal)}</small></div>`).join(''):'<div class="alert alert-secondary">No AM/PM P history</div>';
+  hb.innerHTML=rows.length?rows.map(r=>r.weekend?`<tr class="table-secondary"><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td colspan="5" class="text-center fw-bold">ပိတ်ရက် / 2D မရှိ</td></tr>`:`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
 }
 
 
@@ -1481,7 +1524,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   ['rName','rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].forEach(id=>$(id)?.addEventListener('focus',()=>focusField(id)));
   applySettingsUI();
   setInterval(checkLock,60000);
-  setInterval(updateSessionTimer,1000);
+  setInterval(updateSessionTimer,1000);setInterval(refreshSharedSettings,30000);
   window.__rmWorkDate=today();setInterval(()=>{if(window.__rmWorkDate!==today()){window.__rmWorkDate=today();renderAll();toast('နေ့သစ် စာရင်းအသစ် စတင်ပါပြီ ✅','success')}},60000);
   u.addEventListener('keydown',e=>{if(e.key==='Enter')p.focus()});
   p.addEventListener('keydown',e=>{if(e.key==='Enter')login()});
