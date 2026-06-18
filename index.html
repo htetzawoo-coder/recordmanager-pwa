@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.4 Six Fixes</title>
+<title>RecordManager_2D_Logic_Pro v1.5.5 Owner License Control</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.4 Six Fixes */
+/* v1.5.5 Owner License Control */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -116,7 +116,7 @@
 .owner-badge{display:inline-block;border-radius:999px;background:#fef3c7;color:#92400e;padding:4px 9px;font-weight:1000;font-size:11px}.dark .owner-badge{background:#78350f;color:#fde68a}.owner-table td,.owner-table th{font-size:12px;vertical-align:middle}
 
 
-/* v1.5.4 six fixes */
+/* v1.5.5 owner license control */
 .tabs{backdrop-filter:blur(8px)}
 .result-clean{border-radius:18px;padding:12px;margin:10px 0;border:1px solid var(--border);box-shadow:0 6px 16px #0001}
 .result-clean.win{background:#dcfce7;color:#166534}.result-clean.lose{background:#fee2e2;color:#991b1b}
@@ -127,6 +127,16 @@
 .result-final{font-size:20px;border-top:1px dashed currentColor;margin-top:6px;padding-top:8px}
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
+
+/* v1.5.5 Owner License Control */
+.owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
+.dark .owner-license-card{background:#451a03;border-color:#92400e}
+.license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
+.license-active{background:#dcfce7;color:#166534}
+.license-warning{background:#fef3c7;color:#92400e}
+.license-disabled,.license-expired{background:#fee2e2;color:#991b1b}
+.owner-control-note{font-size:12px;color:var(--muted);font-weight:700}
+
 </style>
 </head>
 <body>
@@ -134,7 +144,7 @@
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.4 Six Fixes</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.5 Owner License Control</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
@@ -147,7 +157,7 @@
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.4 Six Fixes — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <p class="small-note mb-2">v1.5.5 Owner License Control — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -205,10 +215,30 @@
         <h5 class="fw-bold">👑 Super Admin / App Owner Dashboard</h5>
         <p class="small-note">Registration / License metadata only. Record data, number amount, reports are not shown here.</p>
         <div id="ownerStats" class="smart-grid mb-3"></div>
+      </div>
+
+      <div class="owner-license-card">
+        <h6 class="fw-bold mb-2">🔐 Owner License Control</h6>
+        <p class="owner-control-note mb-2">Admin account မှာ License Settings မပြတော့ပါ။ App Owner / Super Admin မှသာ plan, expire, active/disabled ကို ထိန်းပါမည်။</p>
+        <label class="small fw-bold">Select Admin / Shop</label>
+        <select id="ownerShopSelect" class="form-select mb-2" onchange="ownerSelectLicenseShop()"></select>
+        <div class="row g-2">
+          <div class="col-6"><label class="small fw-bold">Plan</label><input id="ownerPlan" class="form-control" placeholder="Trial / Monthly / Yearly"></div>
+          <div class="col-6"><label class="small fw-bold">License Status</label><select id="ownerLicenseActive" class="form-select"><option value="true">Active</option><option value="false">Disabled</option></select></div>
+          <div class="col-6"><label class="small fw-bold">Expire Date</label><input id="ownerExpireDate" class="form-control" type="date"></div>
+          <div class="col-6"><label class="small fw-bold">Expire Time</label><input id="ownerExpireTime" class="form-control" type="time"></div>
+          <div class="col-12"><label class="small fw-bold">Notice Message</label><input id="ownerNotice" class="form-control" placeholder="သက်တမ်းတိုးရန် ဆက်သွယ်ပါ"></div>
+          <div class="col-12"><label class="small fw-bold">Contact Phone</label><input id="ownerPhone" class="form-control" placeholder="09773121226"></div>
+          <div class="col-12"><button class="btn btn-warning w-100 rounded-pill fw-bold" onclick="saveOwnerLicenseSettings()">Save License For Selected Shop</button></div>
+        </div>
+      </div>
+
+      <div class="card p-3">
+        <h6 class="fw-bold">Registration / License List</h6>
         <input id="ownerSearch" class="form-control mb-2" placeholder="Search admin/member email, phone, shop..." oninput="renderOwnerDashboard()">
         <div class="table-responsive">
           <table class="table table-sm owner-table">
-            <thead><tr><th>Role</th><th>ID</th><th>Name / Shop</th><th>Email / Phone</th><th>Status</th></tr></thead>
+            <thead><tr><th>Role</th><th>ID</th><th>Name / Shop</th><th>Email / Phone</th><th>License / Status</th></tr></thead>
             <tbody id="ownerBody"></tbody>
           </table>
         </div>
@@ -478,7 +508,7 @@
         <div class="mt-2"><span id="setAmCloseStatus" class="close-pill">AM Auto</span> <span id="setPmCloseStatus" class="close-pill">PM Auto</span> <span id="setDailyCloseStatus" class="close-pill">Daily Auto</span></div>
 
         <hr>
-        <button class="btn btn-danger w-100 rounded-pill fw-bold" onclick="openLicenseSettings()">🔒 Open License Settings</button>
+        <button id="adminLicenseOpenBtn" class="btn btn-danger w-100 rounded-pill fw-bold d-none" onclick="openLicenseSettings()">🔒 Open License Settings</button>
         <div id="licenseBox" class="license-box">
           <h6 class="fw-bold text-danger">Protected License Settings</h6>
           <div class="row g-2">
@@ -514,7 +544,7 @@
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.4 Six Fixes
+   RecordManager_2D_Logic_Pro v1.5.5 Owner License Control
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -620,7 +650,7 @@ function renderCloseStatus(updateTimer=true){
 }
 
 
-let settings={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
+let settings={},ownerSettingsMap={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
 let token='',uid='',authEmail='';
 const SUPER_ADMIN_EMAILS=['htetzawoohzo99@gmail.com','admin@test.com'];
 function isSuperAdmin(){return currentUser&&currentUser.role==='superadmin'}
@@ -731,6 +761,44 @@ function normalizeSettings(){
   if(!settings.results[today()]||typeof settings.results[today()]!=='object')settings.results[today()]={};
 }
 function resultBook(){normalizeSettings();return settings.results[today()]}
+
+function defaultLicenseSettings(shopId=''){
+  return {shopId,plan:'Trial',licenseActive:true,expireDate:'',expireTime:'23:59',notice:'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ',phone:'09773121226'};
+}
+function licenseInfoForSettings(st={}){
+  let info={active:st.licenseActive!==false,expired:false,label:'Active',cls:'license-active'};
+  if(st.licenseActive===false){info.label='Disabled';info.cls='license-disabled';return info}
+  if(st.expireDate){
+    let exp=new Date(st.expireDate+'T'+(st.expireTime||'23:59')+':00');
+    if(Date.now()>exp.getTime()){info.expired=true;info.label='Expired';info.cls='license-expired';return info}
+    let left=exp.getTime()-Date.now();
+    if(left<7*24*60*60*1000){info.label='Expire Soon';info.cls='license-warning';return info}
+  }
+  return info;
+}
+function licenseBadgeHTML(st={}){
+  let li=licenseInfoForSettings(st);
+  return `<span class="license-status-pill ${li.cls}">${li.label}</span>`;
+}
+function ownerAdminAccounts(){
+  return (accounts||[]).filter(a=>a.role==='admin');
+}
+function ownerShopLabel(shopId){
+  let a=ownerAdminAccounts().find(x=>String(x.shopId||'')===String(shopId||''));
+  return a?(a.shopName||a.memberName||a.email||shopId):shopId;
+}
+async function loadOwnerSettingsForAccounts(list){
+  let map={};
+  let shopIds=[...new Set((list||[]).map(a=>a.shopId).filter(Boolean))];
+  for(const sid of shopIds){
+    try{
+      let st=await getDoc(COL_SETTINGS,sid,defaultLicenseSettings(sid));
+      map[sid]={...defaultLicenseSettings(sid),...(st||{}),shopId:sid};
+    }catch(e){map[sid]=defaultLicenseSettings(sid)}
+  }
+  return map;
+}
+
 
 async function loadCloudAll(){
   setCloudStatus('Cloud: Loading...', 'info');
@@ -868,7 +936,7 @@ async function login(){
 
     if(SUPER_ADMIN_EMAILS.includes(authEmail)){
       currentUser={id:uid,uid,email:authEmail,username:authEmail,role:'superadmin',memberName:'App Owner / Developer',phone:'',shopId:'__owner__',shopName:'App Owner',active:true};
-      accounts=await listCollection(COL_ACCOUNTS);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
+      accounts=await listCollection(COL_ACCOUNTS);ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
       saveCur();loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
       $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
       applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Super Admin Connected ✅','success');return;
@@ -940,7 +1008,7 @@ function logicBtn(type){
   if(type==='reverse'){rCode.value=v+'*'}
   if(type==='khway'){rCode.value=v+'ခွေ'}
   if(type==='break'){rCode.value='*'+v.replace(/^\*/,'')}
-  if(type==='apa'){rCode.value=v+'အပါ'}
+  if(type==='apa'){rCode.value=v+'*'}
   if(type==='front'){rCode.value=v.replace(/\/$/,'')+'/'}
   if(type==='back'){rCode.value='/'+v.replace(/^\//,'')}
   rCode.focus();toast('Logic button ထည့်ပြီးပါပြီ','info')
@@ -1010,7 +1078,7 @@ function uniq(a){return[...new Set(a)]}
 function pair(a,b){let r=[];a.forEach(x=>b.forEach(y=>r.push(x+y)));return r}
 function apa(d){let r=[];for(let i=0;i<10;i++){r.push(d+String(i));r.push(String(i)+d)}return uniq(r)}
 function khway(s){let r=[];for(let i=0;i<s.length;i++)for(let j=i+1;j<s.length;j++){r.push(s[i]+s[j]);r.push(s[j]+s[i])}return uniq(r)}
-function expand(c,amt){c=String(c).trim();if(MAP[c])return MAP[c].map(n=>({n,amt}));if(c==='ပါဝါ')return expand('A',amt);if(c==='နက္ခ')return expand('Z',amt);if(c==='ညီကို')return expand('B',amt);if(c==='အပူး')return expand('//',amt);if(c==='စုံ')c='+';if(c==='မ')c='-';if(c==='စုံစုံ')c='++';if(c==='မမ')c='--';if(c==='စုံမ')c='+-';if(c==='မစုံ')c='-+';if(c==='++')return pair(E,E).map(n=>({n,amt}));if(c==='--')return pair(O,O).map(n=>({n,amt}));if(c==='+-')return pair(E,O).map(n=>({n,amt}));if(c==='-+')return pair(O,E).map(n=>({n,amt}));let a=[];if(/^[1-9]\/$/.test(c)){for(let i=0;i<10;i++)a.push({n:c[0]+i,amt});return a}if(/^\/[1-9]$/.test(c)){for(let i=0;i<10;i++)a.push({n:String(i)+c[1],amt});return a}if(/^[0-9]\*$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}\*$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]}if(/^\d{3,}\*$/.test(c))return khway(c.slice(0,-1)).map(n=>({n,amt}));if(/^\d{3,}ခွေ$/.test(c))return khway(c.replace('ခွေ','')).map(n=>({n,amt}));if(/^\*[0-9]{1,2}$/.test(c)){let t=+c.slice(1);if(t<9||t>18){alert('*9 မှ *18 အတွင်းသာ');return[]}for(let i=0;i<100;i++){let n=String(i).padStart(2,'0'),s=+n[0]+ +n[1];if(s===t||s===t-10)a.push({n,amt})}return a}if(/^\d{2}$/.test(c))return[{n:c,amt}];alert('Invalid Logic');return[]}
+function expand(c,amt){c=String(c).trim();if(MAP[c])return MAP[c].map(n=>({n,amt}));if(c==='ပါဝါ')return expand('A',amt);if(c==='နက္ခ')return expand('Z',amt);if(c==='ညီကို')return expand('B',amt);if(c==='အပူး')return expand('//',amt);if(c==='စုံ')c='+';if(c==='မ')c='-';if(c==='စုံစုံ')c='++';if(c==='မမ')c='--';if(c==='စုံမ')c='+-';if(c==='မစုံ')c='-+';if(c==='++')return pair(E,E).map(n=>({n,amt}));if(c==='--')return pair(O,O).map(n=>({n,amt}));if(c==='+-')return pair(E,O).map(n=>({n,amt}));if(c==='-+')return pair(O,E).map(n=>({n,amt}));let a=[];if(/^[1-9]\/$/.test(c)){for(let i=0;i<10;i++)a.push({n:c[0]+i,amt});return a}if(/^\/[1-9]$/.test(c)){for(let i=0;i<10;i++)a.push({n:String(i)+c[1],amt});return a}if(/^[0-9]အပါ$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}အပြန်$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]};if(/^[0-9]\*$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}\*$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]}if(/^\d{3,}\*$/.test(c))return khway(c.slice(0,-1)).map(n=>({n,amt}));if(/^\d{3,}ခွေ$/.test(c))return khway(c.replace('ခွေ','')).map(n=>({n,amt}));if(/^\*[0-9]{1,2}$/.test(c)){let t=+c.slice(1);if(t<9||t>18){alert('*9 မှ *18 အတွင်းသာ');return[]}for(let i=0;i<100;i++){let n=String(i).padStart(2,'0'),s=+n[0]+ +n[1];if(s===t||s===t-10)a.push({n,amt})}return a}if(/^\d{2}$/.test(c))return[{n:c,amt}];alert('Invalid Logic');return[]}
 async function saveGroup(){
   if(isSaving){toast('Cloud ထဲသို့ သိမ်းနေပါသည်။ ထပ်မနှိပ်ပါနှင့်','warning');return}
   if(!navigator.onLine){toast('Offline ဖြစ်နေပါသည်။ Online ပြန်ရမှ Save လုပ်ပါ','warning');return}
@@ -1337,9 +1405,16 @@ async function saveGeneralSettings(){
   };
   await saveSet();toast('General Settings သိမ်းပြီးပါပြီ','success');renderAll();updateSessionTimer();setCloudStatus('Cloud: Settings Saved ✅','success')
 }
-function openLicenseSettings(){let pass=prompt('License Settings Password ရိုက်ပါ');if(pass===(settings.licensePass||'4321')){licenseBox.style.display='block';applySettingsUI()}else alert('Password မှားနေပါသည်')}
+function openLicenseSettings(){
+  alert('License Settings ကို Admin account ထဲမှာ မပြတော့ပါ။ Super Admin / Owner Dashboard မှသာ License Control လုပ်ပါ။')
+}
 async function saveLicenseSettings(){settings.expireDate=setExpireDate.value||'';settings.expireTime=setExpireTime.value||'23:59';settings.notice=setNotice.value||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ';settings.phone=setPhone.value||'09773121226';settings.licensePass=setLicensePass.value||settings.licensePass||'4321';await saveSet();alert('License Settings သိမ်းပြီးပါပြီ');setCloudStatus('Cloud: License Saved ✅','success')}
-function isExpired(){if(!settings.expireDate)return false;let exp=new Date(settings.expireDate+'T'+(settings.expireTime||'23:59')+':00');return Date.now()>exp.getTime()}
+function isExpired(){
+  if(settings.licenseActive===false)return true;
+  if(!settings.expireDate)return false;
+  let exp=new Date(settings.expireDate+'T'+(settings.expireTime||'23:59')+':00');
+  return Date.now()>exp.getTime()
+}
 function showLock(){app.classList.remove('active');loginPage.classList.remove('active');lockPage.classList.add('active');lockMsg.innerText=settings.notice||'သက်တမ်းကုန်ဆုံးသွားပါပြီ။';lockContact.innerText='သက်တမ်းတိုးရန် ဆက်သွယ်ပါ '+(settings.phone||'09773121226')}
 function checkLock(){if(isExpired())showLock();return isExpired()}
 
@@ -1461,16 +1536,55 @@ function renderHistory(){
 
 function renderOwnerDashboard(){
   if(!$('ownerBody'))return;
+  if(isSuperAdmin()&&(!ownerSettingsMap||!Object.keys(ownerSettingsMap).length)){
+    // best effort lazy load for old sessions
+    loadOwnerSettingsForAccounts(accounts).then(m=>{ownerSettingsMap=m;renderOwnerDashboard()}).catch(()=>{});
+  }
+  renderOwnerLicenseControls();
   let q=($('ownerSearch')?.value||'').toLowerCase();
   let rows=(accounts||[]).filter(a=>String(a.role||'').match(/admin|member/));
-  if(q)rows=rows.filter(a=>[a.role,a.id,a.uid,a.email,a.username,a.memberName,a.phone,a.shopId,a.shopName].join(' ').toLowerCase().includes(q));
+  if(q)rows=rows.filter(a=>[a.role,a.id,a.uid,a.email,a.username,a.memberName,a.phone,a.shopId,a.shopName,(ownerSettingsMap[a.shopId]||{}).plan,(ownerSettingsMap[a.shopId]||{}).expireDate].join(' ').toLowerCase().includes(q));
   let admins=(accounts||[]).filter(a=>a.role==='admin'),members=(accounts||[]).filter(a=>a.role==='member'),active=(accounts||[]).filter(a=>a.active!==false).length;
-  ownerStats.innerHTML=`<div class="smart-mini"><small>Admins</small><br><b>${admins.length}</b></div><div class="smart-mini"><small>Members</small><br><b>${members.length}</b></div><div class="smart-mini"><small>Active</small><br><b>${active}</b></div><div class="smart-mini"><small>Metadata only</small><br><b>No records</b></div>`;
+  let licensed=Object.values(ownerSettingsMap||{}).filter(st=>licenseInfoForSettings(st).label==='Active').length;
+  ownerStats.innerHTML=`<div class="smart-mini"><small>Admins</small><br><b>${admins.length}</b></div><div class="smart-mini"><small>Members</small><br><b>${members.length}</b></div><div class="smart-mini"><small>Active Accounts</small><br><b>${active}</b></div><div class="smart-mini"><small>Active Licenses</small><br><b>${licensed}</b></div>`;
   ownerBody.innerHTML=rows.length?rows.map(a=>{
     let memCount=a.role==='admin'?members.filter(m=>String(m.shopId||'')===String(a.shopId||'')).length:'';
-    let st=a.active===false?'Disabled':'Active';
-    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${st}<br><small>${a.createdAt?new Date(Number(a.createdAt)).toLocaleDateString():''}</small></td></tr>`
+    let st=a.active===false?'Account OFF':'Account ON';
+    let lic=ownerSettingsMap[a.shopId]||defaultLicenseSettings(a.shopId||'');
+    let plan=lic.plan||'Trial',exp=lic.expireDate?`${lic.expireDate} ${lic.expireTime||'23:59'}`:'No expiry';
+    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${licenseBadgeHTML(lic)}<br><small>${plan} • ${exp}<br>${st}</small></td></tr>`
   }).join(''):'<tr><td colspan="5" class="text-center text-muted">No registration metadata</td></tr>';
+}
+function renderOwnerLicenseControls(){
+  if(!$('ownerShopSelect')||!isSuperAdmin())return;
+  let admins=ownerAdminAccounts();
+  let old=ownerShopSelect.value;
+  ownerShopSelect.innerHTML=admins.map(a=>`<option value="${a.shopId||''}">${a.shopName||a.memberName||a.email} — ${a.email||''}</option>`).join('')||'<option value="">No admin shop</option>';
+  if(old&&[...ownerShopSelect.options].some(o=>o.value===old))ownerShopSelect.value=old;
+  ownerSelectLicenseShop();
+}
+function ownerSelectLicenseShop(){
+  if(!$('ownerShopSelect'))return;
+  let sid=ownerShopSelect.value||'',st={...defaultLicenseSettings(sid),...((ownerSettingsMap||{})[sid]||{})};
+  if($('ownerPlan'))ownerPlan.value=st.plan||'Trial';
+  if($('ownerLicenseActive'))ownerLicenseActive.value=String(st.licenseActive!==false);
+  if($('ownerExpireDate'))ownerExpireDate.value=st.expireDate||'';
+  if($('ownerExpireTime'))ownerExpireTime.value=st.expireTime||'23:59';
+  if($('ownerNotice'))ownerNotice.value=st.notice||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ';
+  if($('ownerPhone'))ownerPhone.value=st.phone||'09773121226';
+}
+async function saveOwnerLicenseSettings(){
+  if(!isSuperAdmin())return alert('Super Admin Only');
+  let sid=ownerShopSelect?.value||'';
+  if(!sid)return alert('Admin / Shop မရွေးရသေးပါ');
+  try{
+    setBusy(true,'Saving license...');
+    let old=await getDoc(COL_SETTINGS,sid,defaultLicenseSettings(sid))||defaultLicenseSettings(sid);
+    let st={...old,shopId:sid,shopName:ownerShopLabel(sid),plan:ownerPlan.value||'Trial',licenseActive:ownerLicenseActive.value==='true',expireDate:ownerExpireDate.value||'',expireTime:ownerExpireTime.value||'23:59',notice:ownerNotice.value||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ',phone:ownerPhone.value||'09773121226',licenseManagedBy:currentUser.email,licenseUpdatedAt:Date.now()};
+    await setDoc(COL_SETTINGS,sid,st);
+    ownerSettingsMap[sid]=st;
+    setBusy(false);toast('License Saved ✅','success');setCloudStatus('Cloud: Owner License Saved ✅','success');renderOwnerDashboard();
+  }catch(e){setBusy(false);alert('Owner License Save Error: '+e.message);setCloudStatus('Owner License Save Error: '+e.message,'danger')}
 }
 
 function safeRun(label,fn){try{if(typeof fn==='function')fn()}catch(e){console.warn(label,e);toast(label+' render warning: '+e.message,'warning')}}
