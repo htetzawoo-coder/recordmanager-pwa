@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.7 Windows Live Desk</title>
+<title>RecordManager_2D_Logic_Pro v1.5.8 Refresh Session Fix</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.7 Windows Live Desk */
+/* v1.5.8 Refresh Session Fix */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.5.7 Windows Live Desk */
+/* v1.5.8 Refresh Session Fix */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.5.7 Windows Live Desk */
+/* v1.5.8 Refresh Session Fix */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,8 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.5.7 Windows Live Desk + Clear Limit Board */
-.limit-grid.limit-grid-board{display:block;grid-template-columns:none;gap:0;font-size:13px}
+/* v1.5.8 Refresh Session Fix + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -199,7 +198,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.7 Windows Live Desk</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.8 Refresh Session Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="updateBtn" class="btn btn-success btn-sm rounded-pill fw-bold" onclick="forceAppUpdate()">Update</button>
@@ -214,7 +213,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.7 Windows Live Desk — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <p class="small-note mb-2">v1.5.8 Refresh Session Fix — Refresh လုပ်လည်း Login မထွက်အောင်ပြင်ထားသည်</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -621,7 +620,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.7 Windows Live Desk
+   RecordManager_2D_Logic_Pro v1.5.8 Refresh Session Fix
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -728,7 +727,7 @@ function renderCloseStatus(updateTimer=true){
 
 
 let settings={},ownerSettingsMap={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
-let token='',uid='',authEmail='';
+let token='',uid='',authEmail='',refreshToken='';
 const SUPER_ADMIN_EMAILS=['htetzawoohzo99@gmail.com','admin@test.com'];
 function isSuperAdmin(){return currentUser&&currentUser.role==='superadmin'}
 
@@ -778,7 +777,13 @@ async function api(url,opt={}){
   let res=await fetch(url,{...opt,headers});
   let txt=await res.text();
   let data=txt?JSON.parse(txt):{};
-  if(!res.ok)throw new Error(data.error?.message||res.statusText);
+  if(!res.ok){
+    if(res.status===401&&!opt.noAuth&&refreshToken&&!opt._retried){
+      let ok=await refreshIdToken();
+      if(ok)return api(url,{...opt,_retried:true});
+    }
+    throw new Error(data.error?.message||res.statusText);
+  }
   return data;
 }
 async function firebaseSignIn(email,password){
@@ -936,6 +941,46 @@ async function save(){localSave('RM_v132_records_cache',records)}
 async function saveEx(){localSave('RM_v132_exports_cache',exportsL)}
 async function saveAcc(){for(const a of accounts)await setDoc(COL_ACCOUNTS,a.id||a.email||a.username,a);localSave('RM_v132_accounts_cache',accounts)}
 function saveCur(){if(currentUser)localSave('RM_v132_current_user',currentUser);else localStorage.removeItem('RM_v132_current_user')}
+function saveSession(){
+  if(currentUser&&token)localSave('RM_v158_session',{token,refreshToken,uid,authEmail,currentUser,ts:Date.now(),version:'v1.5.8'});
+}
+function clearSession(){
+  currentUser=null;token='';uid='';authEmail='';refreshToken='';
+  localStorage.removeItem('RM_v158_session');
+  localStorage.removeItem('RM_v132_current_user');
+}
+async function refreshIdToken(){
+  if(!refreshToken)return false;
+  try{
+    let body='grant_type=refresh_token&refresh_token='+encodeURIComponent(refreshToken);
+    let d=await api(`https://securetoken.googleapis.com/v1/token?key=${API_KEY}`,{method:'POST',noAuth:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
+    token=d.id_token||token;refreshToken=d.refresh_token||refreshToken;uid=d.user_id||uid;authEmail=(d.email||authEmail||'').toLowerCase();
+    saveSession();return true;
+  }catch(e){console.warn('refreshIdToken',e.message);return false}
+}
+async function restoreSession(){
+  let s=localLoad('RM_v158_session',null);
+  if(!s||!s.currentUser||!s.token)return false;
+  token=s.token||'';refreshToken=s.refreshToken||'';uid=s.uid||s.currentUser.uid||s.currentUser.id||'';authEmail=(s.authEmail||s.currentUser.email||'').toLowerCase();currentUser=s.currentUser;
+  if(refreshToken)await refreshIdToken();
+  try{
+    setCloudStatus('Cloud: Restoring session...', 'info');
+    loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
+    $('logoutBtn')?.classList.remove('d-none');$('roleBadge')?.classList.remove('d-none');$('shopBadge')?.classList.remove('d-none');
+    if(isSuperAdmin()){
+      accounts=await listCollection(COL_ACCOUNTS);ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
+      applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Session Restored ✅','success');return true;
+    }
+    await loadCloudAll();
+    if(checkLock())return true;
+    applyRoleUI();renderAll();
+    let first=isAdmin()?['dash','tDash']:['entry','tEntry'];tab(first[0],first[1]);
+    setCloudStatus('Cloud: Session Restored ✅','success');
+    return true;
+  }catch(e){
+    console.warn('restoreSession',e.message);clearSession();return false;
+  }
+}
 function isAdmin(){return currentUser&&currentUser.role==='admin'}
 function isMember(){return currentUser&&currentUser.role==='member'}
 function rate(){return Number(settings.rate||80)}
@@ -999,7 +1044,7 @@ async function registerAdmin(){
   try{
     setBusy(true,'Creating admin shop...');
     let rr=await api(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,{method:'POST',noAuth:true,body:JSON.stringify({email,password:pass,returnSecureToken:true})});
-    token=rr.idToken;uid=rr.localId;authEmail=email;
+    token=rr.idToken;refreshToken=rr.refreshToken||'';uid=rr.localId;authEmail=email;
     accounts=await listCollection(COL_ACCOUNTS);
     let shopId=makeShopId(shop),acc={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,cor:Number(settings.cor||13),active:true,createdAt:Date.now()};
     await setDoc(COL_ACCOUNTS,uid,acc);accounts.push(acc);
@@ -1016,12 +1061,12 @@ async function login(){
   try{
     setCloudStatus('Cloud: Signing in...', 'info');
     let r=await firebaseSignIn(email,pass);
-    token=r.idToken; uid=r.localId; authEmail=(r.email||email).toLowerCase();
+    token=r.idToken; refreshToken=r.refreshToken||''; uid=r.localId; authEmail=(r.email||email).toLowerCase();
 
     if(SUPER_ADMIN_EMAILS.includes(authEmail)){
       currentUser={id:uid,uid,email:authEmail,username:authEmail,role:'superadmin',memberName:'App Owner / Developer',phone:'',shopId:'__owner__',shopName:'App Owner',active:true};
       accounts=await listCollection(COL_ACCOUNTS);ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
-      saveCur();loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
+      saveCur();saveSession();loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
       $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
       applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Super Admin Connected ✅','success');return;
     }
@@ -1055,7 +1100,7 @@ async function login(){
     currentUser={id:uid,uid,email:authEmail,username:authEmail,role:acc.role||'member',memberName:acc.memberName||acc.name||authEmail,phone:acc.phone||'',cor:Number(acc.cor||settings.cor||13),shopId:acc.shopId||'demo_shop',shopName:acc.shopName||'Demo Shop',active:acc.active!==false};
 
     await loadCloudAll();
-    saveCur();
+    saveCur();saveSession();
     if(checkLock())return;
     loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
     $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
@@ -1068,7 +1113,7 @@ async function login(){
     alert('Firebase Login Error: '+e.message);
   }
 }
-function logout(){currentUser=null;token='';uid='';authEmail='';saveCur();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');$('desktopModeBtn')?.classList.add('d-none');document.body.classList.remove('admin-windows-mode');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary');updateDesktopModeUI()}
+function logout(){clearSession();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');$('desktopModeBtn')?.classList.add('d-none');document.body.classList.remove('admin-windows-mode');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary');updateDesktopModeUI()}
 function applyRoleUI(){
   if(!currentUser)return;
   let label=isSuperAdmin()?'SUPER ADMIN / OWNER':(isAdmin()?'ADMIN / ဒိုင်':'MEMBER / '+(currentUser.memberName||currentUser.username));
@@ -1348,10 +1393,14 @@ function renderLimit(alertIt){
     if(riskLosePct)riskLosePct.value=r.actualLosePct?Number(r.actualLosePct.toFixed(2)):'';
     if(riskMaxLose)riskMaxLose.value=r.loseAmount?Math.round(r.loseAmount):'';
   }
+  grid.innerHTML='';
   let t=totals(),l=+lim.value;
-  grid.classList.add('limit-grid-board');
-  grid.innerHTML=buildLimitWindowsBoard(t,l);
-  renderLiveDesk();
+  for(let i=0;i<100;i++){
+    let n=String(i).padStart(2,'0'),d=document.createElement('div');
+    d.className='cell '+(l>0&&t[n]>l?'hit':'');
+    d.innerHTML='<b>'+n+'</b><br>'+money(t[n]);
+    grid.appendChild(d)
+  }
   if(alertIt&&over.length)alert('Over Limit / Risk တွက်ပြီးပါပြီ')
 }
 async function saveLimit(){if(!isAdmin())return alert('Admin Only');let o=overItems();if(!o.length)return alert('No Over');if(!confirm('Limit စာရင်းအတွက်သာ သိမ်းမည်။ မူရင်းစာရင်း မပြောင်းပါ။'))return;try{setBusy(true,'Saving Limit Export...');for(const x of o){let saved=await addDoc(COL_EXPORTS,{n:x.n,amt:x.over,date:today(),s:sess(),shopId:currentUser.shopId,shopName:currentUser.shopName,createdAt:Date.now()});exportsL.push(saved)}await saveEx();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Export Saved ✅','success');toast('Limit Export Saved ✅','success');await addAudit('SAVE_LIMIT_EXPORT',`count ${o.length} / over ${money(o.reduce((a,b)=>a+b.over,0))}`)}catch(e){setCloudStatus('Limit Save Error: '+e.message,'danger');alert(e.message)}finally{setBusy(false)}}
@@ -1824,9 +1873,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   rName.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();rCode.focus();focusField('rCode')}});
   rCode.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();rAmt.focus();focusField('rAmt')}});
   rAmt.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();saveGroup()}});
-  currentUser=null;token='';uid='';authEmail='';
-  loginPage.classList.add('active');app.classList.remove('active');lockPage.classList.remove('active');
-  u.focus();focusField('rCode');setCloudStatus('Cloud: Please login','info');
+  restoreSession().then(ok=>{
+    if(!ok){
+      clearSession();
+      loginPage.classList.add('active');app.classList.remove('active');lockPage.classList.remove('active');
+      u.focus();focusField('rCode');setCloudStatus('Cloud: Please login','info');
+    }
+  });
   [['amP','AM'],['dAmP','AM'],['imgAM','AM'],['pmP','PM'],['dPmP','PM'],['imgPM','PM']].forEach(([id,k])=>$(id)?.addEventListener('input',e=>{setP(k,e.target.value,true);renderImg()}));
 
   window.addEventListener('online',updateNetBadge);
