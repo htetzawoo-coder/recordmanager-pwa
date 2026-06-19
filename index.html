@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.6.3 Invite Share Fix</title>
+<title>RecordManager_2D_Logic_Pro v1.6.5 Admin Register Fix</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.6.3 Invite Share Fix */
+/* v1.6.5 Admin Register Fix */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.6.3 Invite Share Fix */
+/* v1.6.5 Admin Register Fix */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.6.3 Invite Share Fix */
+/* v1.6.5 Admin Register Fix */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,7 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.6.3 Invite Share Fix + Clear Limit Board */
+/* v1.6.5 Admin Register Fix + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -219,12 +219,12 @@ body.admin-windows-mode .windows-live-desk{display:block}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.3 Invite Share Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.5 Admin Register Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
-      <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()">Refresh</button>
+      <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()" data-i18n-key="Refresh">Refresh</button>
       <button id="langBtn" class="btn btn-light btn-sm rounded-pill fw-bold" onclick="toggleLang()">မြန်မာ</button>
-      <button id="updateBtn" class="btn btn-success btn-sm rounded-pill fw-bold" onclick="forceAppUpdate()">Update</button>
+      <button id="updateBtn" class="btn btn-success btn-sm rounded-pill fw-bold" onclick="forceAppUpdate()" data-i18n-key="Update">Update</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
       <button id="desktopModeBtn" class="btn btn-info btn-sm rounded-pill fw-bold d-none" onclick="toggleDesktopMode()">🪟 Windows Mode</button>
       <button class="btn btn-light btn-sm rounded-pill fw-bold" onclick="toggleTheme()">Theme</button>
@@ -236,7 +236,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.6.3 Invite Share Fix — Share link + Owner delete + duplicate checks</p>
+      <p class="small-note mb-2">v1.6.5 Admin Register Fix — strict rules login/register fix</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -557,10 +557,10 @@ body.admin-windows-mode .windows-live-desk{display:block}
           <div class="col-6"><input id="invitePhone" class="form-control" inputmode="tel" placeholder="Phone"></div>
           <div class="col-6"><input id="inviteCor" class="form-control" inputmode="decimal" placeholder="Cor %"></div>
           <div class="col-6"><input id="inviteExpireHours" class="form-control" inputmode="numeric" value="24" placeholder="Expire Hours"></div>
-          <div class="col-12"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="createInviteLink()">Generate Invite Link</button></div>
+          <div class="col-12"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="createInviteLink()" data-i18n-key="Generate Invite Link">Generate Invite Link</button></div>
           <div class="col-12"><textarea id="inviteLinkBox" class="form-control" rows="2" readonly placeholder="Invite link ပေါ်လာမည်"></textarea></div>
-          <div class="col-6"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="copyInviteLink()">Copy Link</button></div>
-          <div class="col-6"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="shareInviteLink()">Share Link</button></div>
+          <div class="col-6"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="copyInviteLink()" data-i18n-key="Copy Link">Copy Link</button></div>
+          <div class="col-6"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="shareInviteLink()" data-i18n-key="Share Link">Share Link</button></div>
         </div>
       </div>
       <div class="card p-3">
@@ -669,7 +669,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.6.3 Invite Share Fix
+   RecordManager_2D_Logic_Pro v1.6.5 Admin Register Fix
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -1041,7 +1041,6 @@ async function restoreSession(){
       accounts=await listCollection(COL_ACCOUNTS);ensureAccountPublicIds();ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
       applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Session Restored ✅','success');return true;
     }
-    await enforcePasswordChangeIfNeeded(acc);
     await loadCloudAll();
     if(checkLock())return true;
     applyRoleUI();renderAll();
@@ -1116,7 +1115,7 @@ async function registerAdmin(){
     setBusy(true,'Creating admin shop...');
     let rr=await api(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,{method:'POST',noAuth:true,body:JSON.stringify({email,password:pass,returnSecureToken:true})});
     token=rr.idToken;refreshToken=rr.refreshToken||'';uid=rr.localId;authEmail=email;
-    accounts=await listCollection(COL_ACCOUNTS);
+    try{accounts=await listCollection(COL_ACCOUNTS)}catch(x){accounts=[];console.warn('Admin duplicate check skipped under strict rules',x.message)}
     let duplicateAdmin=(accounts||[]).find(a=>String(a.shopName||'').trim().toLowerCase()===shop.toLowerCase()||String(a.memberName||'').trim().toLowerCase()===owner.toLowerCase()||String(a.phone||'').trim()===phone);
     if(duplicateAdmin)throw new Error('Admin/Shop name သို့မဟုတ် Phone တူနေပါသည်');
     let shopId=makeShopId(shop),adminNo=makePublicId('A'),acc={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,adminNo,publicId:adminNo,cor:Number(settings.cor||13),active:true,createdAt:Date.now()};
@@ -1146,7 +1145,16 @@ async function login(){
 
     let acc=await getDoc(COL_ACCOUNTS,uid,null);
 
-    // Transition support: v1.4.0/email-doc accounts ကို uid-doc အဖြစ် migrate လုပ်ရန်
+    // Transition support: old email-doc accounts ကို uid-doc အဖြစ် migrate လုပ်ရန်
+    if(!acc){
+      try{
+        let old=await getDoc(COL_ACCOUNTS,authEmail,null);
+        if(old&&String(old.email||old.username||'').toLowerCase()===authEmail){
+          old.uid=uid;old.id=uid;old.email=authEmail;old.username=authEmail;old.shopId=old.shopId||'demo_shop';old.shopName=old.shopName||'Demo Shop';
+          await setDoc(COL_ACCOUNTS,uid,old);acc=old;
+        }
+      }catch(e){}
+    }
     if(!acc){
       try{
         let all=await listCollection(COL_ACCOUNTS);
@@ -1166,6 +1174,7 @@ async function login(){
     if(acc.active===false)return alert('ဒီ Account ကို ပိတ်ထားပါသည်');
     currentUser={id:uid,uid,email:authEmail,username:authEmail,role:acc.role||'member',memberName:acc.memberName||acc.name||authEmail,phone:acc.phone||'',adminNo:acc.adminNo||acc.publicId||'',memberNo:acc.memberNo||acc.publicId||'',publicId:acc.publicId||acc.adminNo||acc.memberNo||'',mustChangePassword:!!acc.mustChangePassword,cor:Number(acc.cor||settings.cor||13),shopId:acc.shopId||'demo_shop',shopName:acc.shopName||'Demo Shop',active:acc.active!==false};
 
+    await enforcePasswordChangeIfNeeded(acc);
     await loadCloudAll();
     saveCur();saveSession();
     if(checkLock())return;
@@ -1246,6 +1255,11 @@ const I18N={
   my:{dash:'📊 စုစုပေါင်း',entry:'📝 စာရင်းထိုးရန်',records:'📋 စာရင်းများ',limit:'📉 လစ်မစ်',over:'🚨 အိုဗာ',am:'☀️ မနက်ပိုင်း',pm:'🌙 ညနေပိုင်း',daily:'📅 နေ့ချုပ်',history:'🗓️ မှတ်တမ်း',img:'🖼️ ပုံစာရင်း',members:'👥 မန်ဘာများ',messages:'💬 စာတို',logs:'🧾 လုပ်ဆောင်မှုမှတ်တမ်း',settings:'⚙️ ဆက်တင်',owner:'👑 Owner',lang:'မြန်မာ'},
   en:{dash:'📊 Dashboard',entry:'📝 Record Entry',records:'📋 Records',limit:'📉 Limit',over:'🚨 Over',am:'☀️ AM',pm:'🌙 PM',daily:'📅 Daily',history:'🗓️ History',img:'🖼️ Image',members:'👥 Members',messages:'💬 Messages',logs:'🧾 Logs',settings:'⚙️ Settings',owner:'👑 Owner',lang:'English'}
 };
+const TERM_MY={
+  'Limit Amount':'လစ်မစ်ပမာဏ','Max Amount':'အများဆုံးပမာဏ','Max Lose Amount':'အများဆုံးအရှုံးပမာဏ','Lose %':'အရှုံးရာခိုင်နှုန်း','Total':'စုစုပေါင်း','Cor':'ကော်မရှင် / Cor','AM':'မနက်ပိုင်း','PM':'ညနေပိုင်း','Worst Pay':'အဆိုးဆုံးလျော်ကြေး','Pay Allowed':'ပေးနိုင်သည့်အများဆုံးလျော်ကြေး','Balance':'လက်ကျန်','Over Count':'အိုဗာအရေအတွက်','Suggested Limit':'အကြံပြုလစ်မစ်','Max No':'အများဆုံးနံပါတ်','Status':'အခြေအနေ','Risk':'အန္တရာယ်အခြေအနေ','SAFE':'စိတ်ချရ','DANGER':'အန္တရာယ်ရှိ','Records':'စာရင်းများ','Members':'မန်ဘာများ','Member List':'မန်ဘာစာရင်း','Invite Link':'ဖိတ်ခေါ်လင့်','Generate Invite Link':'ဖိတ်ခေါ်လင့်ထုတ်ရန်','Share Link':'လင့်မျှဝေရန်','Copy Link':'လင့်ကူးရန်','Copy Invite Link':'ဖိတ်ခေါ်လင့်ကူးရန်','Member Invite Link':'မန်ဘာဖိတ်ခေါ်လင့်','Member Name':'မန်ဘာနာမည်','Phone':'ဖုန်း','Phone Number':'ဖုန်းနံပါတ်','Expire Hours':'သက်တမ်းနာရီ','Admin Dashboard':'Admin စုစုပေါင်း','Member Dashboard':'မန်ဘာ စုစုပေါင်း','Member Record Entry':'မန်ဘာစာရင်းထိုးရန်','Record Entry':'စာရင်းထိုးရန်','Payout Rate':'လျော်ကြေးနှုန်း','Default Cor %':'Default ကော်မရှင် %','App Name':'App နာမည်','Owner / Shop Name':'Owner / ဆိုင်နာမည်','Open AM':'မနက်ပိုင်း ဖွင့်ချိန်','Close AM':'မနက်ပိုင်း ပိတ်ချိန်','Open PM':'ညနေပိုင်း ဖွင့်ချိန်','Close PM':'ညနေပိုင်း ပိတ်ချိန်','Save General Settings':'ဆက်တင် သိမ်းမည်','Backup / Restore':'Backup / Restore','No records':'စာရင်းမရှိသေးပါ','No Members':'မန်ဘာမရှိသေးပါ','View only':'ကြည့်ရန်သာ','Latest Recorded':'နောက်ဆုံးသိမ်းထားသောစာရင်း','Sync Now':'အခု Sync လုပ်','Refresh':'Refresh','Update':'Update','Logout':'ထွက်မည်','Theme':'Theme','Install':'Install','Admin Only — Limit Monitor':'Admin Only — လစ်မစ်စစ်ရန်','Admin Only — Limit Over Table':'Admin Only — အိုဗာစာရင်း','Image / Member Result Report':'ပုံစာရင်း / မန်ဘာ Result','Contact / Message Box':'ဆက်သွယ်ရန် / စာတို','Audit Logs':'လုပ်ဆောင်မှုမှတ်တမ်း','Settings & Data Safety':'ဆက်တင် & Data Safety','Full Read-only Date':'ပြန်ကြည့်မည့် Date','OK':'OK','This Week':'ဒီအပတ်','Show History':'မှတ်တမ်းကြည့်မည်'
+};
+const TERM_EN={};Object.keys(TERM_MY).forEach(k=>TERM_EN[k]=k);
+
 function appLang(){return localLoad('RM_v162_lang','my')}
 function L(k){return (I18N[appLang()]||I18N.my)[k]||k}
 function toggleLang(){localSave('RM_v162_lang',appLang()==='my'?'en':'my');applyLanguage();toast('Language changed','info')}
@@ -1253,6 +1267,22 @@ function applyLanguage(){
   let ids={tDash:'dash',tEntry:'entry',tRecords:'records',tLimit:'limit',tOver:'over',tAM:'am',tPM:'pm',tDaily:'daily',tHistory:'history',tImg:'img',tMembers:'members',tMessages:'messages',tLogs:'logs',tSettings:'settings',tOwner:'owner'};
   Object.keys(ids).forEach(id=>{let e=$(id);if(e)e.innerText=L(ids[id])});
   if($('langBtn'))langBtn.innerText=appLang()==='my'?'English':'မြန်မာ';
+  applyTermLanguage();
+}
+function applyTermLanguage(){
+  let my=appLang()==='my';
+  let dict=my?TERM_MY:TERM_EN;
+  document.querySelectorAll('label,.risk-title,.redlbl,th,button,h5,h6,.last-entry-preview span,.small-translate').forEach(el=>{
+    let txt=(el.dataset.i18nKey||el.textContent||'').trim();
+    if(!el.dataset.i18nKey){
+      if(TERM_MY[txt]||Object.values(TERM_MY).includes(txt)){
+        let base=TERM_MY[txt]?txt:Object.keys(TERM_MY).find(k=>TERM_MY[k]===txt);
+        if(base)el.dataset.i18nKey=base;
+      }
+    }
+    let base=el.dataset.i18nKey;
+    if(base&&dict[base])el.textContent=dict[base];
+  });
 }
 
 function logout(){clearSession();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');$('desktopModeBtn')?.classList.add('d-none');document.body.classList.remove('admin-windows-mode');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary');updateDesktopModeUI()}
@@ -1730,7 +1760,7 @@ service cloud.firestore {
     function sameShopRequest() { return hasAccount() && request.resource.data.shopId == myShop(); }
 
     match /recordmanager/main/accounts/{uid} {
-      allow read: if isOwner() || (hasAccount() && resource.data.shopId == myShop()) || (signedIn() && uid == request.auth.uid);
+      allow read: if isOwner() || (signedIn() && resource.data.email == request.auth.token.email) || (hasAccount() && resource.data.shopId == myShop()) || (signedIn() && uid == request.auth.uid);
       allow create: if isOwner() || (hasAccount() && myRole() == 'admin' && request.resource.data.shopId == myShop() && request.resource.data.role == 'member') || (signedIn() && uid == request.auth.uid && (request.resource.data.role == 'member' || request.resource.data.role == 'admin'));
       allow update: if isOwner() || (signedIn() && uid == request.auth.uid) || (hasAccount() && myRole() == 'admin' && resource.data.shopId == myShop() && request.resource.data.shopId == myShop() && resource.data.role == 'member');
       allow delete: if isOwner() || (hasAccount() && myRole() == 'admin' && resource.data.shopId == myShop() && resource.data.role == 'member');
