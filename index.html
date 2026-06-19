@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.0 PWA Install Deploy</title>
+<title>RecordManager_2D_Logic_Pro v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-:root{--bg:#f4f6fb;--card:#fff;--text:#111827;--muted:#64748b;--border:#e5e7eb;--primary:#2563eb;--purple:#7c3aed}body{background:var(--bg);color:var(--text);font-family:Arial,'Noto Sans Myanmar',sans-serif;padding-bottom:30px}.dark{--bg:#111827;--card:#1f2937;--text:#f9fafb;--muted:#cbd5e1;--border:#334155}.card{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 25px #0001;margin-bottom:16px}.page{display:none}.page.active{display:block}.appbar{position:sticky;top:0;z-index:1000;border-radius:0 0 18px 18px}.tabs{position:sticky;top:58px;z-index:999;background:var(--bg);padding:8px 6px;white-space:nowrap;overflow-x:auto;border-bottom:1px solid var(--border)}.tabs button{border:0;border-radius:999px;padding:9px 12px;margin:2px;background:var(--card);color:var(--muted);font-weight:800;box-shadow:0 4px 12px #0001}.tabs button.active{background:var(--primary);color:#fff}.form-control,.form-select{border:1px solid var(--border);border-radius:14px;padding:12px;background:var(--card);color:var(--text);font-weight:700}.dark .form-control,.dark .form-select{background:#0f172a;color:#f9fafb;border-color:#334155}.focused-input{outline:3px solid #60a5fa!important}.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.keypad button{min-height:56px;font-weight:900;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);box-shadow:0 5px 12px #0001}.keypad .enter{grid-column:span 4;min-height:72px;background:linear-gradient(135deg,#10b981,#047857);color:#fff;font-size:24px;border:0}.keypad small{font-size:11px;color:var(--muted)}.name-text{font-weight:900;color:var(--purple)}.nums{display:none;background:#eff6ff;border-radius:10px;padding:8px;margin-top:6px;font-size:12px;line-height:1.6;color:#1e3a8a}.dark .nums{background:#0f2a4a;color:#bfdbfe}.limit-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:11px}.cell{background:var(--card);border:1px solid var(--border);border-radius:6px;text-align:center;padding:5px 1px}.hit{background:#dc2626!important;color:#fff!important;font-weight:900;box-shadow:0 0 0 2px #7f1d1d inset}.neg{background:#fee2e2!important;color:#991b1b!important;font-weight:900}.pos{background:#dcfce7!important;color:#166534!important;font-weight:900}.dark .table{--bs-table-bg:var(--card);--bs-table-color:var(--text);--bs-table-border-color:var(--border)}.report-shell{background:linear-gradient(135deg,#e0f7fa,#fff 40%,#fff1f2);padding:14px;border-radius:20px}#imgBox{background:#fff;color:#111;max-width:610px;margin:auto;padding:20px;border-radius:22px;border:1px solid #e5e7eb;box-shadow:0 12px 28px #0002}.img-header{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}.img-title{font-size:34px;font-weight:1000;color:#111;text-shadow:2px 2px 0 #facc15;word-break:break-word}.badge13{border:3px solid #22d3ee;color:#0891b2;background:#ecfeff;font-size:24px;font-weight:1000;padding:6px 12px;border-radius:12px;min-width:86px;text-align:center}.session-card{background:#fafafa;border:1px solid #e5e7eb;border-radius:18px;padding:14px;height:100%}.ap{font-size:30px;color:#7c3aed;font-weight:1000;text-align:center}.redlbl{color:#ef4444;font-weight:900;font-size:15px;margin-top:10px}.val{font-weight:1000;font-size:20px;color:#111;border-bottom:1px dashed #e5e7eb}.daily-title{text-align:center;font-size:32px;font-weight:1000;text-shadow:2px 2px 0 #facc15;margin:14px 0 8px}.daily-box{border:4px solid #67e8f9;background:#f8fafc;margin:8px auto 12px;padding:14px 24px;max-width:430px;border-radius:16px}.daily-row{font-size:28px;color:#65a30d;font-weight:1000}.action-text{text-align:center;font-weight:1000;color:#e11d48;text-shadow:1px 1px 0 #111}.lock-screen{min-height:70vh;display:flex;align-items:center;justify-content:center}.lock-card{max-width:520px;margin:auto;border:2px solid #ef4444}.logo-tile{width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:1000;margin:auto;box-shadow:0 8px 18px #0002}.license-box{display:none;border:2px dashed #ef4444;border-radius:16px;padding:12px;margin-top:12px}@media(min-width:900px){.container{max-width:1320px}.tabs{position:fixed;left:0;top:58px;bottom:0;width:218px;display:flex;flex-direction:column;white-space:normal;overflow-y:auto;border-right:1px solid var(--border);border-bottom:0}.tabs button{width:100%;text-align:left;margin:4px 0}.page{margin-left:230px}.card{border-radius:16px}.keypad{max-width:560px}.table-responsive{max-height:70vh}.report-shell{max-width:760px;margin:auto}}@media print{.appbar,.tabs,button,input,select{display:none!important}.page{display:block!important;margin-left:0!important}.card{box-shadow:none!important;border:0!important}}
+:root{--bg:#f4f6fb;--card:#fff;--text:#111827;--muted:#64748b;--border:#e5e7eb;--primary:#2563eb;--purple:#7c3aed}body{background:var(--bg);color:var(--text);font-family:Arial,'Noto Sans Myanmar',sans-serif;padding-bottom:30px}.dark{--bg:#111827;--card:#1f2937;--text:#f9fafb;--muted:#cbd5e1;--border:#334155}.card{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 25px #0001;margin-bottom:16px}.page{display:none}.page.active{display:block}.appbar{position:sticky;top:0;z-index:1000;border-radius:0 0 18px 18px}.tabs{position:sticky!important;top:58px;z-index:999;background:var(--bg);padding:8px 6px;white-space:nowrap;overflow-x:auto;border-bottom:1px solid var(--border)}.tabs button{border:0;border-radius:999px;padding:9px 12px;margin:2px;background:var(--card);color:var(--muted);font-weight:800;box-shadow:0 4px 12px #0001}.tabs button.active{background:var(--primary);color:#fff}.form-control,.form-select{border:1px solid var(--border);border-radius:14px;padding:12px;background:var(--card);color:var(--text);font-weight:700}.dark .form-control,.dark .form-select{background:#0f172a;color:#f9fafb;border-color:#334155}.focused-input{outline:3px solid #60a5fa!important}.keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.keypad button{min-height:56px;font-weight:900;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);box-shadow:0 5px 12px #0001}.keypad .enter{grid-column:span 4;min-height:72px;background:linear-gradient(135deg,#10b981,#047857);color:#fff;font-size:24px;border:0}.keypad small{font-size:11px;color:var(--muted)}.name-text{font-weight:900;color:var(--purple)}.nums{display:none;background:#eff6ff;border-radius:10px;padding:8px;margin-top:6px;font-size:12px;line-height:1.6;color:#1e3a8a}.dark .nums{background:#0f2a4a;color:#bfdbfe}.limit-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:11px}.cell{background:var(--card);border:1px solid var(--border);border-radius:6px;text-align:center;padding:5px 1px}.hit{background:#dc2626!important;color:#fff!important;font-weight:900;box-shadow:0 0 0 2px #7f1d1d inset}.neg{background:#fee2e2!important;color:#991b1b!important;font-weight:900}.pos{background:#dcfce7!important;color:#166534!important;font-weight:900}.dark .table{--bs-table-bg:var(--card);--bs-table-color:var(--text);--bs-table-border-color:var(--border)}.report-shell{background:linear-gradient(135deg,#e0f7fa,#fff 40%,#fff1f2);padding:14px;border-radius:20px}#imgBox{background:#fff;color:#111;max-width:610px;margin:auto;padding:20px;border-radius:22px;border:1px solid #e5e7eb;box-shadow:0 12px 28px #0002}.img-header{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}.img-title{font-size:34px;font-weight:1000;color:#111;text-shadow:2px 2px 0 #facc15;word-break:break-word}.badge13{border:3px solid #22d3ee;color:#0891b2;background:#ecfeff;font-size:24px;font-weight:1000;padding:6px 12px;border-radius:12px;min-width:86px;text-align:center}.session-card{background:#fafafa;border:1px solid #e5e7eb;border-radius:18px;padding:14px;height:100%}.ap{font-size:30px;color:#7c3aed;font-weight:1000;text-align:center}.redlbl{color:#ef4444;font-weight:900;font-size:15px;margin-top:10px}.val{font-weight:1000;font-size:20px;color:#111;border-bottom:1px dashed #e5e7eb}.daily-title{text-align:center;font-size:32px;font-weight:1000;text-shadow:2px 2px 0 #facc15;margin:14px 0 8px}.daily-box{border:4px solid #67e8f9;background:#f8fafc;margin:8px auto 12px;padding:14px 24px;max-width:430px;border-radius:16px}.daily-row{font-size:28px;color:#65a30d;font-weight:1000}.action-text{text-align:center;font-weight:1000;color:#e11d48;text-shadow:1px 1px 0 #111}.lock-screen{min-height:70vh;display:flex;align-items:center;justify-content:center}.lock-card{max-width:520px;margin:auto;border:2px solid #ef4444}.logo-tile{width:96px;height:96px;border-radius:22px;background:linear-gradient(135deg,#2563eb,#10b981);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:1000;margin:auto;box-shadow:0 8px 18px #0002}.license-box{display:none;border:2px dashed #ef4444;border-radius:16px;padding:12px;margin-top:12px}@media(min-width:900px){.container{max-width:1320px}.tabs{position:fixed;left:0;top:58px;bottom:0;width:218px;display:flex;flex-direction:column;white-space:normal;overflow-y:auto;border-right:1px solid var(--border);border-bottom:0}.tabs button{width:100%;text-align:left;margin:4px 0}.page{margin-left:230px}.card{border-radius:16px}.keypad{max-width:560px}.table-responsive{max-height:70vh}.report-shell{max-width:760px;margin:auto}}@media print{.appbar,.tabs,button,input,select{display:none!important}.page{display:block!important;margin-left:0!important}.card{box-shadow:none!important;border:0!important}}
 .role-pill{font-size:12px;border-radius:999px;padding:5px 10px;background:#e0f2fe;color:#075985;font-weight:900;margin-left:6px}
 .dark .role-pill{background:#0c4a6e;color:#e0f2fe}
 .hidden-by-role{display:none!important}
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.0 PWA Install Deploy */
+/* v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -113,18 +113,608 @@
 .dark .cal-am{background:#1e3a8a;color:#dbeafe}.dark .cal-pm{background:#78350f;color:#fde68a}
 @media(max-width:600px){.calendar-grid{grid-template-columns:repeat(5,118px);}.cal-cell{min-width:118px}}
 .workday-badge{display:inline-block;border-radius:999px;background:#dcfce7;color:#166534;padding:5px 10px;font-size:12px;font-weight:1000;margin-top:6px}.dark .workday-badge{background:#14532d;color:#bbf7d0}
+.owner-badge{display:inline-block;border-radius:999px;background:#fef3c7;color:#92400e;padding:4px 9px;font-weight:1000;font-size:11px}.dark .owner-badge{background:#78350f;color:#fde68a}.owner-table td,.owner-table th{font-size:12px;vertical-align:middle}
+
+
+/* v1.5.5 owner license control */
+.tabs{backdrop-filter:blur(8px)}
+.result-clean{border-radius:18px;padding:12px;margin:10px 0;border:1px solid var(--border);box-shadow:0 6px 16px #0001}
+.result-clean.win{background:#dcfce7;color:#166534}.result-clean.lose{background:#fee2e2;color:#991b1b}
+.result-head{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed currentColor;padding-bottom:8px;margin-bottom:8px}
+.result-badge{border-radius:999px;padding:5px 10px;background:#fff;font-size:12px;font-weight:1000;color:#111}
+.result-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-weight:800}
+.result-row span:first-child{opacity:.82}.result-row b{text-align:right}
+.result-final{font-size:20px;border-top:1px dashed currentColor;margin-top:6px;padding-top:8px}
+.weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
+.closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
+
+/* v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization */
+.owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
+.dark .owner-license-card{background:#451a03;border-color:#92400e}
+.license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
+.license-active{background:#dcfce7;color:#166534}
+.license-warning{background:#fef3c7;color:#92400e}
+.license-disabled,.license-expired{background:#fee2e2;color:#991b1b}
+.owner-control-note{font-size:12px;color:var(--muted);font-weight:700}
+
+
+
+/* v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization */
+#desktopModeBtn{white-space:nowrap}
+body.admin-windows-mode .container{max-width:1680px}
+body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
+body.admin-windows-mode .tabs{width:246px;top:58px;padding:10px 8px}
+body.admin-windows-mode .page{margin-left:260px}
+body.admin-windows-mode .card{border-radius:18px}
+body.admin-windows-mode .table-responsive{max-height:72vh}
+body.admin-windows-mode #dash .row.g-2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+body.admin-windows-mode #dash .row.g-2>.col-6{width:100%}
+body.admin-windows-mode #records .table-responsive,
+body.admin-windows-mode #members .table-responsive,
+body.admin-windows-mode #history .table-responsive,
+body.admin-windows-mode #logs .audit-list,
+body.admin-windows-mode #msgList{max-height:70vh}
+body.admin-windows-mode #entry .card,
+body.admin-windows-mode #settings .card,
+body.admin-windows-mode #limit .card,
+body.admin-windows-mode #over .card{max-width:1120px}
+body.admin-windows-mode #imgBox{max-width:760px}
+body.admin-windows-mode .calendar-grid{grid-template-columns:repeat(5,minmax(180px,1fr))}
+body.admin-windows-mode .history-table th,body.admin-windows-mode .history-table td{font-size:13px}
+body.admin-windows-mode .keypad{max-width:760px;grid-template-columns:repeat(5,1fr)}
+body.admin-windows-mode .keypad .enter{grid-column:span 5}
+body.admin-windows-mode .smart-grid{grid-template-columns:repeat(4,1fr)}
+body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{font-size:13px}
+
+
+/* v1.6.5 Split Panel Layout & Desktop Optimization */
+.split-panel-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media(min-width:1400px) {
+  .split-panel-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .split-panel-container.triple {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.split-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 4px 12px #0001;
+}
+
+.split-panel h6 {
+  font-weight: 900;
+  margin-bottom: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.split-panel-content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Enhanced Limit Grid for Desktop */
+body.admin-windows-mode .limit-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  font-size: 12px;
+}
+
+body.admin-windows-mode .cell {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+body.admin-windows-mode .cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px #0002;
+}
+
+/* Desktop Dashboard Panels */
+body.admin-windows-mode #dash .split-panel-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+body.admin-windows-mode #dash .split-panel-container.full {
+  grid-template-columns: 1fr;
+}
+
+/* Limit Page Split Layout */
+body.admin-windows-mode #limit .split-panel-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+body.admin-windows-mode #limit .limit-grid {
+  grid-template-columns: repeat(15, 1fr);
+}
+
+/* Over Page Messages Panel */
+body.admin-windows-mode .over-messages-panel {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: var(--bg);
+}
+
+.message-item {
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: var(--card);
+  border-left: 3px solid var(--primary);
+  font-size: 12px;
+}
+
+.message-item.warning {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.message-item.danger {
+  border-left-color: #ef4444;
+  background: #fee2e2;
+}
+
+.dark .message-item.warning {
+  background: #451a03;
+}
+
+.dark .message-item.danger {
+  background: #450a0a;
+}
+
+/* Number Grid Enhancement */
+.limit-grid .cell {
+  cursor: pointer;
+  user-select: none;
+}
+
+.limit-grid .cell.header {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+  border-radius: 6px;
+}
+
+.limit-grid .cell.total {
+  background: #e0e7ff;
+  color: #3730a3;
+  font-weight: 900;
+  border-radius: 6px;
+}
+
+.dark .limit-grid .cell.total {
+  background: #312e81;
+  color: #e0e7ff;
+}
+
+/* Responsive Adjustments */
+@media(max-width:1200px) {
+  body.admin-windows-mode #limit .split-panel-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  body.admin-windows-mode #limit .limit-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media(max-width:768px) {
+  body.admin-windows-mode #limit .split-panel-container {
+    grid-template-columns: 1fr;
+  }
+  
+  body.admin-windows-mode #limit .limit-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+
+/* v1.6.5 Advanced Limit Table Design */
+
+/* Number Grid Enhancements */
+.limit-grid {
+  perspective: 1000px;
+}
+
+.limit-grid .cell {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 4px #0001;
+}
+
+.limit-grid .cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.limit-grid .cell:hover::before {
+  left: 100%;
+}
+
+.limit-grid .cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px #0002;
+}
+
+/* Hit Numbers - Red */
+.limit-grid .cell.hit {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.limit-grid .cell.hit:hover {
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
+  transform: scale(1.08);
+}
+
+/* Negative Numbers - Light Red */
+.limit-grid .cell.neg {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  font-weight: 800;
+  border: 1px solid #fca5a5;
+}
+
+.limit-grid .cell.neg:hover {
+  background: linear-gradient(135deg, #fecaca, #fca5a5);
+}
+
+/* Positive Numbers - Green */
+.limit-grid .cell.pos {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+  font-weight: 800;
+  border: 1px solid #86efac;
+}
+
+.limit-grid .cell.pos:hover {
+  background: linear-gradient(135deg, #bbf7d0, #86efac);
+}
+
+/* Normal Numbers */
+.limit-grid .cell {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.dark .limit-grid .cell {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.dark .limit-grid .cell.hit {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  box-shadow: 0 4px 12px rgba(127, 29, 29, 0.4);
+}
+
+.dark .limit-grid .cell.neg {
+  background: linear-gradient(135deg, #450a0a, #7f1d1d);
+  color: #fecaca;
+  border-color: #991b1b;
+}
+
+.dark .limit-grid .cell.pos {
+  background: linear-gradient(135deg, #052e16, #166534);
+  color: #bbf7d0;
+  border-color: #15803d;
+}
+
+/* Grid Statistics */
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 12px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.stat-item small {
+  display: block;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.stat-item b {
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.stat-item.hit-stat b {
+  color: #dc2626;
+}
+
+.stat-item.pos-stat b {
+  color: #16a34a;
+}
+
+.stat-item.neg-stat b {
+  color: #ea580c;
+}
+
+/* Number Range Highlight */
+.number-range-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.number-range-input input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Limit Table Legend */
+.limit-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.legend-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.legend-box.hit {
+  background: #dc2626;
+  border-color: #991b1b;
+}
+
+.legend-box.pos {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.legend-box.neg {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.legend-box.normal {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+/* Responsive Grid Adjustments */
+@media(max-width:1600px) {
+  body.admin-windows-mode .limit-grid {
+    grid-template-columns: repeat(12, 1fr) !important;
+  }
+}
+
+@media(max-width:1200px) {
+  body.admin-windows-mode .limit-grid {
+    grid-template-columns: repeat(10, 1fr) !important;
+  }
+}
+
+@media(max-width:768px) {
+  body.admin-windows-mode .limit-grid {
+    grid-template-columns: repeat(8, 1fr) !important;
+  }
+  
+  .limit-grid .cell {
+    min-height: 40px;
+    font-size: 11px;
+  }
+}
+
+/* Animation for number updates */
+@keyframes numberPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.limit-grid .cell.updated {
+  animation: numberPulse 0.4s ease-out;
+}
+
+/* Hover Tooltip */
+.limit-grid .cell[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+  margin-bottom: 6px;
+}
+
+.limit-grid .cell[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+/* Summary Cards Enhancement */
+.risk-box {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.risk-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px #0002;
+}
+
+.risk-box.warning {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.risk-box.danger {
+  border-color: #ef4444;
+  background: #fee2e2;
+}
+
+.risk-box.success {
+  border-color: #10b981;
+  background: #dcfce7;
+}
+
+.dark .risk-box.warning {
+  background: #451a03;
+}
+
+.dark .risk-box.danger {
+  background: #450a0a;
+}
+
+.dark .risk-box.success {
+  background: #052e16;
+}
 
 </style>
 </head>
 <body>
+
+<!-- 
+================================================================================
+RecordManager Pro v1.6.5 — Changelog
+================================================================================
+
+v1.6.5 Updates:
+✅ Admin Dashboard Split Panels
+   - Key Statistics panel with 4 stat cards (Records, Members, AM, PM)
+   - Risk Status panel for quick overview
+   - Smart Risk Summary with top risk numbers
+   - Responsive grid layout (1 column mobile, 2 columns tablet, 2 columns desktop)
+
+✅ Limit Table Design Enhancement
+   - Improved number grid visualization with 1-100 number display
+   - Color-coded cells: Red (Hit), Green (Positive), Light Red (Negative)
+   - Interactive hover effects with smooth animations
+   - Enhanced statistics panel showing Hit Count, Positive, Negative totals
+   - Grid legend for quick reference
+   - Responsive grid columns: 15 (1600px+), 12 (1200px+), 10 (1024px+), 8 (768px-)
+
+✅ Desktop Optimization (Windows Mode)
+   - Wide screen layout support (max-width: 1680px)
+   - Split panel containers with responsive grid
+   - Enhanced sidebar navigation (246px width)
+   - Optimized table heights (max-height: 70-72vh)
+   - Improved keypad layout (5 columns on desktop)
+   - Calendar grid expansion (5 columns, 180px min-width)
+   - Over page messages panel with visual hierarchy
+
+✅ UI/UX Improvements
+   - Smooth transitions and animations
+   - Better visual hierarchy with color gradients
+   - Enhanced risk box styling with warning/danger states
+   - Improved message item styling with left border indicators
+   - Better responsive breakpoints
+   - Keyboard shortcuts (Ctrl+L to jump to Limit tab)
+
+================================================================================
+Previous Version (v1.5.6):
+- Windows Admin Mode with sidebar navigation
+- License Control & App Lock system
+- Keyboard bug fixes (အပါ button support)
+- Manual input logic support (1အပါ / 12အပြန်)
+- UI cleanup for Super Admin Dashboard
+
+================================================================================
+Technical Stack:
+- Framework: Bootstrap 5.3.3
+- Language: Burmese (Myanmar) & English
+- Database: Firebase Firestore
+- PWA: Service Worker support
+- Responsive: Mobile-first design
+- Dark Mode: Supported
+
+================================================================================
+File Size: ~150KB (minified)
+Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
+================================================================================
+-->
+
+
 <div id="toastWrap"></div>
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.0 PWA Install Deploy</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
+      <button id="desktopModeBtn" class="btn btn-info btn-sm rounded-pill fw-bold d-none" onclick="toggleDesktopMode()">🪟 Windows Mode</button>
       <button class="btn btn-light btn-sm rounded-pill fw-bold" onclick="toggleTheme()">Theme</button>
     </div>
   </div>
@@ -134,9 +724,9 @@
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.0 PWA Install Deploy — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
-      <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Firebase Email" value="admin@test.com">
-      <input id="p" type="password" class="form-control mb-3" placeholder="Firebase Password" value="123456">
+      <p class="small-note mb-2">v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
+      <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
       <div class="register-box">
         <button class="btn btn-outline-primary w-100 rounded-pill fw-bold mb-2" type="button" onclick="regBox.style.display=regBox.style.display==='block'?'none':'block'">➕ New Admin Register</button>
@@ -150,11 +740,8 @@
           <small class="text-muted">Admin အသစ်တစ်ယောက်သည် shopId သီးသန့်ဖြင့် သူ့ member/data ကို သီးခြားသုံးနိုင်ပါမည်။</small>
         </div>
       </div>
-      <div class="alert alert-info mt-3 mb-0 small">
-        <b>Firebase Test Accounts</b><br>
-        Admin: <b>admin@test.com / 123456</b><br>
-        Member 1: <b>member1@test.com / 111111</b><br>
-        <small>Member အသစ်ထည့်လျှင် Firebase Authentication ထဲတွင်လည်း user ရှိရပါမည်။</small>
+      <div class="alert alert-secondary mt-3 mb-0 small">
+        Admin / Member account ဖြင့် Sign in ဝင်ပါ။ Member account သည် သက်ဆိုင်ရာ Admin မှ ဖွင့်ပေးထားရန်လိုပါသည်။
       </div>
     </div>
   </div>
@@ -173,6 +760,7 @@
   <div id="app" class="page">
     <div class="alert alert-success small fw-bold" id="cloudStatus">Cloud: Ready <span id="netBadge" class="net-badge">ONLINE</span></div>
     <div class="tabs">
+      <button id="tOwner" class="owner-tab hidden-by-role" onclick="tab('owner','tOwner')">👑 Owner</button>
       <button id="tDash" class="active admin-tab" onclick="tab('dash','tDash')">📊 Dashboard</button>
       <button id="tEntry" class="member-tab" onclick="tab('entry','tEntry')">📝 Record</button>
       <button id="tRecords" onclick="tab('records','tRecords')">📋 Records</button>
@@ -189,17 +777,68 @@
       <button id="tSettings" class="admin-tab" onclick="tab('settings','tSettings')">⚙️ Settings</button>
     </div>
 
-    <section id="dash" class="page active">
+    <section id="owner" class="page">
+      <div class="card p-3">
+        <h5 class="fw-bold">👑 Super Admin / App Owner Dashboard</h5>
+        <p class="small-note">Registration / License metadata only. Record data, number amount, reports are not shown here.</p>
+        <div id="ownerStats" class="smart-grid mb-3"></div>
+      </div>
+
+      <div class="owner-license-card">
+        <h6 class="fw-bold mb-2">🔐 Owner License Control</h6>
+        <p class="owner-control-note mb-2">Admin account မှာ License Settings မပြတော့ပါ။ App Owner / Super Admin မှသာ plan, expire, active/disabled ကို ထိန်းပါမည်။</p>
+        <label class="small fw-bold">Select Admin / Shop</label>
+        <select id="ownerShopSelect" class="form-select mb-2" onchange="ownerSelectLicenseShop()"></select>
+        <div class="row g-2">
+          <div class="col-6"><label class="small fw-bold">Plan</label><input id="ownerPlan" class="form-control" placeholder="Trial / Monthly / Yearly"></div>
+          <div class="col-6"><label class="small fw-bold">License Status</label><select id="ownerLicenseActive" class="form-select"><option value="true">Active</option><option value="false">Disabled</option></select></div>
+          <div class="col-6"><label class="small fw-bold">Expire Date</label><input id="ownerExpireDate" class="form-control" type="date"></div>
+          <div class="col-6"><label class="small fw-bold">Expire Time</label><input id="ownerExpireTime" class="form-control" type="time"></div>
+          <div class="col-12"><label class="small fw-bold">Notice Message</label><input id="ownerNotice" class="form-control" placeholder="သက်တမ်းတိုးရန် ဆက်သွယ်ပါ"></div>
+          <div class="col-12"><label class="small fw-bold">Contact Phone</label><input id="ownerPhone" class="form-control" placeholder="09773121226"></div>
+          <div class="col-12"><button class="btn btn-warning w-100 rounded-pill fw-bold" onclick="saveOwnerLicenseSettings()">Save License For Selected Shop</button></div>
+        </div>
+      </div>
+
+      <div class="card p-3">
+        <h6 class="fw-bold">Registration / License List</h6>
+        <input id="ownerSearch" class="form-control mb-2" placeholder="Search admin/member email, phone, shop..." oninput="renderOwnerDashboard()">
+        <div class="table-responsive">
+          <table class="table table-sm owner-table">
+            <thead><tr><th>Role</th><th>ID</th><th>Name / Shop</th><th>Email / Phone</th><th>License / Status</th></tr></thead>
+            <tbody id="ownerBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+        <section id="dash" class="page active">
       <div class="card p-3">
         <h5 id="dashTitle" class="fw-bold mb-2">Admin Dashboard</h5>
         <div id="dashSub" class="small-note">Member အားလုံး၏ စုစုပေါင်းစာရင်း</div>
       </div>
-      <div class="row g-2">
-        <div class="col-6"><div class="card p-3 text-center stat-card"><small>Records</small><h3 id="dRec">0</h3></div></div>
-        <div class="col-6"><div class="card p-3 text-center stat-card"><small id="dGrpLabel">Members</small><h3 id="dGrp">0</h3></div></div>
-        <div class="col-6"><div class="card p-3 text-center stat-card"><small>AM</small><h3 id="dAM">0</h3></div></div>
-        <div class="col-6"><div class="card p-3 text-center stat-card"><small>PM</small><h3 id="dPM">0</h3></div></div>
+      
+      <!-- Split Panel: Key Statistics -->
+      <div class="split-panel-container">
+        <div class="split-panel">
+          <h6>📊 Key Statistics</h6>
+          <div class="row g-2">
+            <div class="col-6"><div class="card p-3 text-center stat-card"><small>Records</small><h3 id="dRec">0</h3></div></div>
+            <div class="col-6"><div class="card p-3 text-center stat-card"><small id="dGrpLabel">Members</small><h3 id="dGrp">0</h3></div></div>
+            <div class="col-6"><div class="card p-3 text-center stat-card"><small>AM</small><h3 id="dAM">0</h3></div></div>
+            <div class="col-6"><div class="card p-3 text-center stat-card"><small>PM</small><h3 id="dPM">0</h3></div></div>
+          </div>
+        </div>
+        
+        <div class="split-panel">
+          <h6>⚠️ Risk Status</h6>
+          <div id="dashRiskPanel" class="split-panel-content">
+            <div class="alert alert-info mb-0">Risk analysis will appear here</div>
+          </div>
+        </div>
       </div>
+      
+      <!-- Split Panel: Risk Summary -->
       <div class="card p-3">
         <h5 class="fw-bold">Smart Risk Summary</h5>
         <div id="dashRisk" class="smart-grid"></div>
@@ -207,6 +846,8 @@
         <h6 class="fw-bold">Top Risk Numbers</h6>
         <div id="dashTopRisk"></div>
       </div>
+      
+      <!-- Chart -->
       <div class="card p-3"><canvas id="chart"></canvas></div>
     </section>
 
@@ -224,6 +865,12 @@
           <button onclick="key('7')">7</button><button onclick="key('8')">8</button><button onclick="key('9')">9</button><button onclick="key('/')">/</button>
           <button onclick="key('*')">*</button><button onclick="key('0')">0</button><button onclick="key('+')">+<br><small>စုံ</small></button><button onclick="key('-')">-<br><small>မ</small></button>
           <button onclick="key('A')">A<br><small>ပါဝါ</small></button><button onclick="key('Z')">Z<br><small>နက္ခ</small></button><button onclick="key('B')">B<br><small>ညီကို</small></button><button onclick="key('//')">//<br><small>အပူး</small></button>
+          <button onclick="logicBtn('reverse')">*အာ<br><small>အပြန်</small></button>
+          <button onclick="logicBtn('khway')">*ခွေ<br><small>ခွေ</small></button>
+          <button onclick="logicBtn('break')">*<br><small>ဘရိတ်</small></button>
+          <button onclick="logicBtn('apa')">*<br><small>အပါ</small></button>
+          <button onclick="logicBtn('front')">ရှေ့<br><small>1/</small></button>
+          <button onclick="logicBtn('back')">နောက်<br><small>/1</small></button>
           <button class="enter" onclick="enterAction()">ENTER ✓</button>
         </div>
       </div>
@@ -243,42 +890,89 @@
       </div>
     </section>
 
-    <section id="limit" class="page">
+        <section id="limit" class="page">
       <div class="card p-3">
         <h5 class="fw-bold text-danger">Admin Only — Limit Monitor</h5>
         <p class="small-note">Member အားလုံးထံမှ တက်လာသော number amount များကို စုပြီး limit စစ်ပါမည်။</p>
-        <div class="row g-2">
-          <div class="col-12 col-md-4"><label class="small fw-bold">Limit Amount</label><input id="lim" class="form-control mb-2" inputmode="numeric" placeholder="Limit Amount" oninput="riskMaster='limit';renderLimit(false)"></div>
-          <div class="col-6 col-md-4"><label class="small fw-bold">Lose %</label><input id="riskLosePct" class="form-control mb-2" inputmode="decimal" placeholder="ဥပမာ 20" oninput="riskMaster='losePct';renderLimit(false)"></div>
-          <div class="col-6 col-md-4"><label class="small fw-bold">Max Lose Amount</label><input id="riskMaxLose" class="form-control mb-2" inputmode="numeric" placeholder="ဥပမာ 500000" oninput="riskMaster='maxLose';renderLimit(false)"></div>
+      </div>
+      
+      <!-- Split Panel: Limit Settings & Summary -->
+      <div class="split-panel-container triple">
+        <div class="split-panel">
+          <h6>⚙️ Limit Settings</h6>
+          <div class="mb-2">
+            <label class="small fw-bold">Limit Amount</label>
+            <input id="lim" class="form-control" inputmode="numeric" placeholder="Limit Amount" oninput="riskMaster='limit';renderLimit(false)">
+          </div>
+          <div class="mb-2">
+            <label class="small fw-bold">Lose %</label>
+            <input id="riskLosePct" class="form-control" inputmode="decimal" placeholder="ဥပမာ 20" oninput="riskMaster='losePct';renderLimit(false)">
+          </div>
+          <div class="mb-2">
+            <label class="small fw-bold">Max Lose</label>
+            <input id="riskMaxLose" class="form-control" inputmode="numeric" placeholder="ဥပမာ 500000" oninput="riskMaster='maxLose';renderLimit(false)">
+          </div>
+          <button class="btn btn-primary w-100 rounded-pill fw-bold btn-sm" onclick="renderLimit(true)">Calculate</button>
         </div>
-        <button class="btn btn-primary w-100 mb-2 rounded-pill fw-bold" onclick="renderLimit(true)">Check / Auto Calculate</button>
-        <div class="row g-2 mb-2" id="riskSummary">
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Total</div><div id="limTotal" class="risk-value">0</div></div></div>
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Over</div><div id="riskOverTotal" class="risk-value">0</div></div></div>
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Cor</div><div id="riskCorTotal" class="risk-value">0</div></div></div>
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Balance</div><div id="riskBalance" class="risk-value">0</div></div></div>
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Max No</div><div id="riskMaxNo" class="risk-value">-</div></div></div>
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Worst Pay</div><div id="riskWorstPay" class="risk-value">0</div></div></div>
-          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Pay Allowed</div><div id="riskPayAllowed" class="risk-value">0</div></div></div>
-          <div class="col-6 col-md-3"><div id="riskStatusBox" class="risk-box"><div class="risk-title">Status</div><div id="riskStatus" class="risk-value">-</div></div></div>
-          <div class="col-6"><div class="alert alert-danger mb-1">Over Count<br><b id="limCount">0</b></div></div>
-          <div class="col-6"><div class="alert alert-info mb-1">Suggested Limit<br><b id="riskSuggested">0</b></div></div>
+        
+        <div class="split-panel">
+          <h6>📈 Risk Summary</h6>
+          <div class="row g-2">
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Total</div><div id="limTotal" class="risk-value">0</div></div></div>
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Over</div><div id="riskOverTotal" class="risk-value">0</div></div></div>
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Cor</div><div id="riskCorTotal" class="risk-value">0</div></div></div>
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Balance</div><div id="riskBalance" class="risk-value">0</div></div></div>
+          </div>
         </div>
+        
+        <div class="split-panel">
+          <h6>🎯 Status & Action</h6>
+          <div class="row g-2">
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Max No</div><div id="riskMaxNo" class="risk-value">-</div></div></div>
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Worst Pay</div><div id="riskWorstPay" class="risk-value">0</div></div></div>
+            <div class="col-6"><div class="risk-box"><div class="risk-title">Pay Allowed</div><div id="riskPayAllowed" class="risk-value">0</div></div></div>
+            <div class="col-6"><div id="riskStatusBox" class="risk-box"><div class="risk-title">Status</div><div id="riskStatus" class="risk-value">-</div></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Number Grid -->
+      <div class="card p-3">
+        <h6 class="fw-bold">Number Grid (1-100)</h6>
         <div id="grid" class="limit-grid"></div>
-        <button class="btn btn-outline-danger w-100 mt-2 rounded-pill fw-bold" onclick="tab('over','tOver')">Limit ကျော် Table ကြည့်ရန်</button>
-        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="saveLimit()">Save Limit Table</button>
+        <div class="row g-2 mt-3">
+          <div class="col-6"><div class="alert alert-danger mb-0">Over Count<br><b id="limCount">0</b></div></div>
+          <div class="col-6"><div class="alert alert-info mb-0">Suggested Limit<br><b id="riskSuggested">0</b></div></div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="card p-3">
+        <button class="btn btn-outline-danger w-100 mb-2 rounded-pill fw-bold" onclick="tab('over','tOver')">Limit ကျော် Table ကြည့်ရန်</button>
+        <button class="btn btn-success w-100 rounded-pill fw-bold" onclick="saveLimit()">Save Limit Table</button>
         <small class="text-muted">မူရင်းအရောင်းစာရင်း မပြောင်းပါ။ Limit အတွက် သီးသန့်နုတ်ထားသည့် စာရင်းသာ သိမ်းပါမည်။</small>
       </div>
     </section>
 
-    <section id="over" class="page">
+        <section id="over" class="page">
       <div class="card p-3">
         <h5 class="fw-bold">Admin Only — Limit Over Table</h5>
-        <div id="overContent"></div>
-        <button class="btn btn-primary w-100 mt-2 rounded-pill fw-bold" onclick="saveOverImage()">Save Image</button>
-        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="shareOver()">Share</button>
-        <button class="btn btn-warning w-100 mt-2 rounded-pill fw-bold" onclick="exportOver()">Export CSV</button>
+        <p class="small-note">ထိုးသားများ၏ ကျော်လွန်သည့် အရေအတွက်များ</p>
+      </div>
+      
+      <div class="split-panel-container">
+        <div class="split-panel full">
+          <h6>📋 Over Table</h6>
+          <div id="overContent"></div>
+        </div>
+      </div>
+      
+      <div class="card p-3">
+        <div class="row g-2">
+          <div class="col-12 col-md-4"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="saveOverImage()">💾 Save Image</button></div>
+          <div class="col-12 col-md-4"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="shareOver()">📤 Share</button></div>
+          <div class="col-12 col-md-4"><button class="btn btn-warning w-100 rounded-pill fw-bold" onclick="exportOver()">📊 Export CSV</button></div>
+        </div>
       </div>
     </section>
 
@@ -446,7 +1140,7 @@
         <div class="mt-2"><span id="setAmCloseStatus" class="close-pill">AM Auto</span> <span id="setPmCloseStatus" class="close-pill">PM Auto</span> <span id="setDailyCloseStatus" class="close-pill">Daily Auto</span></div>
 
         <hr>
-        <button class="btn btn-danger w-100 rounded-pill fw-bold" onclick="openLicenseSettings()">🔒 Open License Settings</button>
+        <button id="adminLicenseOpenBtn" class="btn btn-danger w-100 rounded-pill fw-bold d-none" onclick="openLicenseSettings()">🔒 Open License Settings</button>
         <div id="licenseBox" class="license-box">
           <h6 class="fw-bold text-danger">Protected License Settings</h6>
           <div class="row g-2">
@@ -482,7 +1176,7 @@
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.0 PWA Install Deploy
+   RecordManager_2D_Logic_Pro v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -588,8 +1282,10 @@ function renderCloseStatus(updateTimer=true){
 }
 
 
-let settings={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
+let settings={},ownerSettingsMap={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
 let token='',uid='',authEmail='';
+const SUPER_ADMIN_EMAILS=['htetzawoohzo99@gmail.com','admin@test.com'];
+function isSuperAdmin(){return currentUser&&currentUser.role==='superadmin'}
 
 const MAP={A:['05','16','27','38','49','50','61','72','83','94'],Z:['07','18','24','35','69','70','81','42','53','96'],B:['12','23','34','45','56','21','32','43','54','65','67','78','89','90','01','76','87','98','09','10'],'//':['00','11','22','33','44','55','66','77','88','99']},E=['0','2','4','6','8'],O=['1','3','5','7','9'];
 
@@ -698,6 +1394,44 @@ function normalizeSettings(){
 }
 function resultBook(){normalizeSettings();return settings.results[today()]}
 
+function defaultLicenseSettings(shopId=''){
+  return {shopId,plan:'Trial',licenseActive:true,expireDate:'',expireTime:'23:59',notice:'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ',phone:'09773121226'};
+}
+function licenseInfoForSettings(st={}){
+  let info={active:st.licenseActive!==false,expired:false,label:'Active',cls:'license-active'};
+  if(st.licenseActive===false){info.label='Disabled';info.cls='license-disabled';return info}
+  if(st.expireDate){
+    let exp=new Date(st.expireDate+'T'+(st.expireTime||'23:59')+':00');
+    if(Date.now()>exp.getTime()){info.expired=true;info.label='Expired';info.cls='license-expired';return info}
+    let left=exp.getTime()-Date.now();
+    if(left<7*24*60*60*1000){info.label='Expire Soon';info.cls='license-warning';return info}
+  }
+  return info;
+}
+function licenseBadgeHTML(st={}){
+  let li=licenseInfoForSettings(st);
+  return `<span class="license-status-pill ${li.cls}">${li.label}</span>`;
+}
+function ownerAdminAccounts(){
+  return (accounts||[]).filter(a=>a.role==='admin');
+}
+function ownerShopLabel(shopId){
+  let a=ownerAdminAccounts().find(x=>String(x.shopId||'')===String(shopId||''));
+  return a?(a.shopName||a.memberName||a.email||shopId):shopId;
+}
+async function loadOwnerSettingsForAccounts(list){
+  let map={};
+  let shopIds=[...new Set((list||[]).map(a=>a.shopId).filter(Boolean))];
+  for(const sid of shopIds){
+    try{
+      let st=await getDoc(COL_SETTINGS,sid,defaultLicenseSettings(sid));
+      map[sid]={...defaultLicenseSettings(sid),...(st||{}),shopId:sid};
+    }catch(e){map[sid]=defaultLicenseSettings(sid)}
+  }
+  return map;
+}
+
+
 async function loadCloudAll(){
   setCloudStatus('Cloud: Loading...', 'info');
   if(currentUser&&currentUser.shopId){
@@ -717,6 +1451,16 @@ async function loadCloudAll(){
   }
   normalizeRecords(false);
   setCloudStatus('Cloud: Connected ✅', 'success');
+}
+
+async function refreshSharedSettings(){
+  try{
+    if(!currentUser||!currentUser.shopId)return;
+    let latest=(await getDoc(COL_SETTINGS,currentUser.shopId,settings))||settings;
+    let oldSchedule=JSON.stringify(settings.sessionSchedule||{});
+    settings=latest;normalizeSettings();
+    if(JSON.stringify(settings.sessionSchedule||{})!==oldSchedule){applySettingsUI();renderCloseStatus();updateSessionTimer();toast('Admin Schedule Sync Updated','info')}
+  }catch(e){console.warn('refreshSharedSettings',e.message)}
 }
 function normalizeRecords(doSave=false){
   records=records.map(r=>{
@@ -744,7 +1488,7 @@ function isAdmin(){return currentUser&&currentUser.role==='admin'}
 function isMember(){return currentUser&&currentUser.role==='member'}
 function rate(){return Number(settings.rate||80)}
 function defCor(){return Number(settings.cor||13)}
-function allVisibleRecords(){if(!currentUser)return[];return isAdmin()?records.filter(r=>sameShop(r)):records.filter(r=>sameShop(r)&&(String(r.memberId).toLowerCase()===String(currentUser.id).toLowerCase()||String(r.memberUid||'').toLowerCase()===String(currentUser.uid).toLowerCase()||String(r.memberEmail||'').toLowerCase()===String(currentUser.email).toLowerCase()))}
+function allVisibleRecords(){if(!currentUser||isSuperAdmin())return[];return isAdmin()?records.filter(r=>sameShop(r)):records.filter(r=>sameShop(r)&&(String(r.memberId).toLowerCase()===String(currentUser.id).toLowerCase()||String(r.memberUid||'').toLowerCase()===String(currentUser.uid).toLowerCase()||String(r.memberEmail||'').toLowerCase()===String(currentUser.email).toLowerCase()))}
 function isTodayRecord(r){return String(r.d||today())===today()}
 function visibleRecords(){return allVisibleRecords().filter(isTodayRecord)}
 function displayNameFor(r){return isAdmin()?(r.memberName||'Unknown Member'):(r.playerName||r.name||'')}
@@ -770,7 +1514,7 @@ function setP(kind,val,saveIt=true){
   ids.forEach(id=>{let e=$(id);if(e&&e.value!==val)e.value=val});
   let rb=resultBook();
   if(kind==='AM'){settings.amP=val;rb.amP=val}else{settings.pmP=val;rb.pmP=val}
-  if(saveIt&&currentUser)saveSet().catch(()=>{});
+  if(saveIt&&currentUser&&isAdmin())saveSet().catch(()=>{});
   if($('img'))renderImg();
 }
 function applyPValues(){
@@ -780,6 +1524,17 @@ function applyPValues(){
   if(am)setP('AM',String(am),false);
   if(pm)setP('PM',String(pm),false);
   renderResultBookStatus();
+}
+
+function lockMemberPInputs(){
+  let lock=isMember();
+  ['amP','pmP','dAmP','dPmP','imgAM','imgPM'].forEach(id=>{let e=$(id);if(e){e.readOnly=lock;e.classList.toggle('bg-light',lock);e.title=lock?'Admin မှသတ်မှတ်သော P Number ဖြစ်ပါသည်':''}});
+}
+function currentP(kind){let rb=resultBook();return String(kind==='AM'?(rb.amP||settings.amP||''):(rb.pmP||settings.pmP||''));}
+function setEntryLocked(locked){
+  if(!isMember())locked=false;
+  ['rName','rCode','rAmt'].forEach(id=>{let e=$(id);if(e)e.disabled=locked});
+  document.querySelectorAll('#entry .keypad button').forEach(b=>b.disabled=locked);
 }
 
 
@@ -810,6 +1565,14 @@ async function login(){
     setCloudStatus('Cloud: Signing in...', 'info');
     let r=await firebaseSignIn(email,pass);
     token=r.idToken; uid=r.localId; authEmail=(r.email||email).toLowerCase();
+
+    if(SUPER_ADMIN_EMAILS.includes(authEmail)){
+      currentUser={id:uid,uid,email:authEmail,username:authEmail,role:'superadmin',memberName:'App Owner / Developer',phone:'',shopId:'__owner__',shopName:'App Owner',active:true};
+      accounts=await listCollection(COL_ACCOUNTS);ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
+      saveCur();loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
+      $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
+      applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Super Admin Connected ✅','success');return;
+    }
 
     let acc=await getDoc(COL_ACCOUNTS,uid,null);
 
@@ -853,14 +1616,59 @@ async function login(){
     alert('Firebase Login Error: '+e.message);
   }
 }
-function logout(){currentUser=null;token='';uid='';authEmail='';saveCur();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary')}
-function applyRoleUI(){if(!currentUser)return;let label=isAdmin()?'ADMIN / ဒိုင်':'MEMBER / '+(currentUser.memberName||currentUser.username);$('roleBadge').innerText=label;if($('shopBadge'))$('shopBadge').innerText=currentUser.shopName||currentUser.shopId||'Shop';document.querySelectorAll('.admin-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isAdmin()));document.querySelectorAll('.member-tab').forEach(el=>el.classList.toggle('hidden-by-role',!isMember()));if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;}
-function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();renderCloseStatus()}
+function logout(){currentUser=null;token='';uid='';authEmail='';saveCur();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');$('desktopModeBtn')?.classList.add('d-none');document.body.classList.remove('admin-windows-mode');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary');updateDesktopModeUI()}
+function applyRoleUI(){
+  if(!currentUser)return;
+  let label=isSuperAdmin()?'SUPER ADMIN / OWNER':(isAdmin()?'ADMIN / ဒိုင်':'MEMBER / '+(currentUser.memberName||currentUser.username));
+  $('roleBadge').innerText=label;
+  if($('shopBadge'))$('shopBadge').innerText=currentUser.shopName||currentUser.shopId||'Shop';
+  document.querySelectorAll('.tabs button').forEach(btn=>{
+    let hide=false;
+    if(btn.classList.contains('owner-tab')) hide=!isSuperAdmin();
+    else if(isSuperAdmin()) hide=true;
+    else if(btn.classList.contains('admin-tab')) hide=!isAdmin();
+    else if(btn.classList.contains('member-tab')) hide=!isMember();
+    else hide=false;
+    btn.classList.toggle('hidden-by-role',hide);
+  });
+  if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;;lockMemberPInputs();updateDesktopModeUI();}
+function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus()}
 function toggleTheme(){document.body.classList.toggle('dark')}
-function key(v){if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
+function desktopModeAllowed(){return !!(currentUser&&isAdmin()&&window.innerWidth>=1100)}
+function updateDesktopModeUI(){
+  let btn=$('desktopModeBtn');if(!btn)return;
+  let allowed=desktopModeAllowed();
+  btn.classList.toggle('d-none',!allowed);
+  if(!allowed){document.body.classList.remove('admin-windows-mode');return}
+  let saved=localLoad('rm_admin_windows_mode',window.innerWidth>=1280);
+  document.body.classList.toggle('admin-windows-mode',!!saved);
+  btn.innerText=document.body.classList.contains('admin-windows-mode')?'🪟 Windows Mode ON':'🪟 Windows Mode OFF';
+  btn.title='Windows computer screen အတွက် Admin layout';
+}
+function toggleDesktopMode(){
+  if(!desktopModeAllowed())return;
+  let on=!document.body.classList.contains('admin-windows-mode');
+  document.body.classList.toggle('admin-windows-mode',on);
+  localSave('rm_admin_windows_mode',on);
+  updateDesktopModeUI();
+  toast(on?'Windows Mode ON ✅':'Windows Mode OFF','info');
+}
+
+function key(v){if(isMember()&&!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။');if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
+function logicBtn(type){
+  focusField('rCode');let v=rCode.value||'';
+  if(type==='reverse'){rCode.value=v+'*'}
+  if(type==='khway'){rCode.value=v+'ခွေ'}
+  if(type==='break'){rCode.value='*'+v.replace(/^\*/,'')}
+  if(type==='apa'){rCode.value=v+'*'}
+  if(type==='front'){rCode.value=v.replace(/\/$/,'')+'/'}
+  if(type==='back'){rCode.value='/'+v.replace(/^\//,'')}
+  rCode.focus();toast('Logic button ထည့်ပြီးပါပြီ','info')
+}
 function delKey(){let e=$(currentField);if(e){e.value=e.value.slice(0,-1);e.focus()}}
 function clearKey(){let e=$(currentField);if(e){e.value='';e.focus()}}
 function enterAction(){
+  if(isMember()&&!isEntryOpen()){alert('Entry ပိတ်ထားပါသည်။ Close time ကျော်ပြီးပါပြီ။');return}
   if(isSaving){alert('Cloud ထဲသို့ သိမ်းနေပါသည်။ ခဏစောင့်ပါ');return}
   if(currentField==='rName'){
     if(!rName.value.trim()){alert('Name လိုအပ်ပါသည်');rName.focus();focusField('rName');return}
@@ -915,13 +1723,14 @@ function updateSessionTimer(){
     if(remain<=5*60*1000 && remain>4*60*1000 && !alarmState[key+'_5']){alarmState[key+'_5']=1;beep(760,500);toast(info.session+' Close time 5 မိနစ်သာလိုပါတော့သည်','warning')}
     if(remain<=20000 && remain>0){let sec=Math.ceil(remain/1000);if(!alarmState[key+'_s_'+sec]){alarmState[key+'_s_'+sec]=1;beep(980,80)}}
   }
+  setEntryLocked(isMember()&&!info.open);
   renderCloseStatus(false);
 }
 function uniq(a){return[...new Set(a)]}
 function pair(a,b){let r=[];a.forEach(x=>b.forEach(y=>r.push(x+y)));return r}
 function apa(d){let r=[];for(let i=0;i<10;i++){r.push(d+String(i));r.push(String(i)+d)}return uniq(r)}
 function khway(s){let r=[];for(let i=0;i<s.length;i++)for(let j=i+1;j<s.length;j++){r.push(s[i]+s[j]);r.push(s[j]+s[i])}return uniq(r)}
-function expand(c,amt){c=String(c).trim();if(MAP[c])return MAP[c].map(n=>({n,amt}));if(c==='ပါဝါ')return expand('A',amt);if(c==='နက္ခ')return expand('Z',amt);if(c==='ညီကို')return expand('B',amt);if(c==='အပူး')return expand('//',amt);if(c==='စုံ')c='+';if(c==='မ')c='-';if(c==='စုံစုံ')c='++';if(c==='မမ')c='--';if(c==='စုံမ')c='+-';if(c==='မစုံ')c='-+';if(c==='++')return pair(E,E).map(n=>({n,amt}));if(c==='--')return pair(O,O).map(n=>({n,amt}));if(c==='+-')return pair(E,O).map(n=>({n,amt}));if(c==='-+')return pair(O,E).map(n=>({n,amt}));let a=[];if(/^[1-9]\/$/.test(c)){for(let i=0;i<10;i++)a.push({n:c[0]+i,amt});return a}if(/^\/[1-9]$/.test(c)){for(let i=0;i<10;i++)a.push({n:String(i)+c[1],amt});return a}if(/^[0-9]\*$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}\*$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]}if(/^\d{3,}\*$/.test(c))return khway(c.slice(0,-1)).map(n=>({n,amt}));if(/^\d{3,}ခွေ$/.test(c))return khway(c.replace('ခွေ','')).map(n=>({n,amt}));if(/^\*[0-9]{1,2}$/.test(c)){let t=+c.slice(1);if(t<9||t>18){alert('*9 မှ *18 အတွင်းသာ');return[]}for(let i=0;i<100;i++){let n=String(i).padStart(2,'0'),s=+n[0]+ +n[1];if(s===t||s===t-10)a.push({n,amt})}return a}if(/^\d{2}$/.test(c))return[{n:c,amt}];alert('Invalid Logic');return[]}
+function expand(c,amt){c=String(c).trim();if(MAP[c])return MAP[c].map(n=>({n,amt}));if(c==='ပါဝါ')return expand('A',amt);if(c==='နက္ခ')return expand('Z',amt);if(c==='ညီကို')return expand('B',amt);if(c==='အပူး')return expand('//',amt);if(c==='စုံ')c='+';if(c==='မ')c='-';if(c==='စုံစုံ')c='++';if(c==='မမ')c='--';if(c==='စုံမ')c='+-';if(c==='မစုံ')c='-+';if(c==='++')return pair(E,E).map(n=>({n,amt}));if(c==='--')return pair(O,O).map(n=>({n,amt}));if(c==='+-')return pair(E,O).map(n=>({n,amt}));if(c==='-+')return pair(O,E).map(n=>({n,amt}));let a=[];if(/^[1-9]\/$/.test(c)){for(let i=0;i<10;i++)a.push({n:c[0]+i,amt});return a}if(/^\/[1-9]$/.test(c)){for(let i=0;i<10;i++)a.push({n:String(i)+c[1],amt});return a}if(/^[0-9]အပါ$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}အပြန်$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]};if(/^[0-9]\*$/.test(c))return apa(c[0]).map(n=>({n,amt}));if(/^\d{2}\*$/.test(c)){let b=c.slice(0,2),rv=b[1]+b[0];return b===rv?[{n:b,amt:amt*2}]:[{n:b,amt},{n:rv,amt}]}if(/^\d{3,}\*$/.test(c))return khway(c.slice(0,-1)).map(n=>({n,amt}));if(/^\d{3,}ခွေ$/.test(c))return khway(c.replace('ခွေ','')).map(n=>({n,amt}));if(/^\*[0-9]{1,2}$/.test(c)){let t=+c.slice(1);if(t<9||t>18){alert('*9 မှ *18 အတွင်းသာ');return[]}for(let i=0;i<100;i++){let n=String(i).padStart(2,'0'),s=+n[0]+ +n[1];if(s===t||s===t-10)a.push({n,amt})}return a}if(/^\d{2}$/.test(c))return[{n:c,amt}];alert('Invalid Logic');return[]}
 async function saveGroup(){
   if(isSaving){toast('Cloud ထဲသို့ သိမ်းနေပါသည်။ ထပ်မနှိပ်ပါနှင့်','warning');return}
   if(!navigator.onLine){toast('Offline ဖြစ်နေပါသည်။ Online ပြန်ရမှ Save လုပ်ပါ','warning');return}
@@ -1095,11 +1904,10 @@ function renderLimit(alertIt){
   if(alertIt&&over.length)alert('Over Limit / Risk တွက်ပြီးပါပြီ')
 }
 async function saveLimit(){if(!isAdmin())return alert('Admin Only');let o=overItems();if(!o.length)return alert('No Over');if(!confirm('Limit စာရင်းအတွက်သာ သိမ်းမည်။ မူရင်းစာရင်း မပြောင်းပါ။'))return;try{setBusy(true,'Saving Limit Export...');for(const x of o){let saved=await addDoc(COL_EXPORTS,{n:x.n,amt:x.over,date:today(),s:sess(),shopId:currentUser.shopId,shopName:currentUser.shopName,createdAt:Date.now()});exportsL.push(saved)}await saveEx();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Export Saved ✅','success');toast('Limit Export Saved ✅','success');await addAudit('SAVE_LIMIT_EXPORT',`count ${o.length} / over ${money(o.reduce((a,b)=>a+b.over,0))}`)}catch(e){setCloudStatus('Limit Save Error: '+e.message,'danger');alert(e.message)}finally{setBusy(false)}}
-function renderOver(){if(!isAdmin())return;if(!overContent)return;let o=overItems();overContent.innerHTML=o.length?'<table class="table table-sm"><tr><th>No</th><th>Total</th><th>Limit</th><th>Over</th><th>Balance</th></tr>'+o.map(x=>`<tr class="neg"><td>${x.n}</td><td>${money(x.total)}</td><td>${money(x.limit)}</td><td>${money(x.over)}</td><td>${money(x.balance)}</td></tr>`).join('')+'</table>':'<div class="alert alert-success">No Over</div>'}
-function exportOver(){let o=overItems();if(!o.length)return alert('No Data');download('Number,Total,Limit,Over\n'+o.map(x=>`${x.n},${x.total},${x.limit},${x.over}`).join('\n'),'Limit_Over.csv','text/csv')}
-function saveOverImage(){drawText('Limit Over',overItems().map(x=>x.n+'='+x.over).join('\n')||'No Over','Limit_Over.png')}
-function shareOver(){share('Limit Over',overItems().map(x=>x.n+'='+x.over).join('\n')||'No Over')}
-
+function renderOver(){if(!isAdmin())return;if(!overContent)return;let o=overItems();let total=o.reduce((a,b)=>a+num(b.over),0);overContent.innerHTML=o.length?'<table class="table table-sm"><tr><th>No</th><th>Number</th><th>Amount</th></tr>'+o.map((x,i)=>`<tr class="neg"><td>${i+1}</td><td>${x.n}</td><td>${money(x.over)}</td></tr>`).join('')+`<tr class="fw-bold"><td colspan="2">total.</td><td>${money(total)}</td></tr></table>`:'<div class="alert alert-success">No Over</div>'}
+function exportOver(){let o=overItems();if(!o.length)return alert('No Data');let total=o.reduce((a,b)=>a+num(b.over),0);download('No,Number,Amount\n'+o.map((x,i)=>`${i+1},${x.n},${x.over}`).join('\n')+`\ntotal,,${total}`,'Limit_Over.csv','text/csv')}
+function saveOverImage(){let o=overItems();let total=o.reduce((a,b)=>a+num(b.over),0);drawText('Limit Over',o.map((x,i)=>`${i+1}. ${x.n}  ${money(x.over)}`).join('\n')+(o.length?`\ntotal. ${money(total)}`:'No Over'),'Limit_Over.png')}
+function shareOver(){let o=overItems();let total=o.reduce((a,b)=>a+num(b.over),0);share('Limit Over',o.map((x,i)=>`${i+1}. ${x.n}  ${money(x.over)}`).join('\n')+(o.length?`\ntotal. ${money(total)}`:'No Over'))}
 
 
 
@@ -1112,10 +1920,17 @@ function adminFinalSummary(s,pn){
   return{session:s,total,cor,pAmt,payout,overAmt,overP,overPayout,final,win:final>=0}
 }
 function summaryHTML(x){
-  return `<div class="settle-summary ${x.win?'settle-win':'settle-lose'}">
-    <b>${x.session} Admin Final Result: ${x.win?'WIN / ရရန်':'LOSE / ပေးရန်'} ${money(Math.abs(x.final))}</b><br>
-    Total: ${money(x.total)} - Cor: ${money(x.cor)} - Payout: ${money(x.payout)} - Over: ${money(x.overAmt)} + Over Payout: ${x.overP?money(x.overPayout):'No'}<br>
-    P Amount: ${money(x.pAmt)} | Over P Amount: ${x.overP?money(x.overP):'No'} | Rate: ${rate()}
+  let cls=x.win?'win':'lose',status=x.win?'WIN / ရရန်':'LOSE / ပေးရန်';
+  return `<div class="result-clean ${cls}">
+    <div class="result-head"><b>${x.session} Final Result</b><span class="result-badge">${status}</span></div>
+    <div class="result-row"><span>Total</span><b>${money(x.total)}</b></div>
+    <div class="result-row"><span>Cor</span><b>${money(x.cor)}</b></div>
+    <div class="result-row"><span>Payout</span><b>${money(x.payout)}</b></div>
+    <div class="result-row"><span>Over</span><b>${money(x.overAmt)}</b></div>
+    <div class="result-row"><span>P Amount</span><b>${money(x.pAmt)}</b></div>
+    <div class="result-row"><span>Over P Amount</span><b>${x.overP?money(x.overP):'No'}</b></div>
+    <div class="result-row"><span>Rate</span><b>${rate()}</b></div>
+    <div class="result-row result-final"><span>Final Result</span><b>${money(Math.abs(x.final))}</b></div>
   </div>`
 }
 function settleData(s,pn){
@@ -1125,7 +1940,7 @@ function settleData(s,pn){
     if(!m[key])m[key]={name:nm,total:0,pAmt:0,pay:0,cor:0,net:0};
     m[key].total+=num(r.amt); if(r.n===pn)m[key].pAmt+=num(r.amt);
   });
-  Object.values(m).forEach(x=>{x.pay=x.pAmt*rate();x.cor=Math.round(x.total*(memberCorRateByName(x.name)/100));x.net=x.total-x.pay-x.cor});
+  Object.values(m).forEach(x=>{x.pay=x.pAmt*rate();x.cor=isAdmin()?Math.round(x.total*(memberCorRateByName(x.name)/100)):0;x.net=x.total-x.pay-x.cor});
   return Object.values(m)
 }
 function memberCorRateByName(name){
@@ -1135,27 +1950,31 @@ function memberCorRateByName(name){
 function tableReport(d){
   if(!d.length)return'<div class="alert alert-secondary mt-2">No Data</div>';
   let h=isAdmin()?'Commission':'Name';
+  if(!isAdmin())return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>ပေးရန်/ရရန်</th></tr>'+ 
+    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>';
   return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>Cor</th><th>ပေးရန်/ရရန်</th></tr>'+
     d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${money(x.cor)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>'
 }
 function settle(s){
-  let pn=s==='AM'?amP.value:pmP.value,out=s==='AM'?amOut:pmOut;
-  if(!/^\d{2}$/.test(pn))return alert('P Number');
-  setP(s,pn,true);
+  let out=s==='AM'?amOut:pmOut;
+  let pn=isAdmin()?(s==='AM'?amP.value:pmP.value):currentP(s);
+  if(!/^\d{2}$/.test(pn))return alert('Admin မှ '+s+' P Number မသတ်မှတ်ရသေးပါ');
+  setP(s,pn,isAdmin());
   out.innerHTML=(isAdmin()?summaryHTML(adminFinalSummary(s,pn)):'')+tableReport(settleData(s,pn));
   toast(s+' Result Updated ✅','success');
-  addAudit('SAVE_'+s+'_RESULT','P='+pn);
+  if(isAdmin())addAudit('SAVE_'+s+'_RESULT','P='+pn);
 }
 function dailyReport(){
-  let am=String(dAmP.value||settings.amP||''),pm=String(dPmP.value||settings.pmP||'');
-  if(am)setP('AM',am,true); if(pm)setP('PM',pm,true);
+  let am=isAdmin()?String(dAmP.value||settings.amP||''):currentP('AM'),pm=isAdmin()?String(dPmP.value||settings.pmP||''):currentP('PM');
+  if(!/^\d{2}$/.test(am)||!/^\d{2}$/.test(pm))return alert('Admin မှ AM P / PM P မသတ်မှတ်ရသေးပါ');
+  if(am)setP('AM',am,isAdmin()); if(pm)setP('PM',pm,isAdmin());
   let a=settleData('AM',am),p=settleData('PM',pm),m={};
   [...a,...p].forEach(x=>{if(!m[x.name])m[x.name]={name:x.name,total:0,pAmt:0,pay:0,cor:0,net:0};m[x.name].total+=x.total;m[x.name].pAmt+=x.pAmt;m[x.name].pay+=x.pay;m[x.name].cor+=x.cor;m[x.name].net=m[x.name].total-m[x.name].pay-m[x.name].cor});
   let html='';
   if(isAdmin()){
     let sa=adminFinalSummary('AM',am),sp=adminFinalSummary('PM',pm);
-    let final=sa.final+sp.final, total=sa.total+sp.total, cor=sa.cor+sp.cor, payout=sa.payout+sp.payout, overAmt=sa.overAmt+sp.overAmt, overPayout=sa.overPayout+sp.overPayout;
-    html=`<div class="settle-summary ${final>=0?'settle-win':'settle-lose'}"><b>DAILY Admin Final Result: ${final>=0?'WIN / ရရန်':'LOSE / ပေးရန်'} ${money(Math.abs(final))}</b><br>Total: ${money(total)} - Cor: ${money(cor)} - Payout: ${money(payout)} - Over: ${money(overAmt)} + Over Payout: ${overPayout?money(overPayout):'No'}</div>`;
+    let final=sa.final+sp.final,total=sa.total+sp.total,cor=sa.cor+sp.cor,payout=sa.payout+sp.payout,overAmt=sa.overAmt+sp.overAmt,overPayout=sa.overPayout+sp.overPayout;
+    html=`<div class="result-clean ${final>=0?'win':'lose'}"><div class="result-head"><b>DAILY Final Result</b><span class="result-badge">${final>=0?'WIN / ရရန်':'LOSE / ပေးရန်'}</span></div><div class="result-row"><span>Total</span><b>${money(total)}</b></div><div class="result-row"><span>Cor</span><b>${money(cor)}</b></div><div class="result-row"><span>Payout</span><b>${money(payout)}</b></div><div class="result-row"><span>Over</span><b>${money(overAmt)}</b></div><div class="result-row"><span>Over Payout</span><b>${overPayout?money(overPayout):'No'}</b></div><div class="result-row result-final"><span>Final Result</span><b>${money(Math.abs(final))}</b></div></div>`;
   }
   dailyOut.innerHTML=html+tableReport(Object.values(m));
   toast('Daily Result Updated ✅','success');
@@ -1238,9 +2057,16 @@ async function saveGeneralSettings(){
   };
   await saveSet();toast('General Settings သိမ်းပြီးပါပြီ','success');renderAll();updateSessionTimer();setCloudStatus('Cloud: Settings Saved ✅','success')
 }
-function openLicenseSettings(){let pass=prompt('License Settings Password ရိုက်ပါ');if(pass===(settings.licensePass||'4321')){licenseBox.style.display='block';applySettingsUI()}else alert('Password မှားနေပါသည်')}
+function openLicenseSettings(){
+  alert('License Settings ကို Admin account ထဲမှာ မပြတော့ပါ။ Super Admin / Owner Dashboard မှသာ License Control လုပ်ပါ။')
+}
 async function saveLicenseSettings(){settings.expireDate=setExpireDate.value||'';settings.expireTime=setExpireTime.value||'23:59';settings.notice=setNotice.value||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ';settings.phone=setPhone.value||'09773121226';settings.licensePass=setLicensePass.value||settings.licensePass||'4321';await saveSet();alert('License Settings သိမ်းပြီးပါပြီ');setCloudStatus('Cloud: License Saved ✅','success')}
-function isExpired(){if(!settings.expireDate)return false;let exp=new Date(settings.expireDate+'T'+(settings.expireTime||'23:59')+':00');return Date.now()>exp.getTime()}
+function isExpired(){
+  if(settings.licenseActive===false)return true;
+  if(!settings.expireDate)return false;
+  let exp=new Date(settings.expireDate+'T'+(settings.expireTime||'23:59')+':00');
+  return Date.now()>exp.getTime()
+}
 function showLock(){app.classList.remove('active');loginPage.classList.remove('active');lockPage.classList.add('active');lockMsg.innerText=settings.notice||'သက်တမ်းကုန်ဆုံးသွားပါပြီ။';lockContact.innerText='သက်တမ်းတိုးရန် ဆက်သွယ်ပါ '+(settings.phone||'09773121226')}
 function checkLock(){if(isExpired())showLock();return isExpired()}
 
@@ -1320,7 +2146,7 @@ async function sendMessage(){
   finally{setBusy(false)}
 }
 
-function backupJSON(){download(JSON.stringify({version:'1.5.0-pwa-install-deploy',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v150_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
+function backupJSON(){download(JSON.stringify({version:'1.5.3-member-close-p-lock',shopId:currentUser?currentUser.shopId:'demo_shop',shopName:currentUser?currentUser.shopName:'Demo Shop',createdAt:new Date().toISOString(),records,exportsL,settings,accounts,auditLogs},null,2),'RecordManager_v153_Backup_'+today()+'.json','application/json');toast('Backup JSON Exported','success')}
 function restoreJSON(e){let f=e.target.files[0];if(!f)return;let reader=new FileReader();reader.onload=async()=>{try{let d=JSON.parse(reader.result);if(!confirm('Backup data ကို Cloud ထဲသို့ ထည့်မည်။ လက်ရှိစာရင်းကို မဖျက်ဘဲ ထပ်ပေါင်းပါမည်။'))return;let newRecords=d.records||[],newExports=d.exportsL||d.limitExports||[];for(const r of newRecords){delete r._path;delete r.docId;let saved=await addDoc(COL_RECORDS,r);records.push(saved)}for(const x of newExports){delete x._path;delete x.docId;let saved=await addDoc(COL_EXPORTS,x);exportsL.push(saved)}if(d.settings){settings={...settings,...d.settings};await saveSet()}renderAll();applySettingsUI();renderMembers();alert('Restore to Cloud ပြီးပါပြီ')}catch(err){alert('Backup file မမှန်ပါ / Restore Error: '+err.message)}};reader.readAsText(f)}
 async function importOldData(){if(!isAdmin())return;let keys=['RM_v130_records','RM_v126_records','RM_v125_records','RM_v124_records','RM_v123_records','RM_v122_records'];let old=[];for(let k of keys){old=localLoad(k,[]);if(old.length)break}if(!old.length)return alert('Old local data မတွေ့ပါ');let memberEmail=prompt('Old data ကို ဘယ် Member Email ဖြင့် Import မလဲ?','legacy@test.com')||'legacy@test.com';let memberName=prompt('Commission Name','Legacy Commission')||'Legacy Commission';if(!accounts.some(a=>a.id===memberEmail)){let a={id:memberEmail,email:memberEmail,username:memberEmail,role:'member',memberName,active:false};accounts.push(a);await setDoc(COL_ACCOUNTS,a.id,a)}for(const r of old){let rec={...r,memberId:memberEmail,memberName,playerName:r.playerName||r.name||'',name:r.name||r.playerName||''};delete rec._path;delete rec.docId;let saved=await addDoc(COL_RECORDS,rec);records.push(saved)}renderAll();renderMembers();alert('Old data imported to Cloud: '+old.length)}
 async function clearTodayRecords(){if(!isAdmin())return; if(!confirm('ဒီနေ့စာရင်းများကို Cloud မှ ဖျက်မလား?'))return;let d=today(),targets=records.filter(r=>r.d===d);try{setBusy(true,'Clearing today...');for(const r of targets)await delDocByPath(r._path);records=records.filter(r=>r.d!==d);await save();renderAll();setCloudStatus('Cloud: Today Records Cleared','success');toast('Today Records Cleared','success');await addAudit('CLEAR_TODAY','rows '+targets.length)}finally{setBusy(false)}}
@@ -1344,20 +2170,73 @@ function renderHistory(){
   if(!hs||!he||!hb||!sumBox)return;
   let start=hs.value||settings.startDate||firstRecordDate()||today(),end=he.value||settings.endDate||today();
   if(start>end){let tmp=start;start=end;end=tmp}
+  let maxEnd=dateAdd(start,92);if(end>maxEnd){end=maxEnd;toast('အများဆုံး 3 လအထိသာ ကြည့်နိုင်ပါသည်','warning')}
   hs.value=start;he.value=end;
   let rows=[],d=start,guard=0;
-  while(d<=end&&guard<370){
-    if(isMonFri(d)){
-      let rb=resultForDate(d),am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM');
-      let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0);
-      rows.push({date:d,day:weekdayName(d),amP:rb.amP||'',pmP:rb.pmP||'',amTotal,pmTotal,total:amTotal+pmTotal});
-    }
+  while(d<=end&&guard<93){
+    let weekend=!isMonFri(d),rb=resultForDate(d),am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM');
+    let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0);
+    rows.push({date:d,day:weekdayName(d),weekend,amP:weekend?'Closed':(rb.amP||''),pmP:weekend?'Closed':(rb.pmP||''),amTotal:weekend?0:amTotal,pmTotal:weekend?0:pmTotal,total:weekend?0:amTotal+pmTotal});
     d=dateAdd(d,1);guard++;
   }
-  let sumAM=rows.reduce((a,b)=>a+b.amTotal,0),sumPM=rows.reduce((a,b)=>a+b.pmTotal,0),sum=sumAM+sumPM;
-  sumBox.innerHTML=`<div class="smart-mini"><small>Days</small><br><b>${rows.length}</b></div><div class="smart-mini"><small>AM Total</small><br><b>${money(sumAM)}</b></div><div class="smart-mini"><small>PM Total</small><br><b>${money(sumPM)}</b></div><div class="smart-mini"><small>Range Total</small><br><b>${money(sum)}</b></div>`;
-  if(cal)cal.innerHTML=rows.length?rows.map(r=>`<div class="cal-cell"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="cal-num cal-am"><span>AM</span><b>${r.amP||'-'}</b></div><div class="cal-num cal-pm"><span>PM</span><b>${r.pmP||'-'}</b></div><small>AM ${money(r.amTotal)} / PM ${money(r.pmTotal)}</small></div>`).join(''):'<div class="alert alert-secondary">No AM/PM P history</div>';
-  hb.innerHTML=rows.length?rows.map(r=>`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
+  let workRows=rows.filter(r=>!r.weekend),sumAM=rows.reduce((a,b)=>a+b.amTotal,0),sumPM=rows.reduce((a,b)=>a+b.pmTotal,0),sum=sumAM+sumPM;
+  sumBox.innerHTML=`<div class="smart-mini"><small>Days</small><br><b>${rows.length}</b></div><div class="smart-mini"><small>Work Days</small><br><b>${workRows.length}</b></div><div class="smart-mini"><small>AM Total</small><br><b>${money(sumAM)}</b></div><div class="smart-mini"><small>Range Total</small><br><b>${money(sum)}</b></div>`;
+  if(cal)cal.innerHTML=rows.length?rows.map(r=>r.weekend?`<div class="cal-cell weekend-card"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="closed-weekend">ပိတ်ရက် / 2D မရှိ</div></div>`:`<div class="cal-cell"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="cal-num cal-am"><span>AM</span><b>${r.amP||'-'}</b></div><div class="cal-num cal-pm"><span>PM</span><b>${r.pmP||'-'}</b></div><small>AM ${money(r.amTotal)} / PM ${money(r.pmTotal)}</small></div>`).join(''):'<div class="alert alert-secondary">No AM/PM P history</div>';
+  hb.innerHTML=rows.length?rows.map(r=>r.weekend?`<tr class="table-secondary"><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td colspan="5" class="text-center fw-bold">ပိတ်ရက် / 2D မရှိ</td></tr>`:`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
+}
+
+
+function renderOwnerDashboard(){
+  if(!$('ownerBody'))return;
+  if(isSuperAdmin()&&(!ownerSettingsMap||!Object.keys(ownerSettingsMap).length)){
+    // best effort lazy load for old sessions
+    loadOwnerSettingsForAccounts(accounts).then(m=>{ownerSettingsMap=m;renderOwnerDashboard()}).catch(()=>{});
+  }
+  renderOwnerLicenseControls();
+  let q=($('ownerSearch')?.value||'').toLowerCase();
+  let rows=(accounts||[]).filter(a=>String(a.role||'').match(/admin|member/));
+  if(q)rows=rows.filter(a=>[a.role,a.id,a.uid,a.email,a.username,a.memberName,a.phone,a.shopId,a.shopName,(ownerSettingsMap[a.shopId]||{}).plan,(ownerSettingsMap[a.shopId]||{}).expireDate].join(' ').toLowerCase().includes(q));
+  let admins=(accounts||[]).filter(a=>a.role==='admin'),members=(accounts||[]).filter(a=>a.role==='member'),active=(accounts||[]).filter(a=>a.active!==false).length;
+  let licensed=Object.values(ownerSettingsMap||{}).filter(st=>licenseInfoForSettings(st).label==='Active').length;
+  ownerStats.innerHTML=`<div class="smart-mini"><small>Admins</small><br><b>${admins.length}</b></div><div class="smart-mini"><small>Members</small><br><b>${members.length}</b></div><div class="smart-mini"><small>Active Accounts</small><br><b>${active}</b></div><div class="smart-mini"><small>Active Licenses</small><br><b>${licensed}</b></div>`;
+  ownerBody.innerHTML=rows.length?rows.map(a=>{
+    let memCount=a.role==='admin'?members.filter(m=>String(m.shopId||'')===String(a.shopId||'')).length:'';
+    let st=a.active===false?'Account OFF':'Account ON';
+    let lic=ownerSettingsMap[a.shopId]||defaultLicenseSettings(a.shopId||'');
+    let plan=lic.plan||'Trial',exp=lic.expireDate?`${lic.expireDate} ${lic.expireTime||'23:59'}`:'No expiry';
+    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${licenseBadgeHTML(lic)}<br><small>${plan} • ${exp}<br>${st}</small></td></tr>`
+  }).join(''):'<tr><td colspan="5" class="text-center text-muted">No registration metadata</td></tr>';
+}
+function renderOwnerLicenseControls(){
+  if(!$('ownerShopSelect')||!isSuperAdmin())return;
+  let admins=ownerAdminAccounts();
+  let old=ownerShopSelect.value;
+  ownerShopSelect.innerHTML=admins.map(a=>`<option value="${a.shopId||''}">${a.shopName||a.memberName||a.email} — ${a.email||''}</option>`).join('')||'<option value="">No admin shop</option>';
+  if(old&&[...ownerShopSelect.options].some(o=>o.value===old))ownerShopSelect.value=old;
+  ownerSelectLicenseShop();
+}
+function ownerSelectLicenseShop(){
+  if(!$('ownerShopSelect'))return;
+  let sid=ownerShopSelect.value||'',st={...defaultLicenseSettings(sid),...((ownerSettingsMap||{})[sid]||{})};
+  if($('ownerPlan'))ownerPlan.value=st.plan||'Trial';
+  if($('ownerLicenseActive'))ownerLicenseActive.value=String(st.licenseActive!==false);
+  if($('ownerExpireDate'))ownerExpireDate.value=st.expireDate||'';
+  if($('ownerExpireTime'))ownerExpireTime.value=st.expireTime||'23:59';
+  if($('ownerNotice'))ownerNotice.value=st.notice||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ';
+  if($('ownerPhone'))ownerPhone.value=st.phone||'09773121226';
+}
+async function saveOwnerLicenseSettings(){
+  if(!isSuperAdmin())return alert('Super Admin Only');
+  let sid=ownerShopSelect?.value||'';
+  if(!sid)return alert('Admin / Shop မရွေးရသေးပါ');
+  try{
+    setBusy(true,'Saving license...');
+    let old=await getDoc(COL_SETTINGS,sid,defaultLicenseSettings(sid))||defaultLicenseSettings(sid);
+    let st={...old,shopId:sid,shopName:ownerShopLabel(sid),plan:ownerPlan.value||'Trial',licenseActive:ownerLicenseActive.value==='true',expireDate:ownerExpireDate.value||'',expireTime:ownerExpireTime.value||'23:59',notice:ownerNotice.value||'သက်တမ်းတိုးရန် ဆက်သွယ်ပါ',phone:ownerPhone.value||'09773121226',licenseManagedBy:currentUser.email,licenseUpdatedAt:Date.now()};
+    await setDoc(COL_SETTINGS,sid,st);
+    ownerSettingsMap[sid]=st;
+    setBusy(false);toast('License Saved ✅','success');setCloudStatus('Cloud: Owner License Saved ✅','success');renderOwnerDashboard();
+  }catch(e){setBusy(false);alert('Owner License Save Error: '+e.message);setCloudStatus('Owner License Save Error: '+e.message,'danger')}
 }
 
 function safeRun(label,fn){try{if(typeof fn==='function')fn()}catch(e){console.warn(label,e);toast(label+' render warning: '+e.message,'warning')}}
@@ -1376,7 +2255,9 @@ function renderAll(){
   safeRun('Messages',renderMessages);
   safeRun('Close Status',renderCloseStatus);
   safeRun('Result Book',renderResultBookStatus);
+  safeRun('Member P Lock',lockMemberPInputs);
   safeRun('History',renderHistory);
+  safeRun('Owner Dashboard',renderOwnerDashboard);
   safeRun('Session Timer',updateSessionTimer);
 }
 
@@ -1409,7 +2290,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   ['rName','rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].forEach(id=>$(id)?.addEventListener('focus',()=>focusField(id)));
   applySettingsUI();
   setInterval(checkLock,60000);
-  setInterval(updateSessionTimer,1000);
+  setInterval(updateSessionTimer,1000);setInterval(refreshSharedSettings,30000);
   window.__rmWorkDate=today();setInterval(()=>{if(window.__rmWorkDate!==today()){window.__rmWorkDate=today();renderAll();toast('နေ့သစ် စာရင်းအသစ် စတင်ပါပြီ ✅','success')}},60000);
   u.addEventListener('keydown',e=>{if(e.key==='Enter')p.focus()});
   p.addEventListener('keydown',e=>{if(e.key==='Enter')login()});
@@ -1424,8 +2305,212 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.addEventListener('online',updateNetBadge);
   window.addEventListener('offline',updateNetBadge);
   updateNetBadge();
+  window.addEventListener('resize',updateDesktopModeUI);
+  updateDesktopModeUI();
 
 });
+
+// v1.6.5 Desktop Mode Enhancements
+function updateDesktopModeUI(){
+  let isDesktop=document.body.classList.contains('admin-windows-mode');
+  let w=window.innerWidth;
+  
+  if(isDesktop && w>=1400){
+    // Enhanced grid layout for large screens
+    let grid=$('grid');
+    if(grid && grid.style){
+      grid.style.gridTemplateColumns='repeat(15, 1fr)';
+    }
+  }else if(isDesktop && w>=1024){
+    let grid=$('grid');
+    if(grid && grid.style){
+      grid.style.gridTemplateColumns='repeat(12, 1fr)';
+    }
+  }
+}
+
+// Enhance dashboard risk panel
+function renderDashRiskPanel(){
+  let panel=$('dashRiskPanel');
+  if(!panel)return;
+  
+  let html='<div class="split-panel-content">';
+  if(data.length>0){
+    let totalAmt=data.reduce((s,d)=>s+(d.amt||0),0);
+    let totalRec=data.length;
+    html+=`<div class="mb-2"><small>Total Amount: <b>${totalAmt}</b></small></div>`;
+    html+=`<div class="mb-2"><small>Total Records: <b>${totalRec}</b></small></div>`;
+    html+=`<div class="alert alert-info mb-0"><small>Risk status: Monitor limit table for details</small></div>`;
+  }else{
+    html+='<div class="alert alert-secondary mb-0"><small>No data available</small></div>';
+  }
+  html+='</div>';
+  panel.innerHTML=html;
+}
+
+// Enhance limit grid rendering
+function renderLimitGrid(){
+  let grid=$('grid');
+  if(!grid)return;
+  
+  let html='';
+  // Add header row
+  for(let i=1;i<=100;i++){
+    let cls='cell';
+    if(hitNumbers.includes(i))cls+=' hit';
+    else if(negNumbers.includes(i))cls+=' neg';
+    else if(posNumbers.includes(i))cls+=' pos';
+    html+=`<div class="${cls}">${i}</div>`;
+  }
+  grid.innerHTML=html;
+}
+
+// Monitor window resize for responsive panels
+window.addEventListener('resize',()=>{
+  updateDesktopModeUI();
+  renderDashRiskPanel();
+});
+
+
+// v1.6.5 Advanced Limit Table Features
+
+// Enhanced limit grid rendering with statistics
+function renderLimitGridEnhanced(){
+  let grid=$('grid');
+  if(!grid)return;
+  
+  let html='';
+  let hitCount=0, posCount=0, negCount=0;
+  
+  // Render 100 numbers
+  for(let i=1;i<=100;i++){
+    let cls='cell';
+    let tooltip='';
+    
+    if(hitNumbers && hitNumbers.includes(i)){
+      cls+=' hit';
+      hitCount++;
+      tooltip='Hit Number';
+    }else if(negNumbers && negNumbers.includes(i)){
+      cls+=' neg';
+      negCount++;
+      tooltip='Negative';
+    }else if(posNumbers && posNumbers.includes(i)){
+      cls+=' pos';
+      posCount++;
+      tooltip='Positive';
+    }
+    
+    html+=`<div class="${cls}" data-tooltip="${tooltip}">${i}</div>`;
+  }
+  
+  grid.innerHTML=html;
+  
+  // Update statistics
+  updateGridStats(hitCount, posCount, negCount);
+}
+
+// Update grid statistics display
+function updateGridStats(hitCount, posCount, negCount){
+  let statsHtml=`
+    <div class="grid-stats">
+      <div class="stat-item hit-stat">
+        <small>Hit Numbers</small>
+        <b>${hitCount}</b>
+      </div>
+      <div class="stat-item pos-stat">
+        <small>Positive</small>
+        <b>${posCount}</b>
+      </div>
+      <div class="stat-item neg-stat">
+        <small>Negative</small>
+        <b>${negCount}</b>
+      </div>
+      <div class="stat-item">
+        <small>Total</small>
+        <b>${hitCount + posCount + negCount}</b>
+      </div>
+    </div>
+  `;
+  
+  let gridContainer=$('grid')?.parentElement;
+  if(gridContainer){
+    let existingStats=gridContainer.querySelector('.grid-stats');
+    if(existingStats){
+      existingStats.innerHTML=statsHtml.replace(/<div class="grid-stats">/,'').replace(/<\/div>/,'');
+    }
+  }
+}
+
+// Add legend to limit section
+function addLimitLegend(){
+  let limitCard=$('limit');
+  if(!limitCard)return;
+  
+  let legendHtml=`
+    <div class="limit-legend">
+      <div class="legend-item">
+        <div class="legend-box hit"></div>
+        <span>Hit Numbers</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-box pos"></div>
+        <span>Positive</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-box neg"></div>
+        <span>Negative</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-box normal"></div>
+        <span>Normal</span>
+      </div>
+    </div>
+  `;
+  
+  let gridContainer=$('grid')?.parentElement;
+  if(gridContainer && !gridContainer.querySelector('.limit-legend')){
+    gridContainer.insertAdjacentHTML('beforebegin', legendHtml);
+  }
+}
+
+// Enhance renderLimit function
+let originalRenderLimit=window.renderLimit;
+window.renderLimit=function(calc){
+  if(originalRenderLimit)originalRenderLimit(calc);
+  renderLimitGridEnhanced();
+  addLimitLegend();
+};
+
+// Add number range filter
+function filterNumberRange(start, end){
+  let cells=document.querySelectorAll('.limit-grid .cell');
+  cells.forEach(cell=>{
+    let num=parseInt(cell.textContent);
+    if(num>=start && num<=end){
+      cell.classList.add('updated');
+      setTimeout(()=>cell.classList.remove('updated'), 400);
+    }
+  });
+}
+
+// Keyboard shortcut for grid navigation
+document.addEventListener('keydown',(e)=>{
+  if(e.ctrlKey && e.key==='l'){
+    e.preventDefault();
+    tab('limit','tLimit');
+    setTimeout(()=>renderLimitGridEnhanced(), 100);
+  }
+});
+
+// Initialize enhanced limit features on page load
+document.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(()=>{
+    addLimitLegend();
+    renderLimitGridEnhanced();
+  }, 500);
+});
+
 </script>
 </body>
 </html>
