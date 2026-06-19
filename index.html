@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.6.2 Language + Invite</title>
+<title>RecordManager_2D_Logic_Pro v1.6.3 Invite Share Fix</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.6.2 Language + Invite */
+/* v1.6.3 Invite Share Fix */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.6.2 Language + Invite */
+/* v1.6.3 Invite Share Fix */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.6.2 Language + Invite */
+/* v1.6.3 Invite Share Fix */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,7 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.6.2 Language + Invite + Clear Limit Board */
+/* v1.6.3 Invite Share Fix + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -219,7 +219,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.2 Language + Invite</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.3 Invite Share Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()">Refresh</button>
@@ -236,7 +236,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.6.2 Language + Invite — Production ID + Security + Language</p>
+      <p class="small-note mb-2">v1.6.3 Invite Share Fix — Share link + Owner delete + duplicate checks</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -559,7 +559,8 @@ body.admin-windows-mode .windows-live-desk{display:block}
           <div class="col-6"><input id="inviteExpireHours" class="form-control" inputmode="numeric" value="24" placeholder="Expire Hours"></div>
           <div class="col-12"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="createInviteLink()">Generate Invite Link</button></div>
           <div class="col-12"><textarea id="inviteLinkBox" class="form-control" rows="2" readonly placeholder="Invite link ပေါ်လာမည်"></textarea></div>
-          <div class="col-12"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="copyInviteLink()">Copy Invite Link</button></div>
+          <div class="col-6"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="copyInviteLink()">Copy Link</button></div>
+          <div class="col-6"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="shareInviteLink()">Share Link</button></div>
         </div>
       </div>
       <div class="card p-3">
@@ -668,7 +669,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.6.2 Language + Invite
+   RecordManager_2D_Logic_Pro v1.6.3 Invite Share Fix
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -677,6 +678,7 @@ const API_KEY='AIzaSyAVL_Dt1R0nzDu5YTseUq6kdV0pafRcWlM';
 const PROJECT_ID='recordmanager-2dlogic-pr-a11d6';
 const BASE=`https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents`;
 const ROOT='recordmanager/main';
+const APP_BASE_URL='https://htetzawoo-coder.github.io/recordmanager-pwa/';
 const COL_RECORDS='records', COL_EXPORTS='limitExports', COL_SETTINGS='settings', COL_ACCOUNTS='accounts', COL_LOGS='auditLogs', COL_MSGS='messages', COL_INVITES='invites';
 
 const DEFAULT_ACCOUNTS=[];
@@ -685,6 +687,8 @@ function $(id){return document.getElementById(id)}
 function safeId(v){return String(v||'').trim().toLowerCase().replace(/[^a-z0-9_-]/g,'_')}
 
 function makePublicId(prefix){return prefix+'-'+String(Date.now()).slice(-5)+String(Math.floor(Math.random()*90+10))}
+function appBaseUrl(){return (location.protocol==='http:'||location.protocol==='https:')?(location.origin+location.pathname):APP_BASE_URL}
+
 function adminPublicId(a=currentUser){return (a&&(a.adminNo||a.publicId))||'A-PENDING'}
 function memberPublicId(a=currentUser){return (a&&(a.memberNo||a.publicId))||'M-PENDING'}
 function ensureAccountPublicIds(){
@@ -1113,6 +1117,8 @@ async function registerAdmin(){
     let rr=await api(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,{method:'POST',noAuth:true,body:JSON.stringify({email,password:pass,returnSecureToken:true})});
     token=rr.idToken;refreshToken=rr.refreshToken||'';uid=rr.localId;authEmail=email;
     accounts=await listCollection(COL_ACCOUNTS);
+    let duplicateAdmin=(accounts||[]).find(a=>String(a.shopName||'').trim().toLowerCase()===shop.toLowerCase()||String(a.memberName||'').trim().toLowerCase()===owner.toLowerCase()||String(a.phone||'').trim()===phone);
+    if(duplicateAdmin)throw new Error('Admin/Shop name သို့မဟုတ် Phone တူနေပါသည်');
     let shopId=makeShopId(shop),adminNo=makePublicId('A'),acc={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,adminNo,publicId:adminNo,cor:Number(settings.cor||13),active:true,createdAt:Date.now()};
     await setDoc(COL_ACCOUNTS,uid,acc);accounts.push(acc);
     currentUser={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,adminNo,publicId:adminNo,cor:Number(settings.cor||13),active:true};
@@ -1201,11 +1207,21 @@ async function createInviteLink(){
   let tokenId=inviteToken(),expireAt=Date.now()+hrs*3600*1000;
   let inv={token:tokenId,shopId:currentUser.shopId,shopName:currentUser.shopName,adminUid:currentUser.uid||currentUser.id,adminEmail:currentUser.email,adminNo:adminPublicId(currentUser),memberName:name,phone,cor,expireAt,used:false,createdAt:Date.now()};
   await setDoc(COL_INVITES,tokenId,inv);
-  let url=new URL(location.href);url.search='';url.hash='';url.searchParams.set('invite',tokenId);
+  let url=new URL(appBaseUrl());url.search='';url.hash='';url.searchParams.set('invite',tokenId);
   if($('inviteLinkBox'))inviteLinkBox.value=url.toString();
   toast('Invite link created ✅','success');await addAudit('CREATE_INVITE',tokenId+' / '+(name||'new member'));
 }
-function copyInviteLink(){let v=$('inviteLinkBox')?.value||'';if(!v)return alert('Invite link မရှိသေးပါ');navigator.clipboard?.writeText(v);toast('Invite copied ✅','success')}
+async function copyInviteLink(){
+  let v=$('inviteLinkBox')?.value||'';if(!v)return alert('Invite link မရှိသေးပါ');
+  try{if(navigator.clipboard&&location.protocol.startsWith('http'))await navigator.clipboard.writeText(v);else throw new Error('clipboard fallback')}
+  catch(e){let box=$('inviteLinkBox');if(box){box.focus();box.select();try{document.execCommand('copy')}catch(x){}}}
+  toast('Invite copied ✅','success');
+}
+async function shareInviteLink(){
+  let v=$('inviteLinkBox')?.value||'';if(!v)return alert('Invite link မရှိသေးပါ');
+  try{if(navigator.share)await navigator.share({title:'RecordManager Member Invite',text:'RecordManager Member Invite Link',url:v});else{await copyInviteLink();alert('Share မရပါက Viber/Chat ထဲ paste လုပ်ပါ')}}
+  catch(e){toast('Share cancelled / failed','warning')}
+}
 function initInviteFromUrl(){let t=new URL(location.href).searchParams.get('invite');if(t&&$('inviteBox')){inviteBox.style.display='block';inviteInfo.innerHTML=`<div class="invite-lock">Invite Token: ${t}<br>Admin ID / Shop ID ကို link မှ locked ချိတ်ပါမည်။</div>`;window.__inviteToken=t}}
 async function acceptInvite(){
   let t=window.__inviteToken||new URL(location.href).searchParams.get('invite');if(!t)return alert('Invite token မရှိပါ');
@@ -1632,6 +1648,10 @@ async function saveMemberAccount(){
   if(!email.includes('@'))return alert('Email ပုံစံမှန်မှန်ဖြည့်ပါ ဥပမာ member2@test.com');
   let dup=accounts.find(a=>String(a.email||a.username||a.id||'').toLowerCase()===email&&a.id!==editMemberId);
   if(dup)return alert('Email တူနေပါသည်');
+  let dupName=accounts.find(a=>a.role==='member'&&itemShopId(a)===String(currentUser.shopId||'')&&String(a.memberName||'').trim().toLowerCase()===memberName.toLowerCase()&&a.id!==editMemberId);
+  if(dupName)return alert('Member Name တူနေပါသည်');
+  let dupPhone=accounts.find(a=>a.role==='member'&&itemShopId(a)===String(currentUser.shopId||'')&&String(a.phone||'').trim()===phone&&a.id!==editMemberId);
+  if(dupPhone)return alert('Phone Number တူနေပါသည်');
   try{
     if(editMemberId){
       let a=accounts.find(x=>x.id===editMemberId);
@@ -1711,7 +1731,7 @@ service cloud.firestore {
 
     match /recordmanager/main/accounts/{uid} {
       allow read: if isOwner() || (hasAccount() && resource.data.shopId == myShop()) || (signedIn() && uid == request.auth.uid);
-      allow create: if isOwner() || (hasAccount() && myRole() == 'admin' && request.resource.data.shopId == myShop() && request.resource.data.role == 'member') || (signedIn() && uid == request.auth.uid && request.resource.data.role == 'member');
+      allow create: if isOwner() || (hasAccount() && myRole() == 'admin' && request.resource.data.shopId == myShop() && request.resource.data.role == 'member') || (signedIn() && uid == request.auth.uid && (request.resource.data.role == 'member' || request.resource.data.role == 'admin'));
       allow update: if isOwner() || (signedIn() && uid == request.auth.uid) || (hasAccount() && myRole() == 'admin' && resource.data.shopId == myShop() && request.resource.data.shopId == myShop() && resource.data.role == 'member');
       allow delete: if isOwner() || (hasAccount() && myRole() == 'admin' && resource.data.shopId == myShop() && resource.data.role == 'member');
     }
@@ -1834,6 +1854,23 @@ function renderHistory(){
 }
 
 
+
+async function ownerDeleteAdmin(id){
+  if(!isSuperAdmin())return alert('Owner Only');
+  let a=(accounts||[]).find(x=>String(x.uid||x.id)===String(id));
+  if(!a||a.role!=='admin')return alert('Admin account မတွေ့ပါ');
+  let members=(accounts||[]).filter(m=>m.role==='member'&&String(m.shopId||'')===String(a.shopId||''));
+  if(!confirm(`Admin ${a.memberName||a.email} ကိုဖျက်မလား?
+Related members ${members.length} ဦးကို OFF လုပ်ပြီး records/history မဖျက်ပါ။`))return;
+  try{
+    setBusy(true,'Deleting admin mapping...');
+    for(const m of members){m.active=false;await setDoc(COL_ACCOUNTS,m.uid||m.id,m)}
+    await delDocByPath(docUrl(COL_ACCOUNTS,a.uid||a.id));
+    accounts=accounts.filter(x=>String(x.uid||x.id)!==String(id));
+    ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);renderOwnerDashboard();toast('Admin deleted / members disabled ✅','success');
+  }catch(e){alert('Delete Admin Error: '+e.message)}finally{setBusy(false)}
+}
+
 function renderOwnerDashboard(){
   if(!$('ownerBody'))return;
   if(isSuperAdmin()&&(!ownerSettingsMap||!Object.keys(ownerSettingsMap).length)){
@@ -1852,7 +1889,7 @@ function renderOwnerDashboard(){
     let st=a.active===false?'Account OFF':'Account ON';
     let lic=ownerSettingsMap[a.shopId]||defaultLicenseSettings(a.shopId||'');
     let plan=lic.plan||'Trial',exp=lic.expireDate?`${lic.expireDate} ${lic.expireTime||'23:59'}`:'No expiry';
-    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small><br><span class="id-pill">${a.role==='admin'?adminPublicId(a):memberPublicId(a)}</span></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${licenseBadgeHTML(lic)}<br><small>${plan} • ${exp}<br>${st}</small></td></tr>`
+    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small><br><span class="id-pill">${a.role==='admin'?adminPublicId(a):memberPublicId(a)}</span></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${licenseBadgeHTML(lic)}<br><small>${plan} • ${exp}<br>${st}</small>${a.role==='admin'?`<br><button class="btn btn-xs btn-danger mt-1" onclick="ownerDeleteAdmin('${a.uid||a.id}')">Delete Admin</button>`:''}</td></tr>`
   }).join(''):'<tr><td colspan="5" class="text-center text-muted">No registration metadata</td></tr>';
 }
 function renderOwnerLicenseControls(){
