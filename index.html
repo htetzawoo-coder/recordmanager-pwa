@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.8 Refresh Session Fix</title>
+<title>RecordManager_2D_Logic_Pro v1.5.9 Mobile Entry UX</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.8 Refresh Session Fix */
+/* v1.5.9 Mobile Entry UX */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.5.8 Refresh Session Fix */
+/* v1.5.9 Mobile Entry UX */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.5.8 Refresh Session Fix */
+/* v1.5.9 Mobile Entry UX */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,7 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.5.8 Refresh Session Fix + Clear Limit Board */
+/* v1.5.9 Mobile Entry UX + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -191,6 +191,19 @@ body.admin-windows-mode .windows-live-desk{display:block}
 @media(max-width:1450px){.live-desk-grid{grid-template-columns:1fr 1fr}.live-panel{max-height:54vh}}
 @media(max-width:900px){.live-desk-grid{grid-template-columns:1fr}.windows-limit-board table{min-width:900px}}
 
+
+
+/* v1.5.9 Member Entry Fit + 3D Keypad + History Details */
+#refreshBtn{white-space:nowrap}
+#settings button[onclick="openLicenseSettings()"],#licenseBox{display:none!important}
+.entry-input-grid{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:7px}
+.last-entry-preview{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #22c55e;background:#dcfce7;color:#14532d;border-radius:14px;padding:8px 11px;margin:6px 0 8px;font-weight:1000;box-shadow:0 7px 15px #0001}
+.last-entry-preview span{font-size:11px;text-transform:uppercase;letter-spacing:.04em;opacity:.8}.last-entry-preview b{font-size:18px}.dark .last-entry-preview{background:#052e16;color:#bbf7d0;border-color:#16a34a}
+.entry-keypad-3d{gap:7px}.entry-keypad-3d button{min-height:52px;font-size:22px;border:0!important;color:#fff!important;text-shadow:0 1px 1px #0007;box-shadow:0 7px 0 #0004,0 12px 18px #0002,inset 0 2px 0 #fff4;transform:translateY(0);transition:.05s ease}.entry-keypad-3d button:active{transform:translateY(4px);box-shadow:0 3px 0 #0004,0 6px 12px #0002,inset 0 1px 0 #fff3}.entry-keypad-3d small{font-size:13px;color:#fff!important;font-weight:900}.key-digit{background:linear-gradient(180deg,#334155,#111827)!important}.key-action{background:linear-gradient(180deg,#64748b,#334155)!important}.key-logic{background:linear-gradient(180deg,#2563eb,#1e3a8a)!important}.key-star,.key-starlogic{background:linear-gradient(180deg,#7c3aed,#4c1d95)!important}.key-position{background:linear-gradient(180deg,#f59e0b,#92400e)!important}.entry-keypad-3d .enter{background:linear-gradient(180deg,#22c55e,#047857)!important;font-size:25px;min-height:60px;grid-column:span 3}
+.history-detail-box{border:1px solid var(--border);border-radius:18px;background:var(--card);padding:12px;display:none}.history-detail-box.active{display:block}.history-detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.history-readonly-note{border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;display:inline-block;margin-bottom:8px}.history-mini-table{width:100%;font-size:12px}.history-mini-table th,.history-mini-table td{border-bottom:1px solid var(--border);padding:5px;vertical-align:top}.history-mini-table th{font-weight:1000}.history-section-title{font-weight:1000;margin:12px 0 6px}.text-keep{white-space:nowrap}
+@media(max-width:520px){#entry .card{padding:9px!important;margin-bottom:8px}#entry h5{font-size:15px;margin-bottom:4px}#entry .small-note{font-size:11px;margin-bottom:4px!important}.session-timer{padding:7px!important;margin:5px 0!important;line-height:1.25}.session-timer .big{font-size:16px}.session-timer .time{font-size:14px}.entry-input-grid{gap:5px}.entry-input-grid .form-control{padding:9px 10px;font-size:15px}.last-entry-preview{padding:6px 9px;margin:5px 0}.last-entry-preview b{font-size:16px}.entry-keypad-3d{gap:6px}.entry-keypad-3d button{min-height:45px;font-size:19px;border-radius:12px}.entry-keypad-3d small{font-size:11px}.entry-keypad-3d .enter{min-height:54px;font-size:21px}.tabs{top:54px;padding:5px 4px}.tabs button{padding:7px 9px;font-size:11px}.navbar-brand{font-size:12px}.appbar .btn{font-size:11px;padding:5px 7px}}
+@media(max-height:720px) and (max-width:520px){#entry .card{padding:7px!important}.entry-keypad-3d button{min-height:42px;font-size:18px}.entry-keypad-3d .enter{min-height:48px}.session-timer{font-size:12px}.entry-input-grid .form-control{padding:8px 9px}.last-entry-preview{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -198,9 +211,10 @@ body.admin-windows-mode .windows-live-desk{display:block}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.8 Refresh Session Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.9 Mobile Entry UX</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
+      <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()">Refresh</button>
       <button id="updateBtn" class="btn btn-success btn-sm rounded-pill fw-bold" onclick="forceAppUpdate()">Update</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
       <button id="desktopModeBtn" class="btn btn-info btn-sm rounded-pill fw-bold d-none" onclick="toggleDesktopMode()">🪟 Windows Mode</button>
@@ -213,7 +227,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.8 Refresh Session Fix — Refresh လုပ်လည်း Login မထွက်အောင်ပြင်ထားသည်</p>
+      <p class="small-note mb-2">v1.5.9 Mobile Entry UX — Phone fit + History read-only + Windows polish</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -347,21 +361,20 @@ body.admin-windows-mode .windows-live-desk{display:block}
         <h5 class="fw-bold">Member Record Entry</h5>
         <p id="entryMemberLabel" class="small-note mb-2"></p>
         <div id="entrySessionTimer" class="session-timer session-closed">Session status...</div>
-        <input id="rName" class="form-control mb-2" placeholder="ထိုးသား Name">
-        <input id="rCode" class="form-control mb-2" inputmode="none" placeholder="Number / Logic">
-        <input id="rAmt" class="form-control mb-3" inputmode="none" placeholder="Amount">
-        <div class="keypad">
-          <button onclick="key('1')">1</button><button onclick="key('2')">2</button><button onclick="key('3')">3</button><button onclick="delKey()">⌫</button>
-          <button onclick="key('4')">4</button><button onclick="key('5')">5</button><button onclick="key('6')">6</button><button onclick="clearKey()">C</button>
-          <button onclick="key('7')">7</button><button onclick="key('8')">8</button><button onclick="key('9')">9</button><button onclick="key('/')">/</button>
-          <button onclick="key('*')">*</button><button onclick="key('0')">0</button><button onclick="key('+')">+<br><small>စုံ</small></button><button onclick="key('-')">-<br><small>မ</small></button>
-          <button onclick="key('A')">A<br><small>ပါဝါ</small></button><button onclick="key('Z')">Z<br><small>နက္ခ</small></button><button onclick="key('B')">B<br><small>ညီကို</small></button><button onclick="key('//')">//<br><small>အပူး</small></button>
-          <button onclick="logicBtn('reverse')">*အာ<br><small>အပြန်</small></button>
-          <button onclick="logicBtn('khway')">*ခွေ<br><small>ခွေ</small></button>
-          <button onclick="logicBtn('break')">*<br><small>ဘရိတ်</small></button>
-          <button onclick="logicBtn('apa')">*<br><small>အပါ</small></button>
-          <button onclick="logicBtn('front')">ရှေ့<br><small>1/</small></button>
-          <button onclick="logicBtn('back')">နောက်<br><small>/1</small></button>
+        <div class="entry-input-grid">
+          <input id="rName" class="form-control" placeholder="ထိုးသား Name">
+          <input id="rCode" class="form-control" inputmode="none" placeholder="Number / Logic">
+          <input id="rAmt" class="form-control" inputmode="none" placeholder="Amount">
+        </div>
+        <div id="lastEntryPreview" class="last-entry-preview d-none"><span>Latest Recorded</span><b>{ -- }</b></div>
+        <div class="keypad entry-keypad-3d">
+          <button class="key-digit" onclick="key('1')">1</button><button class="key-digit" onclick="key('2')">2</button><button class="key-digit" onclick="key('3')">3</button><button class="key-action" onclick="delKey()">⌫</button>
+          <button class="key-digit" onclick="key('4')">4</button><button class="key-digit" onclick="key('5')">5</button><button class="key-digit" onclick="key('6')">6</button><button class="key-action" onclick="clearKey()">C</button>
+          <button class="key-digit" onclick="key('7')">7</button><button class="key-digit" onclick="key('8')">8</button><button class="key-digit" onclick="key('9')">9</button><button class="key-logic" onclick="key('A')">A<br><small>ပါဝါ</small></button>
+          <button class="key-star" onclick="key('*')">*R</button><button class="key-digit" onclick="key('0')">0</button><button class="key-position" onclick="key('+')">+<br><small>စုံ</small></button><button class="key-position" onclick="key('-')">-<br><small>မ</small></button>
+          <button class="key-logic" onclick="key('Z')">Z<br><small>နက္ခ</small></button><button class="key-logic" onclick="key('B')">B<br><small>ညီကို</small></button><button class="key-logic" onclick="key('//')">//<br><small>အပူး</small></button><button class="key-starlogic" onclick="logicBtn('reverse')">*အာ<br><small>အပြန်</small></button>
+          <button class="key-starlogic" onclick="logicBtn('apa')">*<br><small>အပါ</small></button><button class="key-starlogic" onclick="logicBtn('break')">*<br><small>ဘရိတ်</small></button><button class="key-starlogic" onclick="logicBtn('khway')">*ခွေ<br><small>ခွေ</small></button><button class="key-position" onclick="logicBtn('front')">ရှေ့<br><small>1/</small></button>
+          <button class="key-position" onclick="logicBtn('back')">နောက်<br><small>/1</small></button>
           <button class="enter" onclick="enterAction()">ENTER ✓</button>
         </div>
       </div>
@@ -461,7 +474,10 @@ body.admin-windows-mode .windows-live-desk{display:block}
           <div class="col-6"><label class="small fw-bold">End Date</label><input id="histEnd" class="form-control" type="date"></div>
           <div class="col-6"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="setHistoryThisWeek()">This Week</button></div>
           <div class="col-6"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="renderHistory()">Show History</button></div>
+          <div class="col-8"><label class="small fw-bold">Full Read-only Date</label><input id="histDetailDate" class="form-control" type="date"></div>
+          <div class="col-4 d-flex align-items-end"><button class="btn btn-dark w-100 rounded-pill fw-bold" onclick="renderHistoryFull()">OK</button></div>
         </div>
+        <div id="histDetail" class="history-detail-box mt-3"></div>
         <div id="histSummary" class="range-summary mt-3"></div>
         <div id="histCalendar" class="calendar-grid mt-3"></div>
         <div class="table-responsive mt-3">
@@ -620,7 +636,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.8 Refresh Session Fix
+   RecordManager_2D_Logic_Pro v1.5.9 Mobile Entry UX
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -974,7 +990,7 @@ async function restoreSession(){
     await loadCloudAll();
     if(checkLock())return true;
     applyRoleUI();renderAll();
-    let first=isAdmin()?['dash','tDash']:['entry','tEntry'];tab(first[0],first[1]);
+    let first=restoreTabForRole();tab(first[0],first[1]);
     setCloudStatus('Cloud: Session Restored ✅','success');
     return true;
   }catch(e){
@@ -1105,7 +1121,7 @@ async function login(){
     loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
     $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
     applyRoleUI();renderAll();
-    let first=isAdmin()?['dash','tDash']:['entry','tEntry'];tab(first[0],first[1]);
+    let first=restoreTabForRole();tab(first[0],first[1]);
     setTimeout(()=>{if(isMember()){rName.focus();focusField('rName')}},80);
     await addAudit('LOGIN',authEmail+' / '+currentUser.shopName);
   }catch(e){
@@ -1129,9 +1145,9 @@ function applyRoleUI(){
     btn.classList.toggle('hidden-by-role',hide);
   });
   if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;;lockMemberPInputs();updateDesktopModeUI();}
-function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus()}
+function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');rememberActiveTab(id,b);applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus();updateLastEntryPreview()}
 function toggleTheme(){document.body.classList.toggle('dark')}
-function desktopModeAllowed(){return !!(currentUser&&isAdmin()&&window.innerWidth>=1100)}
+function desktopModeAllowed(){return !!(currentUser&&isAdmin())}
 function updateDesktopModeUI(){
   let btn=$('desktopModeBtn');if(!btn)return;
   let allowed=desktopModeAllowed();
@@ -1257,7 +1273,7 @@ async function saveGroup(){
       let saved=await addDoc(COL_RECORDS,rec);
       saved.id=saved.docId;records.push(saved);
     }
-    editId=null;await save();renderAll();setCloudStatus('Cloud: Saved ✅','success');toast('Saved ✅','success');
+    editId=null;await save();showLastEntryPreview(oldCode,oldAmt);renderAll();setCloudStatus('Cloud: Saved ✅','success');toast('Saved ✅','success');
     await addAudit('SAVE_RECORD',`${s} ${name} / ${c} / ${amt} / ${items.length} nums`);
   }catch(e){
     rCode.value=oldCode;rAmt.value=oldAmt;rCode.focus();focusField('rCode');
@@ -1276,7 +1292,7 @@ function renderRecords(){
   data.forEach(g=>{
     let id='n'+String(g.g).replace(/[^a-zA-Z0-9]/g,'');
     let sub=isAdmin()?`<div class="member-tag">Player hidden: ${g.playerName||''}</div>`:'';
-    let acts=isMember()?`<button class="btn btn-sm btn-warning" onclick="edit('${g.g}')">E</button> <button class="btn btn-sm btn-danger" onclick="delg('${g.g}')">D</button>`:`<button class="btn btn-sm btn-danger" onclick="delg('${g.g}')">D</button>`;
+    let acts=isMember()?(!isEntryOpen()?`<span class="text-muted small fw-bold">View only</span>`:`<button class="btn btn-sm btn-warning" onclick="edit('${g.g}')">E</button> <button class="btn btn-sm btn-danger" onclick="delg('${g.g}')">D</button>`):`<button class="btn btn-sm btn-danger" onclick="delg('${g.g}')">D</button>`;
     let chips=g.nums.map(x=>{let [n,a]=String(x).split('=');return `<span class="num-chip"><b>${n}</b>${a||''}</span>`}).join('');
     recBody.innerHTML+=`<tr><td>${g.s}</td><td class="name-text">${g.name}${sub}</td><td><b>${g.c}</b> <button class="btn btn-sm btn-outline-primary" onclick="tog('${id}')">ON/OFF</button><div id="${id}" class="nums">${chips}</div></td><td>${money(g.amt)}</td><td>${acts}</td></tr>`
   })
@@ -1420,7 +1436,7 @@ function adminFinalSummary(s,pn){
   return{session:s,total,cor,pAmt,payout,overAmt,overP,overPayout,final,win:final>=0}
 }
 function summaryHTML(x){
-  let cls=x.win?'win':'lose',status=x.win?'WIN / ရရန်':'LOSE / ပေးရန်';
+  let cls=x.win?'win':'lose',status=x.win?'WIN / ဒိုင်မှရရန်':'LOSE / ဒိုင်မှပေးရန်';
   return `<div class="result-clean ${cls}">
     <div class="result-head"><b>${x.session} Final Result</b><span class="result-badge">${status}</span></div>
     <div class="result-row"><span>Total</span><b>${money(x.total)}</b></div>
@@ -1450,10 +1466,10 @@ function memberCorRateByName(name){
 function tableReport(d){
   if(!d.length)return'<div class="alert alert-secondary mt-2">No Data</div>';
   let h=isAdmin()?'Commission':'Name';
-  if(!isAdmin())return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>ပေးရန်/ရရန်</th></tr>'+ 
-    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>';
-  return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>Cor</th><th>ပေးရန်/ရရန်</th></tr>'+
-    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${money(x.cor)}</td><td>${x.net<0?'ပေးရန် ':'ရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>'
+  if(!isAdmin())return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>ဒိုင်မှပေးရန်/ဒိုင်မှရရန်</th></tr>'+ 
+    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${x.net<0?'ဒိုင်မှပေးရန် ':'ဒိုင်မှရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>';
+  return '<table class="table table-sm"><tr><th>'+h+'</th><th>Total</th><th>P Amt</th><th>Payout</th><th>Cor</th><th>ဒိုင်မှပေးရန်/ဒိုင်မှရရန်</th></tr>'+
+    d.map(x=>`<tr class="${x.net<0?'neg':'pos'}"><td>${x.name}</td><td>${money(x.total)}</td><td>${money(x.pAmt)}</td><td>${money(x.pay)}</td><td>${money(x.cor)}</td><td>${x.net<0?'ဒိုင်မှပေးရန် ':'ဒိုင်မှရရန် '}${money(Math.abs(x.net))}</td></tr>`).join('')+'</table>'
 }
 function settle(s){
   let out=s==='AM'?amOut:pmOut;
@@ -1474,7 +1490,7 @@ function dailyReport(){
   if(isAdmin()){
     let sa=adminFinalSummary('AM',am),sp=adminFinalSummary('PM',pm);
     let final=sa.final+sp.final,total=sa.total+sp.total,cor=sa.cor+sp.cor,payout=sa.payout+sp.payout,overAmt=sa.overAmt+sp.overAmt,overPayout=sa.overPayout+sp.overPayout;
-    html=`<div class="result-clean ${final>=0?'win':'lose'}"><div class="result-head"><b>DAILY Final Result</b><span class="result-badge">${final>=0?'WIN / ရရန်':'LOSE / ပေးရန်'}</span></div><div class="result-row"><span>Total</span><b>${money(total)}</b></div><div class="result-row"><span>Cor</span><b>${money(cor)}</b></div><div class="result-row"><span>Payout</span><b>${money(payout)}</b></div><div class="result-row"><span>Over</span><b>${money(overAmt)}</b></div><div class="result-row"><span>Over Payout</span><b>${overPayout?money(overPayout):'No'}</b></div><div class="result-row result-final"><span>Final Result</span><b>${money(Math.abs(final))}</b></div></div>`;
+    html=`<div class="result-clean ${final>=0?'win':'lose'}"><div class="result-head"><b>DAILY Final Result</b><span class="result-badge">${final>=0?'WIN / ဒိုင်မှရရန်':'LOSE / ဒိုင်မှပေးရန်'}</span></div><div class="result-row"><span>Total</span><b>${money(total)}</b></div><div class="result-row"><span>Cor</span><b>${money(cor)}</b></div><div class="result-row"><span>Payout</span><b>${money(payout)}</b></div><div class="result-row"><span>Over</span><b>${money(overAmt)}</b></div><div class="result-row"><span>Over Payout</span><b>${overPayout?money(overPayout):'No'}</b></div><div class="result-row result-final"><span>Final Result</span><b>${money(Math.abs(final))}</b></div></div>`;
   }
   dailyOut.innerHTML=html+tableReport(Object.values(m));
   toast('Daily Result Updated ✅','success');
@@ -1487,9 +1503,9 @@ function renderImg(){
   if(!imgName)return;
   let name=imgName.value||'Name',cor=+imgCor.value||memberCorRateByName(name)||defCor(),am=cust(name,'AM',imgAM.value,cor),pm=cust(name,'PM',imgPM.value,cor);
   imgTitle.innerText=name;corBadge.innerText=cor;
-  amTot.innerText=money(am.total);amPay.innerText=money(am.pay);amCor.innerText=money(am.c);amRes.innerText=(am.res<0?'ပေးရန် ':'ရရန် ')+money(Math.abs(am.res));
-  pmTot.innerText=money(pm.total);pmPay.innerText=money(pm.pay);pmCor.innerText=money(pm.c);pmRes.innerText=(pm.res<0?'ပေးရန် ':'ရရန် ')+money(Math.abs(pm.res));
-  dt.innerText=money(am.total+pm.total);dp.innerText=money(am.pay+pm.pay);dc.innerText=money(am.c+pm.c);dr.innerText=((am.res+pm.res)<0?'ပေးရန် ':'ရရန် ')+money(Math.abs(am.res+pm.res))
+  amTot.innerText=money(am.total);amPay.innerText=money(am.pay);amCor.innerText=money(am.c);amRes.innerText=(am.res<0?'ဒိုင်မှပေးရန် ':'ဒိုင်မှရရန် ')+money(Math.abs(am.res));
+  pmTot.innerText=money(pm.total);pmPay.innerText=money(pm.pay);pmCor.innerText=money(pm.c);pmRes.innerText=(pm.res<0?'ဒိုင်မှပေးရန် ':'ဒိုင်မှရရန် ')+money(Math.abs(pm.res));
+  dt.innerText=money(am.total+pm.total);dp.innerText=money(am.pay+pm.pay);dc.innerText=money(am.c+pm.c);dr.innerText=((am.res+pm.res)<0?'ဒိုင်မှပေးရန် ':'ဒိုင်မှရရန် ')+money(Math.abs(am.res+pm.res))
 }
 function saveCustomerImage(){renderImg();drawCustomer('Report_'+(imgName.value||'Name')+'.png')}
 function shareCustomer(){renderImg();share('Report',`${imgName.value}\nT=${dt.innerText}\nP=${dp.innerText}\nC=${dc.innerText}\nR=${dr.innerText}`)}
@@ -1671,7 +1687,7 @@ function renderHistory(){
   let start=hs.value||settings.startDate||firstRecordDate()||today(),end=he.value||settings.endDate||today();
   if(start>end){let tmp=start;start=end;end=tmp}
   let maxEnd=dateAdd(start,92);if(end>maxEnd){end=maxEnd;toast('အများဆုံး 3 လအထိသာ ကြည့်နိုင်ပါသည်','warning')}
-  hs.value=start;he.value=end;
+  hs.value=start;he.value=end;if($('histDetailDate')&&!$('histDetailDate').value)$('histDetailDate').value=start;
   let rows=[],d=start,guard=0;
   while(d<=end&&guard<93){
     let weekend=!isMonFri(d),rb=resultForDate(d),am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM');
@@ -1682,7 +1698,7 @@ function renderHistory(){
   let workRows=rows.filter(r=>!r.weekend),sumAM=rows.reduce((a,b)=>a+b.amTotal,0),sumPM=rows.reduce((a,b)=>a+b.pmTotal,0),sum=sumAM+sumPM;
   sumBox.innerHTML=`<div class="smart-mini"><small>Days</small><br><b>${rows.length}</b></div><div class="smart-mini"><small>Work Days</small><br><b>${workRows.length}</b></div><div class="smart-mini"><small>AM Total</small><br><b>${money(sumAM)}</b></div><div class="smart-mini"><small>Range Total</small><br><b>${money(sum)}</b></div>`;
   if(cal)cal.innerHTML=rows.length?rows.map(r=>r.weekend?`<div class="cal-cell weekend-card"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="closed-weekend">ပိတ်ရက် / 2D မရှိ</div></div>`:`<div class="cal-cell"><div class="cal-date">${r.date}</div><div class="cal-day">${r.day}</div><div class="cal-num cal-am"><span>AM</span><b>${r.amP||'-'}</b></div><div class="cal-num cal-pm"><span>PM</span><b>${r.pmP||'-'}</b></div><small>AM ${money(r.amTotal)} / PM ${money(r.pmTotal)}</small></div>`).join(''):'<div class="alert alert-secondary">No AM/PM P history</div>';
-  hb.innerHTML=rows.length?rows.map(r=>r.weekend?`<tr class="table-secondary"><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td colspan="5" class="text-center fw-bold">ပိတ်ရက် / 2D မရှိ</td></tr>`:`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';
+  hb.innerHTML=rows.length?rows.map(r=>r.weekend?`<tr class="table-secondary"><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td colspan="5" class="text-center fw-bold">ပိတ်ရက် / 2D မရှိ</td></tr>`:`<tr><td>${r.date}</td><td><span class="weekday-pill">${r.day}</span></td><td>${r.amP||'-'}</td><td>${money(r.amTotal)}</td><td>${r.pmP||'-'}</td><td>${money(r.pmTotal)}</td><td>${money(r.total)}</td></tr>`).join(''):'<tr><td colspan="7" class="text-center text-muted">No data</td></tr>';renderHistoryFull();
 }
 
 
@@ -1742,6 +1758,35 @@ async function saveOwnerLicenseSettings(){
 function safeRun(label,fn){try{if(typeof fn==='function')fn()}catch(e){console.warn(label,e);toast(label+' render warning: '+e.message,'warning')}}
 
 
+
+
+function rememberActiveTab(id,b){if(currentUser)localSave('RM_v159_active_tab',{id,b,role:currentUser.role,shopId:currentUser.shopId,ts:Date.now()})}
+function defaultTabForRole(){return isSuperAdmin()?['owner','tOwner']:(isAdmin()?['dash','tDash']:['entry','tEntry'])}
+function restoreTabForRole(){
+  let saved=localLoad('RM_v159_active_tab',null),def=defaultTabForRole();
+  if(saved&&saved.id&&saved.b&&$(saved.id)&&$(saved.b)&&String(saved.role||'')===String(currentUser.role||''))return [saved.id,saved.b];
+  return def;
+}
+function softRefreshApp(){rememberActiveTab(document.querySelector('#app>section.active')?.id||'',document.querySelector('.tabs button.active')?.id||'');toast('Refreshing...','info');setTimeout(()=>location.reload(),250)}
+function lastEntryKey(){return 'RM_v159_last_entry_'+(currentUser?String(currentUser.id||currentUser.email||'guest'):'guest')}
+function updateLastEntryPreview(){let box=$('lastEntryPreview');if(!box)return;let v=localLoad(lastEntryKey(),null);if(v&&v.code){box.classList.remove('d-none');box.querySelector('b').innerText=`{ ${v.code}     ${v.amount} }`}else box.classList.add('d-none')}
+function showLastEntryPreview(code,amount){localSave(lastEntryKey(),{code:String(code||''),amount:String(amount||''),ts:Date.now()});updateLastEntryPreview()}
+function totalsForList(list){let t={};for(let i=0;i<100;i++)t[String(i).padStart(2,'0')]=0;(list||[]).forEach(r=>{let n=String(r.n||'').padStart(2,'0');if(t[n]!==undefined)t[n]+=num(r.amt)});return t}
+function tableRowsForHistory(rs){return rs.length?`<table class="history-mini-table"><thead><tr><th>Time</th><th>Member</th><th>Name</th><th>Code</th><th>No</th><th>Amt</th></tr></thead><tbody>${rs.map(r=>`<tr><td class="text-keep">${r.tm||''}</td><td>${r.memberName||''}</td><td>${r.playerName||r.name||''}</td><td>${r.c||''}</td><td><b>${r.n||''}</b></td><td class="text-end fw-bold">${money(r.amt)}</td></tr>`).join('')}</tbody></table>`:'<div class="alert alert-secondary mb-2">No records</div>'}
+function renderHistoryFull(){
+  let box=$('histDetail');if(!box)return;
+  let d=($('histDetailDate')?.value||$('histStart')?.value||today());if($('histDetailDate'))$('histDetailDate').value=d;
+  let am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM'),all=[...am,...pm];
+  let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0),total=amTotal+pmTotal;
+  let limi=num(lim?.value||settings.limitAmount||0),m=totalsForList(all);
+  box.classList.add('active');
+  box.innerHTML=`<div class="d-flex justify-content-between align-items-center flex-wrap gap-2"><h5 class="fw-bold mb-1">📌 ${d} Full Read-only History</h5><span class="history-readonly-note">View Only — Entry/Edit/Delete မရ</span></div>
+  <div class="history-detail-grid mb-2"><div class="smart-mini"><small>AM Total</small><br><b>${money(amTotal)}</b></div><div class="smart-mini"><small>PM Total</small><br><b>${money(pmTotal)}</b></div><div class="smart-mini"><small>Daily Total</small><br><b>${money(total)}</b></div><div class="smart-mini"><small>Rows</small><br><b>${all.length}</b></div></div>
+  <div class="history-section-title">📉 Limit Board ${limi?`/ Limit ${money(limi)}`:'(Limit မထည့်ထားပါ)'}</div>${buildLimitWindowsBoard(m,limi)}
+  <div class="history-section-title">🚨 Over</div>${buildOverMiniTable(m,limi)}
+  <div class="history-section-title">☀️ AM Record List</div>${tableRowsForHistory(am)}
+  <div class="history-section-title">🌙 PM Record List</div>${tableRowsForHistory(pm)}`;
+}
 
 function getRecordKey(r){return String(r.docId||r._path||r.id||'')}
 function visibleRecordNumberTotals(){
@@ -1834,6 +1879,7 @@ function renderAll(){
   safeRun('Owner Dashboard',renderOwnerDashboard);
   safeRun('Session Timer',updateSessionTimer);
   safeRun('Live Desk',renderLiveDesk);
+  safeRun('Last Entry Preview',updateLastEntryPreview);
 }
 
 
