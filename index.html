@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.5.9 Mobile Entry UX</title>
+<title>RecordManager_2D_Logic_Pro v1.6.2 Language + Invite</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.5.9 Mobile Entry UX */
+/* v1.6.2 Language + Invite */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.5.9 Mobile Entry UX */
+/* v1.6.2 Language + Invite */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.5.9 Mobile Entry UX */
+/* v1.6.2 Language + Invite */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,7 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.5.9 Mobile Entry UX + Clear Limit Board */
+/* v1.6.2 Language + Invite + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -204,6 +204,14 @@ body.admin-windows-mode .windows-live-desk{display:block}
 @media(max-width:520px){#entry .card{padding:9px!important;margin-bottom:8px}#entry h5{font-size:15px;margin-bottom:4px}#entry .small-note{font-size:11px;margin-bottom:4px!important}.session-timer{padding:7px!important;margin:5px 0!important;line-height:1.25}.session-timer .big{font-size:16px}.session-timer .time{font-size:14px}.entry-input-grid{gap:5px}.entry-input-grid .form-control{padding:9px 10px;font-size:15px}.last-entry-preview{padding:6px 9px;margin:5px 0}.last-entry-preview b{font-size:16px}.entry-keypad-3d{gap:6px}.entry-keypad-3d button{min-height:45px;font-size:19px;border-radius:12px}.entry-keypad-3d small{font-size:11px}.entry-keypad-3d .enter{min-height:54px;font-size:21px}.tabs{top:54px;padding:5px 4px}.tabs button{padding:7px 9px;font-size:11px}.navbar-brand{font-size:12px}.appbar .btn{font-size:11px;padding:5px 7px}}
 @media(max-height:720px) and (max-width:520px){#entry .card{padding:7px!important}.entry-keypad-3d button{min-height:42px;font-size:18px}.entry-keypad-3d .enter{min-height:48px}.session-timer{font-size:12px}.entry-input-grid .form-control{padding:8px 9px}.last-entry-preview{font-size:12px}}
 
+
+
+/* v1.6.0-v1.6.2 Identity Invite Security Language */
+.identity-box{border:1px dashed var(--primary);border-radius:14px;padding:9px;background:#eff6ff;color:#1e3a8a;font-weight:900}.dark .identity-box{background:#0f2a4a;color:#bfdbfe}
+.id-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#dbeafe;color:#1e40af;margin:2px;font-size:12px;font-weight:1000}.dark .id-pill{background:#1e3a8a;color:#dbeafe}
+.invite-lock{border-radius:12px;background:#fef3c7;color:#92400e;padding:8px;margin:6px 0;font-weight:900}.dark .invite-lock{background:#78350f;color:#fde68a}
+#langBtn{min-width:70px}
+
 </style>
 </head>
 <body>
@@ -211,10 +219,11 @@ body.admin-windows-mode .windows-live-desk{display:block}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.9 Mobile Entry UX</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.2 Language + Invite</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()">Refresh</button>
+      <button id="langBtn" class="btn btn-light btn-sm rounded-pill fw-bold" onclick="toggleLang()">မြန်မာ</button>
       <button id="updateBtn" class="btn btn-success btn-sm rounded-pill fw-bold" onclick="forceAppUpdate()">Update</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
       <button id="desktopModeBtn" class="btn btn-info btn-sm rounded-pill fw-bold d-none" onclick="toggleDesktopMode()">🪟 Windows Mode</button>
@@ -227,7 +236,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.5.9 Mobile Entry UX — Phone fit + History read-only + Windows polish</p>
+      <p class="small-note mb-2">v1.6.2 Language + Invite — Production ID + Security + Language</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -242,6 +251,15 @@ body.admin-windows-mode .windows-live-desk{display:block}
           <button class="btn btn-success w-100 rounded-pill fw-bold" onclick="registerAdmin()">CREATE ADMIN SHOP</button>
           <small class="text-muted">Admin အသစ်တစ်ယောက်သည် shopId သီးသန့်ဖြင့် သူ့ member/data ကို သီးခြားသုံးနိုင်ပါမည်။</small>
         </div>
+      </div>
+      <div id="inviteBox" class="register-box" style="display:none">
+        <h6 class="fw-bold">🔗 Member Invite Register</h6>
+        <div id="inviteInfo" class="small-note mb-2">Invite token detected.</div>
+        <input id="invName" class="form-control mb-2" placeholder="Member Name">
+        <input id="invPhone" class="form-control mb-2" inputmode="tel" placeholder="Phone Number">
+        <input id="invEmail" class="form-control mb-2" type="email" inputmode="email" placeholder="Gmail / Email">
+        <input id="invPass" class="form-control mb-2" type="password" placeholder="New Password">
+        <button class="btn btn-success w-100 rounded-pill fw-bold" onclick="acceptInvite()">ACCEPT INVITE & REGISTER</button>
       </div>
       <div class="alert alert-secondary mt-3 mb-0 small">
         Admin / Member account ဖြင့် Sign in ဝင်ပါ။ Member account သည် သက်ဆိုင်ရာ Admin မှ ဖွင့်ပေးထားရန်လိုပါသည်။
@@ -319,6 +337,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
       <div class="card p-3">
         <h5 id="dashTitle" class="fw-bold mb-2">Admin Dashboard</h5>
         <div id="dashSub" class="small-note">Member အားလုံး၏ စုစုပေါင်းစာရင်း</div>
+        <div id="identityInfo" class="identity-box mt-2"></div>
       </div>
       <div class="row g-2">
         <div class="col-6"><div class="card p-3 text-center stat-card"><small>Records</small><h3 id="dRec">0</h3></div></div>
@@ -531,6 +550,19 @@ body.admin-windows-mode .windows-live-desk{display:block}
         </div>
       </div>
       <div class="card p-3">
+        <h6 class="fw-bold">🔗 Member Invite Link</h6>
+        <p class="small-note">Member ကို share ပေးရန် one-time invite link ထုတ်ပါ။ Link သုံးပြီး register လုပ်လျှင် Admin ID / Shop ID သည် locked ဖြစ်ပါမည်။</p>
+        <div class="row g-2">
+          <div class="col-6"><input id="inviteName" class="form-control" placeholder="Member Name"></div>
+          <div class="col-6"><input id="invitePhone" class="form-control" inputmode="tel" placeholder="Phone"></div>
+          <div class="col-6"><input id="inviteCor" class="form-control" inputmode="decimal" placeholder="Cor %"></div>
+          <div class="col-6"><input id="inviteExpireHours" class="form-control" inputmode="numeric" value="24" placeholder="Expire Hours"></div>
+          <div class="col-12"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="createInviteLink()">Generate Invite Link</button></div>
+          <div class="col-12"><textarea id="inviteLinkBox" class="form-control" rows="2" readonly placeholder="Invite link ပေါ်လာမည်"></textarea></div>
+          <div class="col-12"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="copyInviteLink()">Copy Invite Link</button></div>
+        </div>
+      </div>
+      <div class="card p-3">
         <h6 class="fw-bold">Member List</h6>
         <div class="table-responsive">
           <table class="table table-sm align-middle">
@@ -636,7 +668,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.5.9 Mobile Entry UX
+   RecordManager_2D_Logic_Pro v1.6.2 Language + Invite
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -645,15 +677,29 @@ const API_KEY='AIzaSyAVL_Dt1R0nzDu5YTseUq6kdV0pafRcWlM';
 const PROJECT_ID='recordmanager-2dlogic-pr-a11d6';
 const BASE=`https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents`;
 const ROOT='recordmanager/main';
-const COL_RECORDS='records', COL_EXPORTS='limitExports', COL_SETTINGS='settings', COL_ACCOUNTS='accounts', COL_LOGS='auditLogs', COL_MSGS='messages';
+const COL_RECORDS='records', COL_EXPORTS='limitExports', COL_SETTINGS='settings', COL_ACCOUNTS='accounts', COL_LOGS='auditLogs', COL_MSGS='messages', COL_INVITES='invites';
 
-const DEFAULT_ACCOUNTS=[
-  {id:'admin@test.com',email:'admin@test.com',username:'admin@test.com',role:'admin',memberName:'Admin / ဒိုင်',shopId:'demo_shop',shopName:'Demo Shop',active:true},
-  {id:'member1@test.com',email:'member1@test.com',username:'member1@test.com',role:'member',memberName:'Member 1 Commission',shopId:'demo_shop',shopName:'Demo Shop',active:true}
-];
+const DEFAULT_ACCOUNTS=[];
 
 function $(id){return document.getElementById(id)}
 function safeId(v){return String(v||'').trim().toLowerCase().replace(/[^a-z0-9_-]/g,'_')}
+
+function makePublicId(prefix){return prefix+'-'+String(Date.now()).slice(-5)+String(Math.floor(Math.random()*90+10))}
+function adminPublicId(a=currentUser){return (a&&(a.adminNo||a.publicId))||'A-PENDING'}
+function memberPublicId(a=currentUser){return (a&&(a.memberNo||a.publicId))||'M-PENDING'}
+function ensureAccountPublicIds(){
+  let changed=false;
+  (accounts||[]).forEach(a=>{
+    if(a.role==='admin'&&!a.adminNo){a.adminNo=a.publicId||makePublicId('A');a.publicId=a.adminNo;changed=true}
+    if(a.role==='member'&&!a.memberNo){a.memberNo=a.publicId||makePublicId('M');a.publicId=a.memberNo;changed=true}
+  });
+  if(currentUser){
+    let me=(accounts||[]).find(a=>String(a.uid||a.id||'')===String(currentUser.uid||currentUser.id||''));
+    if(me){currentUser={...currentUser,adminNo:me.adminNo,memberNo:me.memberNo,publicId:me.publicId};saveCur();saveSession()}
+  }
+  if(changed&&token){Promise.all((accounts||[]).filter(a=>a.uid||a.id).map(a=>setDoc(COL_ACCOUNTS,a.uid||a.id,a).catch(()=>{}))).catch(()=>{})}
+}
+
 
 function makeShopId(v){return 'shop_'+safeId(v||'admin')+'_'+Date.now()}
 function itemShopId(x){return x&&x.shopId?String(x.shopId):'demo_shop'}
@@ -744,7 +790,7 @@ function renderCloseStatus(updateTimer=true){
 
 let settings={},ownerSettingsMap={},records=[],exportsL=[],accounts=[],auditLogs=[],messages=[],currentUser=null,editId=null,editMemberId=null,chartObj=null,currentField='rCode',isSaving=false,riskMaster='limit';
 let token='',uid='',authEmail='',refreshToken='';
-const SUPER_ADMIN_EMAILS=['htetzawoohzo99@gmail.com','admin@test.com'];
+const SUPER_ADMIN_EMAILS=['htetzawoohzo99@gmail.com'];
 function isSuperAdmin(){return currentUser&&currentUser.role==='superadmin'}
 
 const MAP={A:['05','16','27','38','49','50','61','72','83','94'],Z:['07','18','24','35','69','70','81','42','53','96'],B:['12','23','34','45','56','21','32','43','54','65','67','78','89','90','01','76','87','98','09','10'],'//':['00','11','22','33','44','55','66','77','88','99']},E=['0','2','4','6','8'],O=['1','3','5','7','9'];
@@ -831,7 +877,10 @@ async function listCollection(col){
 async function queryShopCollection(col){
   if(!currentUser||!currentUser.shopId)return [];
   try{
-    let q={structuredQuery:{from:[{collectionId:col}],where:{fieldFilter:{field:{fieldPath:'shopId'},op:'EQUAL',value:{stringValue:String(currentUser.shopId)}}}}};
+    let filters=[{fieldFilter:{field:{fieldPath:'shopId'},op:'EQUAL',value:{stringValue:String(currentUser.shopId)}}}];
+    if(col===COL_RECORDS&&isMember())filters.push({fieldFilter:{field:{fieldPath:'memberUid'},op:'EQUAL',value:{stringValue:String(currentUser.uid||currentUser.id)}}});
+    let where=filters.length===1?filters[0]:{compositeFilter:{op:'AND',filters}};
+    let q={structuredQuery:{from:[{collectionId:col}],where}};
     let rows=await api(`${BASE}/${ROOT}:runQuery`,{method:'POST',body:JSON.stringify(q)});
     return rows.filter(x=>x.document).map(x=>unpack(x.document));
   }catch(e){
@@ -922,6 +971,7 @@ async function loadCloudAll(){
     normalizeSettings();
     records=[];exportsL=[];auditLogs=[];messages=[];
   }
+  ensureAccountPublicIds();
   normalizeRecords(false);
   setCloudStatus('Cloud: Connected ✅', 'success');
 }
@@ -984,9 +1034,10 @@ async function restoreSession(){
     loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
     $('logoutBtn')?.classList.remove('d-none');$('roleBadge')?.classList.remove('d-none');$('shopBadge')?.classList.remove('d-none');
     if(isSuperAdmin()){
-      accounts=await listCollection(COL_ACCOUNTS);ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
+      accounts=await listCollection(COL_ACCOUNTS);ensureAccountPublicIds();ownerSettingsMap=await loadOwnerSettingsForAccounts(accounts);settings={};normalizeSettings();records=[];exportsL=[];auditLogs=[];messages=[];
       applyRoleUI();renderAll();tab('owner','tOwner');setCloudStatus('Cloud: Session Restored ✅','success');return true;
     }
+    await enforcePasswordChangeIfNeeded(acc);
     await loadCloudAll();
     if(checkLock())return true;
     applyRoleUI();renderAll();
@@ -1062,9 +1113,9 @@ async function registerAdmin(){
     let rr=await api(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,{method:'POST',noAuth:true,body:JSON.stringify({email,password:pass,returnSecureToken:true})});
     token=rr.idToken;refreshToken=rr.refreshToken||'';uid=rr.localId;authEmail=email;
     accounts=await listCollection(COL_ACCOUNTS);
-    let shopId=makeShopId(shop),acc={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,cor:Number(settings.cor||13),active:true,createdAt:Date.now()};
+    let shopId=makeShopId(shop),adminNo=makePublicId('A'),acc={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,adminNo,publicId:adminNo,cor:Number(settings.cor||13),active:true,createdAt:Date.now()};
     await setDoc(COL_ACCOUNTS,uid,acc);accounts.push(acc);
-    currentUser={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,cor:Number(settings.cor||13),active:true};
+    currentUser={id:uid,uid,email,username:email,role:'admin',memberName:owner,phone,shopId,shopName:shop,adminNo,publicId:adminNo,cor:Number(settings.cor||13),active:true};
     await addAudit('REGISTER_ADMIN',shop+' / '+email);
     toast('Admin Shop Created ✅','success');
     u.value=email;p.value=pass;setBusy(false);login();
@@ -1101,19 +1152,13 @@ async function login(){
       }catch(e){}
     }
 
-    // Demo admin fallback for first transition
-    if(!acc&&authEmail==='admin@test.com'){
-      acc={id:uid,uid,email:authEmail,username:authEmail,role:'admin',memberName:'Admin / ဒိုင်',shopId:'demo_shop',shopName:'Demo Shop',cor:Number(settings.cor||13),active:true};
-      await setDoc(COL_ACCOUNTS,uid,acc);
-    }
-
     if(!acc){
       alert('Secure Account Mapping မတွေ့ပါ။ Admin Register အသစ်လုပ်ပါ သို့မဟုတ် v1.4.0 မှ account ကို migrate လုပ်ပါ။');
       setCloudStatus('Cloud: Account mapping missing', 'warning');
       return;
     }
     if(acc.active===false)return alert('ဒီ Account ကို ပိတ်ထားပါသည်');
-    currentUser={id:uid,uid,email:authEmail,username:authEmail,role:acc.role||'member',memberName:acc.memberName||acc.name||authEmail,phone:acc.phone||'',cor:Number(acc.cor||settings.cor||13),shopId:acc.shopId||'demo_shop',shopName:acc.shopName||'Demo Shop',active:acc.active!==false};
+    currentUser={id:uid,uid,email:authEmail,username:authEmail,role:acc.role||'member',memberName:acc.memberName||acc.name||authEmail,phone:acc.phone||'',adminNo:acc.adminNo||acc.publicId||'',memberNo:acc.memberNo||acc.publicId||'',publicId:acc.publicId||acc.adminNo||acc.memberNo||'',mustChangePassword:!!acc.mustChangePassword,cor:Number(acc.cor||settings.cor||13),shopId:acc.shopId||'demo_shop',shopName:acc.shopName||'Demo Shop',active:acc.active!==false};
 
     await loadCloudAll();
     saveCur();saveSession();
@@ -1129,6 +1174,71 @@ async function login(){
     alert('Firebase Login Error: '+e.message);
   }
 }
+
+function identityInfoHTML(){
+  if(!currentUser)return '';
+  if(isAdmin())return `<span class="id-pill">Admin ID: ${adminPublicId(currentUser)}</span><span class="id-pill">Shop: ${currentUser.shopName||''}</span><span class="id-pill">Shop ID: ${currentUser.shopId||''}</span>`;
+  if(isMember())return `<span class="id-pill">Member ID: ${memberPublicId(currentUser)}</span><span class="id-pill">Admin Shop: ${currentUser.shopName||''}</span>`;
+  if(isSuperAdmin())return `<span class="id-pill">Owner / Super Admin</span>`;
+  return '';
+}
+async function changeFirebasePassword(newPassword){
+  let d=await api(`https://identitytoolkit.googleapis.com/v1/accounts:update?key=${API_KEY}`,{method:'POST',noAuth:true,body:JSON.stringify({idToken:token,password:newPassword,returnSecureToken:true})});
+  token=d.idToken||token;refreshToken=d.refreshToken||refreshToken;saveSession();return true;
+}
+async function enforcePasswordChangeIfNeeded(acc){
+  if(!acc||!acc.mustChangePassword)return;
+  let np=prompt('Security: Admin ဖွင့်ပေးထားသော password ကိုပြောင်းပါ။ New Password အနည်းဆုံး 6 လုံးထည့်ပါ');
+  if(!np||np.length<6){alert('Password မပြောင်းမချင်း ဝင်ခွင့်မပြုပါ');logout();throw new Error('Password change required')}
+  await changeFirebasePassword(np);
+  acc.mustChangePassword=false;await setDoc(COL_ACCOUNTS,uid,acc);
+  currentUser.mustChangePassword=false;saveCur();saveSession();toast('Password changed ✅','success');
+}
+function inviteToken(){return 'INV_'+Date.now().toString(36).toUpperCase()+'_'+Math.random().toString(36).slice(2,8).toUpperCase()}
+async function createInviteLink(){
+  if(!isAdmin())return alert('Admin Only');
+  let name=($('inviteName')?.value||'').trim(),phone=($('invitePhone')?.value||'').trim(),cor=Number($('inviteCor')?.value||settings.cor||13),hrs=Number($('inviteExpireHours')?.value||24);
+  let tokenId=inviteToken(),expireAt=Date.now()+hrs*3600*1000;
+  let inv={token:tokenId,shopId:currentUser.shopId,shopName:currentUser.shopName,adminUid:currentUser.uid||currentUser.id,adminEmail:currentUser.email,adminNo:adminPublicId(currentUser),memberName:name,phone,cor,expireAt,used:false,createdAt:Date.now()};
+  await setDoc(COL_INVITES,tokenId,inv);
+  let url=new URL(location.href);url.search='';url.hash='';url.searchParams.set('invite',tokenId);
+  if($('inviteLinkBox'))inviteLinkBox.value=url.toString();
+  toast('Invite link created ✅','success');await addAudit('CREATE_INVITE',tokenId+' / '+(name||'new member'));
+}
+function copyInviteLink(){let v=$('inviteLinkBox')?.value||'';if(!v)return alert('Invite link မရှိသေးပါ');navigator.clipboard?.writeText(v);toast('Invite copied ✅','success')}
+function initInviteFromUrl(){let t=new URL(location.href).searchParams.get('invite');if(t&&$('inviteBox')){inviteBox.style.display='block';inviteInfo.innerHTML=`<div class="invite-lock">Invite Token: ${t}<br>Admin ID / Shop ID ကို link မှ locked ချိတ်ပါမည်။</div>`;window.__inviteToken=t}}
+async function acceptInvite(){
+  let t=window.__inviteToken||new URL(location.href).searchParams.get('invite');if(!t)return alert('Invite token မရှိပါ');
+  let name=($('invName')?.value||'').trim(),phone=($('invPhone')?.value||'').trim(),email=($('invEmail')?.value||'').trim().toLowerCase(),pass=($('invPass')?.value||'').trim();
+  if(!name||!phone||!email||!pass)return alert('Name / Phone / Email / Password ဖြည့်ပါ');
+  try{
+    setBusy(true,'Accepting invite...');
+    let rr=await createFirebaseUser(email,pass);token=rr.idToken;refreshToken=rr.refreshToken||'';uid=rr.localId;authEmail=email;
+    let inv=await getDoc(COL_INVITES,t,null);
+    if(!inv)throw new Error('Invite မတွေ့ပါ');
+    if(inv.used)throw new Error('Invite သုံးပြီးသားဖြစ်ပါသည်');
+    if(inv.expireAt&&Date.now()>Number(inv.expireAt))throw new Error('Invite သက်တမ်းကုန်သွားပါပြီ');
+    let memberNo=makePublicId('M');
+    let acc={id:uid,uid,email,username:email,role:'member',memberName:name||inv.memberName,phone:phone||inv.phone,memberNo,publicId:memberNo,mustChangePassword:false,cor:Number(inv.cor||settings.cor||13),shopId:inv.shopId,shopName:inv.shopName,adminNo:inv.adminNo||'',active:true,inviteToken:t,createdAt:Date.now()};
+    await setDoc(COL_ACCOUNTS,uid,acc);
+    inv.used=true;inv.usedAt=Date.now();inv.usedBy=uid;inv.usedEmail=email;await setDoc(COL_INVITES,t,inv);
+    currentUser={...acc};saveCur();saveSession();await loadCloudAll();loginPage.classList.remove('active');app.classList.add('active');$('logoutBtn')?.classList.remove('d-none');$('roleBadge')?.classList.remove('d-none');$('shopBadge')?.classList.remove('d-none');applyRoleUI();renderAll();tab('entry','tEntry');toast('Invite accepted ✅','success');
+  }catch(e){alert('Invite Register Error: '+e.message);setCloudStatus('Invite Error: '+e.message,'danger')}
+  finally{setBusy(false)}
+}
+const I18N={
+  my:{dash:'📊 စုစုပေါင်း',entry:'📝 စာရင်းထိုးရန်',records:'📋 စာရင်းများ',limit:'📉 လစ်မစ်',over:'🚨 အိုဗာ',am:'☀️ မနက်ပိုင်း',pm:'🌙 ညနေပိုင်း',daily:'📅 နေ့ချုပ်',history:'🗓️ မှတ်တမ်း',img:'🖼️ ပုံစာရင်း',members:'👥 မန်ဘာများ',messages:'💬 စာတို',logs:'🧾 လုပ်ဆောင်မှုမှတ်တမ်း',settings:'⚙️ ဆက်တင်',owner:'👑 Owner',lang:'မြန်မာ'},
+  en:{dash:'📊 Dashboard',entry:'📝 Record Entry',records:'📋 Records',limit:'📉 Limit',over:'🚨 Over',am:'☀️ AM',pm:'🌙 PM',daily:'📅 Daily',history:'🗓️ History',img:'🖼️ Image',members:'👥 Members',messages:'💬 Messages',logs:'🧾 Logs',settings:'⚙️ Settings',owner:'👑 Owner',lang:'English'}
+};
+function appLang(){return localLoad('RM_v162_lang','my')}
+function L(k){return (I18N[appLang()]||I18N.my)[k]||k}
+function toggleLang(){localSave('RM_v162_lang',appLang()==='my'?'en':'my');applyLanguage();toast('Language changed','info')}
+function applyLanguage(){
+  let ids={tDash:'dash',tEntry:'entry',tRecords:'records',tLimit:'limit',tOver:'over',tAM:'am',tPM:'pm',tDaily:'daily',tHistory:'history',tImg:'img',tMembers:'members',tMessages:'messages',tLogs:'logs',tSettings:'settings',tOwner:'owner'};
+  Object.keys(ids).forEach(id=>{let e=$(id);if(e)e.innerText=L(ids[id])});
+  if($('langBtn'))langBtn.innerText=appLang()==='my'?'English':'မြန်မာ';
+}
+
 function logout(){clearSession();app.classList.remove('active');lockPage.classList.remove('active');loginPage.classList.add('active');$('logoutBtn').classList.add('d-none');$('roleBadge').classList.add('d-none');$('shopBadge')?.classList.add('d-none');$('desktopModeBtn')?.classList.add('d-none');document.body.classList.remove('admin-windows-mode');p.value='';u.focus();setCloudStatus('Cloud: Logged out','secondary');updateDesktopModeUI()}
 function applyRoleUI(){
   if(!currentUser)return;
@@ -1144,7 +1254,7 @@ function applyRoleUI(){
     else hide=false;
     btn.classList.toggle('hidden-by-role',hide);
   });
-  if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username);if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;;lockMemberPInputs();updateDesktopModeUI();}
+  if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username)+' • '+memberPublicId(currentUser);if($('identityInfo'))$('identityInfo').innerHTML=identityInfoHTML();if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;;lockMemberPInputs();updateDesktopModeUI();}
 function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');rememberActiveTab(id,b);applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus();updateLastEntryPreview()}
 function toggleTheme(){document.body.classList.toggle('dark')}
 function desktopModeAllowed(){return !!(currentUser&&isAdmin())}
@@ -1513,7 +1623,7 @@ function drawCustomer(fn){drawText('Report',`${imgName.value}\nT=${dt.innerText}
 function drawText(title,text,fn){let lines=String(text).split('\n'),c=document.createElement('canvas'),x=c.getContext('2d');c.width=520;c.height=90+lines.length*30;x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.fillStyle='#111';x.font='bold 20px Arial';x.fillText(title,20,35);x.font='16px Arial';lines.forEach((l,i)=>x.fillText(l,20,75+i*30));let a=document.createElement('a');a.href=c.toDataURL('image/png');a.download=fn;a.click()}
 function download(text,name,type){let b=new Blob([text],{type}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click()}
 async function share(title,text){if(navigator.share)try{await navigator.share({title,text})}catch(e){}else location.href='viber://forward?text='+encodeURIComponent(text)}
-function renderMembers(){if(!memBody||!isAdmin())return;let mems=accounts.filter(a=>a.role==='member'&&itemShopId(a)===String(currentUser.shopId||'demo_shop'));memBody.innerHTML=mems.length?mems.map(a=>`<tr><td class="name-text">${a.memberName}</td><td>${a.email||a.username}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${a.cor||defCor()}%</td><td>${a.active===false?'OFF':'ON'}</td><td><button class="btn btn-sm btn-warning" onclick="editMemberAccount('${a.id}')">E</button> <button class="btn btn-sm btn-outline-${a.active===false?'success':'secondary'}" onclick="toggleMemberAccount('${a.id}')">${a.active===false?'ON':'OFF'}</button> <button class="btn btn-sm btn-danger" onclick="deleteMemberAccount('${a.id}')">D</button></td></tr>`).join(''):'<tr><td colspan="5" class="text-center text-muted">No Members</td></tr>'}
+function renderMembers(){if(!memBody||!isAdmin())return;ensureAccountPublicIds();let mems=accounts.filter(a=>a.role==='member'&&itemShopId(a)===String(currentUser.shopId||'demo_shop'));memBody.innerHTML=mems.length?mems.map(a=>`<tr><td class="name-text">${a.memberName}<br><span class="id-pill">${memberPublicId(a)}</span></td><td>${a.email||a.username}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${a.cor||defCor()}%</td><td>${a.active===false?'OFF':'ON'}${a.mustChangePassword?'<br><small class="text-danger fw-bold">Must change password</small>':''}</td><td><button class="btn btn-sm btn-warning" onclick="editMemberAccount('${a.id}')">E</button> <button class="btn btn-sm btn-outline-${a.active===false?'success':'secondary'}" onclick="toggleMemberAccount('${a.id}')">${a.active===false?'ON':'OFF'}</button> <button class="btn btn-sm btn-danger" onclick="deleteMemberAccount('${a.id}')">D</button></td></tr>`).join(''):'<tr><td colspan="5" class="text-center text-muted">No Members</td></tr>'}
 function resetMemberForm(){editMemberId=null;mName.value='';mUser.value='';mPass.value='';if(mPhone)mPhone.value='';if(mCor)mCor.value=''}
 async function saveMemberAccount(){
   if(!isAdmin())return;
@@ -1531,7 +1641,7 @@ async function saveMemberAccount(){
     }else{
       if(!password)return alert('Member အသစ်အတွက် Password ဖြည့်ပါ');
       let rr=await createFirebaseUser(email,password);let newUid=rr.localId;
-      let a={id:newUid,uid:newUid,email,username:email,role:'member',memberName,phone,cor,shopId:currentUser.shopId,shopName:currentUser.shopName,active:true,createdAt:Date.now()};
+      let memberNo=makePublicId('M');let a={id:newUid,uid:newUid,email,username:email,role:'member',memberName,phone,memberNo,publicId:memberNo,mustChangePassword:true,cor,shopId:currentUser.shopId,shopName:currentUser.shopName,adminNo:currentUser.adminNo||'',active:true,createdAt:Date.now()};
       accounts.push(a);await setDoc(COL_ACCOUNTS,newUid,a);
     }
     resetMemberForm();renderMembers();setCloudStatus('Cloud: Member Saved ✅','success');toast('Member Saved ✅','success');await addAudit('SAVE_MEMBER',email+' / '+phone+' / cor '+cor);alert('Member Account သိမ်းပြီးပါပြီ');
@@ -1588,32 +1698,54 @@ function checkLock(){if(isExpired())showLock();return isExpired()}
 
 function firestoreRulesText(){
 return `rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isOwner() { return signedIn() && request.auth.token.email in ['htetzawoohzo99@gmail.com']; }
+    function myAccount() { return get(/databases/$(database)/documents/recordmanager/main/accounts/$(request.auth.uid)); }
+    function hasAccount() { return signedIn() && exists(/databases/$(database)/documents/recordmanager/main/accounts/$(request.auth.uid)); }
+    function myShop() { return myAccount().data.shopId; }
+    function myRole() { return myAccount().data.role; }
+    function sameShopData() { return hasAccount() && resource.data.shopId == myShop(); }
+    function sameShopRequest() { return hasAccount() && request.resource.data.shopId == myShop(); }
 
-    function signedIn() {
-      return request.auth != null;
+    match /recordmanager/main/accounts/{uid} {
+      allow read: if isOwner() || (hasAccount() && resource.data.shopId == myShop()) || (signedIn() && uid == request.auth.uid);
+      allow create: if isOwner() || (hasAccount() && myRole() == 'admin' && request.resource.data.shopId == myShop() && request.resource.data.role == 'member') || (signedIn() && uid == request.auth.uid && request.resource.data.role == 'member');
+      allow update: if isOwner() || (signedIn() && uid == request.auth.uid) || (hasAccount() && myRole() == 'admin' && resource.data.shopId == myShop() && request.resource.data.shopId == myShop() && resource.data.role == 'member');
+      allow delete: if isOwner() || (hasAccount() && myRole() == 'admin' && resource.data.shopId == myShop() && resource.data.role == 'member');
     }
 
-    // RecordManager v1.4.6 Safe Compatibility Rules
-    // Public မဟုတ်ပါ — Firebase Authentication login ဝင်ထားသူများသာ သုံးနိုင်သည်။
-    // v1.4.x app versions မပိတ်စေရန် recordmanager/main အောက်ကို authenticated-only ဖွင့်ထားသည်။
-    // App ထဲတွင် shopId filter ဖြင့် Admin/Member data ခွဲထားသည်။
-    match /recordmanager/main/{document=**} {
-      allow read, write: if signedIn();
+    match /recordmanager/main/settings/{shopId} {
+      allow read: if isOwner() || (hasAccount() && shopId == myShop());
+      allow write: if isOwner() || (hasAccount() && myRole() == 'admin' && shopId == myShop());
     }
 
-    // အခြား collection များကို ပိတ်ထားသည်။
-    match /{document=**} {
-      allow read, write: if false;
+    match /recordmanager/main/invites/{token} {
+      allow read: if signedIn();
+      allow create, delete: if isOwner() || (hasAccount() && myRole() == 'admin' && request.resource.data.shopId == myShop());
+      allow update: if isOwner()
+        || (hasAccount() && myRole() == 'admin' && request.resource.data.shopId == myShop())
+        || (signedIn() && resource.data.used == false && request.resource.data.used == true && request.resource.data.usedBy == request.auth.uid);
     }
+
+    match /recordmanager/main/records/{docId} {
+      allow read: if hasAccount() && (myRole() == 'admin' && resource.data.shopId == myShop() || myRole() == 'member' && resource.data.shopId == myShop() && resource.data.memberUid == request.auth.uid);
+      allow create: if hasAccount() && myRole() == 'member' && request.resource.data.shopId == myShop() && request.resource.data.memberUid == request.auth.uid;
+      allow update, delete: if hasAccount() && (myRole() == 'admin' && resource.data.shopId == myShop() || myRole() == 'member' && resource.data.shopId == myShop() && resource.data.memberUid == request.auth.uid);
+    }
+
+    match /recordmanager/main/{col}/{docId} {
+      allow read, write: if isOwner() || (hasAccount() && (resource.data.shopId == myShop() || request.resource.data.shopId == myShop()));
+    }
+
+    match /{document=**} { allow read, write: if false; }
   }
 }
 `;
 }
 
-function downloadRules(){download(firestoreRulesText(),'firestore_rules_v1_4_6_safe.rules','text/plain');toast('Safe Rules file downloaded','success')}
+function downloadRules(){download(firestoreRulesText(),'firestore_rules_v1_6_1_strict.rules','text/plain');toast('Safe Rules file downloaded','success')}
 
 
 function contactAccounts(){
@@ -1720,7 +1852,7 @@ function renderOwnerDashboard(){
     let st=a.active===false?'Account OFF':'Account ON';
     let lic=ownerSettingsMap[a.shopId]||defaultLicenseSettings(a.shopId||'');
     let plan=lic.plan||'Trial',exp=lic.expireDate?`${lic.expireDate} ${lic.expireTime||'23:59'}`:'No expiry';
-    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${licenseBadgeHTML(lic)}<br><small>${plan} • ${exp}<br>${st}</small></td></tr>`
+    return `<tr><td><span class="owner-badge">${(a.role||'').toUpperCase()}</span></td><td>${a.uid||a.id||''}<br><small>${a.shopId||''}</small><br><span class="id-pill">${a.role==='admin'?adminPublicId(a):memberPublicId(a)}</span></td><td><b>${a.memberName||a.name||''}</b><br><small>${a.shopName||''}${memCount!==''?' • Members: '+memCount:''}</small></td><td>${a.email||a.username||''}<br><a class="phone-link" href="tel:${a.phone||''}">${a.phone||''}</a></td><td>${licenseBadgeHTML(lic)}<br><small>${plan} • ${exp}<br>${st}</small></td></tr>`
   }).join(''):'<tr><td colspan="5" class="text-center text-muted">No registration metadata</td></tr>';
 }
 function renderOwnerLicenseControls(){
@@ -1880,6 +2012,7 @@ function renderAll(){
   safeRun('Session Timer',updateSessionTimer);
   safeRun('Live Desk',renderLiveDesk);
   safeRun('Last Entry Preview',updateLastEntryPreview);
+  safeRun('Language',applyLanguage);
 }
 
 
@@ -1931,6 +2064,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.addEventListener('online',updateNetBadge);
   window.addEventListener('offline',updateNetBadge);
   updateNetBadge();
+  initInviteFromUrl();applyLanguage();
   window.addEventListener('resize',updateDesktopModeUI);
   updateDesktopModeUI();
 
