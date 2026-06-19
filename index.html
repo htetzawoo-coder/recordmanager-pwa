@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization</title>
+<title>RecordManager_2D_Logic_Pro v1.5.7 Windows Live Desk</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization */
+/* v1.5.7 Windows Live Desk */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization */
+/* v1.5.7 Windows Live Desk */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization */
+/* v1.5.7 Windows Live Desk */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -167,552 +167,42 @@ body.admin-windows-mode .smart-grid{grid-template-columns:repeat(4,1fr)}
 body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{font-size:13px}
 
 
-/* v1.6.5 Split Panel Layout & Desktop Optimization */
-.split-panel-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-bottom: 16px;
-}
 
-@media(min-width:1400px) {
-  .split-panel-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .split-panel-container.triple {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.split-panel {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px;
-  box-shadow: 0 4px 12px #0001;
-}
-
-.split-panel h6 {
-  font-weight: 900;
-  margin-bottom: 10px;
-  font-size: 13px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.split-panel-content {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Enhanced Limit Grid for Desktop */
-body.admin-windows-mode .limit-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 4px;
-  font-size: 12px;
-}
-
-body.admin-windows-mode .cell {
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-body.admin-windows-mode .cell:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px #0002;
-}
-
-/* Desktop Dashboard Panels */
-body.admin-windows-mode #dash .split-panel-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-body.admin-windows-mode #dash .split-panel-container.full {
-  grid-template-columns: 1fr;
-}
-
-/* Limit Page Split Layout */
-body.admin-windows-mode #limit .split-panel-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-body.admin-windows-mode #limit .limit-grid {
-  grid-template-columns: repeat(15, 1fr);
-}
-
-/* Over Page Messages Panel */
-body.admin-windows-mode .over-messages-panel {
-  max-height: 400px;
-  overflow-y: auto;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 10px;
-  background: var(--bg);
-}
-
-.message-item {
-  padding: 8px;
-  margin-bottom: 6px;
-  border-radius: 8px;
-  background: var(--card);
-  border-left: 3px solid var(--primary);
-  font-size: 12px;
-}
-
-.message-item.warning {
-  border-left-color: #f59e0b;
-  background: #fffbeb;
-}
-
-.message-item.danger {
-  border-left-color: #ef4444;
-  background: #fee2e2;
-}
-
-.dark .message-item.warning {
-  background: #451a03;
-}
-
-.dark .message-item.danger {
-  background: #450a0a;
-}
-
-/* Number Grid Enhancement */
-.limit-grid .cell {
-  cursor: pointer;
-  user-select: none;
-}
-
-.limit-grid .cell.header {
-  background: var(--primary);
-  color: #fff;
-  font-weight: 900;
-  border-radius: 6px;
-}
-
-.limit-grid .cell.total {
-  background: #e0e7ff;
-  color: #3730a3;
-  font-weight: 900;
-  border-radius: 6px;
-}
-
-.dark .limit-grid .cell.total {
-  background: #312e81;
-  color: #e0e7ff;
-}
-
-/* Responsive Adjustments */
-@media(max-width:1200px) {
-  body.admin-windows-mode #limit .split-panel-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  body.admin-windows-mode #limit .limit-grid {
-    grid-template-columns: repeat(10, 1fr);
-  }
-}
-
-@media(max-width:768px) {
-  body.admin-windows-mode #limit .split-panel-container {
-    grid-template-columns: 1fr;
-  }
-  
-  body.admin-windows-mode #limit .limit-grid {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-
-
-/* v1.6.5 Advanced Limit Table Design */
-
-/* Number Grid Enhancements */
-.limit-grid {
-  perspective: 1000px;
-}
-
-.limit-grid .cell {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 2px 4px #0001;
-}
-
-.limit-grid .cell::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
-}
-
-.limit-grid .cell:hover::before {
-  left: 100%;
-}
-
-.limit-grid .cell:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px #0002;
-}
-
-/* Hit Numbers - Red */
-.limit-grid .cell.hit {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  color: #fff;
-  font-weight: 900;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
-}
-
-.limit-grid .cell.hit:hover {
-  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
-  transform: scale(1.08);
-}
-
-/* Negative Numbers - Light Red */
-.limit-grid .cell.neg {
-  background: linear-gradient(135deg, #fee2e2, #fecaca);
-  color: #991b1b;
-  font-weight: 800;
-  border: 1px solid #fca5a5;
-}
-
-.limit-grid .cell.neg:hover {
-  background: linear-gradient(135deg, #fecaca, #fca5a5);
-}
-
-/* Positive Numbers - Green */
-.limit-grid .cell.pos {
-  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-  color: #166534;
-  font-weight: 800;
-  border: 1px solid #86efac;
-}
-
-.limit-grid .cell.pos:hover {
-  background: linear-gradient(135deg, #bbf7d0, #86efac);
-}
-
-/* Normal Numbers */
-.limit-grid .cell {
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
-.dark .limit-grid .cell {
-  background: #1f2937;
-  border-color: #374151;
-}
-
-.dark .limit-grid .cell.hit {
-  background: linear-gradient(135deg, #7f1d1d, #991b1b);
-  box-shadow: 0 4px 12px rgba(127, 29, 29, 0.4);
-}
-
-.dark .limit-grid .cell.neg {
-  background: linear-gradient(135deg, #450a0a, #7f1d1d);
-  color: #fecaca;
-  border-color: #991b1b;
-}
-
-.dark .limit-grid .cell.pos {
-  background: linear-gradient(135deg, #052e16, #166534);
-  color: #bbf7d0;
-  border-color: #15803d;
-}
-
-/* Grid Statistics */
-.grid-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-  margin-bottom: 16px;
-  padding: 12px;
-  background: var(--bg);
-  border-radius: 12px;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 8px;
-  border-radius: 10px;
-  background: var(--card);
-  border: 1px solid var(--border);
-}
-
-.stat-item small {
-  display: block;
-  color: var(--muted);
-  font-weight: 700;
-  font-size: 11px;
-  margin-bottom: 4px;
-}
-
-.stat-item b {
-  display: block;
-  font-size: 18px;
-  font-weight: 900;
-  color: var(--primary);
-}
-
-.stat-item.hit-stat b {
-  color: #dc2626;
-}
-
-.stat-item.pos-stat b {
-  color: #16a34a;
-}
-
-.stat-item.neg-stat b {
-  color: #ea580c;
-}
-
-/* Number Range Highlight */
-.number-range-input {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.number-range-input input {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  font-weight: 700;
-}
-
-/* Limit Table Legend */
-.limit-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 12px;
-  background: var(--bg);
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.legend-box {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
-
-.legend-box.hit {
-  background: #dc2626;
-  border-color: #991b1b;
-}
-
-.legend-box.pos {
-  background: #dcfce7;
-  border-color: #86efac;
-}
-
-.legend-box.neg {
-  background: #fee2e2;
-  border-color: #fca5a5;
-}
-
-.legend-box.normal {
-  background: var(--card);
-  border-color: var(--border);
-}
-
-/* Responsive Grid Adjustments */
-@media(max-width:1600px) {
-  body.admin-windows-mode .limit-grid {
-    grid-template-columns: repeat(12, 1fr) !important;
-  }
-}
-
-@media(max-width:1200px) {
-  body.admin-windows-mode .limit-grid {
-    grid-template-columns: repeat(10, 1fr) !important;
-  }
-}
-
-@media(max-width:768px) {
-  body.admin-windows-mode .limit-grid {
-    grid-template-columns: repeat(8, 1fr) !important;
-  }
-  
-  .limit-grid .cell {
-    min-height: 40px;
-    font-size: 11px;
-  }
-}
-
-/* Animation for number updates */
-@keyframes numberPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
-}
-
-.limit-grid .cell.updated {
-  animation: numberPulse 0.4s ease-out;
-}
-
-/* Hover Tooltip */
-.limit-grid .cell[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111827;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 10px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  z-index: 10;
-  margin-bottom: 6px;
-}
-
-.limit-grid .cell[data-tooltip]:hover::after {
-  opacity: 1;
-}
-
-/* Summary Cards Enhancement */
-.risk-box {
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.risk-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px #0002;
-}
-
-.risk-box.warning {
-  border-color: #f59e0b;
-  background: #fffbeb;
-}
-
-.risk-box.danger {
-  border-color: #ef4444;
-  background: #fee2e2;
-}
-
-.risk-box.success {
-  border-color: #10b981;
-  background: #dcfce7;
-}
-
-.dark .risk-box.warning {
-  background: #451a03;
-}
-
-.dark .risk-box.danger {
-  background: #450a0a;
-}
-
-.dark .risk-box.success {
-  background: #052e16;
-}
+/* v1.5.7 Windows Live Desk + Clear Limit Board */
+.limit-grid.limit-grid-board{display:block;grid-template-columns:none;gap:0;font-size:13px}
+#updateBtn{white-space:nowrap}
+.windows-live-desk{display:none}
+body.admin-windows-mode .windows-live-desk{display:block}
+.live-desk-grid{display:grid;grid-template-columns:1.25fr 1.35fr .9fr .95fr;gap:12px;align-items:start}
+.live-panel{border:1px solid var(--border);border-radius:16px;background:var(--card);padding:10px;min-height:250px;max-height:72vh;overflow:auto;box-shadow:0 6px 16px #0001}
+.live-panel h6{font-weight:1000;position:sticky;top:-10px;background:var(--card);padding:8px 0;margin:0 0 8px;z-index:2;border-bottom:1px solid var(--border)}
+.live-mini-row{display:grid;grid-template-columns:56px 1fr 76px;gap:6px;align-items:center;border-bottom:1px dashed var(--border);padding:6px 2px;font-size:12px}
+.live-mini-row b{font-size:14px}.live-mini-row .amt{text-align:right;font-weight:1000;color:var(--primary)}
+.live-msg-row{border-bottom:1px dashed var(--border);padding:7px 2px;font-size:12px}.live-msg-row b{display:block}.live-msg-row small{color:var(--muted)}
+.windows-limit-board{width:100%;overflow:auto;border:1px solid #94a3b8;border-radius:12px;background:#f8fafc;box-shadow:inset 0 0 0 1px #e2e8f0}
+.windows-limit-board table{width:100%;min-width:980px;border-collapse:collapse;table-layout:fixed}
+.windows-limit-board td{border:1px solid #cbd5e1;height:32px;padding:2px 5px;vertical-align:middle}
+.limit-no{width:42px;background:#86efac;color:#064e3b;font-weight:1000;font-size:18px;text-align:center}
+.limit-amt{background:#f8fafc;color:#0f172a;text-align:right;font-weight:800;font-size:13px;min-width:58px}
+.limit-alert{background:#dc2626!important;color:#fff!important;box-shadow:inset 0 0 0 2px #7f1d1d}
+.limit-over{background:#fef3c7!important;color:#92400e!important;font-weight:1000}
+.dark .windows-limit-board{background:#0f172a;border-color:#475569}.dark .limit-no{background:#14532d;color:#bbf7d0}.dark .limit-amt{background:#111827;color:#e5e7eb;border-color:#334155}
+.over-mini-table{width:100%;font-size:12px}.over-mini-table th,.over-mini-table td{border-bottom:1px solid var(--border);padding:5px;text-align:right}.over-mini-table th:first-child,.over-mini-table td:first-child{text-align:center}
+.live-sync-pulse{animation:livePulse .6s ease}@keyframes livePulse{0%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.02);filter:brightness(1.15)}100%{transform:scale(1);filter:brightness(1)}}
+@media(max-width:1450px){.live-desk-grid{grid-template-columns:1fr 1fr}.live-panel{max-height:54vh}}
+@media(max-width:900px){.live-desk-grid{grid-template-columns:1fr}.windows-limit-board table{min-width:900px}}
 
 </style>
 </head>
 <body>
-
-<!-- 
-================================================================================
-RecordManager Pro v1.6.5 — Changelog
-================================================================================
-
-v1.6.5 Updates:
-✅ Admin Dashboard Split Panels
-   - Key Statistics panel with 4 stat cards (Records, Members, AM, PM)
-   - Risk Status panel for quick overview
-   - Smart Risk Summary with top risk numbers
-   - Responsive grid layout (1 column mobile, 2 columns tablet, 2 columns desktop)
-
-✅ Limit Table Design Enhancement
-   - Improved number grid visualization with 1-100 number display
-   - Color-coded cells: Red (Hit), Green (Positive), Light Red (Negative)
-   - Interactive hover effects with smooth animations
-   - Enhanced statistics panel showing Hit Count, Positive, Negative totals
-   - Grid legend for quick reference
-   - Responsive grid columns: 15 (1600px+), 12 (1200px+), 10 (1024px+), 8 (768px-)
-
-✅ Desktop Optimization (Windows Mode)
-   - Wide screen layout support (max-width: 1680px)
-   - Split panel containers with responsive grid
-   - Enhanced sidebar navigation (246px width)
-   - Optimized table heights (max-height: 70-72vh)
-   - Improved keypad layout (5 columns on desktop)
-   - Calendar grid expansion (5 columns, 180px min-width)
-   - Over page messages panel with visual hierarchy
-
-✅ UI/UX Improvements
-   - Smooth transitions and animations
-   - Better visual hierarchy with color gradients
-   - Enhanced risk box styling with warning/danger states
-   - Improved message item styling with left border indicators
-   - Better responsive breakpoints
-   - Keyboard shortcuts (Ctrl+L to jump to Limit tab)
-
-================================================================================
-Previous Version (v1.5.6):
-- Windows Admin Mode with sidebar navigation
-- License Control & App Lock system
-- Keyboard bug fixes (အပါ button support)
-- Manual input logic support (1အပါ / 12အပြန်)
-- UI cleanup for Super Admin Dashboard
-
-================================================================================
-Technical Stack:
-- Framework: Bootstrap 5.3.3
-- Language: Burmese (Myanmar) & English
-- Database: Firebase Firestore
-- PWA: Service Worker support
-- Responsive: Mobile-first design
-- Dark Mode: Supported
-
-================================================================================
-File Size: ~150KB (minified)
-Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
-================================================================================
--->
-
-
 <div id="toastWrap"></div>
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.5.7 Windows Live Desk</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
+      <button id="updateBtn" class="btn btn-success btn-sm rounded-pill fw-bold" onclick="forceAppUpdate()">Update</button>
       <button id="installBtn" class="btn btn-warning btn-sm rounded-pill fw-bold d-none" onclick="installPWA()">Install</button>
       <button id="desktopModeBtn" class="btn btn-info btn-sm rounded-pill fw-bold d-none" onclick="toggleDesktopMode()">🪟 Windows Mode</button>
       <button class="btn btn-light btn-sm rounded-pill fw-bold" onclick="toggleTheme()">Theme</button>
@@ -724,7 +214,7 @@ Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
+      <p class="small-note mb-2">v1.5.7 Windows Live Desk — Admin / Member ခွဲသုံးရန် စမ်းသပ်ဗားရှင်း</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -812,33 +302,17 @@ Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
       </div>
     </section>
 
-        <section id="dash" class="page active">
+    <section id="dash" class="page active">
       <div class="card p-3">
         <h5 id="dashTitle" class="fw-bold mb-2">Admin Dashboard</h5>
         <div id="dashSub" class="small-note">Member အားလုံး၏ စုစုပေါင်းစာရင်း</div>
       </div>
-      
-      <!-- Split Panel: Key Statistics -->
-      <div class="split-panel-container">
-        <div class="split-panel">
-          <h6>📊 Key Statistics</h6>
-          <div class="row g-2">
-            <div class="col-6"><div class="card p-3 text-center stat-card"><small>Records</small><h3 id="dRec">0</h3></div></div>
-            <div class="col-6"><div class="card p-3 text-center stat-card"><small id="dGrpLabel">Members</small><h3 id="dGrp">0</h3></div></div>
-            <div class="col-6"><div class="card p-3 text-center stat-card"><small>AM</small><h3 id="dAM">0</h3></div></div>
-            <div class="col-6"><div class="card p-3 text-center stat-card"><small>PM</small><h3 id="dPM">0</h3></div></div>
-          </div>
-        </div>
-        
-        <div class="split-panel">
-          <h6>⚠️ Risk Status</h6>
-          <div id="dashRiskPanel" class="split-panel-content">
-            <div class="alert alert-info mb-0">Risk analysis will appear here</div>
-          </div>
-        </div>
+      <div class="row g-2">
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small>Records</small><h3 id="dRec">0</h3></div></div>
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small id="dGrpLabel">Members</small><h3 id="dGrp">0</h3></div></div>
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small>AM</small><h3 id="dAM">0</h3></div></div>
+        <div class="col-6"><div class="card p-3 text-center stat-card"><small>PM</small><h3 id="dPM">0</h3></div></div>
       </div>
-      
-      <!-- Split Panel: Risk Summary -->
       <div class="card p-3">
         <h5 class="fw-bold">Smart Risk Summary</h5>
         <div id="dashRisk" class="smart-grid"></div>
@@ -846,9 +320,27 @@ Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
         <h6 class="fw-bold">Top Risk Numbers</h6>
         <div id="dashTopRisk"></div>
       </div>
-      
-      <!-- Chart -->
       <div class="card p-3"><canvas id="chart"></canvas></div>
+      <div id="adminLiveDesk" class="windows-live-desk d-none">
+        <div class="card p-3">
+          <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap mb-2">
+            <div>
+              <h5 class="fw-bold mb-1">🪟 Windows Admin Live Desk</h5>
+              <div class="small-note">Records / Limit / Over / Messages တို့ကို တပြိုင်နက်ကြည့်ရန်</div>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+              <span id="liveSyncBadge" class="close-pill">Live Sync Ready</span>
+              <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold" onclick="liveSyncTick(true)">Sync Now</button>
+            </div>
+          </div>
+          <div class="live-desk-grid">
+            <div class="live-panel"><h6>📋 Live Records</h6><div id="liveRecordsMini"></div></div>
+            <div class="live-panel"><h6>📉 Limit Board</h6><div id="liveLimitMini"></div></div>
+            <div class="live-panel"><h6>🚨 Over</h6><div id="liveOverMini"></div></div>
+            <div class="live-panel"><h6>💬 Messages</h6><div id="liveMsgMini"></div></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="entry" class="page">
@@ -890,89 +382,42 @@ Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
       </div>
     </section>
 
-        <section id="limit" class="page">
+    <section id="limit" class="page">
       <div class="card p-3">
         <h5 class="fw-bold text-danger">Admin Only — Limit Monitor</h5>
         <p class="small-note">Member အားလုံးထံမှ တက်လာသော number amount များကို စုပြီး limit စစ်ပါမည်။</p>
-      </div>
-      
-      <!-- Split Panel: Limit Settings & Summary -->
-      <div class="split-panel-container triple">
-        <div class="split-panel">
-          <h6>⚙️ Limit Settings</h6>
-          <div class="mb-2">
-            <label class="small fw-bold">Limit Amount</label>
-            <input id="lim" class="form-control" inputmode="numeric" placeholder="Limit Amount" oninput="riskMaster='limit';renderLimit(false)">
-          </div>
-          <div class="mb-2">
-            <label class="small fw-bold">Lose %</label>
-            <input id="riskLosePct" class="form-control" inputmode="decimal" placeholder="ဥပမာ 20" oninput="riskMaster='losePct';renderLimit(false)">
-          </div>
-          <div class="mb-2">
-            <label class="small fw-bold">Max Lose</label>
-            <input id="riskMaxLose" class="form-control" inputmode="numeric" placeholder="ဥပမာ 500000" oninput="riskMaster='maxLose';renderLimit(false)">
-          </div>
-          <button class="btn btn-primary w-100 rounded-pill fw-bold btn-sm" onclick="renderLimit(true)">Calculate</button>
+        <div class="row g-2">
+          <div class="col-12 col-md-4"><label class="small fw-bold">Limit Amount</label><input id="lim" class="form-control mb-2" inputmode="numeric" placeholder="Limit Amount" oninput="riskMaster='limit';renderLimit(false)"></div>
+          <div class="col-6 col-md-4"><label class="small fw-bold">Lose %</label><input id="riskLosePct" class="form-control mb-2" inputmode="decimal" placeholder="ဥပမာ 20" oninput="riskMaster='losePct';renderLimit(false)"></div>
+          <div class="col-6 col-md-4"><label class="small fw-bold">Max Lose Amount</label><input id="riskMaxLose" class="form-control mb-2" inputmode="numeric" placeholder="ဥပမာ 500000" oninput="riskMaster='maxLose';renderLimit(false)"></div>
         </div>
-        
-        <div class="split-panel">
-          <h6>📈 Risk Summary</h6>
-          <div class="row g-2">
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Total</div><div id="limTotal" class="risk-value">0</div></div></div>
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Over</div><div id="riskOverTotal" class="risk-value">0</div></div></div>
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Cor</div><div id="riskCorTotal" class="risk-value">0</div></div></div>
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Balance</div><div id="riskBalance" class="risk-value">0</div></div></div>
-          </div>
+        <button class="btn btn-primary w-100 mb-2 rounded-pill fw-bold" onclick="renderLimit(true)">Check / Auto Calculate</button>
+        <div class="row g-2 mb-2" id="riskSummary">
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Total</div><div id="limTotal" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Over</div><div id="riskOverTotal" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Cor</div><div id="riskCorTotal" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Balance</div><div id="riskBalance" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Max No</div><div id="riskMaxNo" class="risk-value">-</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Worst Pay</div><div id="riskWorstPay" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Pay Allowed</div><div id="riskPayAllowed" class="risk-value">0</div></div></div>
+          <div class="col-6 col-md-3"><div id="riskStatusBox" class="risk-box"><div class="risk-title">Status</div><div id="riskStatus" class="risk-value">-</div></div></div>
+          <div class="col-6"><div class="alert alert-danger mb-1">Over Count<br><b id="limCount">0</b></div></div>
+          <div class="col-6"><div class="alert alert-info mb-1">Suggested Limit<br><b id="riskSuggested">0</b></div></div>
         </div>
-        
-        <div class="split-panel">
-          <h6>🎯 Status & Action</h6>
-          <div class="row g-2">
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Max No</div><div id="riskMaxNo" class="risk-value">-</div></div></div>
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Worst Pay</div><div id="riskWorstPay" class="risk-value">0</div></div></div>
-            <div class="col-6"><div class="risk-box"><div class="risk-title">Pay Allowed</div><div id="riskPayAllowed" class="risk-value">0</div></div></div>
-            <div class="col-6"><div id="riskStatusBox" class="risk-box"><div class="risk-title">Status</div><div id="riskStatus" class="risk-value">-</div></div></div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Number Grid -->
-      <div class="card p-3">
-        <h6 class="fw-bold">Number Grid (1-100)</h6>
         <div id="grid" class="limit-grid"></div>
-        <div class="row g-2 mt-3">
-          <div class="col-6"><div class="alert alert-danger mb-0">Over Count<br><b id="limCount">0</b></div></div>
-          <div class="col-6"><div class="alert alert-info mb-0">Suggested Limit<br><b id="riskSuggested">0</b></div></div>
-        </div>
-      </div>
-      
-      <!-- Action Buttons -->
-      <div class="card p-3">
-        <button class="btn btn-outline-danger w-100 mb-2 rounded-pill fw-bold" onclick="tab('over','tOver')">Limit ကျော် Table ကြည့်ရန်</button>
-        <button class="btn btn-success w-100 rounded-pill fw-bold" onclick="saveLimit()">Save Limit Table</button>
+        <button class="btn btn-outline-danger w-100 mt-2 rounded-pill fw-bold" onclick="tab('over','tOver')">Limit ကျော် Table ကြည့်ရန်</button>
+        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="saveLimit()">Save Limit Table</button>
         <small class="text-muted">မူရင်းအရောင်းစာရင်း မပြောင်းပါ။ Limit အတွက် သီးသန့်နုတ်ထားသည့် စာရင်းသာ သိမ်းပါမည်။</small>
       </div>
     </section>
 
-        <section id="over" class="page">
+    <section id="over" class="page">
       <div class="card p-3">
         <h5 class="fw-bold">Admin Only — Limit Over Table</h5>
-        <p class="small-note">ထိုးသားများ၏ ကျော်လွန်သည့် အရေအတွက်များ</p>
-      </div>
-      
-      <div class="split-panel-container">
-        <div class="split-panel full">
-          <h6>📋 Over Table</h6>
-          <div id="overContent"></div>
-        </div>
-      </div>
-      
-      <div class="card p-3">
-        <div class="row g-2">
-          <div class="col-12 col-md-4"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="saveOverImage()">💾 Save Image</button></div>
-          <div class="col-12 col-md-4"><button class="btn btn-success w-100 rounded-pill fw-bold" onclick="shareOver()">📤 Share</button></div>
-          <div class="col-12 col-md-4"><button class="btn btn-warning w-100 rounded-pill fw-bold" onclick="exportOver()">📊 Export CSV</button></div>
-        </div>
+        <div id="overContent"></div>
+        <button class="btn btn-primary w-100 mt-2 rounded-pill fw-bold" onclick="saveOverImage()">Save Image</button>
+        <button class="btn btn-success w-100 mt-2 rounded-pill fw-bold" onclick="shareOver()">Share</button>
+        <button class="btn btn-warning w-100 mt-2 rounded-pill fw-bold" onclick="exportOver()">Export CSV</button>
       </div>
     </section>
 
@@ -1176,7 +621,7 @@ Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.6.5 Windows Admin Mode — Split Panels & Desktop Optimization
+   RecordManager_2D_Logic_Pro v1.5.7 Windows Live Desk
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -1377,7 +822,14 @@ async function getDoc(col,id,fallback=null){
   try{return unpack(await api(docUrl(col,id)))}catch(e){return fallback}
 }
 async function setDoc(col,id,obj){let d=await api(docUrl(col,id),{method:'PATCH',body:JSON.stringify(pack(obj))});return unpack(d)}
-async function addDoc(col,obj){let d=await api(colUrl(col),{method:'POST',body:JSON.stringify(pack(obj))});return unpack(d)}
+async function addDoc(col,obj){
+  let lastErr=null;
+  for(let i=0;i<3;i++){
+    try{let d=await api(colUrl(col),{method:'POST',body:JSON.stringify(pack(obj))});return unpack(d)}
+    catch(e){lastErr=e;await new Promise(r=>setTimeout(r,350*(i+1)))}
+  }
+  throw lastErr;
+}
 async function delDocByPath(path){if(!path)return;try{await api(docUrlFromPath(path),{method:'DELETE'})}catch(e){}}
 
 async function seedAccountsIfEmpty(){
@@ -1644,6 +1096,7 @@ function updateDesktopModeUI(){
   document.body.classList.toggle('admin-windows-mode',!!saved);
   btn.innerText=document.body.classList.contains('admin-windows-mode')?'🪟 Windows Mode ON':'🪟 Windows Mode OFF';
   btn.title='Windows computer screen အတွက် Admin layout';
+  try{renderLiveDesk()}catch(e){}
 }
 function toggleDesktopMode(){
   if(!desktopModeAllowed())return;
@@ -1652,7 +1105,9 @@ function toggleDesktopMode(){
   localSave('rm_admin_windows_mode',on);
   updateDesktopModeUI();
   toast(on?'Windows Mode ON ✅':'Windows Mode OFF','info');
+  renderLiveDesk();
 }
+
 
 function key(v){if(isMember()&&!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။');if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
 function logicBtn(type){
@@ -1893,14 +1348,10 @@ function renderLimit(alertIt){
     if(riskLosePct)riskLosePct.value=r.actualLosePct?Number(r.actualLosePct.toFixed(2)):'';
     if(riskMaxLose)riskMaxLose.value=r.loseAmount?Math.round(r.loseAmount):'';
   }
-  grid.innerHTML='';
   let t=totals(),l=+lim.value;
-  for(let i=0;i<100;i++){
-    let n=String(i).padStart(2,'0'),d=document.createElement('div');
-    d.className='cell '+(l>0&&t[n]>l?'hit':'');
-    d.innerHTML='<b>'+n+'</b><br>'+money(t[n]);
-    grid.appendChild(d)
-  }
+  grid.classList.add('limit-grid-board');
+  grid.innerHTML=buildLimitWindowsBoard(t,l);
+  renderLiveDesk();
   if(alertIt&&over.length)alert('Over Limit / Risk တွက်ပြီးပါပြီ')
 }
 async function saveLimit(){if(!isAdmin())return alert('Admin Only');let o=overItems();if(!o.length)return alert('No Over');if(!confirm('Limit စာရင်းအတွက်သာ သိမ်းမည်။ မူရင်းစာရင်း မပြောင်းပါ။'))return;try{setBusy(true,'Saving Limit Export...');for(const x of o){let saved=await addDoc(COL_EXPORTS,{n:x.n,amt:x.over,date:today(),s:sess(),shopId:currentUser.shopId,shopName:currentUser.shopName,createdAt:Date.now()});exportsL.push(saved)}await saveEx();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Export Saved ✅','success');toast('Limit Export Saved ✅','success');await addAudit('SAVE_LIMIT_EXPORT',`count ${o.length} / over ${money(o.reduce((a,b)=>a+b.over,0))}`)}catch(e){setCloudStatus('Limit Save Error: '+e.message,'danger');alert(e.message)}finally{setBusy(false)}}
@@ -2242,6 +1693,80 @@ async function saveOwnerLicenseSettings(){
 function safeRun(label,fn){try{if(typeof fn==='function')fn()}catch(e){console.warn(label,e);toast(label+' render warning: '+e.message,'warning')}}
 
 
+
+function getRecordKey(r){return String(r.docId||r._path||r.id||'')}
+function visibleRecordNumberTotals(){
+  let m={};
+  visibleRecords().forEach(r=>{let n=String(r.n||'').padStart(2,'0');if(/^\d{2}$/.test(n))m[n]=(m[n]||0)+num(r.amt)});
+  return m;
+}
+function buildLimitWindowsBoard(m={},limi=0){
+  let rows='';
+  for(let r=0;r<10;r++){
+    let cells='';
+    for(let t=0;t<10;t++){
+      let n=String(t)+String(r);
+      let amt=num(m[n]||0), over=limi&&amt>limi, has=amt>0;
+      cells+=`<td class="limit-no ${over?'limit-alert':''}">${n}</td><td class="limit-amt ${over?'limit-alert':(has?'limit-over':'')}">${has?money(amt):''}</td>`;
+    }
+    rows+=`<tr>${cells}</tr>`;
+  }
+  return `<div class="windows-limit-board"><table><tbody>${rows}</tbody></table></div>`;
+}
+function buildOverMiniTable(m={},limi=0){
+  let rows=Object.keys(m).filter(n=>limi&&num(m[n])>limi).sort((a,b)=>num(m[b])-num(m[a]));
+  if(!rows.length)return '<div class="alert alert-success mb-0">Over မရှိပါ</div>';
+  let total=0;
+  let body=rows.slice(0,24).map((n,i)=>{let over=num(m[n])-limi;total+=over;return `<tr><td>${i+1}</td><td><b>${n}</b></td><td>${money(m[n])}</td><td class="text-danger fw-bold">${money(over)}</td></tr>`}).join('');
+  return `<table class="over-mini-table"><thead><tr><th>No</th><th>Number</th><th>Amount</th><th>Over</th></tr></thead><tbody>${body}<tr><th colspan="3">Total</th><th class="text-danger">${money(total)}</th></tr></tbody></table>`;
+}
+function renderLiveDesk(){
+  let desk=$('adminLiveDesk');if(!desk)return;
+  let show=isAdmin()&&document.body.classList.contains('admin-windows-mode');
+  desk.classList.toggle('d-none',!show);
+  if(!show)return;
+  let limi=num($('lim')?.value||settings.limitAmount||0);
+  let m=visibleRecordNumberTotals();
+  let latest=[...visibleRecords()].sort((a,b)=>num(b.createdAt||0)-num(a.createdAt||0)).slice(0,34);
+  if($('liveRecordsMini'))$('liveRecordsMini').innerHTML=latest.length?latest.map(r=>`<div class="live-mini-row"><b>${r.n||''}</b><div>${r.memberName||r.name||''}<br><small>${r.c||''} • ${r.tm||''}</small></div><div class="amt">${money(r.amt)}</div></div>`).join(''):'<div class="alert alert-secondary mb-0">No records</div>';
+  if($('liveLimitMini'))$('liveLimitMini').innerHTML=buildLimitWindowsBoard(m,limi);
+  if($('liveOverMini'))$('liveOverMini').innerHTML=buildOverMiniTable(m,limi);
+  let ms=[...(messages||[])].filter(x=>sameShop(x)).sort((a,b)=>num(b.createdAt)-num(a.createdAt)).slice(0,28);
+  if($('liveMsgMini'))$('liveMsgMini').innerHTML=ms.length?ms.map(x=>`<div class="live-msg-row"><b>${x.fromName||x.fromEmail||''} → ${x.toName||x.toEmail||''}</b><div>${x.text||''}</div><small>${x.date||''} ${x.time||''}</small></div>`).join(''):'<div class="alert alert-secondary mb-0">No messages</div>';
+}
+async function liveSyncTick(manual=false){
+  if(!token||!currentUser||!isAdmin()||liveSyncBusy)return;
+  let now=Date.now();if(!manual&&now-liveSyncLastAt<2500)return;
+  liveSyncBusy=true;liveSyncLastAt=now;
+  let badge=$('liveSyncBadge');if(badge){badge.innerText='Syncing...';badge.className='close-pill'}
+  try{
+    let oldKeys=new Set((records||[]).map(getRecordKey));
+    let [rs,msgs,logs,sett]=await Promise.all([
+      queryShopCollection(COL_RECORDS),
+      queryShopCollection(COL_MSGS),
+      queryShopCollection(COL_LOGS),
+      getDoc(COL_SETTINGS,currentUser.shopId,settings)
+    ]);
+    records=rs||[];normalizeRecords(false);
+    messages=msgs||messages||[];auditLogs=logs||auditLogs||[];settings=sett||settings;normalizeSettings();
+    let newRows=(records||[]).filter(r=>!oldKeys.has(getRecordKey(r))).length;
+    if(newRows>0){liveSyncNewCount+=newRows;toast(newRows+' new records received ✅','success')}
+    renderAll();
+    if(badge){badge.innerText='Live '+time()+(liveSyncNewCount?` • +${liveSyncNewCount}`:'');badge.className='close-pill live-sync-pulse'}
+  }catch(e){
+    console.warn('liveSyncTick',e.message);
+    if(badge){badge.innerText='Sync warning';badge.className='close-pill closed'}
+  }finally{liveSyncBusy=false}
+}
+async function forceAppUpdate(){
+  toast('App update စစ်နေပါသည်...','info');
+  try{
+    if('serviceWorker' in navigator){let regs=await navigator.serviceWorker.getRegistrations();for(const r of regs){try{await r.update()}catch(e){}}}
+    if(window.caches){let keys=await caches.keys();await Promise.all(keys.map(k=>caches.delete(k)))}
+  }catch(e){console.warn('forceAppUpdate',e.message)}
+  setTimeout(()=>{let url=new URL(location.href);url.searchParams.set('v',Date.now());location.replace(url.toString())},600);
+}
+
 function renderAll(){
   safeRun('Role UI',applyRoleUI);
   safeRun('Dashboard',renderDash);
@@ -2259,7 +1784,9 @@ function renderAll(){
   safeRun('History',renderHistory);
   safeRun('Owner Dashboard',renderOwnerDashboard);
   safeRun('Session Timer',updateSessionTimer);
+  safeRun('Live Desk',renderLiveDesk);
 }
+
 
 
 // v1.5.0 PWA Install / Service Worker
@@ -2290,7 +1817,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   ['rName','rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].forEach(id=>$(id)?.addEventListener('focus',()=>focusField(id)));
   applySettingsUI();
   setInterval(checkLock,60000);
-  setInterval(updateSessionTimer,1000);setInterval(refreshSharedSettings,30000);
+  setInterval(updateSessionTimer,1000);setInterval(refreshSharedSettings,30000);setInterval(()=>liveSyncTick(false),3000);
   window.__rmWorkDate=today();setInterval(()=>{if(window.__rmWorkDate!==today()){window.__rmWorkDate=today();renderAll();toast('နေ့သစ် စာရင်းအသစ် စတင်ပါပြီ ✅','success')}},60000);
   u.addEventListener('keydown',e=>{if(e.key==='Enter')p.focus()});
   p.addEventListener('keydown',e=>{if(e.key==='Enter')login()});
@@ -2309,208 +1836,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   updateDesktopModeUI();
 
 });
-
-// v1.6.5 Desktop Mode Enhancements
-function updateDesktopModeUI(){
-  let isDesktop=document.body.classList.contains('admin-windows-mode');
-  let w=window.innerWidth;
-  
-  if(isDesktop && w>=1400){
-    // Enhanced grid layout for large screens
-    let grid=$('grid');
-    if(grid && grid.style){
-      grid.style.gridTemplateColumns='repeat(15, 1fr)';
-    }
-  }else if(isDesktop && w>=1024){
-    let grid=$('grid');
-    if(grid && grid.style){
-      grid.style.gridTemplateColumns='repeat(12, 1fr)';
-    }
-  }
-}
-
-// Enhance dashboard risk panel
-function renderDashRiskPanel(){
-  let panel=$('dashRiskPanel');
-  if(!panel)return;
-  
-  let html='<div class="split-panel-content">';
-  if(data.length>0){
-    let totalAmt=data.reduce((s,d)=>s+(d.amt||0),0);
-    let totalRec=data.length;
-    html+=`<div class="mb-2"><small>Total Amount: <b>${totalAmt}</b></small></div>`;
-    html+=`<div class="mb-2"><small>Total Records: <b>${totalRec}</b></small></div>`;
-    html+=`<div class="alert alert-info mb-0"><small>Risk status: Monitor limit table for details</small></div>`;
-  }else{
-    html+='<div class="alert alert-secondary mb-0"><small>No data available</small></div>';
-  }
-  html+='</div>';
-  panel.innerHTML=html;
-}
-
-// Enhance limit grid rendering
-function renderLimitGrid(){
-  let grid=$('grid');
-  if(!grid)return;
-  
-  let html='';
-  // Add header row
-  for(let i=1;i<=100;i++){
-    let cls='cell';
-    if(hitNumbers.includes(i))cls+=' hit';
-    else if(negNumbers.includes(i))cls+=' neg';
-    else if(posNumbers.includes(i))cls+=' pos';
-    html+=`<div class="${cls}">${i}</div>`;
-  }
-  grid.innerHTML=html;
-}
-
-// Monitor window resize for responsive panels
-window.addEventListener('resize',()=>{
-  updateDesktopModeUI();
-  renderDashRiskPanel();
-});
-
-
-// v1.6.5 Advanced Limit Table Features
-
-// Enhanced limit grid rendering with statistics
-function renderLimitGridEnhanced(){
-  let grid=$('grid');
-  if(!grid)return;
-  
-  let html='';
-  let hitCount=0, posCount=0, negCount=0;
-  
-  // Render 100 numbers
-  for(let i=1;i<=100;i++){
-    let cls='cell';
-    let tooltip='';
-    
-    if(hitNumbers && hitNumbers.includes(i)){
-      cls+=' hit';
-      hitCount++;
-      tooltip='Hit Number';
-    }else if(negNumbers && negNumbers.includes(i)){
-      cls+=' neg';
-      negCount++;
-      tooltip='Negative';
-    }else if(posNumbers && posNumbers.includes(i)){
-      cls+=' pos';
-      posCount++;
-      tooltip='Positive';
-    }
-    
-    html+=`<div class="${cls}" data-tooltip="${tooltip}">${i}</div>`;
-  }
-  
-  grid.innerHTML=html;
-  
-  // Update statistics
-  updateGridStats(hitCount, posCount, negCount);
-}
-
-// Update grid statistics display
-function updateGridStats(hitCount, posCount, negCount){
-  let statsHtml=`
-    <div class="grid-stats">
-      <div class="stat-item hit-stat">
-        <small>Hit Numbers</small>
-        <b>${hitCount}</b>
-      </div>
-      <div class="stat-item pos-stat">
-        <small>Positive</small>
-        <b>${posCount}</b>
-      </div>
-      <div class="stat-item neg-stat">
-        <small>Negative</small>
-        <b>${negCount}</b>
-      </div>
-      <div class="stat-item">
-        <small>Total</small>
-        <b>${hitCount + posCount + negCount}</b>
-      </div>
-    </div>
-  `;
-  
-  let gridContainer=$('grid')?.parentElement;
-  if(gridContainer){
-    let existingStats=gridContainer.querySelector('.grid-stats');
-    if(existingStats){
-      existingStats.innerHTML=statsHtml.replace(/<div class="grid-stats">/,'').replace(/<\/div>/,'');
-    }
-  }
-}
-
-// Add legend to limit section
-function addLimitLegend(){
-  let limitCard=$('limit');
-  if(!limitCard)return;
-  
-  let legendHtml=`
-    <div class="limit-legend">
-      <div class="legend-item">
-        <div class="legend-box hit"></div>
-        <span>Hit Numbers</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-box pos"></div>
-        <span>Positive</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-box neg"></div>
-        <span>Negative</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-box normal"></div>
-        <span>Normal</span>
-      </div>
-    </div>
-  `;
-  
-  let gridContainer=$('grid')?.parentElement;
-  if(gridContainer && !gridContainer.querySelector('.limit-legend')){
-    gridContainer.insertAdjacentHTML('beforebegin', legendHtml);
-  }
-}
-
-// Enhance renderLimit function
-let originalRenderLimit=window.renderLimit;
-window.renderLimit=function(calc){
-  if(originalRenderLimit)originalRenderLimit(calc);
-  renderLimitGridEnhanced();
-  addLimitLegend();
-};
-
-// Add number range filter
-function filterNumberRange(start, end){
-  let cells=document.querySelectorAll('.limit-grid .cell');
-  cells.forEach(cell=>{
-    let num=parseInt(cell.textContent);
-    if(num>=start && num<=end){
-      cell.classList.add('updated');
-      setTimeout(()=>cell.classList.remove('updated'), 400);
-    }
-  });
-}
-
-// Keyboard shortcut for grid navigation
-document.addEventListener('keydown',(e)=>{
-  if(e.ctrlKey && e.key==='l'){
-    e.preventDefault();
-    tab('limit','tLimit');
-    setTimeout(()=>renderLimitGridEnhanced(), 100);
-  }
-});
-
-// Initialize enhanced limit features on page load
-document.addEventListener('DOMContentLoaded',()=>{
-  setTimeout(()=>{
-    addLimitLegend();
-    renderLimitGridEnhanced();
-  }, 500);
-});
-
 </script>
 </body>
 </html>
