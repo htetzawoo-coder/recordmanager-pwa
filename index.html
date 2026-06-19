@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.6.7 UID Rules Fix</title>
+<title>RecordManager_2D_Logic_Pro v1.6.9 UI Final Polish</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.6.7 UID Rules Fix */
+/* v1.6.9 UI Final Polish */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.6.7 UID Rules Fix */
+/* v1.6.9 UI Final Polish */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.6.7 UID Rules Fix */
+/* v1.6.9 UI Final Polish */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,7 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.6.7 UID Rules Fix + Clear Limit Board */
+/* v1.6.9 UI Final Polish + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -212,6 +212,69 @@ body.admin-windows-mode .windows-live-desk{display:block}
 .invite-lock{border-radius:12px;background:#fef3c7;color:#92400e;padding:8px;margin:6px 0;font-weight:900}.dark .invite-lock{background:#78350f;color:#fde68a}
 #langBtn{min-width:70px}
 
+
+
+/* v1.6.8 3D Page Buttons + Auto Sync Polish */
+.tabs{gap:6px;scrollbar-width:thin}.tabs button{border:2px solid #dbeafe!important;background:linear-gradient(180deg,#ffffff,#e2e8f0)!important;color:#0f172a!important;box-shadow:0 5px 0 #94a3b8,0 9px 16px #0002,inset 0 1px 0 #fff!important;text-shadow:none;border-radius:999px!important;transition:.08s ease;position:relative}.tabs button:active{transform:translateY(3px);box-shadow:0 2px 0 #64748b,0 5px 10px #0002!important}.tabs button.active{background:linear-gradient(180deg,#3b82f6,#1d4ed8)!important;color:#fff!important;border-color:#93c5fd!important;box-shadow:0 5px 0 #1e3a8a,0 10px 18px #2563eb55,inset 0 1px 0 #fff5!important}.tabs button.owner-tab{background:linear-gradient(180deg,#fde68a,#f59e0b)!important;border-color:#facc15!important;color:#78350f!important}.tabs button.owner-tab.active{background:linear-gradient(180deg,#fbbf24,#d97706)!important;color:#fff!important}.tabs button.admin-tab{border-color:#bfdbfe!important}.tabs button.member-tab{background:linear-gradient(180deg,#dcfce7,#86efac)!important;border-color:#22c55e!important;color:#14532d!important}.tabs button.member-tab.active{background:linear-gradient(180deg,#22c55e,#047857)!important;color:#fff!important}.dark .tabs button{background:linear-gradient(180deg,#334155,#0f172a)!important;color:#e5e7eb!important;border-color:#475569!important;box-shadow:0 5px 0 #020617,0 9px 16px #0005,inset 0 1px 0 #fff2!important}.dark .tabs button.active{background:linear-gradient(180deg,#2563eb,#1e40af)!important;color:#fff!important}.auto-sync-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000;background:#dcfce7;color:#166534}.auto-sync-off{background:#fee2e2!important;color:#991b1b!important}
+@media(max-width:520px){.tabs{gap:4px}.tabs button{box-shadow:0 4px 0 #94a3b8,0 7px 12px #0002!important;border-width:1.5px!important}.tabs button.active{box-shadow:0 4px 0 #1e3a8a,0 8px 14px #2563eb44!important}}
+
+
+/* v1.6.9 UI Final Polish */
+#loginPage .btn-primary{background:linear-gradient(180deg,#2563eb,#1e40af)!important;border:0!important;box-shadow:0 8px 0 #172554,0 14px 24px #1e40af33}
+#loginPage .btn-outline-primary{border:2px solid #16a34a!important;color:#166534!important;background:#dcfce7!important;box-shadow:0 6px 0 #15803d,0 12px 20px #15803d22}
+#loginPage .btn-outline-primary:active,#loginPage .btn-primary:active{transform:translateY(3px);box-shadow:0 3px 0 #0005}
+#dash .stat-card{min-height:82px;padding:12px!important}
+#dash .stat-card small{font-weight:1000;color:var(--muted);font-size:12px}
+#dash .stat-card h3{font-size:clamp(22px,4vw,34px);font-weight:1000;margin:2px 0 0}
+#records .table th,#records .table td{font-size:13px;vertical-align:middle}
+#records .name-text{font-size:13px}
+#records .num-chip{font-size:11px;padding:3px 7px}
+.limit-sync-note{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;border:1px solid #bfdbfe;background:#eff6ff;color:#1e3a8a;border-radius:14px;padding:8px 11px;font-size:12px;font-weight:1000}
+.dark .limit-sync-note{background:#0f2a4a;color:#bfdbfe;border-color:#1d4ed8}
+.unit-note{background:#fef3c7;color:#92400e;border-radius:999px;padding:4px 8px}
+.dark .unit-note{background:#78350f;color:#fde68a}
+#grid.limit-board-focus{display:block!important;font-size:initial!important}
+#limit .windows-limit-board{border:3px solid #0f766e;border-radius:16px;box-shadow:0 14px 32px #0f766e22, inset 0 0 0 2px #ccfbf1;background:#ecfeff}
+#limit .windows-limit-board table{min-width:1120px}
+#limit .windows-limit-board td{height:40px}
+#limit .limit-no{font-size:20px;background:linear-gradient(180deg,#bbf7d0,#22c55e);border-color:#16a34a;color:#052e16;text-shadow:0 1px 0 #fff8}
+#limit .limit-amt{font-size:15px;background:#fff;color:#111827}
+#limit .limit-alert{background:linear-gradient(180deg,#ef4444,#991b1b)!important;color:#fff!important}
+#limit .limit-near{background:linear-gradient(180deg,#fef08a,#f59e0b)!important;color:#78350f!important}
+.limit-unit{font-size:16px;font-weight:1000}
+.limit-real{font-size:9px;opacity:.55;display:block;line-height:1}
+.limit-board-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 8px;font-weight:1000}
+.limit-board-head .badge{font-size:12px}
+.history-member-chip{display:inline-block;border-radius:999px;background:#ede9fe;color:#5b21b6;padding:5px 10px;font-weight:1000;font-size:12px}
+.dark .history-member-chip{background:#3b0764;color:#e9d5ff}
+@media(min-width:900px){
+  body.admin-windows-mode .container{max-width:1900px!important;padding-left:8px!important;padding-right:12px!important}
+  body.admin-windows-mode .tabs{width:224px!important;padding:8px 7px!important}
+  body.admin-windows-mode .page{margin-left:228px!important}
+  body.admin-windows-mode #limit .card{max-width:none!important}
+  body.admin-windows-mode #records .table th,body.admin-windows-mode #records .table td{font-size:14px}
+}
+@media(max-width:560px){
+  #entry .card{padding:8px!important}
+  #entry .entry-input-grid .form-control{padding:8px 9px!important;font-size:14px!important}
+  #entry .session-timer{font-size:12px!important}
+  #entry .last-entry-preview{margin:4px 0;padding:5px 8px}
+  #entry .entry-keypad-3d{gap:5px!important}
+  #entry .entry-keypad-3d button{min-height:42px!important;font-size:18px!important;border-radius:11px!important}
+  #entry .entry-keypad-3d small{font-size:10px!important}
+  #entry .entry-keypad-3d .enter{min-height:50px!important;font-size:20px!important}
+  #records .table th,#records .table td{font-size:11px!important;padding:5px 3px!important}
+}
+
+
+/* v1.6.9 tab final polish */
+.tabs button{border:2px solid #cbd5e1!important;background:linear-gradient(180deg,#ffffff,#e2e8f0)!important;color:#0f172a!important;box-shadow:0 6px 0 #94a3b8,0 10px 16px #0002!important}
+.tabs button.active{background:linear-gradient(180deg,#38bdf8,#2563eb)!important;color:#fff!important;border-color:#1d4ed8!important;box-shadow:0 6px 0 #1e3a8a,0 12px 22px #2563eb44!important}
+.tabs button.admin-tab{border-color:#93c5fd!important}
+.tabs button.member-tab{border-color:#86efac!important}
+.tabs button.owner-tab{border-color:#fbbf24!important}
+.dark .tabs button{background:linear-gradient(180deg,#334155,#0f172a)!important;color:#e5e7eb!important;border-color:#475569!important}
+
 </style>
 </head>
 <body>
@@ -219,7 +282,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.7 UID Rules Fix</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.9 UI Final Polish</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()" data-i18n-key="Refresh">Refresh</button>
@@ -236,7 +299,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.6.7 UID Rules Fix — admin register permission fix</p>
+      <p class="small-note mb-2">v1.6.9 UI Final Polish — 3D tabs + Auto Sync</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -362,6 +425,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
             </div>
             <div class="d-flex gap-2 align-items-center">
               <span id="liveSyncBadge" class="close-pill">Live Sync Ready</span>
+              <button id="autoSyncBtn" class="btn btn-outline-success btn-sm rounded-pill fw-bold" onclick="toggleLiveSync()">Auto 3s ON</button>
               <button class="btn btn-outline-primary btn-sm rounded-pill fw-bold" onclick="liveSyncTick(true)">Sync Now</button>
             </div>
           </div>
@@ -422,7 +486,12 @@ body.admin-windows-mode .windows-live-desk{display:block}
           <div class="col-6 col-md-4"><label class="small fw-bold">Lose %</label><input id="riskLosePct" class="form-control mb-2" inputmode="decimal" placeholder="ဥပမာ 20" oninput="riskMaster='losePct';renderLimit(false)"></div>
           <div class="col-6 col-md-4"><label class="small fw-bold">Max Lose Amount</label><input id="riskMaxLose" class="form-control mb-2" inputmode="numeric" placeholder="ဥပမာ 500000" oninput="riskMaster='maxLose';renderLimit(false)"></div>
         </div>
-        <button class="btn btn-primary w-100 mb-2 rounded-pill fw-bold" onclick="renderLimit(true)">Check / Auto Calculate</button>
+        <div class="row g-2 mb-2">
+          <div class="col-12 col-md-4"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="renderLimit(true)" data-i18n-key="Check / Auto Calculate">Check / Auto Calculate</button></div>
+          <div class="col-6 col-md-4"><button class="btn btn-outline-primary w-100 rounded-pill fw-bold" onclick="limitSyncTick(true)" data-i18n-key="Refresh Limit Now">Refresh Limit Now</button></div>
+          <div class="col-6 col-md-4"><button id="limitAutoBtn" class="btn btn-outline-success w-100 rounded-pill fw-bold" onclick="toggleLimitAutoSync()">Limit Auto 3s ON</button></div>
+        </div>
+        <div class="limit-sync-note mb-2"><span id="limitSyncTime">Limit Sync: Ready</span> <span class="unit-note">Board Unit = 100 | 30,000 → 300</span></div>
         <div class="row g-2 mb-2" id="riskSummary">
           <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Total</div><div id="limTotal" class="risk-value">0</div></div></div>
           <div class="col-6 col-md-3"><div class="risk-box"><div class="risk-title">Over</div><div id="riskOverTotal" class="risk-value">0</div></div></div>
@@ -495,6 +564,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
           <div class="col-6"><button class="btn btn-primary w-100 rounded-pill fw-bold" onclick="renderHistory()">Show History</button></div>
           <div class="col-8"><label class="small fw-bold">Full Read-only Date</label><input id="histDetailDate" class="form-control" type="date"></div>
           <div class="col-4 d-flex align-items-end"><button class="btn btn-dark w-100 rounded-pill fw-bold" onclick="renderHistoryFull()">OK</button></div>
+          <div class="col-12"><label class="small fw-bold" data-i18n-key="Member Filter">Member Filter</label><select id="histMemberFilter" class="form-select" onchange="renderHistoryFull()"><option value="">All Members</option></select></div>
         </div>
         <div id="histDetail" class="history-detail-box mt-3"></div>
         <div id="histSummary" class="range-summary mt-3"></div>
@@ -669,7 +739,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.6.7 UID Rules Fix
+   RecordManager_2D_Logic_Pro v1.6.9 UI Final Polish
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -1270,7 +1340,7 @@ const I18N={
   en:{dash:'📊 Dashboard',entry:'📝 Record Entry',records:'📋 Records',limit:'📉 Limit',over:'🚨 Over',am:'☀️ AM',pm:'🌙 PM',daily:'📅 Daily',history:'🗓️ History',img:'🖼️ Image',members:'👥 Members',messages:'💬 Messages',logs:'🧾 Logs',settings:'⚙️ Settings',owner:'👑 Owner',lang:'English'}
 };
 const TERM_MY={
-  'Limit Amount':'လစ်မစ်ပမာဏ','Max Amount':'အများဆုံးပမာဏ','Max Lose Amount':'အများဆုံးအရှုံးပမာဏ','Lose %':'အရှုံးရာခိုင်နှုန်း','Total':'စုစုပေါင်း','Cor':'ကော်မရှင် / Cor','AM':'မနက်ပိုင်း','PM':'ညနေပိုင်း','Worst Pay':'အဆိုးဆုံးလျော်ကြေး','Pay Allowed':'ပေးနိုင်သည့်အများဆုံးလျော်ကြေး','Balance':'လက်ကျန်','Over Count':'အိုဗာအရေအတွက်','Suggested Limit':'အကြံပြုလစ်မစ်','Max No':'အများဆုံးနံပါတ်','Status':'အခြေအနေ','Risk':'အန္တရာယ်အခြေအနေ','SAFE':'စိတ်ချရ','DANGER':'အန္တရာယ်ရှိ','Records':'စာရင်းများ','Members':'မန်ဘာများ','Member List':'မန်ဘာစာရင်း','Invite Link':'ဖိတ်ခေါ်လင့်','Generate Invite Link':'ဖိတ်ခေါ်လင့်ထုတ်ရန်','Share Link':'လင့်မျှဝေရန်','Copy Link':'လင့်ကူးရန်','Copy Invite Link':'ဖိတ်ခေါ်လင့်ကူးရန်','Member Invite Link':'မန်ဘာဖိတ်ခေါ်လင့်','Member Name':'မန်ဘာနာမည်','Phone':'ဖုန်း','Phone Number':'ဖုန်းနံပါတ်','Expire Hours':'သက်တမ်းနာရီ','Admin Dashboard':'Admin စုစုပေါင်း','Member Dashboard':'မန်ဘာ စုစုပေါင်း','Member Record Entry':'မန်ဘာစာရင်းထိုးရန်','Record Entry':'စာရင်းထိုးရန်','Payout Rate':'လျော်ကြေးနှုန်း','Default Cor %':'Default ကော်မရှင် %','App Name':'App နာမည်','Owner / Shop Name':'Owner / ဆိုင်နာမည်','Open AM':'မနက်ပိုင်း ဖွင့်ချိန်','Close AM':'မနက်ပိုင်း ပိတ်ချိန်','Open PM':'ညနေပိုင်း ဖွင့်ချိန်','Close PM':'ညနေပိုင်း ပိတ်ချိန်','Save General Settings':'ဆက်တင် သိမ်းမည်','Backup / Restore':'Backup / Restore','No records':'စာရင်းမရှိသေးပါ','No Members':'မန်ဘာမရှိသေးပါ','View only':'ကြည့်ရန်သာ','Latest Recorded':'နောက်ဆုံးသိမ်းထားသောစာရင်း','Sync Now':'အခု Sync လုပ်','Refresh':'Refresh','Update':'Update','Logout':'ထွက်မည်','Theme':'Theme','Install':'Install','Admin Only — Limit Monitor':'Admin Only — လစ်မစ်စစ်ရန်','Admin Only — Limit Over Table':'Admin Only — အိုဗာစာရင်း','Image / Member Result Report':'ပုံစာရင်း / မန်ဘာ Result','Contact / Message Box':'ဆက်သွယ်ရန် / စာတို','Audit Logs':'လုပ်ဆောင်မှုမှတ်တမ်း','Settings & Data Safety':'ဆက်တင် & Data Safety','Full Read-only Date':'ပြန်ကြည့်မည့် Date','OK':'OK','This Week':'ဒီအပတ်','Show History':'မှတ်တမ်းကြည့်မည်'
+  'Limit Amount':'လစ်မစ်ပမာဏ','Max Amount':'အများဆုံးပမာဏ','Max Lose Amount':'အများဆုံးအရှုံးပမာဏ','Lose %':'အရှုံးရာခိုင်နှုန်း','Total':'စုစုပေါင်း','Cor':'ကော်မရှင် / Cor','AM':'မနက်ပိုင်း','PM':'ညနေပိုင်း','Worst Pay':'အဆိုးဆုံးလျော်ကြေး','Pay Allowed':'ပေးနိုင်သည့်အများဆုံးလျော်ကြေး','Balance':'လက်ကျန်','Over Count':'အိုဗာအရေအတွက်','Suggested Limit':'အကြံပြုလစ်မစ်','Max No':'အများဆုံးနံပါတ်','Status':'အခြေအနေ','Risk':'အန္တရာယ်အခြေအနေ','SAFE':'စိတ်ချရ','DANGER':'အန္တရာယ်ရှိ','Records':'စာရင်းများ','Members':'မန်ဘာများ','Member List':'မန်ဘာစာရင်း','Invite Link':'ဖိတ်ခေါ်လင့်','Generate Invite Link':'ဖိတ်ခေါ်လင့်ထုတ်ရန်','Share Link':'လင့်မျှဝေရန်','Copy Link':'လင့်ကူးရန်','Copy Invite Link':'ဖိတ်ခေါ်လင့်ကူးရန်','Member Invite Link':'မန်ဘာဖိတ်ခေါ်လင့်','Member Name':'မန်ဘာနာမည်','Phone':'ဖုန်း','Phone Number':'ဖုန်းနံပါတ်','Expire Hours':'သက်တမ်းနာရီ','Admin Dashboard':'Admin စုစုပေါင်း','Member Dashboard':'မန်ဘာ စုစုပေါင်း','Member Record Entry':'မန်ဘာစာရင်းထိုးရန်','Record Entry':'စာရင်းထိုးရန်','Payout Rate':'လျော်ကြေးနှုန်း','Default Cor %':'Default ကော်မရှင် %','App Name':'App နာမည်','Owner / Shop Name':'Owner / ဆိုင်နာမည်','Open AM':'မနက်ပိုင်း ဖွင့်ချိန်','Close AM':'မနက်ပိုင်း ပိတ်ချိန်','Open PM':'ညနေပိုင်း ဖွင့်ချိန်','Close PM':'ညနေပိုင်း ပိတ်ချိန်','Save General Settings':'ဆက်တင် သိမ်းမည်','Backup / Restore':'Backup / Restore','No records':'စာရင်းမရှိသေးပါ','No Members':'မန်ဘာမရှိသေးပါ','View only':'ကြည့်ရန်သာ','Latest Recorded':'နောက်ဆုံးသိမ်းထားသောစာရင်း','Sync Now':'အခု Sync လုပ်','Refresh':'Refresh','Update':'Update','Logout':'ထွက်မည်','Theme':'Theme','Install':'Install','Admin Only — Limit Monitor':'Admin Only — လစ်မစ်စစ်ရန်','Admin Only — Limit Over Table':'Admin Only — အိုဗာစာရင်း','Image / Member Result Report':'ပုံစာရင်း / မန်ဘာ Result','Contact / Message Box':'ဆက်သွယ်ရန် / စာတို','Audit Logs':'လုပ်ဆောင်မှုမှတ်တမ်း','Settings & Data Safety':'ဆက်တင် & Data Safety','Full Read-only Date':'ပြန်ကြည့်မည့် Date','OK':'OK','This Week':'ဒီအပတ်','Show History':'မှတ်တမ်းကြည့်မည်','Check / Auto Calculate':'စစ်မည် / အလိုအလျောက်တွက်မည်','Refresh Limit Now':'လစ်မစ် အခု Refresh','Limit Auto 3s ON':'လစ်မစ် Auto 3s ON','Limit Auto 3s OFF':'လစ်မစ် Auto 3s OFF','Limit Sync':'လစ်မစ် Sync','Member Filter':'မန်ဘာအလိုက်ကြည့်ရန်','All Members':'မန်ဘာအားလုံး','Days':'ရက်များ','Work Days':'အလုပ်လုပ်ရက်','Range Total':'ကာလစုစုပေါင်း','Rows':'စာကြောင်းအရေအတွက်','Daily Total':'နေ့ချုပ်စုစုပေါင်း','AM Total':'မနက်ပိုင်းစုစုပေါင်း','PM Total':'ညနေပိုင်းစုစုပေါင်း','Full Read-only History':'ပြန်ကြည့်ရန် မှတ်တမ်း','Limit Board':'လစ်မစ်ဘုတ်','Board Unit':'ဘုတ် Unit','Over':'အိုဗာ','Amount':'ထိုးကြေး','Amt':'ထိုးကြေး','Time':'အချိန်','Name':'နာမည်','Code':'ကုဒ်','No':'နံပါတ်','Member':'မန်ဘာ','Show History':'မှတ်တမ်းကြည့်မည်','This Week':'ဒီအပတ်','View Only — Entry/Edit/Delete မရ':'ကြည့်ရန်သာ — Entry/Edit/Delete မရ'
 };
 const TERM_EN={};Object.keys(TERM_MY).forEach(k=>TERM_EN[k]=k);
 
@@ -1282,11 +1352,12 @@ function applyLanguage(){
   Object.keys(ids).forEach(id=>{let e=$(id);if(e)e.innerText=L(ids[id])});
   if($('langBtn'))langBtn.innerText=appLang()==='my'?'English':'မြန်မာ';
   applyTermLanguage();
+  safeRun('History language',renderHistory);
 }
 function applyTermLanguage(){
   let my=appLang()==='my';
   let dict=my?TERM_MY:TERM_EN;
-  document.querySelectorAll('label,.risk-title,.redlbl,th,button,h5,h6,.last-entry-preview span,.small-translate').forEach(el=>{
+  document.querySelectorAll('label,.risk-title,.redlbl,th,button,h5,h6,small,.small-note,.last-entry-preview span,.small-translate').forEach(el=>{
     let txt=(el.dataset.i18nKey||el.textContent||'').trim();
     if(!el.dataset.i18nKey){
       if(TERM_MY[txt]||Object.values(TERM_MY).includes(txt)){
@@ -1370,7 +1441,7 @@ function enterAction(){
   }
   saveGroup()
 }
-function today(){return new Date().toISOString().slice(0,10)}
+function today(){return ymd(new Date())}
 function time(){return new Date().toTimeString().slice(0,5)}
 function schedule(){
   normalizeSettings();
@@ -1563,6 +1634,7 @@ function findSuggestedLimitBy(mode,value){
 
 function renderLimit(alertIt){
   if(!isAdmin())return;if(!grid)return;
+  updateLimitAutoUI();
   if(riskMaster==='losePct'&&Number(riskLosePct.value)>0){lim.value=findSuggestedLimitBy('losePct',riskLosePct.value)}
   if(riskMaster==='maxLose'&&Number(riskMaxLose.value)>0){lim.value=findSuggestedLimitBy('maxLose',riskMaxLose.value)}
   let r=riskCalcForLimit(Number(lim.value||0)),over=r.over;
@@ -1570,7 +1642,7 @@ function renderLimit(alertIt){
   if(riskOverTotal)riskOverTotal.innerText=money(r.overTotal);
   if(riskCorTotal)riskCorTotal.innerText=money(r.cor);
   if(riskBalance)riskBalance.innerText=money(r.balance);
-  if(riskMaxNo)riskMaxNo.innerText=`${r.maxNo} / ${money(r.maxAmt)}`;
+  if(riskMaxNo)riskMaxNo.innerText=`${r.maxNo} / ${limitUnit(r.maxAmt)||0} (${money(r.maxAmt)})`;
   if(riskWorstPay)riskWorstPay.innerText=money(r.worst);
   if(riskPayAllowed)riskPayAllowed.innerText=money(r.payAllowed);
   if(riskStatus){riskStatus.innerText=r.status==='SAFE'?'SAFE ✅':'DANGER 🔴';riskStatusBox.className='risk-box '+(r.status==='SAFE'?'safe':'danger2')}
@@ -1579,14 +1651,10 @@ function renderLimit(alertIt){
     if(riskLosePct)riskLosePct.value=r.actualLosePct?Number(r.actualLosePct.toFixed(2)):'';
     if(riskMaxLose)riskMaxLose.value=r.loseAmount?Math.round(r.loseAmount):'';
   }
-  grid.innerHTML='';
   let t=totals(),l=+lim.value;
-  for(let i=0;i<100;i++){
-    let n=String(i).padStart(2,'0'),d=document.createElement('div');
-    d.className='cell '+(l>0&&t[n]>l?'hit':'');
-    d.innerHTML='<b>'+n+'</b><br>'+money(t[n]);
-    grid.appendChild(d)
-  }
+  grid.className='limit-board-focus';
+  grid.innerHTML=buildLimitWindowsBoard(t,l,{limitPage:true});
+  if($('limitSyncTime')&&!$('limitSyncTime').innerText.includes('Syncing'))$('limitSyncTime').innerText='Limit Sync: '+time();
   if(alertIt&&over.length)alert('Over Limit / Risk တွက်ပြီးပါပြီ')
 }
 async function saveLimit(){if(!isAdmin())return alert('Admin Only');let o=overItems();if(!o.length)return alert('No Over');if(!confirm('Limit စာရင်းအတွက်သာ သိမ်းမည်။ မူရင်းစာရင်း မပြောင်းပါ။'))return;try{setBusy(true,'Saving Limit Export...');for(const x of o){let saved=await addDoc(COL_EXPORTS,{n:x.n,amt:x.over,date:today(),s:sess(),shopId:currentUser.shopId,shopName:currentUser.shopName,createdAt:Date.now()});exportsL.push(saved)}await saveEx();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Export Saved ✅','success');toast('Limit Export Saved ✅','success');await addAudit('SAVE_LIMIT_EXPORT',`count ${o.length} / over ${money(o.reduce((a,b)=>a+b.over,0))}`)}catch(e){setCloudStatus('Limit Save Error: '+e.message,'danger');alert(e.message)}finally{setBusy(false)}}
@@ -1865,11 +1933,12 @@ async function clearTodayRecords(){if(!isAdmin())return; if(!confirm('ဒီန�
 async function clearLimitExports(){if(!isAdmin())return;if(!confirm('Limit Export Records များကို Cloud မှ ဖျက်မလား?'))return;try{setBusy(true,'Clearing limit exports...');let c=exportsL.length;for(const x of exportsL)await delDocByPath(x._path);exportsL=[];await saveEx();renderAll();renderLimit(false);renderOver();setCloudStatus('Cloud: Limit Exports Cleared','success');toast('Limit Exports Cleared','success');await addAudit('CLEAR_LIMIT_EXPORTS','rows '+c)}finally{setBusy(false)}}
 async function clearAllRecords(){if(!isAdmin())return;if(!confirm('စာရင်းအားလုံးကို Cloud မှ ဖျက်မလား?'))return;try{setBusy(true,'Clearing all records...');let c=records.length,e=exportsL.length;for(const r of records)await delDocByPath(r._path);for(const x of exportsL)await delDocByPath(x._path);records=[];exportsL=[];await save();await saveEx();renderAll();setCloudStatus('Cloud: All Records Cleared','success');toast('All Records Cleared','success');await addAudit('CLEAR_ALL','records '+c+' exports '+e)}finally{setBusy(false)}}
 
-function ymd(d){return d.toISOString().slice(0,10)}
+function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function firstRecordDate(){let ds=allVisibleRecords().map(r=>r.d).filter(Boolean).sort();return ds[0]||''}
-function dateAdd(str,days){let d=new Date(str+'T00:00:00');d.setDate(d.getDate()+days);return ymd(d)}
-function weekdayName(str){return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(str+'T00:00:00').getDay()]}
-function isMonFri(str){let x=new Date(str+'T00:00:00').getDay();return x>=1&&x<=5}
+function localDate(str){let p=String(str||today()).split('-').map(Number);return new Date(p[0]||new Date().getFullYear(),(p[1]||1)-1,p[2]||1)}
+function dateAdd(str,days){let d=localDate(str);d.setDate(d.getDate()+days);return ymd(d)}
+function weekdayName(str){let x=localDate(str).getDay(),en=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],my=['တနင်္ဂနွေ','တနင်္လာ','အင်္ဂါ','ဗုဒ္ဓဟူး','ကြာသပတေး','သောကြာ','စနေ'];return appLang&&appLang()==='my'?my[x]:en[x]}
+function isMonFri(str){let x=localDate(str).getDay();return x>=1&&x<=5}
 function recordsByDateSession(date,s){return allVisibleRecords().filter(r=>r.d===date&&(!s||r.s===s))}
 function resultForDate(date){normalizeSettings();return settings.results?.[date]||{}}
 function setHistoryThisWeek(){
@@ -1990,17 +2059,31 @@ function lastEntryKey(){return 'RM_v159_last_entry_'+(currentUser?String(current
 function updateLastEntryPreview(){let box=$('lastEntryPreview');if(!box)return;let v=localLoad(lastEntryKey(),null);if(v&&v.code){box.classList.remove('d-none');box.querySelector('b').innerText=`{ ${v.code}     ${v.amount} }`}else box.classList.add('d-none')}
 function showLastEntryPreview(code,amount){localSave(lastEntryKey(),{code:String(code||''),amount:String(amount||''),ts:Date.now()});updateLastEntryPreview()}
 function totalsForList(list){let t={};for(let i=0;i<100;i++)t[String(i).padStart(2,'0')]=0;(list||[]).forEach(r=>{let n=String(r.n||'').padStart(2,'0');if(t[n]!==undefined)t[n]+=num(r.amt)});return t}
+function historyMemberKey(r){return String(r.memberUid||r.memberId||r.memberEmail||r.memberName||'')}
+function historyMemberLabel(r){return r.memberName||r.memberEmail||r.memberId||'Unknown Member'}
+function populateHistoryMemberFilter(date){
+  let sel=$('histMemberFilter');if(!sel)return;
+  let old=sel.value,all=[...recordsByDateSession(date,'AM'),...recordsByDateSession(date,'PM')],map={};
+  all.forEach(r=>{let k=historyMemberKey(r);if(k)map[k]=historyMemberLabel(r)});
+  let opts='<option value="">'+(appLang&&appLang()==='my'?'မန်ဘာအားလုံး':'All Members')+'</option>'+Object.keys(map).sort((a,b)=>String(map[a]).localeCompare(String(map[b]))).map(k=>`<option value="${k.replaceAll('"','&quot;')}">${map[k]}</option>`).join('');
+  sel.innerHTML=opts;if(old&&map[old])sel.value=old;
+}
+function filterHistoryList(rs){
+  let key=$('histMemberFilter')?.value||'';return key?(rs||[]).filter(r=>historyMemberKey(r)===key):(rs||[]);
+}
 function tableRowsForHistory(rs){return rs.length?`<table class="history-mini-table"><thead><tr><th>Time</th><th>Member</th><th>Name</th><th>Code</th><th>No</th><th>Amt</th></tr></thead><tbody>${rs.map(r=>`<tr><td class="text-keep">${r.tm||''}</td><td>${r.memberName||''}</td><td>${r.playerName||r.name||''}</td><td>${r.c||''}</td><td><b>${r.n||''}</b></td><td class="text-end fw-bold">${money(r.amt)}</td></tr>`).join('')}</tbody></table>`:'<div class="alert alert-secondary mb-2">No records</div>'}
 function renderHistoryFull(){
   let box=$('histDetail');if(!box)return;
   let d=($('histDetailDate')?.value||$('histStart')?.value||today());if($('histDetailDate'))$('histDetailDate').value=d;
-  let am=recordsByDateSession(d,'AM'),pm=recordsByDateSession(d,'PM'),all=[...am,...pm];
+  populateHistoryMemberFilter(d);
+  let allAm=recordsByDateSession(d,'AM'),allPm=recordsByDateSession(d,'PM'),am=filterHistoryList(allAm),pm=filterHistoryList(allPm),all=[...am,...pm];
+  let selected=$('histMemberFilter')?.value,memberName=selected?($('histMemberFilter').selectedOptions[0]?.textContent||''):(appLang&&appLang()==='my'?'မန်ဘာအားလုံး':'All Members');
   let amTotal=am.reduce((a,b)=>a+num(b.amt),0),pmTotal=pm.reduce((a,b)=>a+num(b.amt),0),total=amTotal+pmTotal;
   let limi=num(lim?.value||settings.limitAmount||0),m=totalsForList(all);
   box.classList.add('active');
-  box.innerHTML=`<div class="d-flex justify-content-between align-items-center flex-wrap gap-2"><h5 class="fw-bold mb-1">📌 ${d} Full Read-only History</h5><span class="history-readonly-note">View Only — Entry/Edit/Delete မရ</span></div>
+  box.innerHTML=`<div class="d-flex justify-content-between align-items-center flex-wrap gap-2"><h5 class="fw-bold mb-1">📌 ${d} / ${weekdayName(d)} Full Read-only History</h5><span class="history-readonly-note">View Only — Entry/Edit/Delete မရ</span><span class="history-member-chip">${memberName}</span></div>
   <div class="history-detail-grid mb-2"><div class="smart-mini"><small>AM Total</small><br><b>${money(amTotal)}</b></div><div class="smart-mini"><small>PM Total</small><br><b>${money(pmTotal)}</b></div><div class="smart-mini"><small>Daily Total</small><br><b>${money(total)}</b></div><div class="smart-mini"><small>Rows</small><br><b>${all.length}</b></div></div>
-  <div class="history-section-title">📉 Limit Board ${limi?`/ Limit ${money(limi)}`:'(Limit မထည့်ထားပါ)'}</div>${buildLimitWindowsBoard(m,limi)}
+  <div class="history-section-title">📉 Limit Board ${limi?`/ Limit ${money(limi)} → ${limitUnit(limi)}`:'(Limit မထည့်ထားပါ)'} <span class="badge bg-primary">Unit = 100</span></div>${buildLimitWindowsBoard(m,limi)}
   <div class="history-section-title">🚨 Over</div>${buildOverMiniTable(m,limi)}
   <div class="history-section-title">☀️ AM Record List</div>${tableRowsForHistory(am)}
   <div class="history-section-title">🌙 PM Record List</div>${tableRowsForHistory(pm)}`;
@@ -2012,18 +2095,25 @@ function visibleRecordNumberTotals(){
   visibleRecords().forEach(r=>{let n=String(r.n||'').padStart(2,'0');if(/^\d{2}$/.test(n))m[n]=(m[n]||0)+num(r.amt)});
   return m;
 }
-function buildLimitWindowsBoard(m={},limi=0){
-  let rows='';
+function limitUnit(v){
+  let x=num(v)/100;
+  if(!x)return '';
+  return Number.isInteger(x)?String(x):String(Number(x.toFixed(2))).replace(/\.0+$/,'').replace(/(\.\d*[1-9])0+$/,'$1');
+}
+function buildLimitWindowsBoard(m={},limi=0,opts={}){
+  let rows='',limitU=limi?limitUnit(limi):'';
   for(let r=0;r<10;r++){
     let cells='';
     for(let t=0;t<10;t++){
       let n=String(t)+String(r);
-      let amt=num(m[n]||0), over=limi&&amt>limi, has=amt>0;
-      cells+=`<td class="limit-no ${over?'limit-alert':''}">${n}</td><td class="limit-amt ${over?'limit-alert':(has?'limit-over':'')}">${has?money(amt):''}</td>`;
+      let amt=num(m[n]||0), over=limi&&amt>limi, near=limi&&amt>0&&amt>=limi*0.8&&!over, has=amt>0;
+      let shown=has?limitUnit(amt):'';
+      cells+=`<td class="limit-no ${over?'limit-alert':''}">${n}</td><td class="limit-amt ${over?'limit-alert':(near?'limit-near':(has?'limit-over':''))}" title="${has?money(amt):''}">${has?`<span class="limit-unit">${shown}</span><span class="limit-real">${money(amt)}</span>`:''}</td>`;
     }
     rows+=`<tr>${cells}</tr>`;
   }
-  return `<div class="windows-limit-board"><table><tbody>${rows}</tbody></table></div>`;
+  let head=opts&&opts.compact?'':`<div class="limit-board-head"><span>📉 Limit Board</span><span class="badge bg-primary">Unit = 100</span>${limi?`<span class="badge bg-danger">Limit ${money(limi)} → ${limitU}</span>`:''}</div>`;
+  return `${head}<div class="windows-limit-board"><table><tbody>${rows}</tbody></table></div>`;
 }
 function buildOverMiniTable(m={},limi=0){
   let rows=Object.keys(m).filter(n=>limi&&num(m[n])>limi).sort((a,b)=>num(m[b])-num(m[a]));
@@ -2036,7 +2126,7 @@ function renderLiveDesk(){
   let desk=$('adminLiveDesk');if(!desk)return;
   let show=isAdmin()&&document.body.classList.contains('admin-windows-mode');
   desk.classList.toggle('d-none',!show);
-  if(!show)return;
+  if(!show)return;updateAutoSyncUI();
   let limi=num($('lim')?.value||settings.limitAmount||0);
   let m=visibleRecordNumberTotals();
   let latest=[...visibleRecords()].sort((a,b)=>num(b.createdAt||0)-num(a.createdAt||0)).slice(0,34);
@@ -2046,6 +2136,12 @@ function renderLiveDesk(){
   let ms=[...(messages||[])].filter(x=>sameShop(x)).sort((a,b)=>num(b.createdAt)-num(a.createdAt)).slice(0,28);
   if($('liveMsgMini'))$('liveMsgMini').innerHTML=ms.length?ms.map(x=>`<div class="live-msg-row"><b>${x.fromName||x.fromEmail||''} → ${x.toName||x.toEmail||''}</b><div>${x.text||''}</div><small>${x.date||''} ${x.time||''}</small></div>`).join(''):'<div class="alert alert-secondary mb-0">No messages</div>';
 }
+function updateAutoSyncUI(){
+  let b=$('autoSyncBtn');if(b){b.innerText=liveSyncEnabled?'Auto 3s ON':'Auto 3s OFF';b.className='btn btn-sm rounded-pill fw-bold '+(liveSyncEnabled?'btn-outline-success':'btn-outline-danger')}
+  let badge=$('liveSyncBadge');if(badge&&!liveSyncEnabled){badge.innerText='Auto Sync OFF';badge.className='close-pill closed'}
+}
+function toggleLiveSync(){liveSyncEnabled=!liveSyncEnabled;localSave('RM_v168_live_sync',liveSyncEnabled);updateAutoSyncUI();toast(liveSyncEnabled?'Auto Sync 3s ON ✅':'Auto Sync OFF','info');if(liveSyncEnabled)liveSyncTick(true)}
+
 async function liveSyncTick(manual=false){
   if(!token||!currentUser||!isAdmin()||liveSyncBusy)return;
   let now=Date.now();if(!manual&&now-liveSyncLastAt<2500)return;
@@ -2063,13 +2159,54 @@ async function liveSyncTick(manual=false){
     messages=msgs||messages||[];auditLogs=logs||auditLogs||[];settings=sett||settings;normalizeSettings();
     let newRows=(records||[]).filter(r=>!oldKeys.has(getRecordKey(r))).length;
     if(newRows>0){liveSyncNewCount+=newRows;toast(newRows+' new records received ✅','success')}
-    renderAll();
+    let y=window.scrollY;
+    renderDash();renderLiveDesk();
+    let ap=activePageId();
+    if(ap==='records')renderRecords();
+    if(ap==='limit')renderLimit(false);
+    if(ap==='over')renderOver();
+    if(ap==='messages'){renderMessageContacts();renderMessages()}
+    if(ap==='history')renderHistory();
+    window.scrollTo({top:y,left:0,behavior:'instant'});
     if(badge){badge.innerText='Live '+time()+(liveSyncNewCount?` • +${liveSyncNewCount}`:'');badge.className='close-pill live-sync-pulse'}
   }catch(e){
     console.warn('liveSyncTick',e.message);
     if(badge){badge.innerText='Sync warning';badge.className='close-pill closed'}
   }finally{liveSyncBusy=false}
 }
+
+let limitAutoEnabled=localLoad('RM_v169_limit_auto',true),limitSyncBusy=false,limitSyncAt=0;
+function activePageId(){let e=document.querySelector('#app>section.active');return e?e.id:''}
+function updateLimitAutoUI(){
+  let b=$('limitAutoBtn');if(!b)return;
+  b.innerText=limitAutoEnabled?'Limit Auto 3s ON':'Limit Auto 3s OFF';
+  b.className='btn w-100 rounded-pill fw-bold '+(limitAutoEnabled?'btn-outline-success':'btn-outline-secondary');
+}
+function toggleLimitAutoSync(){
+  limitAutoEnabled=!limitAutoEnabled;localSave('RM_v169_limit_auto',limitAutoEnabled);updateLimitAutoUI();
+  toast(limitAutoEnabled?'Limit Auto Refresh ON ✅':'Limit Auto Refresh OFF','info');
+}
+async function limitSyncTick(manual=false){
+  if(!token||!currentUser||!isAdmin()||limitSyncBusy)return;
+  if(!manual&&(!limitAutoEnabled||activePageId()!=='limit'))return;
+  let now=Date.now();if(!manual&&now-limitSyncAt<2800)return;limitSyncAt=now;limitSyncBusy=true;
+  let y=window.scrollY,boards=[...document.querySelectorAll('.windows-limit-board')].map(x=>({x,left:x.scrollLeft,top:x.scrollTop}));
+  if($('limitSyncTime'))$('limitSyncTime').innerText='Limit Sync: Syncing...';
+  try{
+    let [rs,exps]=await Promise.all([queryShopCollection(COL_RECORDS),queryShopCollection(COL_EXPORTS)]);
+    records=rs||[];exportsL=exps||exportsL||[];normalizeRecords(false);
+    renderLimit(false);renderDash();renderLiveDesk();
+    if($('limitSyncTime'))$('limitSyncTime').innerText='Limit Sync: '+time()+' ✅';
+  }catch(e){
+    console.warn('limitSyncTick',e.message);
+    if($('limitSyncTime'))$('limitSyncTime').innerText='Limit Sync warning';
+  }finally{
+    boards.forEach(o=>{try{o.x.scrollLeft=o.left;o.x.scrollTop=o.top}catch(e){}});
+    window.scrollTo({top:y,left:0,behavior:'instant'});
+    limitSyncBusy=false;
+  }
+}
+
 async function forceAppUpdate(){
   toast('App update စစ်နေပါသည်...','info');
   try{
@@ -2097,6 +2234,7 @@ function renderAll(){
   safeRun('Owner Dashboard',renderOwnerDashboard);
   safeRun('Session Timer',updateSessionTimer);
   safeRun('Live Desk',renderLiveDesk);
+  safeRun('Limit Auto UI',updateLimitAutoUI);
   safeRun('Last Entry Preview',updateLastEntryPreview);
   safeRun('Language',applyLanguage);
 }
@@ -2131,7 +2269,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   ['rName','rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].forEach(id=>$(id)?.addEventListener('focus',()=>focusField(id)));
   applySettingsUI();
   setInterval(checkLock,60000);
-  setInterval(updateSessionTimer,1000);setInterval(refreshSharedSettings,30000);setInterval(()=>liveSyncTick(false),3000);
+  setInterval(updateSessionTimer,1000);setInterval(refreshSharedSettings,30000);setInterval(()=>{if(liveSyncEnabled)liveSyncTick(false)},3000);
   window.__rmWorkDate=today();setInterval(()=>{if(window.__rmWorkDate!==today()){window.__rmWorkDate=today();renderAll();toast('နေ့သစ် စာရင်းအသစ် စတင်ပါပြီ ✅','success')}},60000);
   u.addEventListener('keydown',e=>{if(e.key==='Enter')p.focus()});
   p.addEventListener('keydown',e=>{if(e.key==='Enter')login()});
@@ -2150,9 +2288,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.addEventListener('online',updateNetBadge);
   window.addEventListener('offline',updateNetBadge);
   updateNetBadge();
+  setInterval(limitSyncTick,3000);
   initInviteFromUrl();applyLanguage();
   window.addEventListener('resize',updateDesktopModeUI);
-  updateDesktopModeUI();
+  liveSyncEnabled=localLoad('RM_v168_live_sync',true);updateAutoSyncUI();updateDesktopModeUI();
 
 });
 </script>
