@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>RecordManager_2D_Logic_Pro v1.6.11 Windows Layout Report Preview</title>
+<title>RecordManager_2D_Logic_Pro v1.6.12 Compact Dashboard Flow Report Preview</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="manifest" href="manifest.json">
@@ -76,7 +76,7 @@
 .log-filter{position:sticky;top:0;background:var(--card);z-index:2;padding-bottom:8px}
 
 
-/* v1.6.11 Windows Layout */
+/* v1.6.12 Compact Dashboard Flow */
 .tenant-pill{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef2ff;color:#3730a3;font-size:11px;font-weight:1000;margin-left:5px}
 .dark .tenant-pill{background:#312e81;color:#e0e7ff}
 .register-box{border:1px dashed var(--primary);border-radius:16px;padding:12px;margin-top:12px}
@@ -128,7 +128,7 @@
 .weekend-card{background:#f1f5f9!important;color:#475569!important;border-style:dashed!important}.dark .weekend-card{background:#1e293b!important;color:#cbd5e1!important}
 .closed-weekend{display:inline-block;border-radius:999px;background:#fee2e2;color:#991b1b;font-weight:1000;padding:6px 10px;margin-top:8px}
 
-/* v1.6.11 Windows Layout */
+/* v1.6.12 Compact Dashboard Flow */
 .owner-license-card{border:2px solid #f59e0b;border-radius:18px;padding:14px;background:#fffbeb;margin-bottom:16px}
 .dark .owner-license-card{background:#451a03;border-color:#92400e}
 .license-status-pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:1000}
@@ -139,7 +139,7 @@
 
 
 
-/* v1.6.11 Windows Layout */
+/* v1.6.12 Compact Dashboard Flow */
 #desktopModeBtn{white-space:nowrap}
 body.admin-windows-mode .container{max-width:1680px}
 body.admin-windows-mode .appbar .container-fluid{max-width:1680px}
@@ -168,7 +168,7 @@ body.admin-windows-mode .owner-table td,body.admin-windows-mode .owner-table th{
 
 
 
-/* v1.6.11 Windows Layout + Clear Limit Board */
+/* v1.6.12 Compact Dashboard Flow + Clear Limit Board */
 #updateBtn{white-space:nowrap}
 .windows-live-desk{display:none}
 body.admin-windows-mode .windows-live-desk{display:block}
@@ -219,7 +219,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 @media(max-width:520px){.tabs{gap:4px}.tabs button{box-shadow:0 4px 0 #94a3b8,0 7px 12px #0002!important;border-width:1.5px!important}.tabs button.active{box-shadow:0 4px 0 #1e3a8a,0 8px 14px #2563eb44!important}}
 
 
-/* v1.6.11 Windows Layout */
+/* v1.6.12 Compact Dashboard Flow */
 #loginPage .btn-primary{background:linear-gradient(180deg,#2563eb,#1e40af)!important;border:0!important;box-shadow:0 8px 0 #172554,0 14px 24px #1e40af33}
 #loginPage .btn-outline-primary{border:2px solid #16a34a!important;color:#166534!important;background:#dcfce7!important;box-shadow:0 6px 0 #15803d,0 12px 20px #15803d22}
 #loginPage .btn-outline-primary:active,#loginPage .btn-primary:active{transform:translateY(3px);box-shadow:0 3px 0 #0005}
@@ -276,7 +276,7 @@ body.admin-windows-mode .windows-live-desk{display:block}
 .dark .tabs button{background:linear-gradient(180deg,#334155,#0f172a)!important;color:#e5e7eb!important;border-color:#475569!important}
 
 
-/* v1.6.11 Windows Layout Fix */
+/* v1.6.12 Compact Dashboard Flow Fix */
 .dashboard-limit-card{border:2px solid #0ea5e9!important;background:linear-gradient(180deg,#f0f9ff,#fff)!important}
 .dashboard-limit-card .windows-limit-board{max-height:58vh}
 body.admin-windows-mode .appbar{height:54px!important}
@@ -308,6 +308,49 @@ body.admin-windows-mode .container.mt-3{padding-top:52px!important}
 .dark .report-preview-note{background:#451a03;color:#fde68a;border-color:#92400e}
 .message-sync-note{font-size:11px;color:var(--muted);font-weight:900;text-align:right}
 
+
+/* v1.6.12 Compact Dashboard Flow - remove empty white space */
+body.admin-windows-mode #app>section.page{min-height:0!important}
+body.admin-windows-mode #app>section.page.active{margin-top:0!important;padding-top:4px!important;align-content:start!important}
+body.admin-windows-mode #app>section.page:not(.active){display:none!important}
+body.admin-windows-mode #dash.page.active{
+  display:grid!important;
+  grid-template-columns:minmax(320px,360px) minmax(820px,1fr);
+  gap:8px!important;
+  align-items:start!important;
+  align-content:start!important;
+  padding-top:4px!important;
+}
+body.admin-windows-mode #dash>.card:first-child{
+  grid-column:1!important;grid-row:1!important;margin:0!important;padding:10px!important
+}
+body.admin-windows-mode #dash>.row.g-2{
+  grid-column:1!important;grid-row:2!important;
+  display:grid!important;grid-template-columns:1fr 1fr!important;
+  gap:7px!important;margin:0!important;padding:0!important
+}
+body.admin-windows-mode #dash>.row.g-2>.col-6{width:100%!important;padding:0!important}
+body.admin-windows-mode #dash>.row.g-2 .card{margin:0!important;min-height:72px!important;padding:9px!important}
+body.admin-windows-mode #dash>.card:nth-of-type(2){
+  grid-column:1!important;grid-row:3!important;margin:0!important;padding:10px!important
+}
+body.admin-windows-mode #dash>.dashboard-limit-card{
+  grid-column:2!important;grid-row:1 / span 3!important;margin:0!important;
+  padding:10px!important;align-self:start!important;min-height:calc(100vh - 70px)!important
+}
+body.admin-windows-mode #dash>.dashboard-limit-card .windows-limit-board{max-height:calc(100vh - 156px)!important}
+body.admin-windows-mode #dash>.dashboard-limit-card .windows-limit-board table{min-width:1080px!important}
+body.admin-windows-mode #adminLiveDesk{grid-column:1 / -1!important;margin-top:6px!important}
+body.admin-windows-mode #dash .smart-grid{grid-template-columns:1fr 1fr!important;gap:6px!important}
+body.admin-windows-mode #dash .smart-mini{padding:8px!important}
+body.admin-windows-mode #dash h5{font-size:18px!important;margin-bottom:4px!important}
+body.admin-windows-mode #dash h6{font-size:14px!important;margin:6px 0!important}
+body.admin-windows-mode #dash hr{margin:7px 0!important}
+@media(max-width:1180px){
+  body.admin-windows-mode #dash.page.active{grid-template-columns:minmax(270px,320px) minmax(700px,1fr)}
+  body.admin-windows-mode #dash>.dashboard-limit-card .windows-limit-board table{min-width:980px!important}
+}
+
 </style>
 </head>
 <body>
@@ -315,7 +358,7 @@ body.admin-windows-mode .container.mt-3{padding-top:52px!important}
 <div id="busyOverlay"><div class="busy-card"><div id="busyText">Saving...</div><div class="spinner-border text-light mt-3" role="status"></div></div></div>
 <nav class="navbar navbar-dark bg-primary appbar">
   <div class="container-fluid">
-    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.11 Windows Layout</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
+    <span class="navbar-brand fw-bold">RecordManager_Pro <span class="badge bg-light text-primary">v1.6.12 Compact Dashboard Flow</span><span id="roleBadge" class="role-pill d-none"></span><span id="shopBadge" class="tenant-pill d-none"></span></span>
     <div class="d-flex gap-2">
       <button id="logoutBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold d-none" onclick="logout()">Logout</button>
       <button id="refreshBtn" class="btn btn-outline-light btn-sm rounded-pill fw-bold" onclick="softRefreshApp()" data-i18n-key="Refresh">Refresh</button>
@@ -332,7 +375,7 @@ body.admin-windows-mode .container.mt-3{padding-top:52px!important}
   <div id="loginPage" class="page active">
     <div class="card p-4">
       <h3 class="fw-bold">Login</h3>
-      <p class="small-note mb-2">v1.6.11 Windows Layout — 3D tabs + Auto Sync</p>
+      <p class="small-note mb-2">v1.6.12 Compact Dashboard Flow — 3D tabs + Auto Sync</p>
       <input id="u" class="form-control mb-2" type="email" inputmode="email" placeholder="Email / Gmail">
       <input id="p" type="password" class="form-control mb-3" placeholder="Password">
       <button class="btn btn-primary w-100 py-2 fw-bold rounded-pill" onclick="login()">SIGN IN</button>
@@ -782,7 +825,7 @@ body.admin-windows-mode .container.mt-3{padding-top:52px!important}
 
 <script>
 /* ==========================================================
-   RecordManager_2D_Logic_Pro v1.6.11 Windows Layout Report Preview
+   RecordManager_2D_Logic_Pro v1.6.12 Compact Dashboard Flow Report Preview
    Base UI: v1.3.0 Local Demo
    Cloud Engine: v1.3.1 REST Cloud Test
    ========================================================== */
@@ -1162,7 +1205,7 @@ async function restoreSession(){
     await loadCloudAll();
     if(checkLock())return true;
     applyRoleUI();renderAll();
-    let first=restoreTabForRole();tab(first[0],first[1]);
+    let first=restoreTabForRole();tab(first[0],first[1]);scrollTopWindows();
     setCloudStatus('Cloud: Session Restored ✅','success');
     return true;
   }catch(e){
@@ -1308,7 +1351,7 @@ async function login(){
     loginPage.classList.remove('active');lockPage.classList.remove('active');app.classList.add('active');
     $('logoutBtn').classList.remove('d-none');$('roleBadge').classList.remove('d-none');$('shopBadge').classList.remove('d-none');
     applyRoleUI();renderAll();
-    let first=restoreTabForRole();tab(first[0],first[1]);
+    let first=restoreTabForRole();tab(first[0],first[1]);scrollTopWindows();
     setTimeout(()=>{if(isMember()){rName.focus();focusField('rName')}},80);
     await addAudit('LOGIN',authEmail+' / '+currentUser.shopName);
   }catch(e){
@@ -1429,7 +1472,7 @@ function applyRoleUI(){
     btn.classList.toggle('hidden-by-role',hide);
   });
   if($('entryMemberLabel'))$('entryMemberLabel').innerText='Login Member: '+(currentUser.memberName||currentUser.username)+' • '+memberPublicId(currentUser);if($('identityInfo'))$('identityInfo').innerHTML=identityInfoHTML();if($('dashTitle'))$('dashTitle').innerText=isAdmin()?'Admin Dashboard':'Member Dashboard';if($('dashSub'))$('dashSub').innerText=isAdmin()?'Member အားလုံး၏ စုစုပေါင်းစာရင်း':'မိမိ Member account ထဲမှစာရင်း';if($('recordsTitle'))$('recordsTitle').innerText=isAdmin()?'Admin Records — Commission Name View':'Member Records — ထိုးသား Name View';if($('recordsSub'))$('recordsSub').innerText=isAdmin()?'Admin မှာ ထိုးသားနာမည်မပြဘဲ Member/Commission နာမည်ဖြင့် ပြထားပါသည်။':'မိမိထိုးသားများ၏ Record Table ဖြစ်ပါသည်။';if($('recordsNameTh'))$('recordsNameTh').innerText=isAdmin()?'Commission':'Name';if($('amTitle'))$('amTitle').innerText=isAdmin()?'AM Report — Commission အလိုက်':'AM Report — ထိုးသားအလိုက်';if($('pmTitle'))$('pmTitle').innerText=isAdmin()?'PM Report — Commission အလိုက်':'PM Report — ထိုးသားအလိုက်';if($('dailyTitle'))$('dailyTitle').innerText=isAdmin()?'Daily Report — Commission အလိုက်':'Daily Report — ထိုးသားအလိုက်';if($('amSub'))$('amSub').innerText=isAdmin()?'Member/Commission name ဖြင့် စုပြီးတွက်ပါမည်။':'ထိုးသား name ဖြင့် စုပြီးတွက်ပါမည်။';if($('pmSub'))$('pmSub').innerText=$('amSub').innerText;if($('dailySub'))$('dailySub').innerText=$('amSub').innerText;;lockMemberPInputs();updateDesktopModeUI();}
-function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');rememberActiveTab(id,b);applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus();updateLastEntryPreview();if(document.body.classList.contains('admin-windows-mode'))setTimeout(()=>window.scrollTo({top:0,left:0,behavior:'instant'}),20)}
+function tab(id,b){if(checkLock())return;if(!currentUser)return logout();let btn=$(b);if(btn&&btn.classList.contains('hidden-by-role'))return alert('ဒီ Page ကို ယခု account မှာ အသုံးပြုခွင့်မရှိပါ');document.querySelectorAll('#app>section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');rememberActiveTab(id,b);applyRoleUI();renderAll();if(id==='limit')renderLimit(false);if(id==='over')renderOver();if(id==='img'){fillNames();renderImg()}if(id==='settings')applySettingsUI();if(id==='members')renderMembers();if(id==='logs')renderLogs();if(id==='messages'){renderMessageContacts();renderMessages()}if(id==='history')renderHistory();if(id==='owner')renderOwnerDashboard();renderCloseStatus();updateLastEntryPreview();scrollTopWindows()}
 function toggleTheme(){document.body.classList.toggle('dark')}
 function desktopModeAllowed(){return !!(currentUser&&isAdmin())}
 function updateDesktopModeUI(){
@@ -1451,8 +1494,16 @@ function toggleDesktopMode(){
   updateDesktopModeUI();
   toast(on?'Windows Mode ON ✅':'Windows Mode OFF','info');
   renderLiveDesk();
+  scrollTopWindows();
 }
 
+
+
+function scrollTopWindows(){
+  if(document.body.classList.contains('admin-windows-mode')){
+    setTimeout(()=>{try{window.scrollTo({top:0,left:0,behavior:'instant'})}catch(e){window.scrollTo(0,0)}},30);
+  }
+}
 
 function key(v){if(isMember()&&!isEntryOpen())return alert('Entry ပိတ်ထားပါသည်။');if(!['rCode','rAmt','lim','amP','pmP','dAmP','dPmP','imgAM','imgPM','imgCor'].includes(currentField))focusField('rCode');$(currentField).value+=v;$(currentField).focus()}
 function logicBtn(type){
